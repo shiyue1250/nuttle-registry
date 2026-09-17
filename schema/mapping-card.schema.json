@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/shiyue1250/databridge-registry/schema/mapping-card.schema.json",
+  "title": "DataBridge 映射卡 v1",
+  "description": "一个接口到一种实体的提取规则。纯数据，不含代码。fields 用点号路径取值，末尾 /N 做除法。",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "platform",
+    "entity",
+    "match",
+    "item_path",
+    "fields"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+/[a-z0-9-]+$",
+      "description": "平台/卡名，仓库内唯一"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "platform": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "所属平台包目录名"
+    },
+    "entity": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$",
+      "description": "产出的实体类型：comment / note / product / variation …"
+    },
+    "match": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "host": {
+          "type": "string",
+          "description": "域名子串，可省略"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "description": "路径子串"
+        }
+      }
+    },
+    "item_path": {
+      "type": "string",
+      "description": "从响应根到数组的点号路径；响应本身是数组则为空串"
+    },
+    "fields": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "目标字段 -> 源路径。extra. 前缀整块保留原值；源路径写 $path / $host 取请求上下文（响应正文之外唯一能引用的东西）"
+    },
+    "schema": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "string",
+              "int",
+              "float",
+              "bool",
+              "unix_s",
+              "unix_ms",
+              "url",
+              "json"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "v1 只作文档，不做强制转换"
+    },
+    "fixture": {
+      "type": "string",
+      "description": "同目录下的样本文件名，发布时必填"
+    },
+    "verified": {
+      "type": "string",
+      "format": "date"
+    },
+    "author": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string",
+      "description": "人在页面上做什么会触发这个接口"
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "has_more": {
+          "type": "string"
+        },
+        "cursor": {
+          "type": "string"
+        }
+      }
+    },
+    "noise": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "note": {
+      "type": "string"
+    }
+  }
+}

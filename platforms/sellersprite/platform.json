@@ -1,0 +1,9 @@
+{
+  "id": "sellersprite",
+  "version": "0.1.0",
+  "label": "卖家精灵网页版",
+  "hosts": ["*.sellersprite.com"],
+  "watches": [],
+  "noise": [],
+  "notes": "尚无样本，暂无映射卡。"
+}

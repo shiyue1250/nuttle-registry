@@ -1,0 +1,101 @@
+{
+  "schema": "schema/mapping-card.schema.json",
+  "packs": [
+    {
+      "id": "amazon",
+      "version": "0.2.0",
+      "label": "Amazon 前台 / Seller Central / 广告后台",
+      "hosts": [
+        "*.amazon.com"
+      ],
+      "cards": [
+        {
+          "id": "amazon/dp-twister",
+          "version": "0.2.0",
+          "entity": "variation",
+          "verified": "2026-09-14",
+          "fixture": true,
+          "path": "platforms/amazon/mappings/dp-twister.json"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "amazon/variation-compare",
+          "title": "Amazon 变体对比",
+          "path": "platforms/amazon/recipes/variation-compare.md"
+        }
+      ],
+      "path": "platforms/amazon/platform.json"
+    },
+    {
+      "id": "feiyushuju",
+      "version": "0.1.0",
+      "label": "feiyushuju.com",
+      "hosts": [
+        "*.feiyushuju.com"
+      ],
+      "cards": [],
+      "recipes": [],
+      "path": "platforms/feiyushuju/platform.json"
+    },
+    {
+      "id": "keepa",
+      "version": "0.1.0",
+      "label": "Keepa",
+      "hosts": [
+        "keepa.com"
+      ],
+      "cards": [],
+      "recipes": [],
+      "path": "platforms/keepa/platform.json"
+    },
+    {
+      "id": "sellersprite",
+      "version": "0.1.0",
+      "label": "卖家精灵网页版",
+      "hosts": [
+        "*.sellersprite.com"
+      ],
+      "cards": [],
+      "recipes": [],
+      "path": "platforms/sellersprite/platform.json"
+    },
+    {
+      "id": "weixin",
+      "version": "0.1.0",
+      "label": "微信（带货助手 / 公众号）",
+      "hosts": [
+        "*.weixin.qq.com"
+      ],
+      "cards": [],
+      "recipes": [],
+      "path": "platforms/weixin/platform.json"
+    },
+    {
+      "id": "xiaohongshu",
+      "version": "0.1.0",
+      "label": "小红书",
+      "hosts": [
+        "*.xiaohongshu.com"
+      ],
+      "cards": [
+        {
+          "id": "xiaohongshu/comment-page",
+          "version": "0.1.0",
+          "entity": "comment",
+          "verified": "2026-09-13",
+          "fixture": true,
+          "path": "platforms/xiaohongshu/mappings/comment-page.json"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "xiaohongshu/comment-insight",
+          "title": "小红书评论洞察",
+          "path": "platforms/xiaohongshu/recipes/comment-insight.md"
+        }
+      ],
+      "path": "platforms/xiaohongshu/platform.json"
+    }
+  ]
+}

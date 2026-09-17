@@ -1,0 +1,33 @@
+{
+  "id": "xiaohongshu/comment-page",
+  "version": "0.1.0",
+  "platform": "xiaohongshu",
+  "entity": "comment",
+  "match": { "host": "edith.xiaohongshu.com", "path": "/api/sns/web/v2/comment/page" },
+  "item_path": "data.comments",
+  "fields": {
+    "id": "id",
+    "note_id": "note_id",
+    "content": "content",
+    "like_count": "like_count",
+    "create_time": "create_time/1000",
+    "ip_location": "ip_location",
+    "sub_comment_count": "sub_comment_count",
+    "user_id": "user_info.user_id",
+    "nickname": "user_info.nickname",
+    "extra.sub_comments": "sub_comments",
+    "extra.pictures": "pictures"
+  },
+  "schema": {
+    "like_count": { "type": "int", "note": "接口给的是字符串，如 \"12\"" },
+    "create_time": { "type": "unix_s", "note": "接口是毫秒，/1000 后为秒" },
+    "sub_comment_count": { "type": "int", "note": "接口给的是字符串" }
+  },
+  "fixture": "comment-page.fixture.json",
+  "verified": "2026-09-13",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "trigger": "笔记详情页展开评论、点「更多评论」翻页",
+  "pagination": { "has_more": "data.has_more", "cursor": "data.cursor" },
+  "noise": ["/api/im/web/emoji/config", "/api/sec/v1/scripting"]
+}

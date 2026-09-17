@@ -1,0 +1,13 @@
+{
+  "id": "amazon",
+  "version": "0.2.0",
+  "label": "Amazon 前台 / Seller Central / 广告后台",
+  "hosts": [
+    "*.amazon.com"
+  ],
+  "watches": [],
+  "noise": [
+    "/cart/add-to-cart/patc-config"
+  ],
+  "notes": "商品页数据大多在页面内嵌的 a-state 块里，扩展把它们记成 /dp/<ASIN>/_dom/a-state:<key>；desktop-twister-sort-filter-data 是变体维度表，只有 ASIN / 颜色 / 尺寸 / 可售状态，没有每个变体的价格。"
+}

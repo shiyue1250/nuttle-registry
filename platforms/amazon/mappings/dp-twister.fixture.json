@@ -1,0 +1,497 @@
+{
+  "context": {
+    "host": "www.amazon.com",
+    "path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data"
+  },
+  "expected": [
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0DJH4J6TV",
+      "label": "Light Pink",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "SELECTED"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0F383BYTR",
+      "label": "1b Black",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0GDDNZQX7",
+      "label": "Ash Brown Ombre",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0FKB9MMYZ",
+      "label": "Black Blonde Highlig…",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0DLWDB69R",
+      "label": "Brown Blonde",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0DJH3L4MS",
+      "label": "Brown Peekaboo",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0GGYV7XWS",
+      "label": "Dark Blue",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0F37ZGT6V",
+      "label": "Dark Brown",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0GJSW85D1",
+      "label": "Dirty Blonde",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0GJSX5SVH",
+      "label": "Light Brown",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0DJH5HKKT",
+      "label": "Ombre Blonde",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0F32X4TTP",
+      "label": "Ombre Brown",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0FNWJ2WZM",
+      "label": "Ombre Grey",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0H6MBXZQ1",
+      "label": "Brown Blue Peekaboo",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0DJH57FPR",
+      "label": "Honey Blonde",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    },
+    {
+      "extra": {
+        "hidden": true
+      },
+      "id": "B0GMVGCFT6",
+      "label": "Two-tone Brown",
+      "page_path": "/dp/B0DJH4J6TV/_dom/a-state:desktop-twister-sort-filter-data",
+      "state": "AVAILABLE"
+    }
+  ],
+  "response": {
+    "sortedDimValuesForAllDims": {
+      "color_name": [
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0DJH4J6TV",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Light Pink",
+          "dimensionValueState": "SELECTED",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 11,
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0F383BYTR",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "1b Black",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 0,
+          "pageLoadURL": "/dp/B0F383BYTR/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0GDDNZQX7",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Ash Brown Ombre",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 1,
+          "pageLoadURL": "/dp/B0GDDNZQX7/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0FKB9MMYZ",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Black Blonde Highlig…",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 2,
+          "pageLoadURL": "/dp/B0FKB9MMYZ/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0DLWDB69R",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Brown Blonde",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 3,
+          "pageLoadURL": "/dp/B0DLWDB69R/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0DJH3L4MS",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Brown Peekaboo",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 5,
+          "pageLoadURL": "/dp/B0DJH3L4MS/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0GGYV7XWS",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Dark Blue",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 6,
+          "pageLoadURL": "/dp/B0GGYV7XWS/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0F37ZGT6V",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Dark Brown",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 469,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 7,
+          "pageLoadURL": "/dp/B0F37ZGT6V/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0GJSW85D1",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Dirty Blonde",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 8,
+          "pageLoadURL": "/dp/B0GJSW85D1/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0GJSX5SVH",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Light Brown",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 10,
+          "pageLoadURL": "/dp/B0GJSX5SVH/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0DJH5HKKT",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Ombre Blonde",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 12,
+          "pageLoadURL": "/dp/B0DJH5HKKT/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0F32X4TTP",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Ombre Brown",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 484,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 13,
+          "pageLoadURL": "/dp/B0F32X4TTP/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0FNWJ2WZM",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Ombre Grey",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 14,
+          "pageLoadURL": "/dp/B0FNWJ2WZM/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0H6MBXZQ1",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Brown Blue Peekaboo",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 4,
+          "pageLoadURL": "/dp/B0H6MBXZQ1/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0DJH57FPR",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Honey Blonde",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 469,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 9,
+          "pageLoadURL": "/dp/B0DJH57FPR/ref=t…",
+          "slotsFetched": false
+        },
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0GMVGCFT6",
+          "dimensionDisplaySubType": "image",
+          "dimensionValueDisplayText": "Two-tone Brown",
+          "dimensionValueState": "AVAILABLE",
+          "imageAttribute": {
+            "extension": "jpg",
+            "height": 500,
+            "url": "https://m.media-amaz…",
+            "width": 500
+          },
+          "indexInDimList": 15,
+          "pageLoadURL": "/dp/B0GMVGCFT6/ref=t…",
+          "slotsFetched": false
+        }
+      ],
+      "size_name": [
+        {
+          "asinHiddenInCollapseView": true,
+          "defaultAsin": "B0DJH4J6TV",
+          "dimensionDisplaySubType": "text",
+          "dimensionValueDisplayText": "26 Inch",
+          "dimensionValueState": "SELECTED",
+          "indexInDimList": 0,
+          "slotsFetched": false
+        }
+      ]
+    },
+    "sortedVariations": [
+      [
+        0,
+        11
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        12
+      ],
+      [
+        0,
+        13
+      ],
+      [
+        0,
+        14
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        15
+      ]
+    ],
+    "sorting_filtering_exp": {
+      "sorting": [
+        "featuredOffer",
+        "availability",
+        "region"
+      ]
+    }
+  }
+}

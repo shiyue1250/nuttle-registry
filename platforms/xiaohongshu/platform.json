@@ -1,0 +1,9 @@
+{
+  "id": "xiaohongshu",
+  "version": "0.1.0",
+  "label": "小红书",
+  "hosts": ["*.xiaohongshu.com"],
+  "watches": ["/api/sns/web/v1/feed", "/api/sns/web/v2/comment/page"],
+  "noise": ["/api/im/web/emoji/config", "/api/sec/v1/scripting", "/api/im/"],
+  "notes": "接口在 edith.xiaohongshu.com。评论在笔记详情页展开评论、翻页时触发；IM 相关接口很杂，表情包配置单条 700 KB，建议关注列表只留 feed 和 comment/page。"
+}

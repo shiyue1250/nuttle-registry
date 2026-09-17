@@ -1,0 +1,9 @@
+{
+  "id": "weixin",
+  "version": "0.1.0",
+  "label": "微信（带货助手 / 公众号）",
+  "hosts": ["*.weixin.qq.com"],
+  "watches": ["ecListSelectionSpuItems"],
+  "noise": ["/report/commonReport", "/base/getMsgInfo"],
+  "notes": "带货助手选品广场接口 ecListSelectionSpuItems 由桥内置的提取器解析（字段逐个核对过），不需要映射卡。公众号后台接口在 mp.weixin.qq.com。"
+}

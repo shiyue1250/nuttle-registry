@@ -1,0 +1,9 @@
+{
+  "id": "feiyushuju",
+  "version": "0.1.0",
+  "label": "feiyushuju.com",
+  "hosts": ["*.feiyushuju.com"],
+  "watches": [],
+  "noise": [],
+  "notes": "接口在 api.feiyushuju.com，本机已采到响应，映射卡待出。"
+}
