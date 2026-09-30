@@ -4,7 +4,7 @@
 
 ```
 schema/mapping-card.schema.json      映射卡的 JSON Schema
-platforms/<平台>/platform.json       域名、建议关注的接口、噪音接口、采集提示
+platforms/<平台>/platform.json       域名、建议关注的接口、噪音接口、接口用途标注（endpoints: [{match, label}]）、采集提示
 platforms/<平台>/mappings/<卡>.json          映射卡
 platforms/<平台>/mappings/<卡>.fixture.json  脱敏样本 + 期望产出，CI 和本机都用它校验
 ```

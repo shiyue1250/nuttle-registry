@@ -2,8 +2,53 @@
   "id": "weixin",
   "version": "0.1.0",
   "label": "微信（带货助手 / 公众号）",
-  "hosts": ["*.weixin.qq.com"],
-  "watches": ["ecListSelectionSpuItems"],
-  "noise": ["/report/commonReport", "/base/getMsgInfo"],
+  "hosts": [
+    "*.weixin.qq.com"
+  ],
+  "watches": [
+    "ecListSelectionSpuItems"
+  ],
+  "noise": [
+    "/report/commonReport",
+    "/base/getMsgInfo"
+  ],
+  "endpoints": [
+    {
+      "match": "ecListSelectionSpuItems",
+      "label": "选品广场商品列表（商品、佣金、店铺，已内置解析）"
+    },
+    {
+      "match": "ecListSelectionCategoryCatalogs",
+      "label": "选品广场类目目录"
+    },
+    {
+      "match": "ecInitV2",
+      "label": "选品广场初始化：全量类目、排序项、签约状态"
+    },
+    {
+      "match": "getTalentAccount",
+      "label": "当前达人账号信息（昵称、头像、带货身份审核）"
+    },
+    {
+      "match": "getTalentList",
+      "label": "账号成员列表"
+    },
+    {
+      "match": "getBizSessionList",
+      "label": "账号登录会话（安全中心，含登录 IP / 设备）"
+    },
+    {
+      "match": "getConfigData",
+      "label": "页面前端配置（无业务数据）"
+    },
+    {
+      "match": "getMsgInfo",
+      "label": "消息红点 / 邀请提示（无业务数据，建议关闭）"
+    },
+    {
+      "match": "commonReport",
+      "label": "埋点上报（无业务数据，建议关闭）"
+    }
+  ],
   "notes": "带货助手选品广场接口 ecListSelectionSpuItems 由桥内置的提取器解析（字段逐个核对过），不需要映射卡。公众号后台接口在 mp.weixin.qq.com。"
 }

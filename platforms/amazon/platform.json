@@ -9,5 +9,15 @@
   "noise": [
     "/cart/add-to-cart/patc-config"
   ],
+  "endpoints": [
+    {
+      "match": "_dom/a-state:desktop-twister-sort-filter-data",
+      "label": "商品页变体维度表（ASIN、颜色、尺寸、可售状态，已有映射卡）"
+    },
+    {
+      "match": "/cart/add-to-cart/patc-config",
+      "label": "加购按钮配置（无业务数据，建议关闭）"
+    }
+  ],
   "notes": "商品页数据大多在页面内嵌的 a-state 块里，扩展把它们记成 /dp/<ASIN>/_dom/a-state:<key>；desktop-twister-sort-filter-data 是变体维度表，只有 ASIN / 颜色 / 尺寸 / 可售状态，没有每个变体的价格。"
 }
