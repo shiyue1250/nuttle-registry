@@ -1,9 +1,13 @@
 {
+  "apiVersion": 1,
   "id": "amazon/dp-twister",
   "version": "0.2.0",
   "platform": "amazon",
   "entity": "variation",
-  "match": { "host": "amazon.com", "path": "/_dom/a-state:desktop-twister-sort-filter-data" },
+  "match": {
+    "host": "amazon.com",
+    "path": "/_dom/a-state:desktop-twister-sort-filter-data"
+  },
   "item_path": "sortedDimValuesForAllDims.color_name",
   "fields": {
     "id": "defaultAsin",
@@ -13,13 +17,36 @@
     "extra.hidden": "asinHiddenInCollapseView"
   },
   "schema": {
-    "state": { "type": "string", "note": "SELECTED / AVAILABLE / UNAVAILABLE 等" },
-    "page_path": { "type": "string", "note": "请求路径，形如 /dp/<父 ASIN>/_dom/a-state:…；父商品 ASIN 从这里取" }
+    "state": {
+      "type": "string",
+      "note": "SELECTED / AVAILABLE / UNAVAILABLE 等"
+    },
+    "page_path": {
+      "type": "string",
+      "note": "请求路径，形如 /dp/<父 ASIN>/_dom/a-state:…；父商品 ASIN 从这里取"
+    }
   },
   "fixture": "dp-twister.fixture.json",
   "verified": "2026-09-14",
   "author": "shiyue1250",
   "license": "MIT",
   "trigger": "打开任意商品详情页即有，页面内嵌，不发请求",
-  "note": "只覆盖 color_name 维度；size_name 只有一个值时不出现在变体里。价格和库存不在这个块里。"
+  "note": "只覆盖 color_name 维度；size_name 只有一个值时不出现在变体里。价格和库存不在这个块里。",
+  "locales": {
+    "zh": {
+      "name": "商品变体",
+      "description": "商品页的变体维度：ASIN、颜色、尺寸、可售状态"
+    },
+    "en": {
+      "name": "Product variations",
+      "description": "Variation dimensions on a product page: ASIN, color, size, availability"
+    }
+  },
+  "jsonld": {
+    "@type": "Product",
+    "map": {
+      "id": "sku",
+      "label": "name"
+    }
+  }
 }

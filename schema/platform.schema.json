@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/shiyue1250/databridge-registry/schema/platform.schema.json",
+  "title": "DataBridge 平台包 v1 / DataBridge Platform Pack v1",
+  "description": "一个网站的平台包：适用域名、接口用途标注、建议关注与噪音接口。纯数据。 / A website pack: domains, endpoint labels, suggested and noisy endpoints. Pure data.",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "label",
+    "hosts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "apiVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "包 id；社区包不能与官方包重名 / Pack id; community packs must not reuse an official id"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "社区包须与 Release 标签一致（可带 v 前缀）/ Must equal the release tag for community packs"
+    },
+    "label": {
+      "type": "string"
+    },
+    "locales": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "zh": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "en": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "hosts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^(\\*\\.)?[a-z0-9.-]+$"
+      },
+      "description": "适用域名，*. 前缀匹配所有子域 / Domains; *. matches all subdomains"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri"
+    },
+    "watches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "noise": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "endpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "match",
+          "label"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "match": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "locales": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

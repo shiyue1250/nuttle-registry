@@ -1,7 +1,16 @@
 {
+  "apiVersion": 1,
   "id": "weixin",
   "version": "0.1.0",
   "label": "微信（带货助手 / 公众号）",
+  "locales": {
+    "zh": {
+      "name": "微信（带货助手 / 公众号）"
+    },
+    "en": {
+      "name": "WeChat (Channels shopping assistant / Official Accounts)"
+    }
+  },
   "hosts": [
     "*.weixin.qq.com"
   ],

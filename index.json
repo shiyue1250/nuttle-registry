@@ -5,6 +5,14 @@
       "id": "amazon",
       "version": "0.2.0",
       "label": "Amazon 前台 / Seller Central / 广告后台",
+      "locales": {
+        "zh": {
+          "name": "Amazon 前台 / Seller Central / 广告后台"
+        },
+        "en": {
+          "name": "Amazon storefront / Seller Central / Ads console"
+        }
+      },
       "hosts": [
         "*.amazon.com"
       ],
@@ -25,56 +33,101 @@
           "path": "platforms/amazon/recipes/variation-compare.md"
         }
       ],
-      "path": "platforms/amazon/platform.json"
+      "path": "platforms/amazon/platform.json",
+      "official": true
     },
     {
       "id": "feiyushuju",
       "version": "0.1.0",
       "label": "feiyushuju.com",
+      "locales": {
+        "zh": {
+          "name": "feiyushuju.com"
+        },
+        "en": {
+          "name": "Feiyu Data (3rd-party ABA keyword data)"
+        }
+      },
       "hosts": [
         "*.feiyushuju.com"
       ],
       "cards": [],
       "recipes": [],
-      "path": "platforms/feiyushuju/platform.json"
+      "path": "platforms/feiyushuju/platform.json",
+      "official": true
     },
     {
       "id": "keepa",
       "version": "0.1.0",
       "label": "Keepa",
+      "locales": {
+        "zh": {
+          "name": "Keepa"
+        },
+        "en": {
+          "name": "Keepa"
+        }
+      },
       "hosts": [
         "keepa.com"
       ],
       "cards": [],
       "recipes": [],
-      "path": "platforms/keepa/platform.json"
+      "path": "platforms/keepa/platform.json",
+      "official": true
     },
     {
       "id": "sellersprite",
       "version": "0.1.0",
       "label": "卖家精灵网页版",
+      "locales": {
+        "zh": {
+          "name": "卖家精灵网页版"
+        },
+        "en": {
+          "name": "SellerSprite web"
+        }
+      },
       "hosts": [
         "*.sellersprite.com"
       ],
       "cards": [],
       "recipes": [],
-      "path": "platforms/sellersprite/platform.json"
+      "path": "platforms/sellersprite/platform.json",
+      "official": true
     },
     {
       "id": "weixin",
       "version": "0.1.0",
       "label": "微信（带货助手 / 公众号）",
+      "locales": {
+        "zh": {
+          "name": "微信（带货助手 / 公众号）"
+        },
+        "en": {
+          "name": "WeChat (Channels shopping assistant / Official Accounts)"
+        }
+      },
       "hosts": [
         "*.weixin.qq.com"
       ],
       "cards": [],
       "recipes": [],
-      "path": "platforms/weixin/platform.json"
+      "path": "platforms/weixin/platform.json",
+      "official": true
     },
     {
       "id": "xiaohongshu",
       "version": "0.1.0",
       "label": "小红书",
+      "locales": {
+        "zh": {
+          "name": "小红书"
+        },
+        "en": {
+          "name": "Xiaohongshu (RED)"
+        }
+      },
       "hosts": [
         "*.xiaohongshu.com"
       ],
@@ -95,7 +148,9 @@
           "path": "platforms/xiaohongshu/recipes/comment-insight.md"
         }
       ],
-      "path": "platforms/xiaohongshu/platform.json"
+      "path": "platforms/xiaohongshu/platform.json",
+      "official": true
     }
-  ]
+  ],
+  "community": []
 }

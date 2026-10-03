@@ -2,8 +2,16 @@
 
 映射卡是纯数据：告诉桥「某个接口的响应里，哪些字段是什么」。不含代码，不发请求，只作用于用户自己已经采到的数据。
 
+**规范全文：[SPEC.md](SPEC.md)（映射卡规范 v1，中英双语）。** 想发布自己的平台包，不需要给这个仓库提 PR：
+在你自己的公开仓库放好 `platform.json` 和卡，加上 GitHub 标签 `databridge-pack`，发一个标签等于版本号的正式 Release，
+每天的自动发现会把它收进索引，在 DataBridge 里以「社区」包出现。规则见 SPEC.md「发布」一节。
+
 ```
+SPEC.md                              映射卡规范 v1
 schema/mapping-card.schema.json      映射卡的 JSON Schema
+schema/platform.schema.json          平台包的 JSON Schema
+scripts/build_index.py               生成索引；--discover 同时发现社区包（scripts/discover.py）
+.github/workflows/discover.yml       每天自动发现社区包
 platforms/<平台>/platform.json       域名、建议关注的接口、噪音接口、接口用途标注（endpoints: [{match, label}]）、采集提示
 platforms/<平台>/mappings/<卡>.json          映射卡
 platforms/<平台>/mappings/<卡>.fixture.json  脱敏样本 + 期望产出，CI 和本机都用它校验

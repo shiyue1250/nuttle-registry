@@ -1,8 +1,19 @@
 {
+  "apiVersion": 1,
   "id": "keepa",
   "version": "0.1.0",
   "label": "Keepa",
-  "hosts": ["keepa.com"],
+  "locales": {
+    "zh": {
+      "name": "Keepa"
+    },
+    "en": {
+      "name": "Keepa"
+    }
+  },
+  "hosts": [
+    "keepa.com"
+  ],
   "watches": [],
   "noise": [],
   "notes": "尚无样本，暂无映射卡。"

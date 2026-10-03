@@ -1,7 +1,16 @@
 {
+  "apiVersion": 1,
   "id": "amazon",
   "version": "0.2.0",
   "label": "Amazon 前台 / Seller Central / 广告后台",
+  "locales": {
+    "zh": {
+      "name": "Amazon 前台 / Seller Central / 广告后台"
+    },
+    "en": {
+      "name": "Amazon storefront / Seller Central / Ads console"
+    }
+  },
   "hosts": [
     "*.amazon.com"
   ],

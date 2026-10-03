@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/shiyue1250/databridge-registry/schema/mapping-card.schema.json",
-  "title": "DataBridge 映射卡 v1",
-  "description": "一个接口到一种实体的提取规则。纯数据，不含代码。fields 用点号路径取值，末尾 /N 做除法。",
+  "title": "DataBridge 映射卡规范 v1 / DataBridge Mapping Card Spec v1",
+  "description": "一个接口到一种实体的提取规则。纯数据，不含代码；只读、被动、不重放请求、不含凭证。规范全文见 SPEC.md。 / One API endpoint → one entity type. Pure data, no code; read-only, passive, never replays requests, never carries credentials. See SPEC.md.",
   "type": "object",
   "required": [
     "id",
@@ -15,6 +15,11 @@
   ],
   "additionalProperties": false,
   "properties": {
+    "apiVersion": {
+      "type": "integer",
+      "const": 1,
+      "description": "规范版本。不写视为 1；新卡请写上 / Spec version. Omitted means 1; new cards should set it"
+    },
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9-]+/[a-z0-9-]+$",
@@ -131,6 +136,59 @@
     },
     "note": {
       "type": "string"
+    },
+    "locales": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "zh": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "en": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "description": "卡的中英文名称与说明 / Localized name and description"
+    },
+    "jsonld": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "@type"
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z]+$",
+          "description": "产出实体对应的 schema.org 类型，例如 Comment、Product、Review / schema.org type of the produced entity"
+        },
+        "map": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "实体字段 → schema.org 属性，例如 content→text / entity field → schema.org property"
+        }
+      },
+      "description": "按 schema.org 词汇以 JSON-LD 输出时的类型与字段对应 / How the entity maps to schema.org for JSON-LD output"
     }
   }
 }
