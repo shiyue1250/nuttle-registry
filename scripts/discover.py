@@ -1,4 +1,4 @@
-"""发现社区平台包：搜索打了 databridge-pack 标签的 GitHub 仓库，校验后生成索引的 community 部分。
+"""发现社区平台包：搜索打了 nuttle-pack 标签的 GitHub 仓库，校验后生成索引的 community 部分。
 
 收录条件（照 res-downloader 扩展商店的做法）：
   1. 仓库公开、未归档、不是 fork，带 TOPIC 标签；一个仓库一个平台包，platform.json 在仓库根目录
@@ -16,7 +16,7 @@ import sys
 import urllib.error
 import urllib.request
 
-TOPIC = "databridge-pack"   # ponytail: 产品若改名，这里和 SPEC.md 一起改
+TOPIC = "nuttle-pack"   # 改名前叫 nuttle-pack，当时还没有社区包，不必兼容
 API = "https://api.github.com"
 ID_RE = re.compile(r"^[a-z0-9-]+$")
 

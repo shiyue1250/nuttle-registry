@@ -1,4 +1,4 @@
-# 每天发现一次社区平台包：搜索打了 databridge-pack 标签的公开仓库，校验后写进 index.json 的 community。
+# 每天发现一次社区平台包：搜索打了 nuttle-pack 标签的公开仓库，校验后写进 index.json 的 community。
 # 只读 GitHub（搜索、Release、文件），不上传任何东西；索引有变化才提交。
 name: discover
 on:
@@ -23,7 +23,7 @@ jobs:
       - name: 索引有变化就提交
         run: |
           if git diff --quiet index.json; then echo "社区包没有变化"; exit 0; fi
-          git config user.name "databridge-bot"
+          git config user.name "nuttle-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add index.json
           git commit -m "chore: 更新社区包索引"

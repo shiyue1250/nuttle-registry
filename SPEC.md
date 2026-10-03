@@ -1,4 +1,4 @@
-# DataBridge Mapping Card Spec v1
+# Nuttle Mapping Card Spec v1
 
 [中文版见下方](#中文)
 
@@ -47,7 +47,7 @@ Nothing else. The DSL is intentionally not Turing-complete.
 
 ### Fixture and verification
 
-`databridge --check <card.json>...` runs the host's real extraction engine on the fixture's `response` and compares the result with `expected`. Exit code `0` means every card matches. A card without a fixture cannot be published.
+`nuttle --check <card.json>...` runs the host's real extraction engine on the fixture's `response` and compares the result with `expected`. Exit code `0` means every card matches. A card without a fixture cannot be published.
 
 Redaction is the author's responsibility: besides the author's own account data, replace third-party content (comment text, locations, real platform ids that identify a person) with placeholders in both `response` and `expected`.
 
@@ -75,18 +75,18 @@ Live in this repository under `platforms/`. Changes go through pull requests and
 Publish from **your own public repository**; no pull request to this repository is needed.
 
 ```bash
-databridge card new my-pack my-pack "*.example.com" "Example"   # scaffold a pack repository
-databridge card lint my-pack                                     # static checks before release
-databridge card replay my-pack                                   # run every card against its fixture
+nuttle card new my-pack my-pack "*.example.com" "Example"   # scaffold a pack repository
+nuttle card lint my-pack                                     # static checks before release
+nuttle card replay my-pack                                   # run every card against its fixture
 ```
 
 1. One repository = one pack, with `platform.json` at the repository root.
-2. Add the GitHub topic **`databridge-pack`**.
+2. Add the GitHub topic **`nuttle-pack`**.
 3. Every card and `platform.json` declare `apiVersion: 1`; every card has a fixture.
 4. Create a **non-draft, non-prerelease GitHub Release** whose tag equals `platform.json.version` (an optional `v` prefix is allowed), e.g. tag `v1.2.0` for version `1.2.0`. Never move an existing tag.
 5. The pack `id` must not equal any official pack id.
 
-`discover.yml` runs daily: it searches the topic, applies the rules above, and writes accepted packs to `index.json` under `community`. Files are served from jsDelivr at the release tag (`https://cdn.jsdelivr.net/gh/<owner>/<repo>@<tag>/…`). The topic means you opted in; it is **not** a security review. DataBridge shows community packs with a "Community" badge, their repository, domains and cards, and asks the user to confirm before installing.
+`discover.yml` runs daily: it searches the topic, applies the rules above, and writes accepted packs to `index.json` under `community`. Files are served from jsDelivr at the release tag (`https://cdn.jsdelivr.net/gh/<owner>/<repo>@<tag>/…`). The topic means you opted in; it is **not** a security review. Nuttle shows community packs with a "Community" badge, their repository, domains and cards, and asks the user to confirm before installing.
 
 ## Versioning of this spec
 
@@ -96,7 +96,7 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 <a id="中文"></a>
 
-# DataBridge 映射卡规范 v1
+# Nuttle 映射卡规范 v1
 
 **映射卡**把网页本来就加载了的一个 JSON 接口响应，变成 AI Agent 能查询的结构化实体列表。**平台包**把一个网站的映射卡、接口用途标注和 Agent 配方打包在一起。
 
@@ -131,7 +131,7 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 ### 样本与校验
 
-`databridge --check <卡.json>...` 用宿主真实的提取引擎跑样本里的 `response`，与 `expected` 比对，退出码 `0` 表示全部一致。没有样本的卡不能发布。
+`nuttle --check <卡.json>...` 用宿主真实的提取引擎跑样本里的 `response`，与 `expected` 比对，退出码 `0` 表示全部一致。没有样本的卡不能发布。
 
 脱敏由作者负责：除了自己的账号信息，第三方内容（评论正文、地域、能定位到个人的真实平台 id）也要在 `response` 和 `expected` 中同步换成占位。
 
@@ -143,15 +143,15 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 **官方包**放在本仓库 `platforms/` 下，走 PR 和 CI（Schema 校验、样本回放、索引一致性）。
 
-**社区包（去中心化）**在你**自己的公开仓库**发布，不需要向本仓库提 PR。命令行工具：`databridge card new <目录> <包id> <域名> [显示名]` 生成仓库骨架，`databridge card lint <目录>` 做发布前静态检查，`databridge card replay <目录>` 用样本回放每张卡。
+**社区包（去中心化）**在你**自己的公开仓库**发布，不需要向本仓库提 PR。命令行工具：`nuttle card new <目录> <包id> <域名> [显示名]` 生成仓库骨架，`nuttle card lint <目录>` 做发布前静态检查，`nuttle card replay <目录>` 用样本回放每张卡。
 
 1. 一个仓库一个包，`platform.json` 放在仓库根目录；
-2. 给仓库加上 GitHub 标签 **`databridge-pack`**；
+2. 给仓库加上 GitHub 标签 **`nuttle-pack`**；
 3. `platform.json` 和每张卡都写 `apiVersion: 1`，每张卡都有样本；
 4. 创建**正式的 GitHub Release**（不是草稿、不是预发布），标签等于 `platform.json.version`，可带 `v` 前缀，例如版本 `1.2.0` 用标签 `v1.2.0`。不要移动已有标签；
 5. 包 id 不能和官方包重名。
 
-`discover.yml` 每天运行一次：搜索这个标签，按上面的规则校验，把合格的包写进 `index.json` 的 `community`。文件从 jsDelivr 上该 Release 标签的地址下载。**打标签只代表作者主动加入，不代表经过安全审核。** DataBridge 会给社区包标上「社区」，展示来源仓库、域名和卡，安装前要用户确认。
+`discover.yml` 每天运行一次：搜索这个标签，按上面的规则校验，把合格的包写进 `index.json` 的 `community`。文件从 jsDelivr 上该 Release 标签的地址下载。**打标签只代表作者主动加入，不代表经过安全审核。** Nuttle 会给社区包标上「社区」，展示来源仓库、域名和卡，安装前要用户确认。
 
 ## 规范版本
 

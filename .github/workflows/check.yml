@@ -1,7 +1,7 @@
 # 映射市场的 CI：
 #   schema   —— 每张卡符合 schema/mapping-card.schema.json，index.json 与目录一致
-#   fixtures —— 用桥的同一份提取引擎跑样本（databridge --check）。exe 从主仓库的发布地址下载，
-#               仓库变量 DATABRIDGE_CHECK_URL 未设置时这一步跳过（主仓库还没发版时的过渡）。
+#   fixtures —— 用桥的同一份提取引擎跑样本（nuttle --check）。exe 从主仓库的发布地址下载，
+#               仓库变量 NUTTLE_CHECK_URL 未设置时这一步跳过（主仓库还没发版时的过渡）。
 name: check
 on: [push, pull_request]
 
@@ -29,21 +29,21 @@ jobs:
   fixtures:
     runs-on: windows-latest
     env:
-      CHECK_URL: ${{ vars.DATABRIDGE_CHECK_URL }}
+      CHECK_URL: ${{ vars.NUTTLE_CHECK_URL }}
     steps:
       - uses: actions/checkout@v4
       - name: 下载桥的 exe
         if: env.CHECK_URL != ''
         shell: pwsh
-        run: Invoke-WebRequest -Uri $env:CHECK_URL -OutFile databridge.exe
+        run: Invoke-WebRequest -Uri $env:CHECK_URL -OutFile nuttle.exe
       - name: 用同一份引擎跑样本
         if: env.CHECK_URL != ''
         shell: pwsh
         run: |
           $cards = Get-ChildItem platforms -Recurse -Filter *.json | Where-Object { $_.DirectoryName -like '*mappings' -and $_.Name -notlike '*.fixture.json' }
           if (-not $cards) { "没有映射卡"; exit 0 }
-          & .\databridge.exe --check @($cards.FullName)
+          & .\nuttle.exe --check @($cards.FullName)
           exit $LASTEXITCODE
-      - name: 未配置 DATABRIDGE_CHECK_URL，跳过样本校验
+      - name: 未配置 NUTTLE_CHECK_URL，跳过样本校验
         if: env.CHECK_URL == ''
-        run: echo "在仓库 Settings → Variables 里设置 DATABRIDGE_CHECK_URL 指向 databridge.exe 的下载地址后启用"
+        run: echo "在仓库 Settings → Variables 里设置 NUTTLE_CHECK_URL 指向 nuttle.exe 的下载地址后启用"

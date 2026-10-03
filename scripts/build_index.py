@@ -3,7 +3,7 @@
     python scripts/build_index.py                  # 重新生成 index.json
     python scripts/build_index.py --check          # index.json 与目录不一致则退出 1（CI 用）
     python scripts/build_index.py --check-fixtures # 每份样本都是合法 JSON 且带 response / expected
-    python scripts/build_index.py --discover       # 同时发现社区包（GitHub 标签 databridge-pack），写入 community
+    python scripts/build_index.py --discover       # 同时发现社区包（GitHub 标签 nuttle-pack），写入 community
 
 index.json 分两部分：packs 是本仓库目录里的官方包，由目录生成、--check 只比对这一部分；
 community 是社区包，只由 --discover 更新，平时重新生成时原样保留。

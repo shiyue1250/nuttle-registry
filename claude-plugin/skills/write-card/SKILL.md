@@ -1,19 +1,19 @@
 ---
 name: write-card
-description: Turn a website the user has browsed into a DataBridge mapping card, and (only with the user's explicit approval) publish it as a community pack from the user's own GitHub repository. Use when the user asks to support a new site, extract structured data from a page they browsed, "make a card", "写卡", "把这个网站接进来", or share their mapping with others.
+description: Turn a website the user has browsed into a Nuttle mapping card, and (only with the user's explicit approval) publish it as a community pack from the user's own GitHub repository. Use when the user asks to support a new site, extract structured data from a page they browsed, "make a card", "写卡", "把这个网站接进来", or share their mapping with others.
 ---
 
-# Write a DataBridge mapping card
+# Write a Nuttle mapping card
 
 A mapping card turns one JSON API response the user's browser already loaded into structured entities. The spec is https://github.com/shiyue1250/databridge-registry/blob/main/SPEC.md — read it if anything below is unclear.
 
 ## Ground rules (from the spec — do not break them)
 
-- **Passive and read-only.** Work only with data DataBridge has already captured while the user browsed. Never replay, script or schedule requests, and never ask the user for cookies, tokens or passwords.
+- **Passive and read-only.** Work only with data Nuttle has already captured while the user browsed. Never replay, script or schedule requests, and never ask the user for cookies, tokens or passwords.
 - **Pure data.** A card is a JSON file of field paths. Do not put code in it.
 - **Ask before anything public.** Creating a public repository or a release publishes the card and its fixture. Show the user exactly what will be published and wait for an explicit yes.
 
-If the `databridge` MCP tools (`list_endpoints`, `sample_raw`, `add_mapping`, …) are not available, the DataBridge desktop app is not running — ask the user to start it and enable the target site in its "采集范围 / Capture scope" page.
+If the `nuttle` MCP tools (`list_endpoints`, `sample_raw`, `add_mapping`, …) are not available, the Nuttle desktop app is not running — ask the user to start it and enable the target site in its "采集范围 / Capture scope" page.
 
 ## 1. Find the endpoint
 
@@ -44,13 +44,13 @@ Path syntax: `a.b.c`, numeric segments index arrays (`images.0.url`), `/N` divid
 
 ## 5. Package as a community pack
 
-The `databridge` command is the desktop app executable. If it is not on PATH, ask the user where DataBridge is installed.
+The `nuttle` command is the desktop app executable. If it is not on PATH, ask the user where Nuttle is installed.
 
 ```bash
-databridge card new <dir> <pack-id> "<*.domain.com>" "<display name>"   # only if the user has no pack repo yet
+nuttle card new <dir> <pack-id> "<*.domain.com>" "<display name>"   # only if the user has no pack repo yet
 # copy the card and fixture into <dir>/mappings/
-databridge card lint <dir>     # fix every FAIL; read every WARN
-databridge card replay <dir>   # every card must report OK
+nuttle card lint <dir>     # fix every FAIL; read every WARN
+nuttle card replay <dir>   # every card must report OK
 ```
 
 Optionally add `endpoints` labels to `platform.json` (`[{"match": "<path segment>", "label": "what this endpoint returns"}]`) so other users know what each endpoint is for.
@@ -63,11 +63,11 @@ Summarize for the user: the repository name, that it will be **public**, the pac
 cd <dir>
 git init && git add -A && git commit -m "feat: <pack-id> pack"
 gh repo create <owner>/<repo> --public --source . --push
-gh repo edit <owner>/<repo> --add-topic databridge-pack
+gh repo edit <owner>/<repo> --add-topic nuttle-pack
 gh release create v<version> --title "v<version>" --notes "<what the cards extract>"
 ```
 
-The release tag must equal `platform.json`'s `version` (with an optional `v`). The registry discovers new releases daily; the pack then appears in DataBridge's market with a "Community" badge.
+The release tag must equal `platform.json`'s `version` (with an optional `v`). The registry discovers new releases daily; the pack then appears in Nuttle's market with a "Community" badge.
 
 ## Updating a published pack
 

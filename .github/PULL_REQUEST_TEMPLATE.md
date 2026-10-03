@@ -6,7 +6,7 @@
 
 ## 发布前自查
 
-- [ ] 用 `databridge --check 卡.json` 跑过，输出 OK
+- [ ] 用 `nuttle --check 卡.json` 跑过，输出 OK
 - [ ] 样本里 `user_id / nickname / token / image` 已是占位值，没有我自己的账号信息
 - [ ] 样本里没有别人的联系方式、订单号、地址等可识别信息
 - [ ] `verified` 是今天的日期

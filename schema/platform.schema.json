@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/shiyue1250/databridge-registry/schema/platform.schema.json",
-  "title": "DataBridge 平台包 v1 / DataBridge Platform Pack v1",
+  "title": "Nuttle 平台包 v1 / Nuttle Platform Pack v1",
   "description": "一个网站的平台包：适用域名、接口用途标注、建议关注与噪音接口。纯数据。 / A website pack: domains, endpoint labels, suggested and noisy endpoints. Pure data.",
   "type": "object",
   "required": [

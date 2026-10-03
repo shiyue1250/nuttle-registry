@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/shiyue1250/databridge-registry/schema/mapping-card.schema.json",
-  "title": "DataBridge 映射卡规范 v1 / DataBridge Mapping Card Spec v1",
+  "title": "Nuttle 映射卡规范 v1 / Nuttle Mapping Card Spec v1",
   "description": "一个接口到一种实体的提取规则。纯数据，不含代码；只读、被动、不重放请求、不含凭证。规范全文见 SPEC.md。 / One API endpoint → one entity type. Pure data, no code; read-only, passive, never replays requests, never carries credentials. See SPEC.md.",
   "type": "object",
   "required": [

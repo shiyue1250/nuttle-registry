@@ -1,10 +1,10 @@
-# DataBridge registry — 映射市场
+# Nuttle 小囤 registry — 映射市场
 
 映射卡是纯数据：告诉桥「某个接口的响应里，哪些字段是什么」。不含代码，不发请求，只作用于用户自己已经采到的数据。
 
 **规范全文：[SPEC.md](SPEC.md)（映射卡规范 v1，中英双语）。** 想发布自己的平台包，不需要给这个仓库提 PR：
-在你自己的公开仓库放好 `platform.json` 和卡，加上 GitHub 标签 `databridge-pack`，发一个标签等于版本号的正式 Release，
-每天的自动发现会把它收进索引，在 DataBridge 里以「社区」包出现。规则见 SPEC.md「发布」一节。
+在你自己的公开仓库放好 `platform.json` 和卡，加上 GitHub 标签 `nuttle-pack`，发一个标签等于版本号的正式 Release，
+每天的自动发现会把它收进索引，在 小囤 里以「社区」包出现。规则见 SPEC.md「发布」一节。
 
 ```
 SPEC.md                              映射卡规范 v1
@@ -26,19 +26,19 @@ platforms/<平台>/mappings/<卡>.fixture.json  脱敏样本 + 期望产出，CI
 
 ```bash
 claude plugin marketplace add shiyue1250/databridge-registry
-claude plugin install databridge@databridge
+claude plugin install nuttle@nuttle
 ```
 
-插件 `claude-plugin/` 做两件事：自动接入本机 DataBridge 的 MCP（`http://127.0.0.1:8787/mcp`）；带一个 `write-card` 技能，
+插件 `claude-plugin/` 做两件事：自动接入本机 小囤 的 MCP（`http://127.0.0.1:8787/mcp`）；带一个 `write-card` 技能，
 让 Agent 从「你浏览过的网站」一路走到「卡发布为社区包」——找接口、看结构、登记并核对、导出脱敏样本、`card lint` / `card replay`，
 **创建公开仓库和发 Release 之前一定先征得你的同意**。
 
 ## 社区包的命令行工具
 
 ```bash
-databridge card new my-pack my-pack "*.example.com" "示例站"   # 生成社区平台包仓库骨架
-databridge card lint my-pack                                   # 发布前静态检查（错误必须修，提示可选）
-databridge card replay my-pack                                 # 用样本回放每张卡，等同 --check
+nuttle card new my-pack my-pack "*.example.com" "示例站"   # 生成社区平台包仓库骨架
+nuttle card lint my-pack                                   # 发布前静态检查（错误必须修，提示可选）
+nuttle card replay my-pack                                 # 用样本回放每张卡，等同 --check
 ```
 
 `lint` 按社区包的标准检查：`apiVersion` 必须写明、包 id 不能与官方包重名、每张卡都有样本、样本里疑似凭证的关键词会提示。
@@ -46,8 +46,8 @@ databridge card replay my-pack                                 # 用样本回放
 ## 校验一张卡
 
 ```bash
-databridge --check registry/platforms/xiaohongshu/mappings/comment-page.json           # 跑样本，比对期望产出
-databridge --check registry/platforms/xiaohongshu/mappings/comment-page.json --update  # 把当前产出写回样本的 expected
+nuttle --check registry/platforms/xiaohongshu/mappings/comment-page.json           # 跑样本，比对期望产出
+nuttle --check registry/platforms/xiaohongshu/mappings/comment-page.json --update  # 把当前产出写回样本的 expected
 ```
 
 退出码 0 = 通过。样本文件格式：`{"response": <脱敏后的原始响应>, "expected": [<实体>...]}`。
@@ -71,10 +71,10 @@ databridge --check registry/platforms/xiaohongshu/mappings/comment-page.json --u
 
 1. 在桥里把映射调通（Agent 用 `add_mapping`，或控制台）。
 2. 控制台接口行点「导出卡」，或 MCP `export_mapping(pattern, platform, entity)`：得到 `卡.json` + `卡.fixture.json`，样本已按下面的规则脱敏。
-3. 把两个文件放进 `platforms/<平台>/mappings/`，本地跑 `databridge --check` 和 `python scripts/build_index.py`，提 PR。
+3. 把两个文件放进 `platforms/<平台>/mappings/`，本地跑 `nuttle --check` 和 `python scripts/build_index.py`，提 PR。
 
 CI（`.github/workflows/check.yml`）做三件事：卡符合 Schema、`index.json` 与目录一致、用桥的 exe 跑样本。
-第三步依赖仓库变量 `DATABRIDGE_CHECK_URL`（指向 `databridge.exe` 的下载地址），未设置时跳过。
+第三步依赖仓库变量 `NUTTLE_CHECK_URL`（指向 `nuttle.exe` 的下载地址），未设置时跳过。
 
 桥在运行时也给每张卡记账：命中次数、产出条数；命中了但连续 3 次一条都提不出来标 `stale`，控制台接口行显示「卡可能失效」，`list_mappings` 里能看到。发现失效请在这里提 issue 或 PR 附新样本，桥不会自动上报。
 
