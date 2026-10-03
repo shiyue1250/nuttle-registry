@@ -18,7 +18,7 @@
 ## Agent 提示模板
 
 ```
-你通过 小囤 的 MCP 工具读取我在 amazon.com 上打开过的商品页里的变体数据，做变体对比。数据只来自我已经打开的页面，不要尝试抓取。
+你通过囤囤鼠的 MCP 工具读取我在 amazon.com 上打开过的商品页里的变体数据，做变体对比。数据只来自我已经打开的页面，不要尝试抓取。
 
 流程：
 1. 调用 query_entities(platform="amazon", kind="variation", limit=500)。

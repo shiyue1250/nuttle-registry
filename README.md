@@ -1,10 +1,10 @@
-# Nuttle 小囤 registry — 映射市场
+# Nuttle 囤囤鼠 registry — 映射市场
 
 映射卡是纯数据：告诉桥「某个接口的响应里，哪些字段是什么」。不含代码，不发请求，只作用于用户自己已经采到的数据。
 
 **规范全文：[SPEC.md](SPEC.md)（映射卡规范 v1，中英双语）。** 想发布自己的平台包，不需要给这个仓库提 PR：
 在你自己的公开仓库放好 `platform.json` 和卡，加上 GitHub 标签 `nuttle-pack`，发一个标签等于版本号的正式 Release，
-每天的自动发现会把它收进索引，在 小囤 里以「社区」包出现。规则见 SPEC.md「发布」一节。
+每天的自动发现会把它收进索引，在囤囤鼠里以「社区」包出现。规则见 SPEC.md「发布」一节。
 
 ```
 SPEC.md                              映射卡规范 v1
@@ -29,7 +29,7 @@ claude plugin marketplace add shiyue1250/databridge-registry
 claude plugin install nuttle@nuttle
 ```
 
-插件 `claude-plugin/` 做两件事：自动接入本机 小囤 的 MCP（`http://127.0.0.1:8787/mcp`）；带一个 `write-card` 技能，
+插件 `claude-plugin/` 做两件事：自动接入本机囤囤鼠的 MCP（`http://127.0.0.1:8787/mcp`）；带一个 `write-card` 技能，
 让 Agent 从「你浏览过的网站」一路走到「卡发布为社区包」——找接口、看结构、登记并核对、导出脱敏样本、`card lint` / `card replay`，
 **创建公开仓库和发 Release 之前一定先征得你的同意**。
 
