@@ -74,6 +74,12 @@ Live in this repository under `platforms/`. Changes go through pull requests and
 
 Publish from **your own public repository**; no pull request to this repository is needed.
 
+```bash
+databridge card new my-pack my-pack "*.example.com" "Example"   # scaffold a pack repository
+databridge card lint my-pack                                     # static checks before release
+databridge card replay my-pack                                   # run every card against its fixture
+```
+
 1. One repository = one pack, with `platform.json` at the repository root.
 2. Add the GitHub topic **`databridge-pack`**.
 3. Every card and `platform.json` declare `apiVersion: 1`; every card has a fixture.
@@ -137,7 +143,7 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 **官方包**放在本仓库 `platforms/` 下，走 PR 和 CI（Schema 校验、样本回放、索引一致性）。
 
-**社区包（去中心化）**在你**自己的公开仓库**发布，不需要向本仓库提 PR：
+**社区包（去中心化）**在你**自己的公开仓库**发布，不需要向本仓库提 PR。命令行工具：`databridge card new <目录> <包id> <域名> [显示名]` 生成仓库骨架，`databridge card lint <目录>` 做发布前静态检查，`databridge card replay <目录>` 用样本回放每张卡。
 
 1. 一个仓库一个包，`platform.json` 放在仓库根目录；
 2. 给仓库加上 GitHub 标签 **`databridge-pack`**；

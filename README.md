@@ -20,6 +20,16 @@ platforms/<平台>/mappings/<卡>.fixture.json  脱敏样本 + 期望产出，CI
 桥的 exe 编译时把这个目录打进去，首次启动从内置包种入平台和卡，离线可用。
 「检查更新」只从这个仓库读文件，**只下不上**，不上传任何采集数据。
 
+## 社区包的命令行工具
+
+```bash
+databridge card new my-pack my-pack "*.example.com" "示例站"   # 生成社区平台包仓库骨架
+databridge card lint my-pack                                   # 发布前静态检查（错误必须修，提示可选）
+databridge card replay my-pack                                 # 用样本回放每张卡，等同 --check
+```
+
+`lint` 按社区包的标准检查：`apiVersion` 必须写明、包 id 不能与官方包重名、每张卡都有样本、样本里疑似凭证的关键词会提示。
+
 ## 校验一张卡
 
 ```bash
