@@ -20,6 +20,19 @@ platforms/<平台>/mappings/<卡>.fixture.json  脱敏样本 + 期望产出，CI
 桥的 exe 编译时把这个目录打进去，首次启动从内置包种入平台和卡，离线可用。
 「检查更新」只从这个仓库读文件，**只下不上**，不上传任何采集数据。
 
+## Claude Code 插件
+
+本仓库同时是一个 Claude Code 插件市场：
+
+```bash
+claude plugin marketplace add shiyue1250/databridge-registry
+claude plugin install databridge@databridge
+```
+
+插件 `claude-plugin/` 做两件事：自动接入本机 DataBridge 的 MCP（`http://127.0.0.1:8787/mcp`）；带一个 `write-card` 技能，
+让 Agent 从「你浏览过的网站」一路走到「卡发布为社区包」——找接口、看结构、登记并核对、导出脱敏样本、`card lint` / `card replay`，
+**创建公开仓库和发 Release 之前一定先征得你的同意**。
+
 ## 社区包的命令行工具
 
 ```bash

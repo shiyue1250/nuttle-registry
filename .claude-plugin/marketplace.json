@@ -1,0 +1,13 @@
+{
+  "name": "databridge",
+  "description": "DataBridge for Claude Code: let your agent query the web data you have already seen, and turn any site into a shareable mapping card.",
+  "owner": { "name": "shiyue1250" },
+  "plugins": [
+    {
+      "name": "databridge",
+      "source": "./claude-plugin",
+      "description": "Connects Claude Code to the local DataBridge app (MCP) and adds the write-card skill.",
+      "version": "0.1.0"
+    }
+  ]
+}
