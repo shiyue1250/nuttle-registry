@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin/channels-comment",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "platform": "weixin",
   "entity": "comment",
   "match": {
@@ -20,7 +20,8 @@
     "ip_location": "ipRegionInfo.regionText",
     "create_time": "createtime",
     "extra.replies": "levelTwoComment",
-    "extra.head": "headUrl"
+    "extra.head": "headUrl",
+    "reply_to": "replyCommentId"
   },
   "schema": {
     "create_time": {
@@ -36,6 +37,10 @@
     },
     "reply_count": {
       "type": "int"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "回复的是哪条评论；\"0\" 表示一级评论。展开回复时加载的回复也会作为单独的评论进来"
     }
   },
   "trigger": "在视频号里打开评论、往下翻页；需要「视频号完整数据」插件",
@@ -95,6 +100,26 @@
         "create_time": "Time",
         "video_id": "Video id"
       }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "weixin/channels-video",
+      "field": "video_id",
+      "count_field": "comment_count"
+    },
+    "reply_to": "reply_to",
+    "replies": "replies",
+    "reply_fields": {
+      "id": "commentId",
+      "nickname": "nickname",
+      "content": "content",
+      "like_count": "likeCount",
+      "create_time": "createtime",
+      "ip_location": "ipRegionInfo.regionText",
+      "reply_to": "replyCommentId",
+      "reply_to_nickname": "replyNickname",
+      "head": "headUrl"
     }
   }
 }

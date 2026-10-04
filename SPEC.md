@@ -36,6 +36,8 @@ JSON, one file per card, validated by [`schema/mapping-card.schema.json`](schema
 | `jsonld` | no | `{ "@type": "<schema.org type>", "map": { field: schemaProperty } }` for JSON-LD output |
 | `schema`, `trigger`, `pagination`, `noise`, `note`, `author`, `license`, `verified` | no | Documentation for humans and agents |
 | `display` | no | Table layout for hosts: `columns` (ordered output fields to show) and `labels` (`{zh:{field:label}, en:{…}}`). `schema.<field>.type` (`unix_s`, `int`, `image`, `duration_s`) tells the host how to render a value |
+| `relations` | no | Parent/child structure for hosts: `parent` `{card, field, count_field}` (this entity's `field` equals the parent card entity's `id`; `count_field` on the parent holds the platform's total), `reply_to` (field naming the entity this one replies to; `"0"`/empty = top level), `replies` (field holding inline replies) and `reply_fields` (output field → source path for each inline reply, same DSL) |
+| `resource` | no | `{plugin, match: {resourceField: entityField}}` — the plugin resource (downloadable media) that corresponds to an entity |
 
 ### Field-path DSL
 
@@ -122,6 +124,8 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 - `id` 写成 `<包 id>/<卡名>`；`fields` 必须包含 `id`，用于去重。
 - `item_path` 指向条目数组；如果指向的是单个对象，按一条处理（例如一次只上报一个视频的接口）。
 - `display`（可选）：给宿主的表格布局——`columns` 是要显示的字段及顺序，`labels` 是中英文列名；`schema.<字段>.type`（`unix_s` / `int` / `image` / `duration_s`）决定怎么显示。
+- `relations`（可选）：父子结构——`parent` 写明挂在哪张卡的实体下（本实体的 `field` 等于父实体的 `id`，父实体的 `count_field` 是平台上的总数）；`reply_to` 是「回复给谁」的字段（`"0"` 或空为一级）；`replies` 是内嵌回复所在字段，`reply_fields` 说明内嵌回复怎么读（同一套路径语法）。宿主据此组装「视频 + 评论树」。
+- `resource`（可选）：这张卡的实体对应哪个插件的哪条可下载资源，`match` 写资源字段 → 实体字段。
 - `locales` 提供中英文名称和说明；`jsonld` 声明产出实体对应的 schema.org 类型和字段对应关系。
 
 ### 字段路径语法

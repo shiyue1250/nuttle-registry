@@ -27,7 +27,8 @@
             "likeCount": 66,
             "replyCommentId": "15000000000000000101"
           }
-        ]
+        ],
+        "replyCommentId": "0"
       }
     ],
     "nuttleRest": {
@@ -57,7 +58,8 @@
           }
         ],
         "head": "https://wx.qlogo.cn/example_1"
-      }
+      },
+      "reply_to": "0"
     }
   ]
 }

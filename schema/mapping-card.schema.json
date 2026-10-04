@@ -213,6 +213,60 @@
           }
         }
       }
+    },
+    "relations": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How entities of this card hang under a parent entity (e.g. comments under a video) and how replies are nested",
+      "properties": {
+        "parent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "card",
+            "field"
+          ],
+          "properties": {
+            "card": {
+              "type": "string"
+            },
+            "field": {
+              "type": "string"
+            },
+            "count_field": {
+              "type": "string"
+            }
+          }
+        },
+        "reply_to": {
+          "type": "string"
+        },
+        "replies": {
+          "type": "string"
+        },
+        "reply_fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Which plugin resource (downloadable media) corresponds to an entity of this card",
+      "properties": {
+        "plugin": {
+          "type": "string"
+        },
+        "match": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

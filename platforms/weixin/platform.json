@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "label": "微信（带货助手 / 公众号）",
   "locales": {
     "zh": {

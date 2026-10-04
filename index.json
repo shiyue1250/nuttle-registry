@@ -104,7 +104,7 @@
     },
     {
       "id": "weixin",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "label": "微信（带货助手 / 公众号）",
       "locales": {
         "zh": {
@@ -120,7 +120,7 @@
       "cards": [
         {
           "id": "weixin/channels-comment",
-          "version": "0.1.0",
+          "version": "0.2.0",
           "entity": "comment",
           "verified": "2026-10-04",
           "fixture": true,
@@ -128,7 +128,7 @@
         },
         {
           "id": "weixin/channels-video",
-          "version": "0.1.0",
+          "version": "0.2.0",
           "entity": "video",
           "verified": "2026-10-04",
           "fixture": true,
