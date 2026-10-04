@@ -86,7 +86,9 @@
               "unix_s",
               "unix_ms",
               "url",
-              "json"
+              "json",
+              "image",
+              "duration_s"
             ]
           },
           "unit": {
@@ -189,6 +191,28 @@
         }
       },
       "description": "按 schema.org 词汇以 JSON-LD 输出时的类型与字段对应 / How the entity maps to schema.org for JSON-LD output"
+    },
+    "display": {
+      "type": "object",
+      "description": "Table layout for hosts: ordered columns and zh/en column labels",
+      "additionalProperties": false,
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
   }
 }

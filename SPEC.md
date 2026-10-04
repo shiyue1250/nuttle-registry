@@ -29,12 +29,13 @@ JSON, one file per card, validated by [`schema/mapping-card.schema.json`](schema
 | `entity` | yes | Entity type produced, e.g. `comment`, `product`, `variation` |
 | `match.host` | no | Substring of the response host |
 | `match.path` | yes | Substring of the response path (query string excluded) |
-| `item_path` | yes | Dot path from the response root to the array of items; empty string if the response itself is the array |
+| `item_path` | yes | Dot path from the response root to the array of items; empty string if the response itself is the array. If the path resolves to a single object, it is treated as one item |
 | `fields` | yes | Output field → source path. Must contain `id` (used to de-duplicate) |
 | `fixture` | to publish | Sibling file `<name>.fixture.json` with `response` (redacted) and `expected` (entities) |
 | `locales` | no | `{ "zh": {name, description}, "en": {name, description} }` |
 | `jsonld` | no | `{ "@type": "<schema.org type>", "map": { field: schemaProperty } }` for JSON-LD output |
 | `schema`, `trigger`, `pagination`, `noise`, `note`, `author`, `license`, `verified` | no | Documentation for humans and agents |
+| `display` | no | Table layout for hosts: `columns` (ordered output fields to show) and `labels` (`{zh:{field:label}, en:{…}}`). `schema.<field>.type` (`unix_s`, `int`, `image`, `duration_s`) tells the host how to render a value |
 
 ### Field-path DSL
 
@@ -119,6 +120,8 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 - `apiVersion` 必须是 `1`；不写视为 `1`（兼容 v1 之前发布的卡）；其他值一律拒绝。
 - `id` 写成 `<包 id>/<卡名>`；`fields` 必须包含 `id`，用于去重。
+- `item_path` 指向条目数组；如果指向的是单个对象，按一条处理（例如一次只上报一个视频的接口）。
+- `display`（可选）：给宿主的表格布局——`columns` 是要显示的字段及顺序，`labels` 是中英文列名；`schema.<字段>.type`（`unix_s` / `int` / `image` / `duration_s`）决定怎么显示。
 - `locales` 提供中英文名称和说明；`jsonld` 声明产出实体对应的 schema.org 类型和字段对应关系。
 
 ### 字段路径语法

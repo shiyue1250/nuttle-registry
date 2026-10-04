@@ -1,0 +1,63 @@
+{
+  "response": {
+    "request": {
+      "objectId": "15000000000000000001",
+      "lastBuffer": "",
+      "direction": 2
+    },
+    "comments": [
+      {
+        "objectId": "15000000000000000001",
+        "commentId": "15000000000000000101",
+        "nickname": "示例用户_1",
+        "username": "v5_example_1",
+        "content": "示例评论内容_1",
+        "likeCount": 135,
+        "expandCommentCount": 10,
+        "ipRegionInfo": {
+          "regionText": "示例地区_1"
+        },
+        "createtime": "1789040618",
+        "headUrl": "https://wx.qlogo.cn/example_1",
+        "levelTwoComment": [
+          {
+            "commentId": "15000000000000000102",
+            "nickname": "示例用户_2",
+            "content": "示例回复内容_2",
+            "likeCount": 66,
+            "replyCommentId": "15000000000000000101"
+          }
+        ]
+      }
+    ],
+    "nuttleRest": {
+      "downContinueFlag": 1,
+      "lastBuffer": "example-cursor"
+    }
+  },
+  "expected": [
+    {
+      "id": "15000000000000000101",
+      "video_id": "15000000000000000001",
+      "nickname": "示例用户_1",
+      "user_id": "v5_example_1",
+      "content": "示例评论内容_1",
+      "like_count": 135,
+      "reply_count": 10,
+      "ip_location": "示例地区_1",
+      "create_time": "1789040618",
+      "extra": {
+        "replies": [
+          {
+            "commentId": "15000000000000000102",
+            "nickname": "示例用户_2",
+            "content": "示例回复内容_2",
+            "likeCount": 66,
+            "replyCommentId": "15000000000000000101"
+          }
+        ],
+        "head": "https://wx.qlogo.cn/example_1"
+      }
+    }
+  ]
+}

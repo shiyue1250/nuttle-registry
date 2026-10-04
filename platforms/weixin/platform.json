@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "label": "微信（带货助手 / 公众号）",
   "locales": {
     "zh": {
@@ -57,7 +57,15 @@
     {
       "match": "commonReport",
       "label": "埋点上报（无业务数据，建议关闭）"
+    },
+    {
+      "match": "/res-downloader/wechat",
+      "label": "视频号视频（插件钩子上报，已内置解析：作者、时长、IP 属地、点赞 / 转发 / 评论数）"
+    },
+    {
+      "match": "/nuttle/wechat",
+      "label": "视频号评论（「视频号完整数据」插件上报，已内置解析）"
     }
   ],
-  "notes": "带货助手选品广场接口 ecListSelectionSpuItems 由桥内置的提取器解析（字段逐个核对过），不需要映射卡。公众号后台接口在 mp.weixin.qq.com。"
+  "notes": "带货助手选品广场接口 ecListSelectionSpuItems 由桥内置的提取器解析（字段逐个核对过），不需要映射卡。公众号后台接口在 mp.weixin.qq.com。 视频号视频与评论来自插件在页面里的钩子（经本机代理上报到 wxapp.tc.qq.com 的假地址），由映射卡 channels-video / channels-comment 解析。"
 }

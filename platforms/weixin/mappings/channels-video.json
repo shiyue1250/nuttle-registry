@@ -1,0 +1,144 @@
+{
+  "apiVersion": 1,
+  "id": "weixin/channels-video",
+  "version": "0.1.0",
+  "platform": "weixin",
+  "entity": "video",
+  "match": {
+    "host": "wxapp.tc.qq.com",
+    "path": "/res-downloader/wechat"
+  },
+  "item_path": "",
+  "fields": {
+    "id": "nuttle.id",
+    "title": "objectDesc.description",
+    "author": "nuttle.contact.nickname",
+    "author_id": "nuttle.contact.username",
+    "author_auth": "nuttle.contact.authInfo.authProfession",
+    "create_time": "createtime",
+    "duration_s": "objectDesc.media.0.videoPlayLen",
+    "width": "objectDesc.media.0.width",
+    "height": "objectDesc.media.0.height",
+    "size_mb": "objectDesc.media.0.fileSize/1048576",
+    "thumb_count": "nuttle.favCount",
+    "like_count": "nuttle.likeCount",
+    "forward_count": "nuttle.forwardCount",
+    "comment_count": "nuttle.commentCount",
+    "ip_region": "nuttle.ipRegionInfo.regionText",
+    "poster_city": "objectDesc.posterLocation.city",
+    "location_city": "objectDesc.location.city",
+    "music": "objectDesc.followPostInfo.musicInfo.name",
+    "edit_tool": "objectDesc.publisherVideoInfo.showWording",
+    "cover": "objectDesc.media.0.thumbUrl",
+    "extra.author_signature": "nuttle.contact.signature",
+    "extra.author_head": "nuttle.contact.headUrl",
+    "extra.bullet_comment_count": "nuttle.objectExtend.monotonicData.countInfo.bulletcommentCount",
+    "extra.cover_words": "objectDesc.extra.coverUrlWord",
+    "extra.specs": "objectDesc.media.0.spec"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "duration_s": {
+      "type": "duration_s",
+      "note": "秒"
+    },
+    "thumb_count": {
+      "type": "int",
+      "note": "视频号界面的 👍（接口叫 favCount）"
+    },
+    "like_count": {
+      "type": "int",
+      "note": "视频号界面的 ♡（接口叫 likeCount）"
+    },
+    "ip_region": {
+      "type": "string",
+      "note": "发布时的 IP 属地，境外为国家名"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "forward_count": {
+      "type": "int"
+    },
+    "comment_count": {
+      "type": "int"
+    }
+  },
+  "trigger": "微信电脑版刷视频号；需要「微信视频号」插件 + 「视频号完整数据」插件（作者与互动数据来自后者）",
+  "note": "数据来自插件在页面里的钩子（经本机代理），不是网站接口；没有「视频号完整数据」插件时 nuttle 字段缺失、id 为空，整条不提取",
+  "fixture": "channels-video.fixture.json",
+  "verified": "2026-10-04",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "视频号视频",
+      "description": "刷到的每条视频：作者、时长、发布时间、IP 属地、点赞 / 转发 / 评论数"
+    },
+    "en": {
+      "name": "Channels videos",
+      "description": "Every video you scroll past: author, duration, publish time, IP region, like / share / comment counts"
+    }
+  },
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "name",
+      "author": "author",
+      "create_time": "uploadDate",
+      "duration_s": "duration",
+      "cover": "thumbnailUrl"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "author_auth",
+      "duration_s",
+      "create_time",
+      "thumb_count",
+      "like_count",
+      "forward_count",
+      "comment_count",
+      "ip_region",
+      "music",
+      "edit_tool"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "标题",
+        "author": "作者",
+        "author_auth": "认证",
+        "duration_s": "时长",
+        "create_time": "发布时间",
+        "thumb_count": "赞 👍",
+        "like_count": "喜欢 ♡",
+        "forward_count": "转发",
+        "comment_count": "评论",
+        "ip_region": "IP 属地",
+        "music": "音乐",
+        "edit_tool": "剪辑工具"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Title",
+        "author": "Author",
+        "author_auth": "Verified as",
+        "duration_s": "Duration",
+        "create_time": "Published",
+        "thumb_count": "Thumbs 👍",
+        "like_count": "Likes ♡",
+        "forward_count": "Shares",
+        "comment_count": "Comments",
+        "ip_region": "IP region",
+        "music": "Music",
+        "edit_tool": "Edited with"
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "response": {
+    "objectDesc": {
+      "description": "示例视频标题 #示例话题",
+      "media": [
+        {
+          "videoPlayLen": 45,
+          "width": 1080,
+          "height": 1920,
+          "fileSize": 52856657,
+          "coverUrl": "https://finder.video.qq.com/example-cover",
+          "url": "https://finder.video.qq.com/example.mp4",
+          "urlToken": "&token=example",
+          "decodeKey": "123456",
+          "spec": [
+            {
+              "fileFormat": "xWT111",
+              "width": 720,
+              "height": 1280
+            }
+          ],
+          "thumbUrl": "https://finder.video.qq.com/example-thumb"
+        }
+      ],
+      "posterLocation": {
+        "city": "示例城市"
+      },
+      "location": {
+        "city": "示例城市"
+      },
+      "followPostInfo": {
+        "musicInfo": {
+          "name": "示例音乐"
+        }
+      },
+      "publisherVideoInfo": {
+        "showWording": "剪映"
+      },
+      "extra": {
+        "coverUrlWord": [
+          "示例封面字"
+        ]
+      }
+    },
+    "createtime": 1791116558,
+    "nuttle": {
+      "id": "15000000000000000001",
+      "favCount": 0,
+      "likeCount": 0,
+      "forwardCount": 0,
+      "commentCount": 0,
+      "ipRegionInfo": {
+        "regionText": "示例地区"
+      },
+      "objectExtend": {
+        "monotonicData": {
+          "countInfo": {
+            "bulletcommentCount": 2
+          }
+        }
+      },
+      "contact": {
+        "nickname": "示例作者",
+        "username": "v2_example_author",
+        "signature": "示例签名",
+        "headUrl": "https://wx.qlogo.cn/example",
+        "authInfo": {
+          "authProfession": "示例认证"
+        }
+      }
+    }
+  },
+  "expected": [
+    {
+      "id": "15000000000000000001",
+      "title": "示例视频标题 #示例话题",
+      "author": "示例作者",
+      "author_id": "v2_example_author",
+      "author_auth": "示例认证",
+      "create_time": 1791116558,
+      "duration_s": 45,
+      "width": 1080,
+      "height": 1920,
+      "size_mb": 50.41,
+      "thumb_count": 0,
+      "like_count": 0,
+      "forward_count": 0,
+      "comment_count": 0,
+      "ip_region": "示例地区",
+      "poster_city": "示例城市",
+      "location_city": "示例城市",
+      "music": "示例音乐",
+      "edit_tool": "剪映",
+      "cover": "https://finder.video.qq.com/example-thumb",
+      "extra": {
+        "author_signature": "示例签名",
+        "author_head": "https://wx.qlogo.cn/example",
+        "bullet_comment_count": 2,
+        "cover_words": [
+          "示例封面字"
+        ],
+        "specs": [
+          {
+            "fileFormat": "xWT111",
+            "width": 720,
+            "height": 1280
+          }
+        ]
+      }
+    }
+  ]
+}

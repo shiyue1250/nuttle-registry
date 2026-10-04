@@ -1,0 +1,100 @@
+{
+  "apiVersion": 1,
+  "id": "weixin/channels-comment",
+  "version": "0.1.0",
+  "platform": "weixin",
+  "entity": "comment",
+  "match": {
+    "host": "wxapp.tc.qq.com",
+    "path": "/nuttle/wechat"
+  },
+  "item_path": "comments",
+  "fields": {
+    "id": "commentId",
+    "video_id": "objectId",
+    "nickname": "nickname",
+    "user_id": "username",
+    "content": "content",
+    "like_count": "likeCount",
+    "reply_count": "expandCommentCount",
+    "ip_location": "ipRegionInfo.regionText",
+    "create_time": "createtime",
+    "extra.replies": "levelTwoComment",
+    "extra.head": "headUrl"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s",
+      "note": "接口给的是字符串"
+    },
+    "video_id": {
+      "type": "string",
+      "note": "对应「视频号视频」的 id"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "reply_count": {
+      "type": "int"
+    }
+  },
+  "trigger": "在视频号里打开评论、往下翻页；需要「视频号完整数据」插件",
+  "pagination": {
+    "has_more": "nuttleRest.downContinueFlag",
+    "cursor": "nuttleRest.lastBuffer"
+  },
+  "fixture": "channels-comment.fixture.json",
+  "verified": "2026-10-04",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "视频号评论",
+      "description": "打开评论、翻页时的每条评论：内容、点赞数、地区、时间；楼中楼回复在 extra"
+    },
+    "en": {
+      "name": "Channels comments",
+      "description": "Each comment as you open and page through them: text, likes, region, time; replies in extra"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "like_count": "upvoteCount",
+      "create_time": "dateCreated",
+      "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "like_count",
+      "reply_count",
+      "ip_location",
+      "create_time",
+      "video_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "评论",
+        "nickname": "评论者",
+        "like_count": "赞",
+        "reply_count": "回复数",
+        "ip_location": "地区",
+        "create_time": "时间",
+        "video_id": "视频 id"
+      },
+      "en": {
+        "content": "Comment",
+        "nickname": "By",
+        "like_count": "Likes",
+        "reply_count": "Replies",
+        "ip_location": "Region",
+        "create_time": "Time",
+        "video_id": "Video id"
+      }
+    }
+  }
+}
