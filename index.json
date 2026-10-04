@@ -30,7 +30,13 @@
         {
           "id": "amazon/variation-compare",
           "title": "Amazon 变体对比",
-          "path": "platforms/amazon/recipes/variation-compare.md"
+          "path": "platforms/amazon/recipes/variation-compare.md",
+          "locales": {
+            "en": {
+              "title": "Amazon variation comparison",
+              "path": "platforms/amazon/recipes/variation-compare.en.md"
+            }
+          }
         }
       ],
       "path": "platforms/amazon/platform.json",
@@ -145,7 +151,13 @@
         {
           "id": "xiaohongshu/comment-insight",
           "title": "小红书评论洞察",
-          "path": "platforms/xiaohongshu/recipes/comment-insight.md"
+          "path": "platforms/xiaohongshu/recipes/comment-insight.md",
+          "locales": {
+            "en": {
+              "title": "Xiaohongshu comment insights",
+              "path": "platforms/xiaohongshu/recipes/comment-insight.en.md"
+            }
+          }
         }
       ],
       "path": "platforms/xiaohongshu/platform.json",

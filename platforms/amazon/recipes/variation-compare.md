@@ -6,7 +6,7 @@
 ## 需要
 
 - 平台包 `amazon`（映射卡 `amazon/dp-twister` ≥ 0.2.0，实体类型 `variation`）
-- 控制台「采集范围」里 Amazon 平台开着
+- 控制台「设置 → 采集范围」里 Amazon 平台开着
 - 人在 amazon.com 打开商品详情页（`/dp/<ASIN>`），页面内嵌的变体数据会被采到，不需要点任何东西
 
 ## 变体实体的字段

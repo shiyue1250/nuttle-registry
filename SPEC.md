@@ -60,6 +60,7 @@ platform.json          # validated by schema/platform.schema.json
 mappings/<name>.json   # cards
 mappings/<name>.fixture.json
 recipes/<name>.md      # optional agent prompt templates; first line is the title
+recipes/<name>.en.md   # optional English version of the same recipe (falls back to <name>.md)
 ```
 
 `platform.json` fields: `apiVersion` (1), `id`, `version`, `label`, `locales`, `hosts` (`*.` prefix matches subdomains), and optional `endpoints` (`[{match, label}]` — what each API endpoint is for), `watches`, `noise`, `notes`, `homepage`.
@@ -137,7 +138,7 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 ## 平台包格式
 
-一个目录（或一个仓库），包含 `platform.json`、`mappings/` 下的卡与样本、可选的 `recipes/` 配方（第一行是标题）。`platform.json` 字段：`apiVersion`（1）、`id`、`version`、`label`、`locales`、`hosts`（`*.` 前缀匹配所有子域），可选 `endpoints`（`[{match, label}]`，每个接口是做什么的）、`watches`、`noise`、`notes`、`homepage`。
+一个目录（或一个仓库），包含 `platform.json`、`mappings/` 下的卡与样本、可选的 `recipes/` 配方（第一行是标题；同名加 `.en.md` 是英文版，没有英文版时按中文版给）。`platform.json` 字段：`apiVersion`（1）、`id`、`version`、`label`、`locales`、`hosts`（`*.` 前缀匹配所有子域），可选 `endpoints`（`[{match, label}]`，每个接口是做什么的）、`watches`、`noise`、`notes`、`homepage`。
 
 ## 发布
 

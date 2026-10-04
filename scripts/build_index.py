@@ -37,14 +37,25 @@ def build():
                 "verified": card.get("verified"), "fixture": bool(card.get("fixture")),
                 "path": cj.relative_to(ROOT).as_posix(),
             })
-        recipes = [{"id": f"{plat['id']}/{r.stem}", "title": r.read_text(encoding="utf-8").splitlines()[0].lstrip("# ").strip(),
-                    "path": r.relative_to(ROOT).as_posix()} for r in sorted((pdir / "recipes").glob("*.md"))]
+        recipes = []
+        for r in sorted((pdir / "recipes").glob("*.md")):
+            if "." in r.stem:          # <名>.en.md 是英文版，挂到同名配方的 locales 下，不是独立配方
+                continue
+            entry = {"id": f"{plat['id']}/{r.stem}", "title": md_title(r), "path": r.relative_to(ROOT).as_posix()}
+            en = r.with_name(f"{r.stem}.en.md")
+            if en.exists():
+                entry["locales"] = {"en": {"title": md_title(en), "path": en.relative_to(ROOT).as_posix()}}
+            recipes.append(entry)
         packs.append({
             "id": plat["id"], "version": plat["version"], "label": plat.get("label", plat["id"]),
             "locales": plat.get("locales"), "hosts": plat.get("hosts", []), "cards": cards, "recipes": recipes,
             "path": pj.relative_to(ROOT).as_posix(), "official": True,
         })
     return {"schema": "schema/mapping-card.schema.json", "packs": packs}
+
+
+def md_title(p):
+    return p.read_text(encoding="utf-8").splitlines()[0].lstrip("# ").strip()
 
 
 def check_fixtures():

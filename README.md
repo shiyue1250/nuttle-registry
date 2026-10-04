@@ -56,7 +56,10 @@ nuttle --check registry/platforms/xiaohongshu/mappings/comment-page.json --updat
 
 每个平台包下的 `recipes/*.md` 是给 Agent 的提示模板：用哪个包、哪张卡、怎么循环 `wait_for_capture`、输出什么，
 以及哪些判断留给人（打标签）。分析在 Agent 里做，桥不碰。Agent 用 MCP `list_recipes` / `get_recipe` 取到全文；
-控制台「映射市场」页也能看。首批两份：`xiaohongshu/comment-insight`（评论洞察）、`amazon/variation-compare`（变体对比）。
+控制台「场景」页也能看、一键复制。首批两份：`xiaohongshu/comment-insight`（评论洞察）、`amazon/variation-compare`（变体对比）。
+
+英文版放同目录、同名加 `.en`：`comment-insight.en.md`。`build_index.py` 把它挂到配方条目的 `locales.en {title, path}`，
+不会当成独立配方；装包时一并下载。英文界面复制、Agent 用 `get_recipe(lang="en")` 取到的就是英文版，没有英文版就给中文。
 
 ## 源路径能写什么
 

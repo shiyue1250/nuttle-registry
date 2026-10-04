@@ -107,12 +107,19 @@ def inspect(repo: dict, official_ids: set, gh, raw) -> dict:
                       "verified": card.get("verified"), "fixture": True, "path": f"mappings/{name}"})
 
     recipes = []
-    for f in _listing(gh, full, "recipes", tag):
-        if f["name"].endswith(".md"):
-            stem = f["name"][:-3]
-            first = raw(f"{raw_base}/recipes/{f['name']}").splitlines()[:1]
-            recipes.append({"id": f"{pid}/{stem}", "title": (first[0] if first else stem).lstrip("# ").strip(),
-                            "path": f"recipes/{f['name']}"})
+    rfiles = [f["name"] for f in _listing(gh, full, "recipes", tag) if f["name"].endswith(".md")]
+
+    def title(name):
+        first = raw(f"{raw_base}/recipes/{name}").splitlines()[:1]
+        return (first[0] if first else name[:-3]).lstrip("# ").strip()
+    for name in rfiles:
+        stem = name[:-3]
+        if "." in stem:                # <名>.en.md 是英文版，挂到同名配方下
+            continue
+        entry = {"id": f"{pid}/{stem}", "title": title(name), "path": f"recipes/{name}"}
+        if f"{stem}.en.md" in rfiles:
+            entry["locales"] = {"en": {"title": title(f"{stem}.en.md"), "path": f"recipes/{stem}.en.md"}}
+        recipes.append(entry)
 
     return {
         "id": pid, "version": version, "label": plat.get("label", pid), "locales": plat.get("locales"),
