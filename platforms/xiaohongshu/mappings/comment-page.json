@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu/comment-page",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "platform": "xiaohongshu",
   "entity": "comment",
   "match": {
@@ -20,7 +20,9 @@
     "user_id": "user_info.user_id",
     "nickname": "user_info.nickname",
     "extra.sub_comments": "sub_comments",
-    "extra.pictures": "pictures"
+    "extra.pictures": "pictures",
+    "head": "user_info.image",
+    "reply_count": "sub_comment_count"
   },
   "schema": {
     "like_count": {
@@ -34,10 +36,18 @@
     "sub_comment_count": {
       "type": "int",
       "note": "接口给的是字符串"
+    },
+    "note_id": {
+      "type": "string",
+      "note": "对应「小红书笔记」的 id"
+    },
+    "reply_count": {
+      "type": "int",
+      "note": "同 sub_comment_count，详情页用；可能是「10+」"
     }
   },
   "fixture": "comment-page.fixture.json",
-  "verified": "2026-09-13",
+  "verified": "2026-10-05",
   "author": "shiyue1250",
   "license": "MIT",
   "trigger": "笔记详情页展开评论、点「更多评论」翻页",
@@ -51,11 +61,11 @@
   ],
   "locales": {
     "zh": {
-      "name": "笔记评论",
+      "name": "小红书评论",
       "description": "笔记详情页的评论列表，翻页时持续采集"
     },
     "en": {
-      "name": "Note comments",
+      "name": "RedNote comments",
       "description": "Comments on a note page, collected as you page through them"
     }
   },
@@ -66,6 +76,56 @@
       "like_count": "upvoteCount",
       "create_time": "dateCreated",
       "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "like_count",
+      "sub_comment_count",
+      "ip_location",
+      "create_time",
+      "note_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "评论",
+        "nickname": "评论者",
+        "like_count": "点赞",
+        "sub_comment_count": "回复数",
+        "ip_location": "IP 属地",
+        "create_time": "时间",
+        "note_id": "笔记 id"
+      },
+      "en": {
+        "content": "Comment",
+        "nickname": "By",
+        "like_count": "Likes",
+        "sub_comment_count": "Replies",
+        "ip_location": "IP region",
+        "create_time": "Time",
+        "note_id": "Note id"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "xiaohongshu/note",
+      "field": "note_id",
+      "count_field": "comment_count"
+    },
+    "replies": "sub_comments",
+    "reply_fields": {
+      "id": "id",
+      "nickname": "user_info.nickname",
+      "content": "content",
+      "like_count": "like_count",
+      "create_time": "create_time/1000",
+      "ip_location": "ip_location",
+      "head": "user_info.image",
+      "reply_to": "target_comment.id",
+      "reply_to_nickname": "target_comment.user_info.nickname"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "label": "小红书",
   "locales": {
     "zh": {
