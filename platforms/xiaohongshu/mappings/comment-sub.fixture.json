@@ -1,0 +1,106 @@
+{
+  "response": {
+    "code": 0,
+    "success": true,
+    "msg": "成功",
+    "data": {
+      "comments": [
+        {
+          "content": "示例回复内容_1",
+          "liked": false,
+          "like_count": "3",
+          "user_info": {
+            "user_id": "6a0000000000000000000501",
+            "nickname": "示例用户_1",
+            "image": "https://sns-avatar-qc.xhscdn.com/avatar/example_1",
+            "xsec_token": "example-token"
+          },
+          "show_tags": [],
+          "ip_location": "示例地区_1",
+          "invalid": false,
+          "id": "6a0000000000000000000401",
+          "note_id": "6a0000000000000000000101",
+          "at_users": [],
+          "create_time": 1788900060000,
+          "target_comment": {
+            "id": "6a0000000000000000000399",
+            "user_info": {
+              "user_id": "6a0000000000000000000599",
+              "nickname": "示例用户_0",
+              "image": "https://sns-avatar-qc.xhscdn.com/avatar/example_0",
+              "xsec_token": "example-token"
+            }
+          },
+          "status": 0
+        },
+        {
+          "content": "示例回复内容_2",
+          "at_users": [],
+          "liked": false,
+          "like_count": "6",
+          "user_info": {
+            "user_id": "6a0000000000000000000502",
+            "nickname": "示例用户_2",
+            "image": "https://sns-avatar-qc.xhscdn.com/avatar/example_2",
+            "xsec_token": "example-token"
+          },
+          "note_id": "6a0000000000000000000101",
+          "status": 0,
+          "show_tags": [],
+          "create_time": 1788900120000,
+          "ip_location": "示例地区_2",
+          "target_comment": {
+            "id": "6a0000000000000000000401",
+            "user_info": {
+              "user_id": "6a0000000000000000000599",
+              "nickname": "示例用户_1",
+              "image": "https://sns-avatar-qc.xhscdn.com/avatar/example_0",
+              "xsec_token": "example-token"
+            }
+          },
+          "invalid": false,
+          "id": "6a0000000000000000000402"
+        }
+      ],
+      "cursor": "example-cursor",
+      "has_more": true,
+      "time": 1788900000000,
+      "user_id": "example",
+      "xsec_token": "example-token"
+    }
+  },
+  "expected": [
+    {
+      "id": "6a0000000000000000000401",
+      "note_id": "6a0000000000000000000101",
+      "content": "示例回复内容_1",
+      "like_count": "3",
+      "create_time": 1788900060.0,
+      "ip_location": "示例地区_1",
+      "user_id": "6a0000000000000000000501",
+      "nickname": "示例用户_1",
+      "head": "https://sns-avatar-qc.xhscdn.com/avatar/example_1",
+      "reply_to": "6a0000000000000000000399",
+      "reply_to_nickname": "示例用户_0",
+      "extra": {
+        "pictures": null
+      }
+    },
+    {
+      "id": "6a0000000000000000000402",
+      "note_id": "6a0000000000000000000101",
+      "content": "示例回复内容_2",
+      "like_count": "6",
+      "create_time": 1788900120.0,
+      "ip_location": "示例地区_2",
+      "user_id": "6a0000000000000000000502",
+      "nickname": "示例用户_2",
+      "head": "https://sns-avatar-qc.xhscdn.com/avatar/example_2",
+      "reply_to": "6a0000000000000000000401",
+      "reply_to_nickname": "示例用户_1",
+      "extra": {
+        "pictures": null
+      }
+    }
+  ]
+}

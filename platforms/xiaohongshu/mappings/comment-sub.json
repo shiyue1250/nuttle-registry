@@ -1,0 +1,111 @@
+{
+  "apiVersion": 1,
+  "id": "xiaohongshu/comment-sub",
+  "version": "0.3.0",
+  "platform": "xiaohongshu",
+  "entity": "comment",
+  "match": {
+    "host": "edith.xiaohongshu.com",
+    "path": "/api/sns/web/v2/comment/sub/page"
+  },
+  "item_path": "data.comments",
+  "fields": {
+    "id": "id",
+    "note_id": "note_id",
+    "content": "content",
+    "like_count": "like_count",
+    "create_time": "create_time/1000",
+    "ip_location": "ip_location",
+    "user_id": "user_info.user_id",
+    "nickname": "user_info.nickname",
+    "head": "user_info.image",
+    "reply_to": "target_comment.id",
+    "reply_to_nickname": "target_comment.user_info.nickname",
+    "extra.pictures": "pictures"
+  },
+  "schema": {
+    "like_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "create_time": {
+      "type": "unix_s",
+      "note": "接口是毫秒，/1000 后为秒"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "回复的是哪一条评论（一级评论或其下的回复）"
+    },
+    "note_id": {
+      "type": "string",
+      "note": "对应「小红书笔记」的 id"
+    }
+  },
+  "trigger": "在笔记详情的评论里点「展开回复」",
+  "pagination": {
+    "has_more": "data.has_more",
+    "cursor": "data.cursor"
+  },
+  "fixture": "comment-sub.fixture.json",
+  "verified": "2026-10-05",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "小红书评论回复",
+      "description": "点「展开回复」时加载的楼中楼回复：内容、回复对象、点赞、地区、时间"
+    },
+    "en": {
+      "name": "RedNote comment replies",
+      "description": "Nested replies loaded when you expand a comment: text, who it replies to, likes, region, time"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "like_count": "upvoteCount",
+      "create_time": "dateCreated",
+      "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "reply_to_nickname",
+      "like_count",
+      "ip_location",
+      "create_time",
+      "note_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "回复",
+        "nickname": "回复者",
+        "reply_to_nickname": "回复给",
+        "like_count": "点赞",
+        "ip_location": "IP 属地",
+        "create_time": "时间",
+        "note_id": "笔记 id"
+      },
+      "en": {
+        "content": "Reply",
+        "nickname": "By",
+        "reply_to_nickname": "Replying to",
+        "like_count": "Likes",
+        "ip_location": "IP region",
+        "create_time": "Time",
+        "note_id": "Note id"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "xiaohongshu/note",
+      "field": "note_id",
+      "count_field": "comment_count"
+    },
+    "reply_to": "reply_to"
+  }
+}

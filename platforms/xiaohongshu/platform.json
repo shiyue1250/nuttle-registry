@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "label": "小红书",
   "locales": {
     "zh": {
@@ -39,6 +39,10 @@
     {
       "match": "/api/im/web/emoji/config",
       "label": "表情包配置，单条可达 700 KB（无业务数据，建议关闭）"
+    },
+    {
+      "match": "/api/sns/web/v2/comment/sub/page",
+      "label": "展开回复（楼中楼，已内置解析）"
     }
   ],
   "notes": "接口在 edith.xiaohongshu.com。评论在笔记详情页展开评论、翻页时触发；IM 相关接口很杂，表情包配置单条 700 KB，建议关注列表只留 feed 和 comment/page。"
