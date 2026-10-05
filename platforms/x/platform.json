@@ -1,0 +1,26 @@
+{
+  "apiVersion": 1,
+  "id": "x",
+  "version": "0.1.0",
+  "label": "X",
+  "locales": {
+    "zh": {
+      "name": "X"
+    },
+    "en": {
+      "name": "X"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/x/posts",
+      "label": "X 帖子（「X 帖子与回复」插件整理后交回，已内置解析）"
+    },
+    {
+      "match": "/nuttle/x/replies",
+      "label": "X 回复（「X 帖子与回复」插件整理后交回，已内置解析）"
+    }
+  ],
+  "notes": "X 网页的接口是 GraphQL，帖子层层嵌套、散在十几种接口里，映射卡的点号路径取不到。由配套插件 nuttle.x-extra 在本机代理里读到这些接口时把帖子拍平，交回 /nuttle/x/posts 与 /nuttle/x/replies 两个合成地址，再由本包的两张映射卡解析。数据全部经插件进来，所以本包不登记域名（hosts 为空），浏览器插件不额外抓 x.com。"
+}

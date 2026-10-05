@@ -1,0 +1,98 @@
+{
+  "response": {
+    "replies": [
+      {
+        "id": "1900000000000000002",
+        "url": "https://x.com/example_2/status/1900000000000000002",
+        "text": "@example_1 示例回复_2",
+        "author": "示例作者_2",
+        "handle": "example_2",
+        "author_id": "1002",
+        "verified": false,
+        "followers": 2000,
+        "avatar": "https://pbs.twimg.com/profile_images/example_2.jpg",
+        "create_time": 1790841602,
+        "like_count": 20,
+        "retweet_count": 2,
+        "reply_count": 2,
+        "quote_count": 0,
+        "bookmark_count": 1,
+        "view_count": 200,
+        "lang": "zh",
+        "media_type": "",
+        "media_count": 0,
+        "cover": "",
+        "duration_s": null,
+        "conversation_id": "1900000000000000001",
+        "quote_of": "",
+        "post_id": "1900000000000000001",
+        "reply_to": "0",
+        "reply_to_user": ""
+      },
+      {
+        "id": "1900000000000000003",
+        "url": "https://x.com/example_3/status/1900000000000000003",
+        "text": "@example_2 示例楼中楼_3",
+        "author": "示例作者_3",
+        "handle": "example_3",
+        "author_id": "1003",
+        "verified": false,
+        "followers": 3000,
+        "avatar": "https://pbs.twimg.com/profile_images/example_3.jpg",
+        "create_time": 1790841603,
+        "like_count": 30,
+        "retweet_count": 3,
+        "reply_count": 2,
+        "quote_count": 0,
+        "bookmark_count": 1,
+        "view_count": 300,
+        "lang": "zh",
+        "media_type": "",
+        "media_count": 0,
+        "cover": "",
+        "duration_s": null,
+        "conversation_id": "1900000000000000001",
+        "quote_of": "",
+        "post_id": "1900000000000000001",
+        "reply_to": "1900000000000000002",
+        "reply_to_user": "example_2"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "1900000000000000002",
+      "post_id": "1900000000000000001",
+      "reply_to": "0",
+      "nickname": "示例作者_2",
+      "handle": "example_2",
+      "content": "@example_1 示例回复_2",
+      "like_count": 20,
+      "reply_count": 2,
+      "view_count": 200,
+      "create_time": 1790841602,
+      "reply_to_nickname": "",
+      "extra": {
+        "head": "https://pbs.twimg.com/profile_images/example_2.jpg",
+        "url": "https://x.com/example_2/status/1900000000000000002"
+      }
+    },
+    {
+      "id": "1900000000000000003",
+      "post_id": "1900000000000000001",
+      "reply_to": "1900000000000000002",
+      "nickname": "示例作者_3",
+      "handle": "example_3",
+      "content": "@example_2 示例楼中楼_3",
+      "like_count": 30,
+      "reply_count": 2,
+      "view_count": 300,
+      "create_time": 1790841603,
+      "reply_to_nickname": "example_2",
+      "extra": {
+        "head": "https://pbs.twimg.com/profile_images/example_3.jpg",
+        "url": "https://x.com/example_3/status/1900000000000000003"
+      }
+    }
+  ]
+}

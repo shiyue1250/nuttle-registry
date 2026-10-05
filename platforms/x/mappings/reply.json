@@ -1,0 +1,112 @@
+{
+  "apiVersion": 1,
+  "id": "x/reply",
+  "version": "0.1.0",
+  "platform": "x",
+  "entity": "comment",
+  "match": {
+    "host": "x.com",
+    "path": "/nuttle/x/replies"
+  },
+  "item_path": "replies",
+  "fields": {
+    "id": "id",
+    "post_id": "post_id",
+    "reply_to": "reply_to",
+    "nickname": "author",
+    "handle": "handle",
+    "content": "text",
+    "like_count": "like_count",
+    "reply_count": "reply_count",
+    "view_count": "view_count",
+    "create_time": "create_time",
+    "reply_to_nickname": "reply_to_user",
+    "extra.head": "avatar",
+    "extra.url": "url"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "post_id": {
+      "type": "string",
+      "note": "对应「X 帖子」的 id（会话根）"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "回复的是哪一条：\"0\" 表示直接回复帖子，否则是上级回复的 id"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "reply_count": {
+      "type": "int"
+    },
+    "view_count": {
+      "type": "int"
+    }
+  },
+  "trigger": "在 X 里打开帖子详情、往下翻回复；需要「X 帖子与回复」插件",
+  "fixture": "reply.fixture.json",
+  "verified": "2026-10-05",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "X 回复",
+      "description": "打开帖子详情时看到的回复：内容、作者、点赞 / 回复 / 浏览数、时间；楼中楼按回复关系排好"
+    },
+    "en": {
+      "name": "X replies",
+      "description": "Replies you see when opening a post: text, author, likes / replies / views, time; nested replies kept in order"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "like_count": "upvoteCount",
+      "create_time": "dateCreated",
+      "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "like_count",
+      "reply_count",
+      "view_count",
+      "create_time",
+      "post_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "回复",
+        "nickname": "回复者",
+        "like_count": "点赞",
+        "reply_count": "回复数",
+        "view_count": "浏览",
+        "create_time": "时间",
+        "post_id": "帖子 id"
+      },
+      "en": {
+        "content": "Reply",
+        "nickname": "By",
+        "like_count": "Likes",
+        "reply_count": "Replies",
+        "view_count": "Views",
+        "create_time": "Time",
+        "post_id": "Post id"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "x/post",
+      "field": "post_id",
+      "count_field": "reply_count"
+    },
+    "reply_to": "reply_to"
+  }
+}

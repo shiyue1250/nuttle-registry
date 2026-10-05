@@ -1,0 +1,63 @@
+{
+  "response": {
+    "posts": [
+      {
+        "id": "1900000000000000001",
+        "url": "https://x.com/example_1/status/1900000000000000001",
+        "text": "示例帖子正文_1 https://t.co/example",
+        "author": "示例作者_1",
+        "handle": "example_1",
+        "author_id": "1001",
+        "verified": true,
+        "followers": 1000,
+        "avatar": "https://pbs.twimg.com/profile_images/example_1.jpg",
+        "create_time": 1790841601,
+        "like_count": 10,
+        "retweet_count": 1,
+        "reply_count": 2,
+        "quote_count": 0,
+        "bookmark_count": 1,
+        "view_count": 100,
+        "lang": "zh",
+        "media_type": "video",
+        "media_count": 1,
+        "cover": "https://pbs.twimg.com/amplify_video_thumb/example/img/example.jpg",
+        "duration_s": 25,
+        "conversation_id": "1900000000000000001",
+        "quote_of": "",
+        "post_id": "",
+        "reply_to": "",
+        "reply_to_user": ""
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "1900000000000000001",
+      "title": "示例帖子正文_1 https://t.co/example",
+      "author": "示例作者_1",
+      "handle": "example_1",
+      "author_id": "1001",
+      "verified": true,
+      "followers": 1000,
+      "create_time": 1790841601,
+      "view_count": 100,
+      "like_count": 10,
+      "retweet_count": 1,
+      "reply_count": 2,
+      "quote_count": 0,
+      "bookmark_count": 1,
+      "media_type": "video",
+      "cover": "https://pbs.twimg.com/amplify_video_thumb/example/img/example.jpg",
+      "duration_s": 25,
+      "lang": "zh",
+      "url": "https://x.com/example_1/status/1900000000000000001",
+      "extra": {
+        "media_count": 1,
+        "avatar": "https://pbs.twimg.com/profile_images/example_1.jpg",
+        "conversation_id": "1900000000000000001",
+        "quote_of": ""
+      }
+    }
+  ]
+}
