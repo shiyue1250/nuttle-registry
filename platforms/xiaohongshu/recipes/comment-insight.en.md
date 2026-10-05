@@ -5,13 +5,13 @@ Nuttle only stores the data: this recipe is a prompt template for the Agent — 
 
 ## Requirements
 
-- Platform pack `xiaohongshu` (mapping card `xiaohongshu/comment-page`, entity kind `comment`)
-- The Xiaohongshu site is turned on in the console under "Settings → Capture scope". In that site's "Endpoints" dialog you can turn off the IM and sticker endpoints — they are noise; `/api/sns/web/v1/feed` and `/api/sns/web/v2/comment/page` are the ones that matter
-- The person opens the Xiaohongshu web app, goes into a note's detail page, expands the comments and clicks "more comments" to page through them
+- Platform pack `xiaohongshu` (mapping cards `xiaohongshu/note`, `xiaohongshu/comment-page`, `xiaohongshu/comment-sub`; entity kinds `note`, `comment`)
+- The Xiaohongshu (RedNote) plugin is enabled on the console's Plugins page; the endpoints that matter are `/api/sns/web/v1/feed` (notes), `/api/sns/web/v2/comment/page` (comments) and `/api/sns/web/v2/comment/sub/page` (expanded replies)
+- The person opens the Xiaohongshu web app, goes into a note, pages through the comments and clicks "expand replies" (guests only see the first page of comments; log in to page further)
 
 ## Fields of a comment entity
 
-`id, note_id, content, like_count (string), create_time (seconds), ip_location, sub_comment_count (string), user_id, nickname, extra.sub_comments, extra.pictures`
+`id, note_id, content, like_count (string), create_time (seconds), ip_location, sub_comment_count (string), reply_count, user_id, nickname, head, extra.sub_comments, extra.pictures`; expanded replies also carry `reply_to` (the comment they answer) and `reply_to_nickname`
 
 `like_count` is a string — convert it to a number before sorting.
 
@@ -49,4 +49,4 @@ Constraints: never tag comments 需求池 or 忽略 ("ignore") — those are my 
 
 - Nuttle only stores pages the person has viewed; comments exist only up to the page the person scrolled to.
 - `wait_for_capture` is a long poll — it only blocks while the Agent is calling it; Nuttle never pushes.
-- Replies stay as a block in `extra.sub_comments` and are not separate entities; expand them yourself if you need to analyze replies.
+- The few replies shipped with a top-level comment stay in `extra.sub_comments`; replies loaded by "expand replies" are separate entities (also `comment`, with `reply_to`). For a note with its whole comment tree, use get_thread(platform="xiaohongshu", kind="note", id=<note id>).

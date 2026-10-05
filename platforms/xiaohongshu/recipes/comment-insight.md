@@ -5,13 +5,13 @@
 
 ## 需要
 
-- 平台包 `xiaohongshu`（映射卡 `xiaohongshu/comment-page`，实体类型 `comment`）
-- 控制台「设置 → 采集范围」里小红书平台开着；在它的「接口」弹框里可以关掉 IM 和表情包接口（噪音），有用的是 `/api/sns/web/v1/feed` 和 `/api/sns/web/v2/comment/page`
-- 人打开小红书网页版，进笔记详情页展开评论、点「更多评论」翻页
+- 平台包 `xiaohongshu`（映射卡 `xiaohongshu/note`、`xiaohongshu/comment-page`、`xiaohongshu/comment-sub`；实体类型 `note`、`comment`）
+- 控制台「插件」页小红书为「已启用」；有用的接口是 `/api/sns/web/v1/feed`（笔记）、`/api/sns/web/v2/comment/page`（评论）、`/api/sns/web/v2/comment/sub/page`（展开的回复）
+- 人打开小红书网页版，进笔记详情页展开评论、翻页、点「展开回复」（游客只能看到第一页评论，登录后才能翻页）
 
 ## 评论实体的字段
 
-`id, note_id, content, like_count（字符串）, create_time（秒）, ip_location, sub_comment_count（字符串）, user_id, nickname, extra.sub_comments, extra.pictures`
+`id, note_id, content, like_count（字符串）, create_time（秒）, ip_location, sub_comment_count（字符串）, reply_count, user_id, nickname, head, extra.sub_comments, extra.pictures`；展开的回复另有 `reply_to`（回复的是哪条评论）、`reply_to_nickname`
 
 `like_count` 是字符串，排序前自己转成数字。
 
@@ -49,4 +49,4 @@
 
 - 桥只存人看过的页面；翻到第几页评论就只有到第几页。
 - `wait_for_capture` 是长轮询，Agent 调用时才阻塞，桥不会主动推送。
-- 子评论在 `extra.sub_comments` 里整块保留，没有单独成实体；要分析子评论自己展开。
+- 一级评论自带的少量子评论在 `extra.sub_comments` 里；点「展开回复」加载的回复单独成实体（同为 `comment`，带 `reply_to`）。要看「笔记 + 评论树」整体，用 get_thread(platform="xiaohongshu", kind="note", id=<笔记 id>)。
