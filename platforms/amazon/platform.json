@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "amazon",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "label": "Amazon 前台 / Seller Central / 广告后台",
   "locales": {
     "zh": {

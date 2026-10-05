@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "amazon/dp-twister",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "platform": "amazon",
   "entity": "variation",
   "match": {
@@ -47,6 +47,25 @@
     "map": {
       "id": "sku",
       "label": "name"
+    }
+  },
+  "display": {
+    "columns": [
+      "label",
+      "id",
+      "state"
+    ],
+    "labels": {
+      "zh": {
+        "label": "颜色",
+        "id": "ASIN",
+        "state": "可售状态"
+      },
+      "en": {
+        "label": "Color",
+        "id": "ASIN",
+        "state": "Availability"
+      }
     }
   }
 }
