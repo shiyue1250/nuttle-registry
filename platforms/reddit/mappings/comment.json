@@ -1,0 +1,124 @@
+{
+  "apiVersion": 1,
+  "id": "reddit/comment",
+  "version": "0.1.2",
+  "platform": "reddit",
+  "entity": "comment",
+  "match": {
+    "host": "reddit.com",
+    "path": "/nuttle/reddit/comments"
+  },
+  "item_path": "comments",
+  "fields": {
+    "id": "id",
+    "post_id": "post_id",
+    "reply_to": "reply_to",
+    "depth": "depth",
+    "nickname": "author",
+    "content": "content",
+    "like_count": "score",
+    "award_count": "award_count",
+    "create_time": "create_time",
+    "is_op": "is_op",
+    "head": "avatar",
+    "url": "url",
+    "image": "image",
+    "gif": "gif"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int",
+      "note": "分数（赞减踩）"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "\"0\" = 直接回复帖子，否则是上一级评论的 id"
+    },
+    "depth": {
+      "type": "int",
+      "note": "楼层深度，0 为顶层"
+    },
+    "is_op": {
+      "type": "bool",
+      "note": "楼主本人"
+    },
+    "head": {
+      "type": "image"
+    },
+    "url": {
+      "type": "url",
+      "note": "这条评论的原文链接"
+    },
+    "image": {
+      "type": "image",
+      "note": "评论里的第一张图（只发图 / 动图的评论没有文字）"
+    },
+    "gif": {
+      "type": "video",
+      "note": "动图评论（GIPHY）的 mp4 地址"
+    }
+  },
+  "trigger": "在 Reddit 网页打开帖子详情、展开更多评论（需要「Reddit 帖子与评论」插件）",
+  "fixture": "comment.fixture.json",
+  "verified": "2026-10-06",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "Reddit 评论",
+      "description": "打开帖子时看到的评论与楼中楼：内容、作者、分数、时间、是否楼主"
+    },
+    "en": {
+      "name": "Reddit comments",
+      "description": "Comments and nested replies you see on a post: text, author, score, time, OP"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "like_count": "upvoteCount",
+      "create_time": "dateCreated",
+      "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "like_count",
+      "depth",
+      "create_time",
+      "post_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "评论",
+        "nickname": "评论者",
+        "like_count": "分数",
+        "depth": "层级",
+        "create_time": "时间",
+        "post_id": "帖子 id"
+      },
+      "en": {
+        "content": "Comment",
+        "nickname": "By",
+        "like_count": "Score",
+        "depth": "Depth",
+        "create_time": "Time",
+        "post_id": "Post id"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "reddit/post",
+      "field": "post_id",
+      "count_field": "comment_count"
+    },
+    "reply_to": "reply_to"
+  }
+}

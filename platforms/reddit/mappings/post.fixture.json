@@ -1,0 +1,51 @@
+{
+  "context": {
+    "host": "www.reddit.com",
+    "path": "/nuttle/reddit/posts"
+  },
+  "response": {
+    "posts": [
+      {
+        "id": "ex1001",
+        "url": "https://www.reddit.com/r/example/comments/ex1001/example_title/",
+        "title": "Example post: what do you hate about 'tool A'?",
+        "content": "Example body line one & more.\nSecond link line.",
+        "author": "example_op",
+        "author_id": "t2_ex1",
+        "subreddit": "r/example",
+        "score": 120,
+        "comment_count": 3,
+        "upvote_ratio": 0.95,
+        "award_count": null,
+        "create_time": 1790841600,
+        "post_type": "text",
+        "domain": "self.example",
+        "link": "",
+        "cover": "",
+        "lang": "en"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "ex1001",
+      "title": "Example post: what do you hate about 'tool A'?",
+      "content": "Example body line one & more.\nSecond link line.",
+      "author": "example_op",
+      "author_id": "t2_ex1",
+      "subreddit": "r/example",
+      "score": 120,
+      "comment_count": 3,
+      "upvote_ratio": 0.95,
+      "award_count": null,
+      "create_time": 1790841600,
+      "post_type": "text",
+      "domain": "self.example",
+      "link": "",
+      "cover": "",
+      "lang": "en",
+      "url": "https://www.reddit.com/r/example/comments/ex1001/example_title/",
+      "extra": {}
+    }
+  ]
+}

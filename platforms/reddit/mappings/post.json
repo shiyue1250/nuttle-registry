@@ -1,0 +1,126 @@
+{
+  "apiVersion": 1,
+  "id": "reddit/post",
+  "version": "0.1.0",
+  "platform": "reddit",
+  "entity": "post",
+  "match": {
+    "host": "reddit.com",
+    "path": "/nuttle/reddit/posts"
+  },
+  "item_path": "posts",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "content": "content",
+    "author": "author",
+    "author_id": "author_id",
+    "subreddit": "subreddit",
+    "score": "score",
+    "comment_count": "comment_count",
+    "upvote_ratio": "upvote_ratio",
+    "award_count": "award_count",
+    "create_time": "create_time",
+    "post_type": "post_type",
+    "domain": "domain",
+    "link": "link",
+    "cover": "cover",
+    "lang": "lang",
+    "url": "url"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "score": {
+      "type": "int",
+      "note": "赞减踩"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "upvote_ratio": {
+      "type": "number",
+      "note": "赞成比例 0~1"
+    },
+    "award_count": {
+      "type": "int"
+    },
+    "cover": {
+      "type": "image",
+      "note": "图片帖的图；其他类型为空"
+    },
+    "content": {
+      "type": "string",
+      "note": "正文；列表页通常只有标题，打开帖子后才有正文"
+    },
+    "link": {
+      "type": "link",
+      "note": "外链帖指向的网址"
+    },
+    "url": {
+      "type": "url",
+      "note": "原帖链接"
+    }
+  },
+  "trigger": "在 Reddit 网页浏览版块首页、搜索结果、帖子详情（需要「Reddit 帖子与评论」插件）",
+  "note": "数据来自「Reddit 帖子与评论」插件对页面 HTML 的整理，不是网站原始接口",
+  "fixture": "post.fixture.json",
+  "verified": "2026-10-06",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "Reddit 帖子",
+      "description": "浏览过的每个帖子：标题、正文、作者、版块、分数、评论数、赞成比例、发帖时间"
+    },
+    "en": {
+      "name": "Reddit posts",
+      "description": "Every post you view: title, text, author, subreddit, score, comments, upvote ratio, time"
+    }
+  },
+  "jsonld": {
+    "@type": "DiscussionForumPosting",
+    "map": {
+      "title": "headline",
+      "content": "articleBody",
+      "author": "author",
+      "create_time": "datePublished",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "subreddit",
+      "author",
+      "score",
+      "comment_count",
+      "upvote_ratio",
+      "create_time"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "配图",
+        "title": "标题",
+        "subreddit": "版块",
+        "author": "作者",
+        "score": "分数",
+        "comment_count": "评论",
+        "upvote_ratio": "赞成比例",
+        "create_time": "发帖时间"
+      },
+      "en": {
+        "cover": "Media",
+        "title": "Title",
+        "subreddit": "Subreddit",
+        "author": "Author",
+        "score": "Score",
+        "comment_count": "Comments",
+        "upvote_ratio": "Upvoted",
+        "create_time": "Posted"
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "context": {
+    "host": "www.reddit.com",
+    "path": "/nuttle/reddit/comments"
+  },
+  "response": {
+    "comments": [
+      {
+        "id": "c1",
+        "post_id": "ex1001",
+        "reply_to": "0",
+        "depth": 0,
+        "author": "example_user_1",
+        "avatar": "",
+        "content": "Example complaint: it is too slow <sometimes>.",
+        "image": "",
+        "gif": "",
+        "score": 40,
+        "award_count": null,
+        "create_time": 1790845200,
+        "is_op": false,
+        "url": "https://www.reddit.com/r/example/comments/ex1001/comment/c1/"
+      },
+      {
+        "id": "c2",
+        "post_id": "ex1001",
+        "reply_to": "c1",
+        "depth": 1,
+        "author": "example_op",
+        "avatar": "",
+        "content": "Example reply from OP.",
+        "image": "",
+        "gif": "",
+        "score": 12,
+        "award_count": null,
+        "create_time": 1790847000,
+        "is_op": true,
+        "url": "https://www.reddit.com/r/example/comments/ex1001/comment/c2/"
+      },
+      {
+        "id": "c3",
+        "post_id": "ex1001",
+        "reply_to": "c2",
+        "depth": 2,
+        "author": "example_user_2",
+        "avatar": "",
+        "content": "Nested example.",
+        "image": "",
+        "gif": "",
+        "score": 5,
+        "award_count": null,
+        "create_time": 1790848800,
+        "is_op": false,
+        "url": "https://www.reddit.com/r/example/comments/ex1001/comment/c3/"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "c1",
+      "post_id": "ex1001",
+      "reply_to": "0",
+      "depth": 0,
+      "nickname": "example_user_1",
+      "content": "Example complaint: it is too slow <sometimes>.",
+      "like_count": 40,
+      "award_count": null,
+      "create_time": 1790845200,
+      "is_op": false,
+      "head": "",
+      "url": "https://www.reddit.com/r/example/comments/ex1001/comment/c1/",
+      "image": "",
+      "gif": "",
+      "extra": {}
+    },
+    {
+      "id": "c2",
+      "post_id": "ex1001",
+      "reply_to": "c1",
+      "depth": 1,
+      "nickname": "example_op",
+      "content": "Example reply from OP.",
+      "like_count": 12,
+      "award_count": null,
+      "create_time": 1790847000,
+      "is_op": true,
+      "head": "",
+      "url": "https://www.reddit.com/r/example/comments/ex1001/comment/c2/",
+      "image": "",
+      "gif": "",
+      "extra": {}
+    },
+    {
+      "id": "c3",
+      "post_id": "ex1001",
+      "reply_to": "c2",
+      "depth": 2,
+      "nickname": "example_user_2",
+      "content": "Nested example.",
+      "like_count": 5,
+      "award_count": null,
+      "create_time": 1790848800,
+      "is_op": false,
+      "head": "",
+      "url": "https://www.reddit.com/r/example/comments/ex1001/comment/c3/",
+      "image": "",
+      "gif": "",
+      "extra": {}
+    }
+  ]
+}

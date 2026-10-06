@@ -1,0 +1,26 @@
+{
+  "apiVersion": 1,
+  "id": "reddit",
+  "version": "0.1.2",
+  "label": "Reddit",
+  "locales": {
+    "zh": {
+      "name": "Reddit"
+    },
+    "en": {
+      "name": "Reddit"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/reddit/posts",
+      "label": "Reddit 帖子（「Reddit 帖子与评论」插件整理后交回，已内置解析）"
+    },
+    {
+      "match": "/nuttle/reddit/comments",
+      "label": "Reddit 评论（「Reddit 帖子与评论」插件整理后交回，已内置解析）"
+    }
+  ],
+  "notes": "Reddit 新版网页（shreddit）的帖子和评论直接渲染在 HTML 里，没有给页面用的 JSON 接口。由配套插件 nuttle.reddit 在本机代理里读到页面与「加载更多」的 HTML 片段时，把 <shreddit-post> / <shreddit-comment> 拍平，交回 /nuttle/reddit/posts 与 /nuttle/reddit/comments，再由本包两张映射卡解析。数据全部经插件进来，本包不登记域名。"
+}
