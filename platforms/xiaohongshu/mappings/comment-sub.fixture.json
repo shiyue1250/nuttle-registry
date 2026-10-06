@@ -84,7 +84,8 @@
       "reply_to_nickname": "示例用户_0",
       "extra": {
         "pictures": null
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000101?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000402",
@@ -100,7 +101,13 @@
       "reply_to_nickname": "示例用户_1",
       "extra": {
         "pictures": null
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000101?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     }
-  ]
+  ],
+  "context": {
+    "q": {
+      "xsec_token": "EXAMPLE_TOKEN"
+    }
+  }
 }

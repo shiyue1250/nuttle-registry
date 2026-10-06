@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu/note",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "platform": "xiaohongshu",
   "entity": "note",
   "match": {

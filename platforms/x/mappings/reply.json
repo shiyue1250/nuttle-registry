@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "x/reply",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "platform": "x",
   "entity": "comment",
   "match": {
@@ -22,8 +22,8 @@
     "create_time": "create_time",
     "reply_to_nickname": "reply_to_user",
     "extra.head": "avatar",
-    "extra.url": "url",
-    "image": "cover"
+    "image": "cover",
+    "url": "url"
   },
   "schema": {
     "create_time": {
@@ -49,6 +49,10 @@
     "image": {
       "type": "image",
       "note": "回复里的第一张图（视频取封面）；纯文字回复为空"
+    },
+    "url": {
+      "type": "url",
+      "note": "原文链接（打开原帖 / 原笔记 / 商品页）"
     }
   },
   "trigger": "在 X 里打开帖子详情、往下翻回复；需要「X 帖子与回复」插件",

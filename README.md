@@ -65,10 +65,13 @@ nuttle --check registry/platforms/xiaohongshu/mappings/comment-page.json --updat
 
 - 点号路径取嵌套值：`user_info.nickname`；数组下标用数字：`images.0.url`
 - 末尾 `/N` 做除法：`price/100`（分转元）、`rate/10000`
-- `$path` / `$host` 取请求上下文：响应正文之外唯一能引用的东西，比如 Amazon 变体要记来自哪个商品页
+- `$path` / `$host` 取请求上下文：比如 Amazon 变体要记来自哪个商品页；`$q.<名>` 取请求网址里的查询参数（原样不解码）
+- 以 `=` 开头是模板，用来拼原文链接：`"url": "=https://{$host}/dp/{defaultAsin}"`，花括号里写点号路径或 `$` 变量；任一处取不到值就整条为空，不产出坏链接
 - 目标字段以 `extra.` 开头的整块保留原值（嵌套列表照搬）
 
-样本文件可带 `"context": {"host": …, "path": …}`，校验 `$path` / `$host` 时用。
+样本文件可带 `"context": {"host": …, "path": …, "q": {…}}`，校验 `$path` / `$host` / `$q` 时用。导出样本时查询参数的值一律换成 `EXAMPLE`。
+
+**每张卡尽量带 `url`（原文链接）**：用户要能从数据回到原帖。平台网页上打不开的（例如视频号）就不写，别拼打不开的链接。
 
 ## 发布一张卡
 

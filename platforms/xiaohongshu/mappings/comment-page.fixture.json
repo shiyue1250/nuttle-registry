@@ -49,7 +49,8 @@
           }
         ],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000006",
@@ -98,7 +99,8 @@
           }
         ],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000003",
@@ -147,7 +149,8 @@
           }
         ],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000010",
@@ -195,7 +198,8 @@
           }
         ],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000018",
@@ -212,7 +216,8 @@
       "extra": {
         "sub_comments": [],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000005",
@@ -261,7 +266,8 @@
           }
         ],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000002",
@@ -310,7 +316,8 @@
           }
         ],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000013",
@@ -361,7 +368,8 @@
           }
         ],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000012",
@@ -395,7 +403,8 @@
             "width": 1280
           }
         ]
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     },
     {
       "id": "6a0000000000000000000008",
@@ -412,7 +421,8 @@
       "extra": {
         "sub_comments": [],
         "pictures": []
-      }
+      },
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=EXAMPLE_TOKEN&xsec_source=pc_comment"
     }
   ],
   "response": {
@@ -929,5 +939,10 @@
     },
     "msg": "成功",
     "success": true
+  },
+  "context": {
+    "q": {
+      "xsec_token": "EXAMPLE_TOKEN"
+    }
   }
 }

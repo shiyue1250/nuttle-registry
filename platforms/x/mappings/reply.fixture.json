@@ -73,10 +73,10 @@
       "create_time": 1790841602,
       "reply_to_nickname": "",
       "extra": {
-        "head": "https://pbs.twimg.com/profile_images/example_2.jpg",
-        "url": "https://x.com/example_2/status/1900000000000000002"
+        "head": "https://pbs.twimg.com/profile_images/example_2.jpg"
       },
-      "image": ""
+      "image": "",
+      "url": "https://x.com/example_2/status/1900000000000000002"
     },
     {
       "id": "1900000000000000003",
@@ -91,10 +91,10 @@
       "create_time": 1790841603,
       "reply_to_nickname": "example_2",
       "extra": {
-        "head": "https://pbs.twimg.com/profile_images/example_3.jpg",
-        "url": "https://x.com/example_3/status/1900000000000000003"
+        "head": "https://pbs.twimg.com/profile_images/example_3.jpg"
       },
-      "image": ""
+      "image": "",
+      "url": "https://x.com/example_3/status/1900000000000000003"
     }
   ]
 }

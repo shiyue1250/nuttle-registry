@@ -44,7 +44,8 @@ JSON, one file per card, validated by [`schema/mapping-card.schema.json`](schema
 - `a.b.c` — walk object keys; numeric segments index arrays.
 - `path/N` — divide the number at `path` by `N`, rounded to 2 decimals (e.g. `create_time/1000` turns milliseconds into seconds).
 - `extra.<name>` as an **output** field keeps the whole source value under `extra`.
-- `$path` / `$host` as a **source** read the request context instead of the response body.
+- `$path` / `$host` as a **source** read the request context instead of the response body; `$q.<name>` reads a query parameter of the request URL (raw, not decoded).
+- `=<template>` as a **source** builds a string, mainly the original link: `=https://{$host}/dp/{defaultAsin}`. Braces hold a field path or a `$` variable. If any placeholder is empty the whole value is null — never a half-built link.
 
 Nothing else. The DSL is intentionally not Turing-complete.
 
@@ -133,7 +134,8 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 - `a.b.c`：按键逐层取值，数字段表示数组下标。
 - `路径/N`：把取到的数除以 N，保留两位小数，例如 `create_time/1000` 把毫秒换成秒。
 - 输出字段写成 `extra.<名>`：把源值整块保留到 `extra` 里。
-- 源路径写 `$path` / `$host`：取请求上下文，而不是响应正文。
+- 源路径写 `$path` / `$host`：取请求上下文，而不是响应正文；`$q.<名>` 取请求网址的查询参数（原样，不解码）。
+- 源路径以 `=` 开头是模板，主要用来拼原文链接：`=https://{$host}/dp/{defaultAsin}`。花括号里是字段路径或 `$` 变量，任一处为空则整条为空，不产出半截链接。
 
 仅此而已，这套语法刻意不具备图灵完备性。
 

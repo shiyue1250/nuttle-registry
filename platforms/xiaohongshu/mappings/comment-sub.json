@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu/comment-sub",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "platform": "xiaohongshu",
   "entity": "comment",
   "match": {
@@ -21,7 +21,8 @@
     "head": "user_info.image",
     "reply_to": "target_comment.id",
     "reply_to_nickname": "target_comment.user_info.nickname",
-    "extra.pictures": "pictures"
+    "extra.pictures": "pictures",
+    "url": "=https://www.xiaohongshu.com/explore/{note_id}?xsec_token={$q.xsec_token}&xsec_source=pc_comment"
   },
   "schema": {
     "like_count": {
@@ -39,6 +40,10 @@
     "note_id": {
       "type": "string",
       "note": "对应「小红书笔记」的 id"
+    },
+    "url": {
+      "type": "url",
+      "note": "所在笔记的原文链接（带评论接口里的 xsec_token，小红书要它才让打开）"
     }
   },
   "trigger": "在笔记详情的评论里点「展开回复」",

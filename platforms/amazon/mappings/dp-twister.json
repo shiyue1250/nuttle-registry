@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "amazon/dp-twister",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "platform": "amazon",
   "entity": "variation",
   "match": {
@@ -14,7 +14,8 @@
     "label": "dimensionValueDisplayText",
     "state": "dimensionValueState",
     "page_path": "$path",
-    "extra.hidden": "asinHiddenInCollapseView"
+    "extra.hidden": "asinHiddenInCollapseView",
+    "url": "=https://{$host}/dp/{defaultAsin}"
   },
   "schema": {
     "state": {
@@ -24,6 +25,10 @@
     "page_path": {
       "type": "string",
       "note": "请求路径，形如 /dp/<父 ASIN>/_dom/a-state:…；父商品 ASIN 从这里取"
+    },
+    "url": {
+      "type": "url",
+      "note": "原文链接（打开原帖 / 原笔记 / 商品页）"
     }
   },
   "fixture": "dp-twister.fixture.json",
