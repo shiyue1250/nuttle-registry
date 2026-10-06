@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "reddit/post",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "platform": "reddit",
   "entity": "post",
   "match": {
@@ -126,7 +126,7 @@
   "resource": {
     "plugin": "nuttle.reddit",
     "match": {
-      "meta:reddit.postImage": "id"
+      "meta:reddit.postMedia": "id"
     }
   }
 }
