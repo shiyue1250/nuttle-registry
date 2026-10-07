@@ -1,0 +1,67 @@
+{
+  "context": {
+    "host": "mp.weixin.qq.com",
+    "path": "/nuttle/wechat-mp/comments"
+  },
+  "response": {
+    "comments": [
+      {
+        "id": "6600000000000000001",
+        "article_id": "MzExample==_2247480001_1",
+        "reply_to": "0",
+        "nickname": "示例读者",
+        "head": "",
+        "content": "写得很实在",
+        "like_count": 12,
+        "create_time": 1790000000,
+        "is_top": false,
+        "reply_count": 1,
+        "ip_location": "广东"
+      },
+      {
+        "id": "6600000000000000001_1",
+        "article_id": "MzExample==_2247480001_1",
+        "reply_to": "6600000000000000001",
+        "nickname": "示例公众号",
+        "head": "",
+        "content": "谢谢支持",
+        "like_count": 3,
+        "create_time": 1790003600,
+        "is_author": true,
+        "ip_location": ""
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "6600000000000000001",
+      "article_id": "MzExample==_2247480001_1",
+      "reply_to": "0",
+      "nickname": "示例读者",
+      "head": "",
+      "content": "写得很实在",
+      "like_count": 12,
+      "create_time": 1790000000,
+      "is_top": false,
+      "is_author": null,
+      "reply_count": 1,
+      "extra": {},
+      "ip_location": "广东"
+    },
+    {
+      "id": "6600000000000000001_1",
+      "article_id": "MzExample==_2247480001_1",
+      "reply_to": "6600000000000000001",
+      "nickname": "示例公众号",
+      "head": "",
+      "content": "谢谢支持",
+      "like_count": 3,
+      "create_time": 1790003600,
+      "is_top": null,
+      "is_author": true,
+      "reply_count": null,
+      "extra": {},
+      "ip_location": ""
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "apiVersion": 1,
+  "id": "weixin-mp/comment",
+  "version": "0.1.1",
+  "platform": "weixin-mp",
+  "entity": "comment",
+  "match": {
+    "host": "mp.weixin.qq.com",
+    "path": "/nuttle/wechat-mp/comments"
+  },
+  "item_path": "comments",
+  "fields": {
+    "id": "id",
+    "article_id": "article_id",
+    "reply_to": "reply_to",
+    "nickname": "nickname",
+    "head": "head",
+    "content": "content",
+    "like_count": "like_count",
+    "create_time": "create_time",
+    "is_top": "is_top",
+    "is_author": "is_author",
+    "reply_count": "reply_count",
+    "ip_location": "ip_location"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "head": {
+      "type": "image"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "\"0\" = 直接留言，否则是被回复的那条留言 id"
+    },
+    "article_id": {
+      "type": "string",
+      "note": "所属文章 id（__biz_mid_idx），与文章卡的 id 一致"
+    },
+    "is_top": {
+      "type": "bool",
+      "note": "作者置顶"
+    },
+    "is_author": {
+      "type": "bool",
+      "note": "作者回复"
+    },
+    "reply_count": {
+      "type": "int",
+      "note": "这条留言的回复总数（只记录展开过的）"
+    },
+    "ip_location": {
+      "type": "string",
+      "note": "IP 属地"
+    }
+  },
+  "trigger": "在电脑版微信里打开公众号文章并滑到留言区，点开更多回复（需要「公众号文章」插件 0.2.0+）",
+  "note": "新版微信的留言请求走客户端原生通道（webTransfer），代理看不到；由插件的页面脚本在结果回到页面时抄一份交回",
+  "fixture": "comment.fixture.json",
+  "verified": "2026-10-07",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "公众号留言",
+      "description": "打开过的文章下的精选留言与回复：内容、昵称、点赞、时间、IP 属地、作者回复"
+    },
+    "en": {
+      "name": "Official Account comments",
+      "description": "Featured comments and replies under articles you open: text, name, likes, time, IP location, author replies"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "like_count": "upvoteCount",
+      "create_time": "dateCreated",
+      "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "like_count",
+      "ip_location",
+      "create_time",
+      "article_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "留言",
+        "nickname": "昵称",
+        "like_count": "点赞",
+        "create_time": "时间",
+        "article_id": "文章 id",
+        "ip_location": "属地"
+      },
+      "en": {
+        "content": "Comment",
+        "nickname": "By",
+        "like_count": "Likes",
+        "create_time": "Time",
+        "article_id": "Article id",
+        "ip_location": "Location"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "weixin-mp/article",
+      "field": "article_id",
+      "count_field": "comment_count"
+    },
+    "reply_to": "reply_to"
+  }
+}

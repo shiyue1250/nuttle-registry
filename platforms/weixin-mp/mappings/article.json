@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin-mp/article",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "platform": "weixin-mp",
   "entity": "article",
   "match": {
@@ -25,7 +25,13 @@
     "original": "original",
     "source_url": "source_url",
     "biz": "biz",
-    "url": "url"
+    "url": "url",
+    "read_num": "read_num",
+    "like_num": "like_num",
+    "seen_num": "seen_num",
+    "share_num": "share_num",
+    "collect_num": "collect_num",
+    "comment_count": "comment_count"
   },
   "schema": {
     "create_time": {
@@ -57,10 +63,30 @@
     "biz": {
       "type": "string",
       "note": "公众号 id（__biz）"
+    },
+    "read_num": {
+      "type": "int",
+      "note": "阅读数（10 万以上时微信只给 100001）"
+    },
+    "like_num": {
+      "type": "int"
+    },
+    "seen_num": {
+      "type": "int",
+      "note": "「在看」（爱心）"
+    },
+    "share_num": {
+      "type": "int"
+    },
+    "collect_num": {
+      "type": "int"
+    },
+    "comment_count": {
+      "type": "int"
     }
   },
   "trigger": "在电脑版微信或浏览器里打开公众号文章（需要「公众号文章」插件）",
-  "note": "数据来自「公众号文章」插件对文章页 HTML 的整理；阅读数、留言待接入",
+  "note": "文章页 HTML 由「公众号文章」插件整理；阅读 / 赞 / 在看 / 转发 / 收藏 / 留言数由插件的页面脚本在页面拿到时抄回，并进同一篇文章",
   "fixture": "article.fixture.json",
   "verified": "2026-10-07",
   "author": "shiyue1250",
@@ -90,9 +116,10 @@
       "cover",
       "title",
       "account",
-      "author",
       "create_time",
-      "image_count",
+      "read_num",
+      "like_num",
+      "comment_count",
       "original"
     ],
     "labels": {
@@ -103,7 +130,13 @@
         "author": "作者",
         "create_time": "发布时间",
         "image_count": "配图",
-        "original": "原创"
+        "original": "原创",
+        "read_num": "阅读",
+        "like_num": "赞",
+        "seen_num": "在看",
+        "share_num": "转发",
+        "collect_num": "收藏",
+        "comment_count": "留言"
       },
       "en": {
         "cover": "Cover",
@@ -112,7 +145,13 @@
         "author": "Author",
         "create_time": "Published",
         "image_count": "Images",
-        "original": "Original"
+        "original": "Original",
+        "read_num": "Reads",
+        "like_num": "Likes",
+        "seen_num": "Wow",
+        "share_num": "Shares",
+        "collect_num": "Saves",
+        "comment_count": "Comments"
       }
     }
   },

@@ -45,7 +45,13 @@
       "source_url": "",
       "biz": "MzExample==",
       "url": "https://mp.weixin.qq.com/s?__biz=MzExample==&mid=2247480001&idx=1&sn=abc123#rd",
-      "extra": {}
+      "extra": {},
+      "read_num": null,
+      "like_num": null,
+      "seen_num": null,
+      "share_num": null,
+      "collect_num": null,
+      "comment_count": null
     }
   ]
 }
