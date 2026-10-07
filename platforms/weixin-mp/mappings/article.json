@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin-mp/article",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "platform": "weixin-mp",
   "entity": "article",
   "match": {
@@ -31,7 +31,8 @@
     "seen_num": "seen_num",
     "share_num": "share_num",
     "collect_num": "collect_num",
-    "comment_count": "comment_count"
+    "comment_count": "comment_count",
+    "blocks": "blocks"
   },
   "schema": {
     "create_time": {
@@ -83,6 +84,10 @@
     },
     "comment_count": {
       "type": "int"
+    },
+    "blocks": {
+      "type": "json",
+      "note": "正文按原文顺序的段落与插图：[{t:\"p\"|\"img\", v}]，详情页据此还原插图位置"
     }
   },
   "trigger": "在电脑版微信或浏览器里打开公众号文章（需要「公众号文章」插件）",
