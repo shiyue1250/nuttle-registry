@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin-mp/comment",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "platform": "weixin-mp",
   "entity": "comment",
   "match": {
@@ -21,7 +21,9 @@
     "is_top": "is_top",
     "is_author": "is_author",
     "reply_count": "reply_count",
-    "ip_location": "ip_location"
+    "ip_location": "ip_location",
+    "image": "image",
+    "images": "images"
   },
   "schema": {
     "create_time": {
@@ -56,6 +58,14 @@
     "ip_location": {
       "type": "string",
       "note": "IP 属地"
+    },
+    "image": {
+      "type": "image",
+      "note": "留言里的第一张配图"
+    },
+    "images": {
+      "type": "json",
+      "note": "留言里的全部配图地址"
     }
   },
   "trigger": "在电脑版微信里打开公众号文章并滑到留言区，点开更多回复（需要「公众号文章」插件 0.2.0+）",

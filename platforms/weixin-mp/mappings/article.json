@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin-mp/article",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "platform": "weixin-mp",
   "entity": "article",
   "match": {
@@ -87,7 +87,7 @@
     },
     "blocks": {
       "type": "json",
-      "note": "正文按原文顺序的段落与插图：[{t:\"p\"|\"img\", v}]，详情页据此还原插图位置"
+      "note": "正文按原文顺序的段落、插图、视频：[{t:\"p\"|\"img\"|\"video\", v, cover?}]，详情页据此还原排版；视频 v 是 wxv_ 编号，播放地址在资源里"
     }
   },
   "trigger": "在电脑版微信或浏览器里打开公众号文章（需要「公众号文章」插件）",

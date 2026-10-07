@@ -46,7 +46,9 @@
       "is_author": null,
       "reply_count": 1,
       "extra": {},
-      "ip_location": "广东"
+      "ip_location": "广东",
+      "image": null,
+      "images": null
     },
     {
       "id": "6600000000000000001_1",
@@ -61,7 +63,9 @@
       "is_author": true,
       "reply_count": null,
       "extra": {},
-      "ip_location": ""
+      "ip_location": "",
+      "image": null,
+      "images": null
     }
   ]
 }
