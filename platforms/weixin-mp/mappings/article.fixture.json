@@ -1,0 +1,51 @@
+{
+  "context": {
+    "host": "mp.weixin.qq.com",
+    "path": "/nuttle/wechat-mp/articles"
+  },
+  "response": {
+    "articles": [
+      {
+        "id": "MzExample==_2247480001_1",
+        "biz": "MzExample==",
+        "mid": "2247480001",
+        "idx": "1",
+        "title": "示例文章：一篇关于&测试的文章",
+        "account": "示例公众号",
+        "account_id": "gh_example",
+        "author": "示例作者",
+        "avatar": "https://mmbiz.qpic.cn/example_head/0?wx_fmt=png",
+        "create_time": 1790000000,
+        "desc": "这是摘要",
+        "content": "第一段 正文\n第二段",
+        "image_count": 2,
+        "cover": "https://mmbiz.qpic.cn/example_cover/0?wx_fmt=jpeg",
+        "comment_id": "1234567890",
+        "original": true,
+        "source_url": "",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzExample==&mid=2247480001&idx=1&sn=abc123#rd"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "MzExample==_2247480001_1",
+      "title": "示例文章：一篇关于&测试的文章",
+      "account": "示例公众号",
+      "account_id": "gh_example",
+      "author": "示例作者",
+      "avatar": "https://mmbiz.qpic.cn/example_head/0?wx_fmt=png",
+      "create_time": 1790000000,
+      "desc": "这是摘要",
+      "content": "第一段 正文\n第二段",
+      "image_count": 2,
+      "cover": "https://mmbiz.qpic.cn/example_cover/0?wx_fmt=jpeg",
+      "comment_id": "1234567890",
+      "original": true,
+      "source_url": "",
+      "biz": "MzExample==",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzExample==&mid=2247480001&idx=1&sn=abc123#rd",
+      "extra": {}
+    }
+  ]
+}

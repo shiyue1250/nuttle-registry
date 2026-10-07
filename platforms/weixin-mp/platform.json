@@ -1,0 +1,22 @@
+{
+  "apiVersion": 1,
+  "id": "weixin-mp",
+  "version": "0.1.0",
+  "label": "公众号",
+  "locales": {
+    "zh": {
+      "name": "公众号"
+    },
+    "en": {
+      "name": "WeChat Official Accounts"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/wechat-mp/articles",
+      "label": "公众号文章（「公众号文章」插件整理后交回，已内置解析）"
+    }
+  ],
+  "notes": "公众号文章页是服务端渲染的 HTML，基本信息写在页面脚本变量里、正文在 js_content。由插件 nuttle.wechat-mp 在本机代理读到文章页时整理交回 /nuttle/wechat-mp/articles，再由本包的文章卡解析。数据全部经插件进来，本包不登记域名。"
+}

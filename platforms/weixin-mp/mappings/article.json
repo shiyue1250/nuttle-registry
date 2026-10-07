@@ -1,0 +1,125 @@
+{
+  "apiVersion": 1,
+  "id": "weixin-mp/article",
+  "version": "0.1.0",
+  "platform": "weixin-mp",
+  "entity": "article",
+  "match": {
+    "host": "mp.weixin.qq.com",
+    "path": "/nuttle/wechat-mp/articles"
+  },
+  "item_path": "articles",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "account": "account",
+    "account_id": "account_id",
+    "author": "author",
+    "avatar": "avatar",
+    "create_time": "create_time",
+    "desc": "desc",
+    "content": "content",
+    "image_count": "image_count",
+    "cover": "cover",
+    "comment_id": "comment_id",
+    "original": "original",
+    "source_url": "source_url",
+    "biz": "biz",
+    "url": "url"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "image_count": {
+      "type": "int",
+      "note": "正文配图张数"
+    },
+    "original": {
+      "type": "bool",
+      "note": "原创"
+    },
+    "content": {
+      "type": "string",
+      "note": "正文纯文本，按段落换行"
+    },
+    "comment_id": {
+      "type": "string",
+      "note": "留言区 id，留言接口按它关联文章"
+    },
+    "url": {
+      "type": "url",
+      "note": "原文链接"
+    },
+    "biz": {
+      "type": "string",
+      "note": "公众号 id（__biz）"
+    }
+  },
+  "trigger": "在电脑版微信或浏览器里打开公众号文章（需要「公众号文章」插件）",
+  "note": "数据来自「公众号文章」插件对文章页 HTML 的整理；阅读数、留言待接入",
+  "fixture": "article.fixture.json",
+  "verified": "2026-10-07",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "公众号文章",
+      "description": "打开过的每篇公众号文章：标题、公众号、作者、发布时间、摘要、正文、配图数、原创标记、原文链接"
+    },
+    "en": {
+      "name": "Official Account articles",
+      "description": "Every Official Account article you open: title, account, author, time, summary, full text, image count, original mark, link"
+    }
+  },
+  "jsonld": {
+    "@type": "Article",
+    "map": {
+      "title": "headline",
+      "content": "articleBody",
+      "author": "author",
+      "create_time": "datePublished",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "account",
+      "author",
+      "create_time",
+      "image_count",
+      "original"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "标题",
+        "account": "公众号",
+        "author": "作者",
+        "create_time": "发布时间",
+        "image_count": "配图",
+        "original": "原创"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Title",
+        "account": "Account",
+        "author": "Author",
+        "create_time": "Published",
+        "image_count": "Images",
+        "original": "Original"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "nuttle.wechat-mp",
+    "match": {
+      "meta:wechatMp.articleId": "id"
+    }
+  }
+}
