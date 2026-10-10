@@ -25,7 +25,7 @@ platforms/<平台>/mappings/<卡>.fixture.json  脱敏样本 + 期望产出，CI
 本仓库同时是一个 Claude Code 插件市场：
 
 ```bash
-claude plugin marketplace add shiyue1250/databridge-registry
+claude plugin marketplace add shiyue1250/nuttle-registry
 claude plugin install nuttle@nuttle
 ```
 

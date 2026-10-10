@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "description": "What you have seen in your browser, your agent can query. Connects to the local Nuttle app over MCP and adds a skill that turns a website you browsed into a mapping card and a community pack.",
   "author": { "name": "shiyue1250" },
-  "homepage": "https://github.com/shiyue1250/databridge-registry",
-  "repository": "https://github.com/shiyue1250/databridge-registry",
+  "homepage": "https://github.com/shiyue1250/nuttle-registry",
+  "repository": "https://github.com/shiyue1250/nuttle-registry",
   "license": "MIT",
   "keywords": ["mcp", "browser", "web-data", "local-first", "scraping-free"],
   "mcpServers": {

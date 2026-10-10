@@ -29,4 +29,4 @@
 
 ## 联系
 
-问题反馈：<https://github.com/shiyue1250/databridge-registry/issues>
+问题反馈：<https://github.com/shiyue1250/nuttle-registry/issues>

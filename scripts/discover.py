@@ -26,7 +26,7 @@ class Skip(Exception):
 
 
 def _get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "databridge-registry"})
+    req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "nuttle-registry"})
     token = os.environ.get("GITHUB_TOKEN")
     if token and url.startswith(API):
         req.add_header("Authorization", f"Bearer {token}")

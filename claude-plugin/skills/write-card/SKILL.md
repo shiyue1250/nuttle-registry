@@ -5,7 +5,7 @@ description: Turn a website the user has browsed into a Nuttle mapping card, and
 
 # Write a Nuttle mapping card
 
-A mapping card turns one JSON API response the user's browser already loaded into structured entities. The spec is https://github.com/shiyue1250/databridge-registry/blob/main/SPEC.md — read it if anything below is unclear.
+A mapping card turns one JSON API response the user's browser already loaded into structured entities. The spec is https://github.com/shiyue1250/nuttle-registry/blob/main/SPEC.md — read it if anything below is unclear.
 
 ## Ground rules (from the spec — do not break them)
 
