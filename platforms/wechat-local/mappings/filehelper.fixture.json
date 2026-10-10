@@ -1,0 +1,33 @@
+{
+  "context": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-local/filehelper"
+  },
+  "response": {
+    "messages": [
+      {
+        "id": "fh:1",
+        "kind_label": "链接",
+        "type_num": 49,
+        "create_time": 1790001000,
+        "title": "转给自己的文章",
+        "content": "<msg>...",
+        "url": "https://example.com/a",
+        "source": "来源公众号"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "fh:1",
+      "kind_label": "链接",
+      "type_num": 49,
+      "create_time": 1790001000,
+      "title": "转给自己的文章",
+      "content": "<msg>...",
+      "url": "https://example.com/a",
+      "source": "来源公众号",
+      "extra": {}
+    }
+  ]
+}

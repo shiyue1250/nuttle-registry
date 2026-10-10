@@ -1,0 +1,77 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-local/filehelper",
+  "version": "0.1.0",
+  "platform": "wechat-local",
+  "entity": "filehelper",
+  "match": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-local/filehelper"
+  },
+  "item_path": "messages",
+  "fields": {
+    "id": "id",
+    "kind_label": "kind_label",
+    "type_num": "type_num",
+    "create_time": "create_time",
+    "title": "title",
+    "content": "content",
+    "url": "url",
+    "source": "source"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "type_num": {
+      "type": "int",
+      "note": "原始类型号"
+    },
+    "content": {
+      "type": "string",
+      "note": "正文纯文本（截断到 4000 字）"
+    },
+    "url": {
+      "type": "url",
+      "note": "链接类的原文地址"
+    }
+  },
+  "trigger": "在设置里开启「微信收藏 / 文件传输助手」并点同步（仅 Windows，微信需登录运行）",
+  "note": "message_*.db 里文件传输助手会话，本机只读解密；分片 mtime 没变则跳过",
+  "fixture": "filehelper.fixture.json",
+  "verified": "2026-10-07",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "文件传输助手",
+      "description": "发给文件传输助手的文章、视频、链接、文件、文字：标题、类型、时间、来源、链接"
+    },
+    "en": {
+      "name": "File Helper",
+      "description": "Articles, videos, links, files, text you sent to File Helper"
+    }
+  },
+  "display": {
+    "columns": [
+      "kind_label",
+      "title",
+      "source",
+      "create_time"
+    ],
+    "labels": {
+      "zh": {
+        "kind_label": "类型",
+        "title": "标题",
+        "source": "来源",
+        "create_time": "时间"
+      },
+      "en": {
+        "kind_label": "Type",
+        "title": "Title",
+        "source": "From",
+        "create_time": "Time"
+      }
+    }
+  }
+}

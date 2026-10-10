@@ -3,7 +3,7 @@
   "packs": [
     {
       "id": "amazon",
-      "version": "0.2.0",
+      "version": "0.2.2",
       "label": "Amazon 前台 / Seller Central / 广告后台",
       "locales": {
         "zh": {
@@ -19,7 +19,7 @@
       "cards": [
         {
           "id": "amazon/dp-twister",
-          "version": "0.2.0",
+          "version": "0.2.2",
           "entity": "variation",
           "verified": "2026-09-14",
           "fixture": true,
@@ -83,6 +83,53 @@
       "official": true
     },
     {
+      "id": "reddit",
+      "version": "0.1.4",
+      "label": "Reddit",
+      "locales": {
+        "zh": {
+          "name": "Reddit"
+        },
+        "en": {
+          "name": "Reddit"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "reddit/comment",
+          "version": "0.1.2",
+          "entity": "comment",
+          "verified": "2026-10-06",
+          "fixture": true,
+          "path": "platforms/reddit/mappings/comment.json"
+        },
+        {
+          "id": "reddit/post",
+          "version": "0.1.2",
+          "entity": "post",
+          "verified": "2026-10-06",
+          "fixture": true,
+          "path": "platforms/reddit/mappings/post.json"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "reddit/pain-mining",
+          "title": "Reddit 用户抱怨挖掘",
+          "path": "platforms/reddit/recipes/pain-mining.md",
+          "locales": {
+            "en": {
+              "title": "Reddit pain-point mining",
+              "path": "platforms/reddit/recipes/pain-mining.en.md"
+            }
+          }
+        }
+      ],
+      "path": "platforms/reddit/platform.json",
+      "official": true
+    },
+    {
       "id": "sellersprite",
       "version": "0.1.0",
       "label": "卖家精灵网页版",
@@ -140,8 +187,102 @@
       "official": true
     },
     {
+      "id": "weixin-mp",
+      "version": "0.3.3",
+      "label": "公众号",
+      "locales": {
+        "zh": {
+          "name": "公众号"
+        },
+        "en": {
+          "name": "WeChat Official Accounts"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "weixin-mp/article",
+          "version": "0.2.3",
+          "entity": "article",
+          "verified": "2026-10-07",
+          "fixture": true,
+          "path": "platforms/weixin-mp/mappings/article.json"
+        },
+        {
+          "id": "weixin-mp/comment",
+          "version": "0.1.2",
+          "entity": "comment",
+          "verified": "2026-10-07",
+          "fixture": true,
+          "path": "platforms/weixin-mp/mappings/comment.json"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "weixin-mp/viral-breakdown",
+          "title": "公众号爆文拆解",
+          "path": "platforms/weixin-mp/recipes/viral-breakdown.md",
+          "locales": {
+            "en": {
+              "title": "Official Account viral-article breakdown",
+              "path": "platforms/weixin-mp/recipes/viral-breakdown.en.md"
+            }
+          }
+        }
+      ],
+      "path": "platforms/weixin-mp/platform.json",
+      "official": true
+    },
+    {
+      "id": "x",
+      "version": "0.1.3",
+      "label": "X",
+      "locales": {
+        "zh": {
+          "name": "X"
+        },
+        "en": {
+          "name": "X"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "x/post",
+          "version": "0.1.0",
+          "entity": "post",
+          "verified": "2026-10-05",
+          "fixture": true,
+          "path": "platforms/x/mappings/post.json"
+        },
+        {
+          "id": "x/reply",
+          "version": "0.1.2",
+          "entity": "comment",
+          "verified": "2026-10-05",
+          "fixture": true,
+          "path": "platforms/x/mappings/reply.json"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "x/feedback-triage",
+          "title": "X 征集需求整理",
+          "path": "platforms/x/recipes/feedback-triage.md",
+          "locales": {
+            "en": {
+              "title": "X feedback triage",
+              "path": "platforms/x/recipes/feedback-triage.en.md"
+            }
+          }
+        }
+      ],
+      "path": "platforms/x/platform.json",
+      "official": true
+    },
+    {
       "id": "xiaohongshu",
-      "version": "0.1.0",
+      "version": "0.3.2",
       "label": "小红书",
       "locales": {
         "zh": {
@@ -157,11 +298,27 @@
       "cards": [
         {
           "id": "xiaohongshu/comment-page",
-          "version": "0.1.0",
+          "version": "0.2.2",
           "entity": "comment",
-          "verified": "2026-09-13",
+          "verified": "2026-10-05",
           "fixture": true,
           "path": "platforms/xiaohongshu/mappings/comment-page.json"
+        },
+        {
+          "id": "xiaohongshu/comment-sub",
+          "version": "0.3.2",
+          "entity": "comment",
+          "verified": "2026-10-05",
+          "fixture": true,
+          "path": "platforms/xiaohongshu/mappings/comment-sub.json"
+        },
+        {
+          "id": "xiaohongshu/note",
+          "version": "0.2.2",
+          "entity": "note",
+          "verified": "2026-10-05",
+          "fixture": true,
+          "path": "platforms/xiaohongshu/mappings/note.json"
         }
       ],
       "recipes": [
