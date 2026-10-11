@@ -1,0 +1,142 @@
+{
+  "apiVersion": 1,
+  "id": "xiaohongshu/note-detail",
+  "version": "0.1.0",
+  "platform": "xiaohongshu",
+  "entity": "note",
+  "match": {
+    "host": "www.xiaohongshu.com",
+    "path": "/_dom/__INITIAL_STATE__"
+  },
+  "item_path": "note.noteDetailMap.*.note",
+  "fields": {
+    "id": "noteId",
+    "title": "title",
+    "content": "desc",
+    "author": "user.nickname",
+    "author_id": "user.userId",
+    "note_type": "type",
+    "create_time": "time/1000",
+    "ip_location": "ipLocation",
+    "like_count": "interactInfo.likedCount",
+    "collect_count": "interactInfo.collectedCount",
+    "comment_count": "interactInfo.commentCount",
+    "share_count": "interactInfo.shareCount",
+    "cover": "imageList.0.urlDefault",
+    "extra.images": "imageList",
+    "extra.tags": "tagList",
+    "extra.avatar": "user.avatar",
+    "extra.video": "video"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s",
+      "note": "接口是毫秒，/1000 后为秒"
+    },
+    "note_type": {
+      "type": "string",
+      "note": "normal = 图文，video = 视频"
+    },
+    "like_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "collect_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "comment_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "share_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "cover": {
+      "type": "image",
+      "note": "第一张图"
+    },
+    "title": {
+      "type": "string",
+      "note": "不少笔记没有标题，只有正文"
+    }
+  },
+  "trigger": "用链接直接打开小红书笔记（不经首页、搜索点开）",
+  "note": "直接打开的笔记不走 feed 接口，数据在页面的 window.__INITIAL_STATE__ 里（驼峰字段）；与 xiaohongshu/note 按笔记 id 合并成同一篇",
+  "fixture": "note-detail.fixture.json",
+  "verified": "2026-10-11",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "小红书笔记（直接打开）",
+      "description": "用链接直接打开的笔记：标题、正文、作者、发布时间、IP 属地、互动数、图片与话题，和点开的笔记合并"
+    },
+    "en": {
+      "name": "RedNote notes (opened by link)",
+      "description": "Notes opened directly by link: title, text, author, time, IP region, counts, images and topics, merged with notes opened in-app"
+    }
+  },
+  "jsonld": {
+    "@type": "SocialMediaPosting",
+    "map": {
+      "title": "headline",
+      "content": "articleBody",
+      "author": "author",
+      "create_time": "datePublished"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "content",
+      "author",
+      "create_time",
+      "like_count",
+      "collect_count",
+      "comment_count",
+      "share_count",
+      "ip_location",
+      "note_type"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "标题",
+        "content": "正文",
+        "author": "作者",
+        "create_time": "发布时间",
+        "like_count": "点赞",
+        "collect_count": "收藏",
+        "comment_count": "评论",
+        "share_count": "分享",
+        "ip_location": "IP 属地",
+        "note_type": "类型"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Title",
+        "content": "Text",
+        "author": "Author",
+        "create_time": "Posted",
+        "like_count": "Likes",
+        "collect_count": "Saves",
+        "comment_count": "Comments",
+        "share_count": "Shares",
+        "ip_location": "IP region",
+        "note_type": "Type"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "nuttle.xiaohongshu",
+    "match": {
+      "meta:xiaohongshu.noteId": "id"
+    },
+    "kinds": [
+      "media.video"
+    ]
+  }
+}

@@ -59,7 +59,7 @@
     },
     "item_path": {
       "type": "string",
-      "description": "从响应根到数组的点号路径；响应本身是数组则为空串"
+      "description": "从响应根到数组的点号路径；响应本身是数组则为空串；`*` 段取对象或数组的每个值（如 note.noteDetailMap.*.note）"
     },
     "fields": {
       "type": "object",

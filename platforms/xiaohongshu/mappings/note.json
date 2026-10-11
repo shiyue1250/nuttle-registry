@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu/note",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "platform": "xiaohongshu",
   "entity": "note",
   "match": {
@@ -131,7 +131,7 @@
     }
   },
   "resource": {
-    "plugin": "official.xiaohongshu",
+    "plugin": "nuttle.xiaohongshu",
     "match": {
       "meta:xiaohongshu.noteId": "id"
     },

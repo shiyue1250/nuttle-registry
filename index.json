@@ -150,6 +150,47 @@
       "official": true
     },
     {
+      "id": "wechat-local",
+      "version": "0.1.0",
+      "label": "微信本地",
+      "locales": {
+        "zh": {
+          "name": "微信收藏 / 文件传输助手"
+        },
+        "en": {
+          "name": "WeChat Favorites / File Helper"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "wechat-local/favorite",
+          "version": "0.1.0",
+          "entity": "favorite",
+          "verified": "2026-10-07",
+          "fixture": true,
+          "path": "platforms/wechat-local/mappings/favorite.json"
+        },
+        {
+          "id": "wechat-local/filehelper",
+          "version": "0.1.0",
+          "entity": "filehelper",
+          "verified": "2026-10-07",
+          "fixture": true,
+          "path": "platforms/wechat-local/mappings/filehelper.json"
+        }
+      ],
+      "recipes": [
+        {
+          "id": "wechat-local/inbox-triage",
+          "title": "整理收藏与「转给自己」的内容",
+          "path": "platforms/wechat-local/recipes/inbox-triage.md"
+        }
+      ],
+      "path": "platforms/wechat-local/platform.json",
+      "official": true
+    },
+    {
       "id": "weixin",
       "version": "0.3.0",
       "label": "微信（带货助手 / 公众号）",
@@ -282,7 +323,7 @@
     },
     {
       "id": "xiaohongshu",
-      "version": "0.3.2",
+      "version": "0.4.0",
       "label": "小红书",
       "locales": {
         "zh": {
@@ -313,8 +354,16 @@
           "path": "platforms/xiaohongshu/mappings/comment-sub.json"
         },
         {
+          "id": "xiaohongshu/note-detail",
+          "version": "0.1.0",
+          "entity": "note",
+          "verified": "2026-10-11",
+          "fixture": true,
+          "path": "platforms/xiaohongshu/mappings/note-detail.json"
+        },
+        {
           "id": "xiaohongshu/note",
-          "version": "0.2.2",
+          "version": "0.2.3",
           "entity": "note",
           "verified": "2026-10-05",
           "fixture": true,

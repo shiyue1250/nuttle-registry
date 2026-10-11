@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "label": "小红书",
   "locales": {
     "zh": {
@@ -16,7 +16,8 @@
   ],
   "watches": [
     "/api/sns/web/v1/feed",
-    "/api/sns/web/v2/comment/page"
+    "/api/sns/web/v2/comment/page",
+    "/_dom/__INITIAL_STATE__"
   ],
   "noise": [
     "/api/im/web/emoji/config",
@@ -27,6 +28,10 @@
     {
       "match": "/api/sns/web/v1/feed",
       "label": "笔记详情（正文、图片、互动数据）"
+    },
+    {
+      "match": "/_dom/__INITIAL_STATE__",
+      "label": "直接打开的笔记页内嵌数据（正文、图片、互动数据）"
     },
     {
       "match": "/api/sns/web/v2/comment/page",

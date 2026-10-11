@@ -29,7 +29,7 @@ JSON, one file per card, validated by [`schema/mapping-card.schema.json`](schema
 | `entity` | yes | Entity type produced, e.g. `comment`, `product`, `variation` |
 | `match.host` | no | Substring of the response host |
 | `match.path` | yes | Substring of the response path (query string excluded) |
-| `item_path` | yes | Dot path from the response root to the array of items; empty string if the response itself is the array. If the path resolves to a single object, it is treated as one item |
+| `item_path` | yes | Dot path from the response root to the array of items; empty string if the response itself is the array. If the path resolves to a single object, it is treated as one item. A `*` segment walks every value of an object or array (e.g. `note.noteDetailMap.*.note`, where the keys are ids) |
 | `fields` | yes | Output field → source path. Must contain `id` (used to de-duplicate) |
 | `fixture` | to publish | Sibling file `<name>.fixture.json` with `response` (redacted) and `expected` (entities) |
 | `locales` | no | `{ "zh": {name, description}, "en": {name, description} }` |
@@ -123,7 +123,7 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 - `apiVersion` 必须是 `1`；不写视为 `1`（兼容 v1 之前发布的卡）；其他值一律拒绝。
 - `id` 写成 `<包 id>/<卡名>`；`fields` 必须包含 `id`，用于去重。
-- `item_path` 指向条目数组；如果指向的是单个对象，按一条处理（例如一次只上报一个视频的接口）。
+- `item_path` 指向条目数组；如果指向的是单个对象，按一条处理（例如一次只上报一个视频的接口）。路径里的 `*` 段取对象（或数组）的每个值，用于以 id 为键的对象，例如 `note.noteDetailMap.*.note`。
 - `display`（可选）：给宿主的表格布局——`columns` 是要显示的字段及顺序，`labels` 是中英文列名；`schema.<字段>.type`（`unix_s` / `int` / `image` / `duration_s`）决定怎么显示。
 - `relations`（可选）：父子结构——`parent` 写明挂在哪张卡的实体下（本实体的 `field` 等于父实体的 `id`，父实体的 `count_field` 是平台上的总数）；`reply_to` 是「回复给谁」的字段（`"0"` 或空为一级）；`replies` 是内嵌回复所在字段，`reply_fields` 说明内嵌回复怎么读（同一套路径语法）。宿主据此组装「视频 + 评论树」。
 - `resource`（可选）：这张卡的实体对应哪个插件的哪条可下载资源，`match` 写资源字段 → 实体字段。

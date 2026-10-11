@@ -1,0 +1,103 @@
+{
+  "expected": [
+    {
+      "author": "示例作者",
+      "author_id": "5a0000000000000000000002",
+      "collect_count": "45",
+      "comment_count": "6",
+      "content": "正文第一行\n#示例话题[话题]#",
+      "cover": "https://sns-webpic-qc.xhscdn.com/example/2!dft",
+      "create_time": 1760000000.0,
+      "extra": {
+        "avatar": "https://sns-avatar-qc.xhscdn.com/avatar/example_2",
+        "images": [
+          {
+            "height": 1440,
+            "livePhoto": false,
+            "urlDefault": "https://sns-webpic-qc.xhscdn.com/example/2!dft",
+            "urlPre": "https://sns-webpic-qc.xhscdn.com/example/2!prv",
+            "width": 1080
+          }
+        ],
+        "tags": [
+          {
+            "id": "6a0000000000000000000301",
+            "name": "示例话题",
+            "type": "topic"
+          }
+        ],
+        "video": null
+      },
+      "id": "6a0000000000000000000402",
+      "ip_location": "上海",
+      "like_count": "321",
+      "note_type": "normal",
+      "share_count": "7",
+      "title": "示例直接打开的笔记"
+    }
+  ],
+  "response": {
+    "global": {},
+    "note": {
+      "currentNoteId": "6a0000000000000000000402",
+      "noteDetailMap": {
+        "6a0000000000000000000402": {
+          "comments": {
+            "list": []
+          },
+          "currentTime": 1760000000000,
+          "note": {
+            "desc": "正文第一行\n#示例话题[话题]#",
+            "imageList": [
+              {
+                "height": 1440,
+                "livePhoto": false,
+                "urlDefault": "https://sns-webpic-qc.xhscdn.com/example/2!dft",
+                "urlPre": "https://sns-webpic-qc.xhscdn.com/example/2!prv",
+                "width": 1080
+              }
+            ],
+            "interactInfo": {
+              "collected": false,
+              "collectedCount": "45",
+              "commentCount": "6",
+              "followed": false,
+              "liked": false,
+              "likedCount": "321",
+              "shareCount": "7"
+            },
+            "ipLocation": "上海",
+            "lastUpdateTime": 1760000000000,
+            "noteId": "6a0000000000000000000402",
+            "tagList": [
+              {
+                "id": "6a0000000000000000000301",
+                "name": "示例话题",
+                "type": "topic"
+              }
+            ],
+            "time": 1760000000000,
+            "title": "示例直接打开的笔记",
+            "type": "normal",
+            "user": {
+              "avatar": "https://sns-avatar-qc.xhscdn.com/avatar/example_2",
+              "nickname": "示例作者",
+              "userId": "5a0000000000000000000002"
+            },
+            "video": null,
+            "xsecToken": null
+          }
+        },
+        "undefined": {
+          "comments": {
+            "list": []
+          },
+          "note": {}
+        }
+      }
+    },
+    "user": {
+      "loggedIn": true
+    }
+  }
+}
