@@ -381,6 +381,11 @@
               "path": "platforms/xiaohongshu/recipes/comment-insight.en.md"
             }
           }
+        },
+        {
+          "id": "xiaohongshu/scenario-discovery",
+          "title": "情景需求发现",
+          "path": "platforms/xiaohongshu/recipes/scenario-discovery.md"
         }
       ],
       "path": "platforms/xiaohongshu/platform.json",
