@@ -1,0 +1,129 @@
+{
+  "expected": [
+    {
+      "author": "示例用户",
+      "author_id": "5f0000000000000000000001",
+      "collect_count": "10",
+      "comment_count": "4",
+      "content": null,
+      "cover": "https://sns-webpic-qc.xhscdn.com/example/cover-1",
+      "create_time": null,
+      "extra": {
+        "avatar": "https://sns-avatar-qc.xhscdn.com/example"
+      },
+      "id": "6a0000000000000000000001",
+      "ip_location": null,
+      "like_count": "28",
+      "note_type": "normal",
+      "share_count": "32",
+      "title": "示例笔记标题 1",
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=XSEC_EXAMPLE_1&xsec_source=pc_search"
+    },
+    {
+      "author": "示例用户",
+      "author_id": "5f0000000000000000000001",
+      "collect_count": "22",
+      "comment_count": "15",
+      "content": null,
+      "cover": "https://sns-webpic-qc.xhscdn.com/example/cover-2",
+      "create_time": null,
+      "extra": {
+        "avatar": "https://sns-avatar-qc.xhscdn.com/example"
+      },
+      "id": "6a0000000000000000000002",
+      "ip_location": null,
+      "like_count": "26",
+      "note_type": "normal",
+      "share_count": "5",
+      "title": "示例笔记标题 2",
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000002?xsec_token=XSEC_EXAMPLE_2&xsec_source=pc_search"
+    }
+  ],
+  "response": {
+    "code": 0,
+    "data": {
+      "items": [
+        {
+          "id": "6a0000000000000000000001",
+          "model_type": "note",
+          "note_card": {
+            "cover": {
+              "height": 4590,
+              "url_default": "https://sns-webpic-qc.xhscdn.com/example/cover-1",
+              "url_pre": "https://sns-webpic-qc.xhscdn.com/example/cover-1",
+              "width": 3442
+            },
+            "display_title": "示例笔记标题 1",
+            "image_list": [],
+            "interact_info": {
+              "collected": false,
+              "collected_count": "10",
+              "comment_count": "4",
+              "liked": false,
+              "liked_count": "28",
+              "shared_count": "32"
+            },
+            "type": "normal",
+            "user": {
+              "avatar": "https://sns-avatar-qc.xhscdn.com/example",
+              "nick_name": "示例用户",
+              "nickname": "示例用户",
+              "user_id": "5f0000000000000000000001",
+              "xsec_token": "XSEC_USER_EXAMPLE"
+            }
+          },
+          "xsec_token": "XSEC_EXAMPLE_1"
+        },
+        {
+          "id": "6a0000000000000000000002",
+          "model_type": "note",
+          "note_card": {
+            "cover": {
+              "height": 3024,
+              "url_default": "https://sns-webpic-qc.xhscdn.com/example/cover-2",
+              "url_pre": "https://sns-webpic-qc.xhscdn.com/example/cover-2",
+              "width": 4032
+            },
+            "display_title": "示例笔记标题 2",
+            "image_list": [],
+            "interact_info": {
+              "collected": false,
+              "collected_count": "22",
+              "comment_count": "15",
+              "liked": false,
+              "liked_count": "26",
+              "shared_count": "5"
+            },
+            "type": "normal",
+            "user": {
+              "avatar": "https://sns-avatar-qc.xhscdn.com/example",
+              "nick_name": "示例用户",
+              "nickname": "示例用户",
+              "user_id": "5f0000000000000000000001",
+              "xsec_token": "XSEC_USER_EXAMPLE"
+            }
+          },
+          "xsec_token": "XSEC_EXAMPLE_2"
+        },
+        {
+          "hot_query": {
+            "queries": [
+              {
+                "cover": "https://sns-na-i1.xhscdn.com/example",
+                "search_word": "示例搜索词"
+              }
+            ],
+            "source": 2,
+            "title": "大家都在搜",
+            "word_request_id": "00000000-0000-0000-0000-000000000000#0"
+          },
+          "id": "00000000-0000-0000-0000-000000000000#0",
+          "model_type": "hot_query",
+          "xsec_token": "XSEC_EXAMPLE_HOTQUERY"
+        }
+      ]
+    },
+    "msg": "成功",
+    "success": true
+  }
+}

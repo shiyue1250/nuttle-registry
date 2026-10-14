@@ -323,7 +323,7 @@
     },
     {
       "id": "xiaohongshu",
-      "version": "0.4.0",
+      "version": "0.5.1",
       "label": "小红书",
       "locales": {
         "zh": {
@@ -354,10 +354,18 @@
           "path": "platforms/xiaohongshu/mappings/comment-sub.json"
         },
         {
-          "id": "xiaohongshu/note-detail",
+          "id": "xiaohongshu/homefeed-note",
           "version": "0.1.0",
           "entity": "note",
-          "verified": "2026-10-11",
+          "verified": "2026-10-14",
+          "fixture": true,
+          "path": "platforms/xiaohongshu/mappings/homefeed-note.json"
+        },
+        {
+          "id": "xiaohongshu/note-detail",
+          "version": "0.2.0",
+          "entity": "note",
+          "verified": "2026-10-14",
           "fixture": true,
           "path": "platforms/xiaohongshu/mappings/note-detail.json"
         },
@@ -368,6 +376,14 @@
           "verified": "2026-10-05",
           "fixture": true,
           "path": "platforms/xiaohongshu/mappings/note.json"
+        },
+        {
+          "id": "xiaohongshu/search-note",
+          "version": "0.1.0",
+          "entity": "note",
+          "verified": "2026-10-14",
+          "fixture": true,
+          "path": "platforms/xiaohongshu/mappings/search-note.json"
         }
       ],
       "recipes": [

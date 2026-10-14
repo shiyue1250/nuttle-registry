@@ -47,6 +47,8 @@ JSON, one file per card, validated by [`schema/mapping-card.schema.json`](schema
 - `$path` / `$host` as a **source** read the request context instead of the response body; `$q.<name>` reads a query parameter of the request URL (raw, not decoded).
 - `=<template>` as a **source** builds a string, mainly the original link: `=https://{$host}/dp/{defaultAsin}`. Braces hold a field path or a `$` variable. If any placeholder is empty the whole value is null — never a half-built link.
 
+An item whose direct fields (everything except `id`, `=` templates and `$` context) all come out null is skipped. Lists often mix in other kinds of items (e.g. "people also search" blocks among search results) that carry an `id`, sometimes enough to fill a link template, but none of the card's own fields; they never become entities.
+
 Nothing else. The DSL is intentionally not Turing-complete.
 
 ### Fixture and verification

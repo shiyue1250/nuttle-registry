@@ -1,0 +1,136 @@
+{
+  "apiVersion": 1,
+  "id": "xiaohongshu/homefeed-note",
+  "version": "0.1.0",
+  "platform": "xiaohongshu",
+  "entity": "note",
+  "match": {
+    "host": "edith.xiaohongshu.com",
+    "path": "/api/sns/web/v1/homefeed"
+  },
+  "item_path": "data.items",
+  "fields": {
+    "id": "id",
+    "title": "note_card.display_title",
+    "content": "note_card.desc",
+    "author": "note_card.user.nickname",
+    "author_id": "note_card.user.user_id",
+    "note_type": "note_card.type",
+    "create_time": "note_card.time/1000",
+    "ip_location": "note_card.ip_location",
+    "like_count": "note_card.interact_info.liked_count",
+    "collect_count": "note_card.interact_info.collected_count",
+    "comment_count": "note_card.interact_info.comment_count",
+    "share_count": "note_card.interact_info.shared_count",
+    "cover": "note_card.cover.url_default",
+    "url": "=https://www.xiaohongshu.com/explore/{id}?xsec_token={xsec_token}&xsec_source=pc_feed",
+    "extra.avatar": "note_card.user.avatar"
+  },
+  "schema": {
+    "note_type": {
+      "type": "string",
+      "note": "normal = 图文，video = 视频"
+    },
+    "like_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "collect_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "comment_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "share_count": {
+      "type": "int",
+      "note": "接口给的是字符串"
+    },
+    "cover": {
+      "type": "image",
+      "note": "第一张图"
+    },
+    "title": {
+      "type": "string",
+      "note": "不少笔记没有标题，只有正文"
+    }
+  },
+  "trigger": "打开小红书网页版首页，往下刷",
+  "note": "列表里只有标题、封面、作者和互动数；正文、图片、发布时间要点开笔记才有（与 xiaohongshu/note 按笔记 id 合并，空字段不覆盖已有内容）。夹在中间的「大家都在搜」等非笔记条目取不到任何字段，不入库",
+  "fixture": "homefeed-note.fixture.json",
+  "verified": "2026-10-14",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "小红书首页推荐",
+      "description": "首页推荐流里刷到的笔记：标题、封面、作者、点赞数，以及原文链接"
+    },
+    "en": {
+      "name": "RedNote home feed",
+      "description": "Notes in your home feed: title, cover, author, likes, and a link that opens them"
+    }
+  },
+  "jsonld": {
+    "@type": "SocialMediaPosting",
+    "map": {
+      "title": "headline",
+      "content": "articleBody",
+      "author": "author",
+      "create_time": "datePublished"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "content",
+      "author",
+      "create_time",
+      "like_count",
+      "collect_count",
+      "comment_count",
+      "share_count",
+      "ip_location",
+      "note_type"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "标题",
+        "content": "正文",
+        "author": "作者",
+        "create_time": "发布时间",
+        "like_count": "点赞",
+        "collect_count": "收藏",
+        "comment_count": "评论",
+        "share_count": "分享",
+        "ip_location": "IP 属地",
+        "note_type": "类型"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Title",
+        "content": "Text",
+        "author": "Author",
+        "create_time": "Posted",
+        "like_count": "Likes",
+        "collect_count": "Saves",
+        "comment_count": "Comments",
+        "share_count": "Shares",
+        "ip_location": "IP region",
+        "note_type": "Type"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "nuttle.xiaohongshu",
+    "match": {
+      "meta:xiaohongshu.noteId": "id"
+    },
+    "kinds": [
+      "media.video"
+    ]
+  }
+}

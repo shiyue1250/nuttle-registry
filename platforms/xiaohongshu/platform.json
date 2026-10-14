@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "xiaohongshu",
-  "version": "0.4.0",
+  "version": "0.5.1",
   "label": "小红书",
   "locales": {
     "zh": {
@@ -17,7 +17,10 @@
   "watches": [
     "/api/sns/web/v1/feed",
     "/api/sns/web/v2/comment/page",
-    "/_dom/__INITIAL_STATE__"
+    "/api/sns/web/v2/comment/sub/page",
+    "/_dom/__INITIAL_STATE__",
+    "/api/sns/web/v2/search/notes",
+    "/api/sns/web/v1/homefeed"
   ],
   "noise": [
     "/api/im/web/emoji/config",
@@ -25,6 +28,14 @@
     "/api/im/"
   ],
   "endpoints": [
+    {
+      "match": "/api/sns/web/v1/homefeed",
+      "label": "首页推荐流（标题、封面、作者、点赞数、原文链接）"
+    },
+    {
+      "match": "/api/sns/web/v2/search/notes",
+      "label": "搜索结果列表（标题、封面、作者、互动数、原文链接）"
+    },
     {
       "match": "/api/sns/web/v1/feed",
       "label": "笔记详情（正文、图片、互动数据）"

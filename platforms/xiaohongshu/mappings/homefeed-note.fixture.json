@@ -1,0 +1,113 @@
+{
+  "expected": [
+    {
+      "author": "示例用户",
+      "author_id": "5f0000000000000000000001",
+      "collect_count": null,
+      "comment_count": null,
+      "content": null,
+      "cover": "https://sns-webpic-qc.xhscdn.com/example/cover-1",
+      "create_time": null,
+      "extra": {
+        "avatar": "https://sns-avatar-qc.xhscdn.com/example"
+      },
+      "id": "6a0000000000000000000001",
+      "ip_location": null,
+      "like_count": "27",
+      "note_type": "normal",
+      "share_count": null,
+      "title": "示例笔记标题 1",
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000001?xsec_token=XSEC_EXAMPLE_1&xsec_source=pc_feed"
+    },
+    {
+      "author": "示例用户",
+      "author_id": "5f0000000000000000000001",
+      "collect_count": null,
+      "comment_count": null,
+      "content": null,
+      "cover": "https://sns-webpic-qc.xhscdn.com/example/cover-2",
+      "create_time": null,
+      "extra": {
+        "avatar": "https://sns-avatar-qc.xhscdn.com/example"
+      },
+      "id": "6a0000000000000000000002",
+      "ip_location": null,
+      "like_count": "3093",
+      "note_type": "normal",
+      "share_count": null,
+      "title": "示例笔记标题 2",
+      "url": "https://www.xiaohongshu.com/explore/6a0000000000000000000002?xsec_token=XSEC_EXAMPLE_2&xsec_source=pc_feed"
+    }
+  ],
+  "response": {
+    "code": 0,
+    "data": {
+      "items": [
+        {
+          "id": "6a0000000000000000000001",
+          "ignore": false,
+          "model_type": "note",
+          "note_card": {
+            "cover": {
+              "file_id": "example",
+              "height": 1656,
+              "info_list": [],
+              "url": "https://sns-webpic-qc.xhscdn.com/example/cover-1",
+              "url_default": "https://sns-webpic-qc.xhscdn.com/example/cover-1",
+              "url_pre": "https://sns-webpic-qc.xhscdn.com/example/cover-1",
+              "width": 1242
+            },
+            "display_title": "示例笔记标题 1",
+            "image_list": [],
+            "interact_info": {
+              "liked": false,
+              "liked_count": "27"
+            },
+            "type": "normal",
+            "user": {
+              "avatar": "https://sns-avatar-qc.xhscdn.com/example",
+              "nick_name": "示例用户",
+              "nickname": "示例用户",
+              "user_id": "5f0000000000000000000001",
+              "xsec_token": "XSEC_USER_EXAMPLE"
+            }
+          },
+          "xsec_token": "XSEC_EXAMPLE_1"
+        },
+        {
+          "id": "6a0000000000000000000002",
+          "ignore": false,
+          "model_type": "note",
+          "note_card": {
+            "cover": {
+              "file_id": "example",
+              "height": 1600,
+              "info_list": [],
+              "url": "https://sns-webpic-qc.xhscdn.com/example/cover-2",
+              "url_default": "https://sns-webpic-qc.xhscdn.com/example/cover-2",
+              "url_pre": "https://sns-webpic-qc.xhscdn.com/example/cover-2",
+              "width": 1200
+            },
+            "display_title": "示例笔记标题 2",
+            "image_list": [],
+            "interact_info": {
+              "liked": false,
+              "liked_count": "3093"
+            },
+            "type": "normal",
+            "user": {
+              "avatar": "https://sns-avatar-qc.xhscdn.com/example",
+              "nick_name": "示例用户",
+              "nickname": "示例用户",
+              "user_id": "5f0000000000000000000001",
+              "xsec_token": "XSEC_USER_EXAMPLE"
+            }
+          },
+          "xsec_token": "XSEC_EXAMPLE_2"
+        }
+      ]
+    },
+    "msg": "成功",
+    "success": true
+  }
+}
