@@ -1,0 +1,92 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-chat/chat",
+  "version": "0.1.0",
+  "platform": "wechat-chat",
+  "entity": "chat",
+  "match": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-chat/chats"
+  },
+  "item_path": "chats",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "participants": "participants",
+    "message_count": "message_count",
+    "start_time": "start_time",
+    "end_time": "end_time",
+    "file_name": "file_name",
+    "attachments": "attachments",
+    "imported_at": "imported_at"
+  },
+  "schema": {
+    "message_count": {
+      "type": "int"
+    },
+    "start_time": {
+      "type": "unix_s"
+    },
+    "end_time": {
+      "type": "unix_s"
+    },
+    "imported_at": {
+      "type": "unix_s"
+    },
+    "participants": {
+      "type": "string",
+      "note": "出现过的发送者，按首次出现排序"
+    },
+    "attachments": {
+      "type": "int",
+      "note": "ZIP 里除聊天记录.txt 外的文件数（图片、视频、文件），原始 ZIP 另存在数据目录 wechat-chat/ 下"
+    }
+  },
+  "trigger": "在插件页「微信聊天记录」卡片点「导入」，选微信「转发到其他应用」导出的 ZIP 或其中的 聊天记录.txt",
+  "note": "一次导入一条；id 是聊天记录正文的哈希，重复导入同一份不会重复",
+  "fixture": "chat.fixture.json",
+  "verified": "2026-10-15",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "聊天记录",
+      "description": "导入的一段聊天记录：参与者、消息数、起止时间"
+    },
+    "en": {
+      "name": "Chat",
+      "description": "An imported chat export: participants, message count, time range"
+    }
+  },
+  "display": {
+    "columns": [
+      "title",
+      "message_count",
+      "start_time",
+      "end_time",
+      "imported_at"
+    ],
+    "labels": {
+      "zh": {
+        "title": "聊天记录",
+        "participants": "参与者",
+        "message_count": "消息数",
+        "start_time": "开始",
+        "end_time": "结束",
+        "file_name": "文件",
+        "attachments": "附件数",
+        "imported_at": "导入时间"
+      },
+      "en": {
+        "title": "Chat",
+        "participants": "Participants",
+        "message_count": "Messages",
+        "start_time": "From",
+        "end_time": "To",
+        "file_name": "File",
+        "attachments": "Attachments",
+        "imported_at": "Imported"
+      }
+    }
+  }
+}

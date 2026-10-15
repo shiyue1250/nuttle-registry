@@ -1,0 +1,26 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-chat",
+  "version": "0.1.0",
+  "label": "微信聊天记录",
+  "locales": {
+    "zh": {
+      "name": "微信聊天记录"
+    },
+    "en": {
+      "name": "WeChat Chat Export"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/wechat-chat/chats",
+      "label": "导入的聊天记录（微信官方「转发到其他应用」导出，已内置解析）"
+    },
+    {
+      "match": "/nuttle/wechat-chat/messages",
+      "label": "聊天记录里的消息（已内置解析）"
+    }
+  ],
+  "notes": "微信电脑版 4.1.13 起，多选聊天记录 → 转发 → 其他应用，会导出一个 ZIP（内含 聊天记录.txt）。在控制台导入这个 ZIP 或 txt，由内置模块 wechat_chat 解析后交回 /nuttle/wechat-chat/*，本包解析。只读用户自己导出的文件，不碰微信。"
+}

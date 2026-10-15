@@ -1,0 +1,35 @@
+{
+  "context": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-chat/chats"
+  },
+  "response": {
+    "chats": [
+      {
+        "id": "c0ffee0000000001",
+        "title": "张三、李四 的聊天记录",
+        "participants": ["张三", "李四"],
+        "message_count": 2,
+        "start_time": 1792040400,
+        "end_time": 1792040460,
+        "file_name": "聊天记录.zip",
+        "attachments": 0,
+        "imported_at": 1792050000
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "c0ffee0000000001",
+      "title": "张三、李四 的聊天记录",
+      "participants": ["张三", "李四"],
+      "message_count": 2,
+      "start_time": 1792040400,
+      "end_time": 1792040460,
+      "file_name": "聊天记录.zip",
+      "attachments": 0,
+      "imported_at": 1792050000,
+      "extra": {}
+    }
+  ]
+}

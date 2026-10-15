@@ -1,0 +1,29 @@
+{
+  "context": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-chat/messages"
+  },
+  "response": {
+    "messages": [
+      {
+        "id": "c0ffee0000000001:1",
+        "chat_id": "c0ffee0000000001",
+        "seq": 1,
+        "nickname": "张三",
+        "content": "明天几点出发？",
+        "create_time": 1792040400
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "c0ffee0000000001:1",
+      "chat_id": "c0ffee0000000001",
+      "seq": 1,
+      "nickname": "张三",
+      "content": "明天几点出发？",
+      "create_time": 1792040400,
+      "extra": {}
+    }
+  ]
+}

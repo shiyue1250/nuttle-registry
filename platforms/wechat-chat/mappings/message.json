@@ -1,0 +1,79 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-chat/message",
+  "version": "0.1.0",
+  "platform": "wechat-chat",
+  "entity": "message",
+  "match": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-chat/messages"
+  },
+  "item_path": "messages",
+  "fields": {
+    "id": "id",
+    "chat_id": "chat_id",
+    "seq": "seq",
+    "nickname": "nickname",
+    "content": "content",
+    "create_time": "create_time"
+  },
+  "schema": {
+    "seq": {
+      "type": "int",
+      "note": "在这段聊天记录里的顺序，从 1 开始"
+    },
+    "create_time": {
+      "type": "unix_s",
+      "note": "微信只给到分钟"
+    },
+    "content": {
+      "type": "string",
+      "note": "消息正文；图片、转账等微信只给 [图片]、[转账] 这类标记"
+    }
+  },
+  "trigger": "导入聊天记录时一并生成",
+  "note": "按聊天记录里的顺序排列，打开聊天记录即可逐条查看",
+  "fixture": "message.fixture.json",
+  "verified": "2026-10-15",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "消息",
+      "description": "聊天记录里的每条消息：发送者、时间、正文"
+    },
+    "en": {
+      "name": "Message",
+      "description": "Each message in the chat: sender, time, text"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "create_time"
+    ],
+    "labels": {
+      "zh": {
+        "content": "消息",
+        "nickname": "发送者",
+        "create_time": "时间",
+        "seq": "序号"
+      },
+      "en": {
+        "content": "Message",
+        "nickname": "From",
+        "create_time": "Time",
+        "seq": "#"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "wechat-chat/chat",
+      "field": "chat_id",
+      "count_field": "message_count"
+    },
+    "order": "seq"
+  }
+}

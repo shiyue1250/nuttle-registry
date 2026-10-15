@@ -150,6 +150,41 @@
       "official": true
     },
     {
+      "id": "wechat-chat",
+      "version": "0.1.0",
+      "label": "微信聊天记录",
+      "locales": {
+        "zh": {
+          "name": "微信聊天记录"
+        },
+        "en": {
+          "name": "WeChat Chat Export"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "wechat-chat/chat",
+          "version": "0.1.0",
+          "entity": "chat",
+          "verified": "2026-10-15",
+          "fixture": true,
+          "path": "platforms/wechat-chat/mappings/chat.json"
+        },
+        {
+          "id": "wechat-chat/message",
+          "version": "0.1.0",
+          "entity": "message",
+          "verified": "2026-10-15",
+          "fixture": true,
+          "path": "platforms/wechat-chat/mappings/message.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/wechat-chat/platform.json",
+      "official": true
+    },
+    {
       "id": "wechat-local",
       "version": "0.1.0",
       "label": "微信本地",
