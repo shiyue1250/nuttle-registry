@@ -14,7 +14,8 @@
         "end_time": 1792040460,
         "file_name": "聊天记录.zip",
         "attachments": 0,
-        "imported_at": 1792050000
+        "imported_at": 1792050000,
+        "files": ["c0ffee0000000001"]
       }
     ]
   },
@@ -29,6 +30,7 @@
       "file_name": "聊天记录.zip",
       "attachments": 0,
       "imported_at": 1792050000,
+      "files": ["c0ffee0000000001"],
       "extra": {}
     }
   ]

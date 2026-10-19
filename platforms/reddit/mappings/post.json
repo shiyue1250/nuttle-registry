@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "reddit/post",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "platform": "reddit",
   "entity": "post",
   "match": {
@@ -40,7 +40,7 @@
       "type": "int"
     },
     "upvote_ratio": {
-      "type": "number",
+      "type": "float",
       "note": "赞成比例 0~1"
     },
     "award_count": {
@@ -55,7 +55,7 @@
       "note": "正文；列表页通常只有标题，打开帖子后才有正文"
     },
     "link": {
-      "type": "link",
+      "type": "url",
       "note": "外链帖指向的网址"
     },
     "url": {

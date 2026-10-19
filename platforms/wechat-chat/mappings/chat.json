@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "wechat-chat/chat",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "platform": "wechat-chat",
   "entity": "chat",
   "match": {
@@ -18,7 +18,8 @@
     "end_time": "end_time",
     "file_name": "file_name",
     "attachments": "attachments",
-    "imported_at": "imported_at"
+    "imported_at": "imported_at",
+    "files": "files"
   },
   "schema": {
     "message_count": {
@@ -37,15 +38,19 @@
       "type": "string",
       "note": "出现过的发送者，按首次出现排序"
     },
+    "files": {
+      "type": "string",
+      "note": "组成这段聊天的导出文件 id（同一个群分几次转发会合并成一段，记录 063）"
+    },
     "attachments": {
       "type": "int",
       "note": "ZIP 里除聊天记录.txt 外的文件数（图片、视频、文件），原始 ZIP 另存在数据目录 wechat-chat/ 下"
     }
   },
   "trigger": "在插件页「微信聊天记录」卡片点「导入」，选微信「转发到其他应用」导出的 ZIP 或其中的 聊天记录.txt",
-  "note": "一次导入一条；id 是聊天记录正文的哈希，重复导入同一份不会重复",
+  "note": "id 是第一份导出文件正文的哈希；重复导入同一份不会重复；和已有聊天有相同消息的自动并入，也可在详情里手动合并",
   "fixture": "chat.fixture.json",
-  "verified": "2026-10-15",
+  "verified": "2026-10-18",
   "author": "shiyue1250",
   "license": "MIT",
   "locales": {

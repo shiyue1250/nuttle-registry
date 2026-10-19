@@ -249,6 +249,10 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "order": {
+          "type": "string",
+          "description": "Field holding the sequence number of ordered children (e.g. chat messages); children sort ascending by it instead of by likes"
         }
       }
     },
@@ -265,6 +269,13 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "kinds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Only resources of these kinds (e.g. video, image) match"
         }
       }
     }

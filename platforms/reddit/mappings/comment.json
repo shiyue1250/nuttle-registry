@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "reddit/comment",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "platform": "reddit",
   "entity": "comment",
   "match": {
@@ -57,7 +57,7 @@
       "note": "评论里的第一张图（只发图 / 动图的评论没有文字）"
     },
     "gif": {
-      "type": "video",
+      "type": "url",
       "note": "动图评论（GIPHY）的 mp4 地址"
     }
   },
