@@ -43,6 +43,41 @@
       "official": true
     },
     {
+      "id": "feishu",
+      "version": "0.1.0",
+      "label": "飞书群聊",
+      "locales": {
+        "zh": {
+          "name": "飞书群聊"
+        },
+        "en": {
+          "name": "Feishu group chats"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "feishu/chat",
+          "version": "0.1.0",
+          "entity": "chat",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/feishu/mappings/chat.json"
+        },
+        {
+          "id": "feishu/message",
+          "version": "0.1.0",
+          "entity": "message",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/feishu/mappings/message.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/feishu/platform.json",
+      "official": true
+    },
+    {
       "id": "feiyushuju",
       "version": "0.1.0",
       "label": "feiyushuju.com",
@@ -545,6 +580,36 @@
           "desc": {
             "zh": "在微信里多选消息 → 转发 → 其他应用，导出后导入。只读你导出的文件。",
             "en": "In WeChat, select messages → Forward → Other apps, then import the export. Only reads the file you export."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feishu",
+      "letter": "飞",
+      "group": "main",
+      "name": {
+        "zh": "飞书",
+        "en": "Feishu"
+      },
+      "desc": {
+        "zh": "用你自己在飞书开放平台建的应用，同步关注的群聊消息。",
+        "en": "Syncs the group chats you watch, using an app you create on the Feishu Open Platform."
+      },
+      "parts": [
+        {
+          "id": "groups",
+          "packs": [
+            "feishu"
+          ],
+          "local": "feishu",
+          "name": {
+            "zh": "群聊消息",
+            "en": "Group messages"
+          },
+          "desc": {
+            "zh": "选好要关注的群，每 10 分钟同步一次新消息。需要先填你的应用凭据。",
+            "en": "Pick the groups to watch; new messages sync every 10 minutes. Needs your app credentials first."
           }
         }
       ]

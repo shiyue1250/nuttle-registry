@@ -1,0 +1,26 @@
+{
+  "apiVersion": 1,
+  "id": "feishu",
+  "version": "0.1.0",
+  "label": "飞书群聊",
+  "locales": {
+    "zh": {
+      "name": "飞书群聊"
+    },
+    "en": {
+      "name": "Feishu group chats"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/feishu/chats",
+      "label": "关注的飞书群（经飞书开放接口同步，已内置解析）"
+    },
+    {
+      "match": "/nuttle/feishu/messages",
+      "label": "飞书群里的消息（已内置解析）"
+    }
+  ],
+  "notes": "用用户自己在飞书开放平台建的企业自建应用（App ID / App Secret）调用官方接口：列出机器人所在的群，按游标增量同步选中群的消息，由内置模块 feishu 交回 /nuttle/feishu/*，本包解析。只读，不发消息。"
+}

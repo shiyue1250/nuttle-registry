@@ -1,0 +1,83 @@
+{
+  "apiVersion": 1,
+  "id": "feishu/message",
+  "version": "0.1.0",
+  "platform": "feishu",
+  "entity": "message",
+  "match": {
+    "host": "feishu.local",
+    "path": "/nuttle/feishu/messages"
+  },
+  "item_path": "messages",
+  "fields": {
+    "id": "id",
+    "chat_id": "chat_id",
+    "seq": "seq",
+    "nickname": "nickname",
+    "content": "content",
+    "create_time": "create_time",
+    "msg_type": "msg_type"
+  },
+  "schema": {
+    "seq": {
+      "type": "int",
+      "note": "按时间先后的序号（毫秒时间戳）"
+    },
+    "create_time": {
+      "type": "unix_s"
+    },
+    "content": {
+      "type": "string",
+      "note": "文本与富文本取文字；图片、文件等记为 [image] 这类标记"
+    },
+    "nickname": {
+      "type": "string",
+      "note": "发送者 id（飞书的 open_id）；要显示真名需开通通讯录权限，第一版不做"
+    }
+  },
+  "trigger": "同步飞书群时一并生成",
+  "note": "按时间先后排列，打开群即可逐条查看",
+  "fixture": "message.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "消息",
+      "description": "飞书群里的每条消息：发送者、时间、正文"
+    },
+    "en": {
+      "name": "Message",
+      "description": "Each message in the Feishu group: sender, time, text"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "create_time"
+    ],
+    "labels": {
+      "zh": {
+        "content": "消息",
+        "nickname": "发送者",
+        "create_time": "时间",
+        "seq": "序号"
+      },
+      "en": {
+        "content": "Message",
+        "nickname": "From",
+        "create_time": "Time",
+        "seq": "#"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "feishu/chat",
+      "field": "chat_id",
+      "count_field": "message_count"
+    },
+    "order": "seq"
+  }
+}

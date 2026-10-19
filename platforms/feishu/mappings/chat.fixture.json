@@ -1,0 +1,27 @@
+{
+  "context": {
+    "host": "feishu.local",
+    "path": "/nuttle/feishu/chats"
+  },
+  "response": {
+    "chats": [
+      {
+        "id": "oc_1",
+        "title": "产品群",
+        "message_count": 2,
+        "last_time": 1792040400,
+        "synced_at": 1792040500
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "oc_1",
+      "title": "产品群",
+      "message_count": 2,
+      "last_time": 1792040400,
+      "synced_at": 1792040500,
+      "extra": {}
+    }
+  ]
+}

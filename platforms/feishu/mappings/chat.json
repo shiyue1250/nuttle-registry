@@ -1,0 +1,70 @@
+{
+  "apiVersion": 1,
+  "id": "feishu/chat",
+  "version": "0.1.0",
+  "platform": "feishu",
+  "entity": "chat",
+  "match": {
+    "host": "feishu.local",
+    "path": "/nuttle/feishu/chats"
+  },
+  "item_path": "chats",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "message_count": "message_count",
+    "last_time": "last_time",
+    "synced_at": "synced_at"
+  },
+  "schema": {
+    "message_count": {
+      "type": "int",
+      "note": "已同步到囤囤鼠的消息条数"
+    },
+    "last_time": {
+      "type": "unix_s",
+      "note": "最新一条消息的时间"
+    },
+    "synced_at": {
+      "type": "unix_s"
+    }
+  },
+  "trigger": "在「平台 → 飞书 → 群聊消息 → 设置」里选好群后同步",
+  "note": "一个群一条；消息挂在群下面，按时间先后排列",
+  "fixture": "chat.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "飞书群",
+      "description": "关注的飞书群：群名、消息数、最新消息时间"
+    },
+    "en": {
+      "name": "Feishu group",
+      "description": "A watched Feishu group: name, message count, latest message time"
+    }
+  },
+  "display": {
+    "columns": [
+      "title",
+      "message_count",
+      "last_time",
+      "synced_at"
+    ],
+    "labels": {
+      "zh": {
+        "title": "群",
+        "message_count": "消息数",
+        "last_time": "最新消息",
+        "synced_at": "同步时间"
+      },
+      "en": {
+        "title": "Group",
+        "message_count": "Messages",
+        "last_time": "Latest",
+        "synced_at": "Synced"
+      }
+    }
+  }
+}

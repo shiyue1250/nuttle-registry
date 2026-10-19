@@ -1,0 +1,31 @@
+{
+  "context": {
+    "host": "feishu.local",
+    "path": "/nuttle/feishu/messages"
+  },
+  "response": {
+    "messages": [
+      {
+        "id": "om_1",
+        "chat_id": "oc_1",
+        "seq": 1792040400000,
+        "nickname": "ou_a",
+        "content": "今天发版吗？",
+        "create_time": 1792040400,
+        "msg_type": "text"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "om_1",
+      "chat_id": "oc_1",
+      "seq": 1792040400000,
+      "nickname": "ou_a",
+      "content": "今天发版吗？",
+      "create_time": 1792040400,
+      "msg_type": "text",
+      "extra": {}
+    }
+  ]
+}
