@@ -443,5 +443,470 @@
       "official": true
     }
   ],
+  "platforms": [
+    {
+      "id": "weixin",
+      "letter": "微",
+      "group": "main",
+      "name": {
+        "zh": "微信",
+        "en": "WeChat"
+      },
+      "desc": {
+        "zh": "公众号文章、视频号、聊天与群聊、收藏，按需开启。",
+        "en": "Official Account articles, Channels, chats and Favorites — turn on what you need."
+      },
+      "parts": [
+        {
+          "id": "mp",
+          "packs": [
+            "weixin-mp"
+          ],
+          "plugins": [
+            "nuttle.wechat-mp"
+          ],
+          "name": {
+            "zh": "公众号文章",
+            "en": "Official Account articles"
+          },
+          "desc": {
+            "zh": "记录打开过的公众号文章：标题、公众号、作者、发布时间、正文；正文配图可下载。",
+            "en": "Records the Official Account articles you open: title, account, author, time and full text; images can be downloaded."
+          }
+        },
+        {
+          "id": "channels",
+          "packs": [
+            "weixin"
+          ],
+          "plugins": [
+            "official.wechat",
+            "nuttle.wechat-extra"
+          ],
+          "name": {
+            "zh": "视频号",
+            "en": "Channels"
+          },
+          "desc": {
+            "zh": "采集视频号的视频、作者、互动数据与评论，以及带货助手的选品商品。",
+            "en": "Collects Channels videos, authors, engagement and comments, plus products from the shopping assistant."
+          }
+        },
+        {
+          "id": "chats",
+          "packs": [
+            "wechat-local"
+          ],
+          "local": "wechat-local",
+          "scope": "chats",
+          "name": {
+            "zh": "聊天与群聊",
+            "en": "Chats and groups"
+          },
+          "desc": {
+            "zh": "列出会话，选中的会话才读取消息。",
+            "en": "Lists your chats; messages are read only for the chats you pick."
+          },
+          "risk": {
+            "zh": "通过读取本机的微信数据库获取（只读，不改动微信）。",
+            "en": "Read from the WeChat database on this computer (read-only; WeChat itself is untouched)."
+          }
+        },
+        {
+          "id": "favorites",
+          "packs": [
+            "wechat-local"
+          ],
+          "local": "wechat-local",
+          "scope": "favorites",
+          "name": {
+            "zh": "收藏",
+            "en": "Favorites"
+          },
+          "desc": {
+            "zh": "点「读入收藏」时读取微信收藏。",
+            "en": "Reads your WeChat Favorites when you click Read Favorites."
+          },
+          "risk": {
+            "zh": "通过读取本机的微信数据库获取（只读，不改动微信）。",
+            "en": "Read from the WeChat database on this computer (read-only; WeChat itself is untouched)."
+          }
+        },
+        {
+          "id": "export",
+          "packs": [
+            "wechat-chat"
+          ],
+          "local": "wechat-chat",
+          "name": {
+            "zh": "导入导出的聊天记录",
+            "en": "Import exported chats"
+          },
+          "desc": {
+            "zh": "在微信里多选消息 → 转发 → 其他应用，导出后导入。只读你导出的文件。",
+            "en": "In WeChat, select messages → Forward → Other apps, then import the export. Only reads the file you export."
+          }
+        }
+      ]
+    },
+    {
+      "id": "xiaohongshu",
+      "letter": "小",
+      "group": "main",
+      "name": {
+        "zh": "小红书",
+        "en": "RedNote"
+      },
+      "desc": {
+        "zh": "采集点开的笔记：标题、正文、作者、互动数据与评论，以及图片与视频。",
+        "en": "Collects the notes you open: title, text, author, engagement and comments, plus images and videos."
+      },
+      "parts": [
+        {
+          "id": "notes",
+          "packs": [
+            "xiaohongshu"
+          ],
+          "plugins": [
+            "nuttle.xiaohongshu"
+          ],
+          "name": {
+            "zh": "笔记与评论",
+            "en": "Notes and comments"
+          },
+          "desc": {
+            "zh": "点开的笔记、评论、图片与视频。",
+            "en": "Notes you open, comments, images and videos."
+          }
+        }
+      ]
+    },
+    {
+      "id": "douyin",
+      "letter": "抖",
+      "group": "main",
+      "name": {
+        "zh": "抖音",
+        "en": "Douyin"
+      },
+      "desc": {
+        "zh": "采集浏览过的视频与图文作品。",
+        "en": "Collects the videos and image posts you view."
+      },
+      "parts": [
+        {
+          "id": "videos",
+          "plugins": [
+            "official.douyin"
+          ],
+          "name": {
+            "zh": "视频与图文",
+            "en": "Videos and image posts"
+          },
+          "desc": {
+            "zh": "浏览过的视频与图文作品。",
+            "en": "Videos and image posts you view."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kuaishou",
+      "letter": "快",
+      "group": "main",
+      "name": {
+        "zh": "快手",
+        "en": "Kuaishou"
+      },
+      "desc": {
+        "zh": "采集推荐页中浏览过的视频。",
+        "en": "Collects the videos you view in the recommended feed."
+      },
+      "parts": [
+        {
+          "id": "videos",
+          "plugins": [
+            "official.kuaishou"
+          ],
+          "name": {
+            "zh": "视频",
+            "en": "Videos"
+          },
+          "desc": {
+            "zh": "推荐页中浏览过的视频。",
+            "en": "Videos you view in the feed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bilibili",
+      "letter": "B",
+      "group": "main",
+      "name": {
+        "zh": "哔哩哔哩",
+        "en": "Bilibili"
+      },
+      "desc": {
+        "zh": "采集浏览过的视频。",
+        "en": "Collects the videos you view."
+      },
+      "parts": [
+        {
+          "id": "videos",
+          "plugins": [
+            "official.bilibili"
+          ],
+          "name": {
+            "zh": "视频",
+            "en": "Videos"
+          },
+          "desc": {
+            "zh": "浏览过的视频。",
+            "en": "Videos you view."
+          }
+        }
+      ]
+    },
+    {
+      "id": "x",
+      "letter": "X",
+      "group": "main",
+      "name": {
+        "zh": "X",
+        "en": "X"
+      },
+      "desc": {
+        "zh": "采集浏览过的帖子与视频：正文、作者、互动数据；打开帖子详情时一并采集回复。",
+        "en": "Collects the posts and videos you view: text, author and engagement, plus replies when you open a post."
+      },
+      "parts": [
+        {
+          "id": "posts",
+          "packs": [
+            "x"
+          ],
+          "plugins": [
+            "official.x",
+            "nuttle.x-extra"
+          ],
+          "name": {
+            "zh": "帖子与回复",
+            "en": "Posts and replies"
+          },
+          "desc": {
+            "zh": "浏览过的帖子、视频与回复。",
+            "en": "Posts, videos and replies you view."
+          }
+        }
+      ]
+    },
+    {
+      "id": "reddit",
+      "letter": "r/",
+      "group": "main",
+      "name": {
+        "zh": "Reddit",
+        "en": "Reddit"
+      },
+      "desc": {
+        "zh": "采集浏览过的帖子：标题、正文、版块、分数、评论数；打开帖子时一并采集评论与楼中楼。",
+        "en": "Collects the posts you view: title, text, subreddit, score and comment count, plus threaded comments when you open a post."
+      },
+      "parts": [
+        {
+          "id": "posts",
+          "packs": [
+            "reddit"
+          ],
+          "plugins": [
+            "nuttle.reddit"
+          ],
+          "name": {
+            "zh": "帖子与评论",
+            "en": "Posts and comments"
+          },
+          "desc": {
+            "zh": "浏览过的帖子与评论。",
+            "en": "Posts and comments you view."
+          }
+        }
+      ]
+    },
+    {
+      "id": "youtube",
+      "letter": "Y",
+      "group": "main",
+      "name": {
+        "zh": "YouTube",
+        "en": "YouTube"
+      },
+      "desc": {
+        "zh": "采集浏览过的视频。",
+        "en": "Collects the videos you view."
+      },
+      "parts": [
+        {
+          "id": "videos",
+          "plugins": [
+            "official.youtube"
+          ],
+          "name": {
+            "zh": "视频",
+            "en": "Videos"
+          },
+          "desc": {
+            "zh": "浏览过的视频。",
+            "en": "Videos you view."
+          }
+        }
+      ]
+    },
+    {
+      "id": "instagram",
+      "letter": "I",
+      "group": "main",
+      "name": {
+        "zh": "Instagram",
+        "en": "Instagram"
+      },
+      "desc": {
+        "zh": "采集浏览过的 Reels 视频。",
+        "en": "Collects the Reels you view."
+      },
+      "parts": [
+        {
+          "id": "reels",
+          "plugins": [
+            "official.instagram"
+          ],
+          "name": {
+            "zh": "Reels",
+            "en": "Reels"
+          },
+          "desc": {
+            "zh": "浏览过的 Reels 视频。",
+            "en": "Reels you view."
+          }
+        }
+      ]
+    },
+    {
+      "id": "amazon",
+      "letter": "A",
+      "group": "more",
+      "name": {
+        "zh": "Amazon",
+        "en": "Amazon"
+      },
+      "desc": {
+        "zh": "采集商品页的变体信息：ASIN、颜色、尺寸与可售状态。",
+        "en": "Collects product variations: ASIN, color, size and availability."
+      },
+      "parts": [
+        {
+          "id": "products",
+          "packs": [
+            "amazon"
+          ],
+          "name": {
+            "zh": "商品变体",
+            "en": "Product variations"
+          },
+          "desc": {
+            "zh": "商品页的变体信息。",
+            "en": "Variations on product pages."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sellersprite",
+      "letter": "卖",
+      "group": "more",
+      "name": {
+        "zh": "卖家精灵",
+        "en": "SellerSprite"
+      },
+      "desc": {
+        "zh": "记录卖家精灵网页版的数据，供分析使用。",
+        "en": "Records data from SellerSprite for analysis."
+      },
+      "parts": [
+        {
+          "id": "pages",
+          "packs": [
+            "sellersprite"
+          ],
+          "name": {
+            "zh": "网页数据",
+            "en": "Page data"
+          },
+          "desc": {
+            "zh": "卖家精灵网页版的数据。",
+            "en": "Data from SellerSprite pages."
+          }
+        }
+      ]
+    },
+    {
+      "id": "keepa",
+      "letter": "K",
+      "group": "more",
+      "name": {
+        "zh": "Keepa",
+        "en": "Keepa"
+      },
+      "desc": {
+        "zh": "记录 Keepa 页面的数据，供分析使用。",
+        "en": "Records data from Keepa for analysis."
+      },
+      "parts": [
+        {
+          "id": "pages",
+          "packs": [
+            "keepa"
+          ],
+          "name": {
+            "zh": "网页数据",
+            "en": "Page data"
+          },
+          "desc": {
+            "zh": "Keepa 页面的数据。",
+            "en": "Data from Keepa pages."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feiyushuju",
+      "letter": "飞",
+      "group": "more",
+      "name": {
+        "zh": "飞鱼数据",
+        "en": "Feiyu Data"
+      },
+      "desc": {
+        "zh": "记录飞鱼数据页面的数据，供分析使用。",
+        "en": "Records data from Feiyu Data for analysis."
+      },
+      "parts": [
+        {
+          "id": "pages",
+          "packs": [
+            "feiyushuju"
+          ],
+          "name": {
+            "zh": "网页数据",
+            "en": "Page data"
+          },
+          "desc": {
+            "zh": "飞鱼数据页面的数据。",
+            "en": "Data from Feiyu Data pages."
+          }
+        }
+      ]
+    }
+  ],
   "community": []
 }

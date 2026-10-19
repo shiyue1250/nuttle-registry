@@ -5,8 +5,8 @@
     python scripts/build_index.py --check-fixtures # 每份样本都是合法 JSON 且带 response / expected
     python scripts/build_index.py --discover       # 同时发现社区包（GitHub 标签 nuttle-pack），写入 community
 
-index.json 分两部分：packs 是本仓库目录里的官方包，由目录生成、--check 只比对这一部分；
-community 是社区包，只由 --discover 更新，平时重新生成时原样保留。
+index.json 三部分：packs 是本仓库目录里的官方包，由目录生成；platforms 是 catalog.json（用户心里的平台 → 模块 → 平台包 / 插件），
+原样并入、引用的平台包必须存在；--check 比对这两部分。community 是社区包，只由 --discover 更新，平时重新生成时原样保留。
 """
 import json
 import sys
@@ -51,7 +51,14 @@ def build():
             "locales": plat.get("locales"), "hosts": plat.get("hosts", []), "cards": cards, "recipes": recipes,
             "path": pj.relative_to(ROOT).as_posix(), "official": True,
         })
-    return {"schema": "schema/mapping-card.schema.json", "packs": packs}
+    platforms = load(ROOT / "catalog.json")
+    ids = {p["id"] for p in packs}
+    for plat in platforms:
+        for part in plat["parts"]:
+            missing = [x for x in part.get("packs", []) if x not in ids]
+            if missing:
+                sys.exit(f"catalog.json: {plat['id']}/{part['id']} 引用了不存在的平台包 {missing}")
+    return {"schema": "schema/mapping-card.schema.json", "packs": packs, "platforms": platforms}
 
 
 def md_title(p):
@@ -79,7 +86,7 @@ def main():
     out = ROOT / "index.json"
     old = load(out) if out.exists() else {}
     if "--check" in sys.argv:
-        if old.get("packs") != index["packs"] or old.get("schema") != index["schema"]:
+        if any(old.get(k) != index[k] for k in ("packs", "platforms", "schema")):
             print("index.json 过期，运行 python scripts/build_index.py 重新生成")
             sys.exit(1)
         print("index.json 一致")
