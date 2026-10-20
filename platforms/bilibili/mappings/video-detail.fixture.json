@@ -1,0 +1,222 @@
+{
+  "expected": [
+    {
+      "author": "示例UP主_6",
+      "author_id": "100006",
+      "bvid": "BV1example005",
+      "coin_count": 1285195,
+      "content": "示例简介_5",
+      "cover": "http://i0.hdslb.com/bfs/archive/example_5.jpg",
+      "create_time": 1577835803,
+      "danmaku_count": 151017,
+      "duration_s": 213,
+      "extra": {
+        "category": ""
+      },
+      "favorite_count": 1556091,
+      "id": "900005",
+      "like_count": 2958246,
+      "reply_count": 238099,
+      "share_count": 500476,
+      "title": "示例视频标题_5",
+      "url": "https://www.bilibili.com/video/BV1example005",
+      "view_count": 107453431
+    }
+  ],
+  "response": {
+    "code": 0,
+    "data": {
+      "Related": [
+        {
+          "ai_rcmd": {
+            "goto": "av",
+            "id": 113491440567226,
+            "trackid": "web_related_0.router-related-2479604-dplt2.1792474897077.222",
+            "uniq_id": ""
+          },
+          "aid": 900007,
+          "attribute_v3": 4,
+          "bvid": "BV1example007",
+          "cid": 26787186091,
+          "copyright": 1,
+          "cover43": "",
+          "ctime": 1731742138,
+          "current_state": 0,
+          "desc": "示例简介_7",
+          "dimension": {
+            "height": 1080,
+            "rotate": 0,
+            "width": 1920
+          },
+          "duration": 18,
+          "enable_vt": 0,
+          "first_frame": "http://i1.hdslb.com/bfs/storyff/n241116sa2zbdxmpnbm86l2chio1gimb_firsti.jpg",
+          "global_state": 0,
+          "is_ogv": false,
+          "ogv_info": null,
+          "owner": {
+            "face": "https://i0.hdslb.com/bfs/face/example_8.jpg",
+            "mid": 100008,
+            "name": "示例UP主_8"
+          },
+          "pic": "http://i0.hdslb.com/bfs/archive/example_7.jpg",
+          "pid_name_v2": "鬼畜",
+          "pid_v2": 1007,
+          "pub_location": "上海",
+          "pubdate": 1731742178,
+          "season_type": 0,
+          "short_link_v2": "https://b23.tv/BV1V4UYY5EhD",
+          "stat": {
+            "aid": 113491440567226,
+            "coin": 500,
+            "danmaku": 1288,
+            "dislike": 0,
+            "fav_g": 0,
+            "favorite": 6698,
+            "his_rank": 0,
+            "like": 11164,
+            "like_g": 0,
+            "now_rank": 0,
+            "reply": 1101,
+            "share": 507,
+            "view": 561176,
+            "vt": 0,
+            "vv": 561176
+          },
+          "state": 0,
+          "tid": 21,
+          "tidv2": 2063,
+          "title": "示例视频标题_7",
+          "tname": "日常",
+          "tnamev2": "鬼畜综合",
+          "up_from_v2": 8,
+          "videos": 1
+        },
+        {
+          "ai_rcmd": {
+            "goto": "av",
+            "id": 370010949,
+            "trackid": "web_related_0.router-related-2479604-dplt2.1792474897077.222",
+            "uniq_id": ""
+          },
+          "aid": 900009,
+          "attribute_v3": 4,
+          "bvid": "BV1example009",
+          "cid": 172423516,
+          "copyright": 2,
+          "cover43": "",
+          "ctime": 1585735296,
+          "current_state": 0,
+          "desc": "示例简介_9",
+          "dimension": {
+            "height": 720,
+            "rotate": 0,
+            "width": 1280
+          },
+          "duration": 200,
+          "enable_vt": 0,
+          "global_state": 0,
+          "is_ogv": false,
+          "ogv_info": null,
+          "owner": {
+            "face": "https://i0.hdslb.com/bfs/face/example_10.jpg",
+            "mid": 100010,
+            "name": "示例UP主_10"
+          },
+          "pic": "http://i0.hdslb.com/bfs/archive/example_9.jpg",
+          "pid_name_v2": "鬼畜",
+          "pid_v2": 1007,
+          "pubdate": 1585735296,
+          "season_type": 0,
+          "short_link_v2": "https://b23.tv/BV1NZ4y1j7nw",
+          "stat": {
+            "aid": 370010949,
+            "coin": 466367,
+            "danmaku": 458373,
+            "dislike": 0,
+            "fav_g": 666,
+            "favorite": 1076859,
+            "his_rank": 2,
+            "like": 2059164,
+            "like_g": 284,
+            "now_rank": 0,
+            "reply": 53337,
+            "share": 799300,
+            "view": 69318972,
+            "vt": 0,
+            "vv": 69318972
+          },
+          "state": 0,
+          "tid": 138,
+          "tidv2": 2059,
+          "title": "示例视频标题_9",
+          "tname": "搞笑",
+          "tnamev2": "鬼畜调教",
+          "videos": 2
+        }
+      ],
+      "View": {
+        "aid": 900005,
+        "bvid": "BV1example005",
+        "cid": 137649199,
+        "copyright": 1,
+        "ctime": 1577835803,
+        "desc": "示例简介_5",
+        "dimension": {
+          "height": 1080,
+          "rotate": 0,
+          "width": 1920
+        },
+        "disable_show_up_info": false,
+        "duration": 213,
+        "enable_vt": 0,
+        "is_chargeable_season": false,
+        "is_hua_sheng": false,
+        "is_season_display": false,
+        "is_story": false,
+        "is_story_play": 0,
+        "is_upower_exclusive": false,
+        "is_upower_exclusive_with_qa": false,
+        "is_upower_play": false,
+        "is_upower_preview": false,
+        "is_view_self": false,
+        "like_icon": "",
+        "need_jump_bv": false,
+        "no_cache": true,
+        "owner": {
+          "face": "https://i0.hdslb.com/bfs/face/example_6.jpg",
+          "mid": 100006,
+          "name": "示例UP主_6"
+        },
+        "pic": "http://i0.hdslb.com/bfs/archive/example_5.jpg",
+        "premiere": null,
+        "pubdate": 1577835803,
+        "stat": {
+          "aid": 80433022,
+          "coin": 1285195,
+          "danmaku": 151017,
+          "dislike": 0,
+          "evaluation": "",
+          "favorite": 1556091,
+          "his_rank": 0,
+          "like": 2958246,
+          "now_rank": 0,
+          "reply": 238099,
+          "share": 500476,
+          "view": 107453431,
+          "vt": 0
+        },
+        "state": 0,
+        "teenage_mode": 0,
+        "tid": 193,
+        "tid_v2": 2017,
+        "title": "示例视频标题_5",
+        "tname": "",
+        "tname_v2": "",
+        "videos": 1,
+        "vt_display": ""
+      }
+    },
+    "message": "OK"
+  }
+}

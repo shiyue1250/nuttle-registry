@@ -1,0 +1,177 @@
+{
+  "expected": [
+    {
+      "author": "示例UP主_20",
+      "author_id": "100020",
+      "bvid": "BV1example019",
+      "coin_count": 44074,
+      "content": "示例简介_19",
+      "cover": "http://i0.hdslb.com/bfs/archive/example_19.jpg",
+      "create_time": 1792468800,
+      "danmaku_count": 1878,
+      "duration_s": 904,
+      "extra": {
+        "category": "手机游戏"
+      },
+      "favorite_count": 19463,
+      "id": "900019",
+      "like_count": 57337,
+      "reply_count": 4463,
+      "share_count": 10772,
+      "title": "示例视频标题_19",
+      "url": "https://www.bilibili.com/video/BV1example019",
+      "view_count": 313500
+    },
+    {
+      "author": "示例UP主_22",
+      "author_id": "100022",
+      "bvid": "BV1example021",
+      "coin_count": 19727,
+      "content": "示例简介_21",
+      "cover": "http://i0.hdslb.com/bfs/archive/example_21.jpg",
+      "create_time": 1792465200,
+      "danmaku_count": 6266,
+      "duration_s": 2369,
+      "extra": {
+        "category": "人文历史"
+      },
+      "favorite_count": 16205,
+      "id": "900021",
+      "like_count": 43053,
+      "reply_count": 2454,
+      "share_count": 1313,
+      "title": "示例视频标题_21",
+      "url": "https://www.bilibili.com/video/BV1example021",
+      "view_count": 439249
+    }
+  ],
+  "response": {
+    "code": 0,
+    "data": {
+      "list": [
+        {
+          "ai_rcmd": null,
+          "aid": 900019,
+          "attribute_v3": 4,
+          "bvid": "BV1example019",
+          "cid": 42888006782,
+          "copyright": 3,
+          "cover43": "http://i0.hdslb.com/bfs/archive/3ef495da09b94785d331ef6a1f1d44d03eecc1fb.jpg",
+          "ctime": 1792465311,
+          "current_state": 0,
+          "desc": "示例简介_19",
+          "dimension": {
+            "height": 1080,
+            "rotate": 0,
+            "width": 1920
+          },
+          "duration": 904,
+          "enable_vt": 0,
+          "first_frame": "http://i0.hdslb.com/bfs/storyff/_00001eptdzl1azhj72alw25ppjv7y8b_firsti.jpg",
+          "global_state": 0,
+          "is_ogv": false,
+          "ogv_info": null,
+          "owner": {
+            "face": "https://i0.hdslb.com/bfs/face/example_20.jpg",
+            "mid": 100020,
+            "name": "示例UP主_20"
+          },
+          "pic": "http://i0.hdslb.com/bfs/archive/example_19.jpg",
+          "pid_name_v2": "音乐",
+          "pid_v2": 1003,
+          "pub_location": "上海",
+          "pubdate": 1792468800,
+          "season_type": 0,
+          "short_link_v2": "https://b23.tv/BV1SknF6KE5g",
+          "stat": {
+            "aid": 117470996208173,
+            "coin": 44074,
+            "danmaku": 1878,
+            "dislike": 0,
+            "fav_g": 0,
+            "favorite": 19463,
+            "his_rank": 0,
+            "like": 57337,
+            "like_g": 5,
+            "now_rank": 0,
+            "reply": 4463,
+            "share": 10772,
+            "view": 313500,
+            "vt": 0,
+            "vv": 313500
+          },
+          "state": 0,
+          "tid": 172,
+          "tidv2": 2016,
+          "title": "示例视频标题_19",
+          "tname": "手机游戏",
+          "tnamev2": "原创音乐",
+          "videos": 4
+        },
+        {
+          "ai_rcmd": null,
+          "aid": 900021,
+          "attribute_v3": 4,
+          "bvid": "BV1example021",
+          "cid": 42867688715,
+          "copyright": 3,
+          "cover43": "http://i1.hdslb.com/bfs/archive/ac263ecae9569623ff0fd5b43fab020a5d24ffdf.jpg",
+          "ctime": 1792395819,
+          "current_state": 0,
+          "desc": "示例简介_21",
+          "dimension": {
+            "height": 1080,
+            "rotate": 0,
+            "width": 1920
+          },
+          "duration": 2369,
+          "enable_vt": 0,
+          "first_frame": "http://i0.hdslb.com/bfs/storyff/_00001somwautithg22dh3692zs4k6cb_firsti.jpg",
+          "global_state": 0,
+          "is_ogv": false,
+          "mission_id": 4071132,
+          "ogv_info": null,
+          "owner": {
+            "face": "https://i0.hdslb.com/bfs/face/example_22.jpg",
+            "mid": 100022,
+            "name": "示例UP主_22"
+          },
+          "pic": "http://i0.hdslb.com/bfs/archive/example_21.jpg",
+          "pid_name_v2": "知识",
+          "pid_v2": 1010,
+          "pub_location": "江苏",
+          "pubdate": 1792465200,
+          "season_id": 1095498,
+          "season_type": 0,
+          "short_link_v2": "https://b23.tv/BV1Vbnn6iEfG",
+          "stat": {
+            "aid": 117466399252185,
+            "coin": 19727,
+            "danmaku": 6266,
+            "dislike": 0,
+            "fav_g": 0,
+            "favorite": 16205,
+            "his_rank": 0,
+            "like": 43053,
+            "like_g": 5,
+            "now_rank": 0,
+            "reply": 2454,
+            "share": 1313,
+            "view": 439249,
+            "vt": 0,
+            "vv": 439249
+          },
+          "state": 0,
+          "tid": 228,
+          "tidv2": 2090,
+          "title": "示例视频标题_21",
+          "tname": "人文历史",
+          "tnamev2": "人文历史",
+          "videos": 1
+        }
+      ],
+      "no_more": false
+    },
+    "message": "OK"
+  }
+}

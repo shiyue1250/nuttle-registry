@@ -1,0 +1,108 @@
+{
+  "expected": [
+    {
+      "author": "示例作者_1",
+      "author_id": "3xauthor0001",
+      "cover": "https://p2.a.yximgs.com/upic/example_1.jpg",
+      "create_time": 1788220802,
+      "duration_s": 15,
+      "extra": {},
+      "id": "3xexample0001",
+      "like_count": 12346,
+      "title": "示例作品_1 #示例",
+      "url": "https://www.kuaishou.com/short-video/3xexample0001",
+      "view_count": 105000
+    },
+    {
+      "author": "示例作者_2",
+      "author_id": "3xauthor0002",
+      "cover": "https://p2.a.yximgs.com/upic/example_2.jpg",
+      "create_time": 1788220803,
+      "duration_s": 15,
+      "extra": {},
+      "id": "3xexample0002",
+      "like_count": 12347,
+      "title": "示例作品_2 #示例",
+      "url": "https://www.kuaishou.com/short-video/3xexample0002",
+      "view_count": 105000
+    },
+    {
+      "author": "示例作者_3",
+      "author_id": "3xauthor0003",
+      "cover": "https://p2.a.yximgs.com/upic/example_3.jpg",
+      "create_time": 1788220804,
+      "duration_s": 15,
+      "extra": {},
+      "id": "3xexample0003",
+      "like_count": 12348,
+      "title": "示例作品_3 #示例",
+      "url": "https://www.kuaishou.com/short-video/3xexample0003",
+      "view_count": 105000
+    },
+    {
+      "author": "示例作者_4",
+      "author_id": "3xauthor0004",
+      "cover": "https://p2.a.yximgs.com/upic/example_4.jpg",
+      "create_time": 1788220805,
+      "duration_s": 15,
+      "extra": {},
+      "id": "3xexample0004",
+      "like_count": 12349,
+      "title": "示例作品_4 #示例",
+      "url": "https://www.kuaishou.com/short-video/3xexample0004",
+      "view_count": 105000
+    }
+  ],
+  "response": {
+    "videos": [
+      {
+        "author": "示例作者_1",
+        "author_id": "3xauthor0001",
+        "cover": "https://p2.a.yximgs.com/upic/example_1.jpg",
+        "create_time": 1788220802,
+        "duration_s": 15,
+        "id": "3xexample0001",
+        "like_count": 12346,
+        "title": "示例作品_1 #示例",
+        "url": "https://www.kuaishou.com/short-video/3xexample0001",
+        "view_count": 105000
+      },
+      {
+        "author": "示例作者_2",
+        "author_id": "3xauthor0002",
+        "cover": "https://p2.a.yximgs.com/upic/example_2.jpg",
+        "create_time": 1788220803,
+        "duration_s": 15,
+        "id": "3xexample0002",
+        "like_count": 12347,
+        "title": "示例作品_2 #示例",
+        "url": "https://www.kuaishou.com/short-video/3xexample0002",
+        "view_count": 105000
+      },
+      {
+        "author": "示例作者_3",
+        "author_id": "3xauthor0003",
+        "cover": "https://p2.a.yximgs.com/upic/example_3.jpg",
+        "create_time": 1788220804,
+        "duration_s": 15,
+        "id": "3xexample0003",
+        "like_count": 12348,
+        "title": "示例作品_3 #示例",
+        "url": "https://www.kuaishou.com/short-video/3xexample0003",
+        "view_count": 105000
+      },
+      {
+        "author": "示例作者_4",
+        "author_id": "3xauthor0004",
+        "cover": "https://p2.a.yximgs.com/upic/example_4.jpg",
+        "create_time": 1788220805,
+        "duration_s": 15,
+        "id": "3xexample0004",
+        "like_count": 12349,
+        "title": "示例作品_4 #示例",
+        "url": "https://www.kuaishou.com/short-video/3xexample0004",
+        "view_count": 105000
+      }
+    ]
+  }
+}

@@ -175,22 +175,25 @@
       "en": "Douyin"
     },
     "desc": {
-      "zh": "采集浏览过的视频与图文作品。",
-      "en": "Collects the videos and image posts you view."
+      "zh": "采集你看过的作品与评论。",
+      "en": "Collects the posts you watch and their comments."
     },
     "parts": [
       {
         "id": "videos",
+        "packs": [
+          "douyin"
+        ],
         "plugins": [
           "official.douyin"
         ],
         "name": {
-          "zh": "视频与图文",
-          "en": "Videos and image posts"
+          "zh": "作品与评论",
+          "en": "Posts and comments"
         },
         "desc": {
-          "zh": "浏览过的视频与图文作品。",
-          "en": "Videos and image posts you view."
+          "zh": "看过的作品、推荐 / 搜索 / 作者主页里刷到的作品、评论与回复，以及可下载的视频。",
+          "en": "Posts you watch or see in feeds, search and profiles, comments and replies, plus downloadable videos."
         }
       }
     ]
@@ -204,22 +207,26 @@
       "en": "Kuaishou"
     },
     "desc": {
-      "zh": "采集推荐页中浏览过的视频。",
-      "en": "Collects the videos you view in the recommended feed."
+      "zh": "采集你看过的视频与评论。",
+      "en": "Collects the videos you watch and their comments."
     },
     "parts": [
       {
         "id": "videos",
+        "packs": [
+          "kuaishou"
+        ],
         "plugins": [
-          "official.kuaishou"
+          "official.kuaishou",
+          "nuttle.kuaishou"
         ],
         "name": {
-          "zh": "视频",
-          "en": "Videos"
+          "zh": "视频与评论",
+          "en": "Videos and comments"
         },
         "desc": {
-          "zh": "推荐页中浏览过的视频。",
-          "en": "Videos you view in the feed."
+          "zh": "看过的作品、精选 / 搜索 / 作者主页里刷到的作品、评论与回复，以及可下载的视频。",
+          "en": "Videos you watch or see in feeds, search and profiles, comments and replies, plus downloadable videos."
         }
       }
     ]
@@ -233,22 +240,25 @@
       "en": "Bilibili"
     },
     "desc": {
-      "zh": "采集浏览过的视频。",
-      "en": "Collects the videos you view."
+      "zh": "采集你看过的视频与评论。",
+      "en": "Collects the videos you watch and their comments."
     },
     "parts": [
       {
         "id": "videos",
+        "packs": [
+          "bilibili"
+        ],
         "plugins": [
           "official.bilibili"
         ],
         "name": {
-          "zh": "视频",
-          "en": "Videos"
+          "zh": "视频与评论",
+          "en": "Videos and comments"
         },
         "desc": {
-          "zh": "浏览过的视频。",
-          "en": "Videos you view."
+          "zh": "看过的视频、首页推荐和热门里刷到的视频、评论与楼中楼，以及可下载的视频。",
+          "en": "Videos you watch or see in your feed and Popular, comments and replies, plus downloadable videos."
         }
       }
     ]
@@ -327,22 +337,26 @@
       "en": "YouTube"
     },
     "desc": {
-      "zh": "采集浏览过的视频。",
-      "en": "Collects the videos you view."
+      "zh": "采集你看过的视频与评论。",
+      "en": "Collects the videos you watch and their comments."
     },
     "parts": [
       {
         "id": "videos",
+        "packs": [
+          "youtube"
+        ],
         "plugins": [
-          "official.youtube"
+          "official.youtube",
+          "nuttle.youtube"
         ],
         "name": {
-          "zh": "视频",
-          "en": "Videos"
+          "zh": "视频与评论",
+          "en": "Videos and comments"
         },
         "desc": {
-          "zh": "浏览过的视频。",
-          "en": "Videos you view."
+          "zh": "看过的视频、搜索和列表里刷到的视频、评论与回复，以及可下载的视频。",
+          "en": "Videos you watch or see in search and lists, comments and replies, plus downloadable videos."
         }
       }
     ]
@@ -356,22 +370,26 @@
       "en": "Instagram"
     },
     "desc": {
-      "zh": "采集浏览过的 Reels 视频。",
-      "en": "Collects the Reels you view."
+      "zh": "采集你看过的帖子、Reels 与评论。",
+      "en": "Collects the posts and Reels you view and their comments."
     },
     "parts": [
       {
         "id": "reels",
+        "packs": [
+          "instagram"
+        ],
         "plugins": [
-          "official.instagram"
+          "official.instagram",
+          "nuttle.instagram"
         ],
         "name": {
-          "zh": "Reels",
-          "en": "Reels"
+          "zh": "帖子、Reels 与评论",
+          "en": "Posts, Reels and comments"
         },
         "desc": {
-          "zh": "浏览过的 Reels 视频。",
-          "en": "Reels you view."
+          "zh": "看过的帖子与 Reels、评论与回复，以及可下载的视频。",
+          "en": "Posts and Reels you view, comments and replies, plus downloadable videos."
         }
       }
     ]

@@ -1,0 +1,127 @@
+{
+  "apiVersion": 1,
+  "id": "douyin/feed",
+  "version": "0.1.0",
+  "platform": "douyin",
+  "entity": "video",
+  "match": {
+    "host": "douyin.com",
+    "path": "/aweme/v1/web/tab/feed/"
+  },
+  "item_path": "aweme_list",
+  "fields": {
+    "id": "aweme_id",
+    "title": "desc",
+    "author": "author.nickname",
+    "author_id": "author.uid",
+    "create_time": "create_time",
+    "like_count": "statistics.digg_count",
+    "comment_count": "statistics.comment_count",
+    "collect_count": "statistics.collect_count",
+    "share_count": "statistics.share_count",
+    "cover": "video.cover.url_list.0",
+    "duration_s": "video.duration/1000",
+    "ip_location": "ip_label",
+    "url": "=https://www.douyin.com/video/{aweme_id}",
+    "extra.sec_uid": "author.sec_uid",
+    "extra.aweme_type": "aweme_type",
+    "extra.images": "images"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int",
+      "note": "点赞"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "collect_count": {
+      "type": "int",
+      "note": "收藏"
+    },
+    "share_count": {
+      "type": "int"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "duration_s": {
+      "type": "duration_s",
+      "note": "接口是毫秒，/1000 后为秒；图文作品为 0"
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "刷首页推荐",
+  "fixture": "feed.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "note": "字段路径依据 MediaCrawler 的抖音解析与官方抖音插件的样本；还没有用真实浏览采到的数据核对过，第一次采到后以实际为准",
+  "locales": {
+    "zh": {
+      "name": "抖音推荐",
+      "description": "首页推荐里刷到的作品"
+    },
+    "en": {
+      "name": "Douyin feed",
+      "description": "Posts in your recommended feed"
+    }
+  },
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "description",
+      "cover": "thumbnailUrl",
+      "create_time": "uploadDate",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "duration_s",
+      "like_count",
+      "comment_count",
+      "collect_count",
+      "share_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "描述",
+        "author": "作者",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "like_count": "点赞",
+        "comment_count": "评论",
+        "collect_count": "收藏",
+        "share_count": "分享"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Caption",
+        "author": "Author",
+        "create_time": "Posted",
+        "duration_s": "Duration",
+        "like_count": "Likes",
+        "comment_count": "Comments",
+        "collect_count": "Saves",
+        "share_count": "Shares"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "official.douyin",
+    "match": {
+      "meta:awemeId": "id"
+    }
+  }
+}

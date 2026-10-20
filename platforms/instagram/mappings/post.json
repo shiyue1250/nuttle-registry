@@ -1,0 +1,120 @@
+{
+  "apiVersion": 1,
+  "id": "instagram/post",
+  "version": "0.1.0",
+  "platform": "instagram",
+  "entity": "post",
+  "match": {
+    "host": "instagram.com",
+    "path": "/nuttle/instagram/posts"
+  },
+  "item_path": "posts",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "author": "author",
+    "author_id": "author_id",
+    "create_time": "create_time",
+    "like_count": "like_count",
+    "comment_count": "comment_count",
+    "view_count": "view_count",
+    "cover": "cover",
+    "url": "url",
+    "media_type": "media_type"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "view_count": {
+      "type": "int"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "reply_count": {
+      "type": "int"
+    },
+    "duration_s": {
+      "type": "duration_s"
+    },
+    "cover": {
+      "type": "image",
+      "note": "地址带签名会过期"
+    },
+    "url": {
+      "type": "url"
+    },
+    "media_type": {
+      "type": "string",
+      "note": "video / photo / carousel"
+    }
+  },
+  "trigger": "浏览首页、Reels、打开帖子。需要「Instagram 帖子与评论」插件",
+  "note": "数据来自「Instagram 帖子与评论」插件的整理（经本机代理），不是网站原始接口；字段依据开源实现与官方插件样本，还没有用真实浏览采到的数据核对过",
+  "fixture": "post.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "Instagram 帖子",
+      "description": "看过的帖子与 Reels：正文、作者、发布时间、点赞 / 评论 / 播放数"
+    },
+    "en": {
+      "name": "Instagram posts",
+      "description": "Posts and Reels you view: caption, author, time, likes / comments / plays"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "like_count",
+      "comment_count",
+      "view_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "正文",
+        "author": "作者",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "view_count": "播放",
+        "like_count": "点赞",
+        "comment_count": "评论"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Caption",
+        "author": "Author",
+        "create_time": "Posted",
+        "duration_s": "Duration",
+        "view_count": "Views",
+        "like_count": "Likes",
+        "comment_count": "Comments"
+      }
+    }
+  },
+  "jsonld": {
+    "@type": "SocialMediaPosting",
+    "map": {
+      "title": "articleBody",
+      "author": "author",
+      "create_time": "datePublished",
+      "url": "url"
+    }
+  },
+  "resource": {
+    "plugin": "official.instagram",
+    "match": {
+      "meta:instagram.shortcode": "id"
+    }
+  }
+}

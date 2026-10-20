@@ -1,0 +1,95 @@
+{
+  "expected": [
+    {
+      "author": "示例用户_1",
+      "author_id": "50001",
+      "content": "示例评论_1",
+      "create_time": 1788221001,
+      "extra": {
+        "reply_to_user": ""
+      },
+      "head": "https://p2.a.yximgs.com/uhead/u1.jpg",
+      "id": "900000001",
+      "like_count": 13,
+      "nickname": "示例用户_1",
+      "reply_count": 1,
+      "reply_to": "0",
+      "video_id": "3xexample0003"
+    },
+    {
+      "author": "示例用户_2",
+      "author_id": "50002",
+      "content": "示例评论_2",
+      "create_time": 1788221002,
+      "extra": {
+        "reply_to_user": "示例用户_1"
+      },
+      "head": "https://p2.a.yximgs.com/uhead/u2.jpg",
+      "id": "900000002",
+      "like_count": 14,
+      "nickname": "示例用户_2",
+      "reply_count": 0,
+      "reply_to": "900000001",
+      "video_id": "3xexample0003"
+    },
+    {
+      "author": "示例用户_3",
+      "author_id": "50003",
+      "content": "示例评论_3",
+      "create_time": 1788221003,
+      "extra": {
+        "reply_to_user": ""
+      },
+      "head": "https://p2.a.yximgs.com/uhead/u3.jpg",
+      "id": "900000003",
+      "like_count": 15,
+      "nickname": "示例用户_3",
+      "reply_count": 0,
+      "reply_to": "0",
+      "video_id": "3xexample0003"
+    }
+  ],
+  "response": {
+    "comments": [
+      {
+        "author": "示例用户_1",
+        "author_id": "50001",
+        "content": "示例评论_1",
+        "create_time": 1788221001,
+        "head": "https://p2.a.yximgs.com/uhead/u1.jpg",
+        "id": "900000001",
+        "like_count": 13,
+        "reply_count": 1,
+        "reply_to": "0",
+        "reply_to_user": "",
+        "video_id": "3xexample0003"
+      },
+      {
+        "author": "示例用户_2",
+        "author_id": "50002",
+        "content": "示例评论_2",
+        "create_time": 1788221002,
+        "head": "https://p2.a.yximgs.com/uhead/u2.jpg",
+        "id": "900000002",
+        "like_count": 14,
+        "reply_count": 0,
+        "reply_to": "900000001",
+        "reply_to_user": "示例用户_1",
+        "video_id": "3xexample0003"
+      },
+      {
+        "author": "示例用户_3",
+        "author_id": "50003",
+        "content": "示例评论_3",
+        "create_time": 1788221003,
+        "head": "https://p2.a.yximgs.com/uhead/u3.jpg",
+        "id": "900000003",
+        "like_count": 15,
+        "reply_count": 0,
+        "reply_to": "0",
+        "reply_to_user": "",
+        "video_id": "3xexample0003"
+      }
+    ]
+  }
+}

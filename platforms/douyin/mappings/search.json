@@ -1,0 +1,127 @@
+{
+  "apiVersion": 1,
+  "id": "douyin/search",
+  "version": "0.1.0",
+  "platform": "douyin",
+  "entity": "video",
+  "match": {
+    "host": "douyin.com",
+    "path": "/aweme/v1/web/general/search/single/"
+  },
+  "item_path": "data",
+  "fields": {
+    "id": "aweme_info.aweme_id",
+    "title": "aweme_info.desc",
+    "author": "aweme_info.author.nickname",
+    "author_id": "aweme_info.author.uid",
+    "create_time": "aweme_info.create_time",
+    "like_count": "aweme_info.statistics.digg_count",
+    "comment_count": "aweme_info.statistics.comment_count",
+    "collect_count": "aweme_info.statistics.collect_count",
+    "share_count": "aweme_info.statistics.share_count",
+    "cover": "aweme_info.video.cover.url_list.0",
+    "duration_s": "aweme_info.video.duration/1000",
+    "ip_location": "aweme_info.ip_label",
+    "url": "=https://www.douyin.com/video/{aweme_info.aweme_id}",
+    "extra.sec_uid": "aweme_info.author.sec_uid",
+    "extra.aweme_type": "aweme_info.aweme_type",
+    "extra.images": "aweme_info.images"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int",
+      "note": "点赞"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "collect_count": {
+      "type": "int",
+      "note": "收藏"
+    },
+    "share_count": {
+      "type": "int"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "duration_s": {
+      "type": "duration_s",
+      "note": "接口是毫秒，/1000 后为秒；图文作品为 0"
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "搜索作品",
+  "fixture": "search.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "note": "字段路径依据 MediaCrawler 的抖音解析与官方抖音插件的样本；还没有用真实浏览采到的数据核对过，第一次采到后以实际为准",
+  "locales": {
+    "zh": {
+      "name": "抖音搜索结果",
+      "description": "搜索结果里的作品"
+    },
+    "en": {
+      "name": "Douyin search results",
+      "description": "Posts in search results"
+    }
+  },
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "description",
+      "cover": "thumbnailUrl",
+      "create_time": "uploadDate",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "duration_s",
+      "like_count",
+      "comment_count",
+      "collect_count",
+      "share_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "描述",
+        "author": "作者",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "like_count": "点赞",
+        "comment_count": "评论",
+        "collect_count": "收藏",
+        "share_count": "分享"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Caption",
+        "author": "Author",
+        "create_time": "Posted",
+        "duration_s": "Duration",
+        "like_count": "Likes",
+        "comment_count": "Comments",
+        "collect_count": "Saves",
+        "share_count": "Shares"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "official.douyin",
+    "match": {
+      "meta:awemeId": "id"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "apiVersion": 1,
+  "id": "bilibili/comment",
+  "version": "0.1.1",
+  "platform": "bilibili",
+  "entity": "comment",
+  "match": {
+    "host": "api.bilibili.com",
+    "path": "/x/v2/reply"
+  },
+  "item_path": "data.replies",
+  "fields": {
+    "id": "rpid_str",
+    "video_id": "oid_str",
+    "content": "content.message",
+    "like_count": "like",
+    "create_time": "ctime",
+    "reply_count": "rcount",
+    "user_id": "mid_str",
+    "author_id": "mid_str",
+    "author": "member.uname",
+    "nickname": "member.uname",
+    "head": "member.avatar",
+    "ip_location": "reply_control.location",
+    "reply_to": "parent_str",
+    "root_id": "root_str",
+    "extra.pictures": "content.pictures",
+    "extra.replies": "replies"
+  },
+  "schema": {
+    "like_count": {
+      "type": "int"
+    },
+    "create_time": {
+      "type": "unix_s"
+    },
+    "reply_count": {
+      "type": "int",
+      "note": "楼中楼回复数"
+    },
+    "video_id": {
+      "type": "string",
+      "note": "视频的 aid，对应「哔哩哔哩视频」的 id；动态、专栏下的评论也会进来，oid 对不上视频"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "回复的那条评论 rpid；0 为一级评论"
+    },
+    "ip_location": {
+      "type": "string",
+      "note": "如「IP属地：广东」"
+    }
+  },
+  "trigger": "视频页下方评论区：加载、翻页、展开楼中楼（接口 /x/v2/reply、/x/v2/reply/main、/x/v2/reply/wbi/main、/x/v2/reply/reply）",
+  "note": "一级评论自带的前几条楼中楼按内嵌回复读；展开楼中楼时 /x/v2/reply/reply 返回的回复也按评论入库，reply_to 指向被回复的那条",
+  "fixture": "comment.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "pagination": {
+    "cursor": "data.cursor.pagination_reply.next_offset",
+    "has_more": "data.cursor.is_end"
+  },
+  "locales": {
+    "zh": {
+      "name": "哔哩哔哩评论",
+      "description": "看过的视频下的评论与楼中楼：内容、用户、时间、点赞、IP 属地"
+    },
+    "en": {
+      "name": "Bilibili comments",
+      "description": "Comments and replies under videos you watch: text, user, time, likes, IP location"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "nickname": "author",
+      "create_time": "dateCreated"
+    }
+  },
+  "display": {
+    "columns": [
+      "nickname",
+      "content",
+      "create_time",
+      "like_count",
+      "reply_count",
+      "ip_location"
+    ],
+    "labels": {
+      "zh": {
+        "nickname": "用户",
+        "content": "内容",
+        "create_time": "时间",
+        "like_count": "点赞",
+        "reply_count": "回复",
+        "ip_location": "IP 属地"
+      },
+      "en": {
+        "nickname": "User",
+        "content": "Text",
+        "create_time": "Time",
+        "like_count": "Likes",
+        "reply_count": "Replies",
+        "ip_location": "IP location"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "bilibili/video",
+      "field": "video_id",
+      "count_field": "reply_count"
+    },
+    "reply_to": "reply_to",
+    "replies": "replies",
+    "reply_fields": {
+      "id": "rpid_str",
+      "nickname": "member.uname",
+      "content": "content.message",
+      "like_count": "like",
+      "create_time": "ctime",
+      "head": "member.avatar",
+      "ip_location": "reply_control.location",
+      "reply_to": "parent_str"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "expected": [
+    {
+      "author": "@user1",
+      "author_id": "UCuser000000000000000001",
+      "content": "示例评论内容_1",
+      "extra": {
+        "is_creator": false,
+        "published_text": "6 years ago (edited)"
+      },
+      "head": "https://yt3.ggpht.com/example1=s88",
+      "id": "UgxComment0001AaABAg",
+      "like_count": 105000,
+      "nickname": "@user1",
+      "reply_count": 624,
+      "reply_to": "0",
+      "url": "https://www.youtube.com/watch?v=vid00000001&lc=UgxComment0001AaABAg",
+      "video_id": "vid00000001"
+    },
+    {
+      "author": "@user2",
+      "author_id": "UCuser000000000000000002",
+      "content": "示例评论内容_2",
+      "extra": {
+        "is_creator": true,
+        "published_text": "6 years ago (edited)"
+      },
+      "head": "https://yt3.ggpht.com/example2=s88",
+      "id": "UgxComment0001AaABAg.9xReply0002",
+      "like_count": 1234,
+      "nickname": "@user2",
+      "reply_count": null,
+      "reply_to": "UgxComment0001AaABAg",
+      "url": "https://www.youtube.com/watch?v=vid00000001&lc=UgxComment0001AaABAg.9xReply0002",
+      "video_id": "vid00000001"
+    }
+  ],
+  "response": {
+    "comments": [
+      {
+        "author": "@user1",
+        "author_id": "UCuser000000000000000001",
+        "content": "示例评论内容_1",
+        "head": "https://yt3.ggpht.com/example1=s88",
+        "id": "UgxComment0001AaABAg",
+        "is_creator": false,
+        "like_count": 105000,
+        "published_text": "6 years ago (edited)",
+        "reply_count": 624,
+        "reply_to": "0",
+        "url": "https://www.youtube.com/watch?v=vid00000001&lc=UgxComment0001AaABAg",
+        "video_id": "vid00000001"
+      },
+      {
+        "author": "@user2",
+        "author_id": "UCuser000000000000000002",
+        "content": "示例评论内容_2",
+        "head": "https://yt3.ggpht.com/example2=s88",
+        "id": "UgxComment0001AaABAg.9xReply0002",
+        "is_creator": true,
+        "like_count": 1234,
+        "published_text": "6 years ago (edited)",
+        "reply_count": null,
+        "reply_to": "UgxComment0001AaABAg",
+        "url": "https://www.youtube.com/watch?v=vid00000001&lc=UgxComment0001AaABAg.9xReply0002",
+        "video_id": "vid00000001"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "apiVersion": 1,
+  "id": "youtube",
+  "version": "0.1.0",
+  "label": "YouTube",
+  "locales": {
+    "zh": {
+      "name": "YouTube"
+    },
+    "en": {
+      "name": "YouTube"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/youtube/videos",
+      "label": "YouTube 视频（「YouTube 视频与评论」插件整理后交回，已内置解析）"
+    },
+    {
+      "match": "/nuttle/youtube/comments",
+      "label": "YouTube 评论（「YouTube 视频与评论」插件整理后交回，已内置解析）"
+    }
+  ],
+  "notes": "YouTube 的视频信息嵌在观看页 HTML（ytInitialPlayerResponse）和 innertube 接口里，评论在 next 接口的 frameworkUpdates 里、视频 id 还在另一条数据中，映射卡的点号路径取不到。由配套插件 nuttle.youtube 在本机代理里读到这些响应时拍平，交回 /nuttle/youtube/videos 与 /nuttle/youtube/comments，再由本包两张卡解析。数据全部经插件进来，本包不登记域名。样本结构来自 2026-10-20 的真实返回，内容已换成示例值。"
+}

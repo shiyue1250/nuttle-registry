@@ -1,0 +1,60 @@
+{
+  "expected": [
+    {
+      "author": "commenter_1",
+      "author_id": "2001",
+      "content": "示例评论_1",
+      "create_time": 1756685001,
+      "extra": {},
+      "head": "https://scontent.cdninstagram.com/p/1.jpg",
+      "id": "18000000000000001",
+      "like_count": 6,
+      "nickname": "commenter_1",
+      "post_id": "ExampleCode1",
+      "reply_count": 1,
+      "reply_to": "0"
+    },
+    {
+      "author": "commenter_2",
+      "author_id": "2002",
+      "content": "示例评论_2",
+      "create_time": 1756685002,
+      "extra": {},
+      "head": "https://scontent.cdninstagram.com/p/2.jpg",
+      "id": "18000000000000002",
+      "like_count": 7,
+      "nickname": "commenter_2",
+      "post_id": "ExampleCode1",
+      "reply_count": 0,
+      "reply_to": "18000000000000001"
+    }
+  ],
+  "response": {
+    "comments": [
+      {
+        "author": "commenter_1",
+        "author_id": "2001",
+        "content": "示例评论_1",
+        "create_time": 1756685001,
+        "head": "https://scontent.cdninstagram.com/p/1.jpg",
+        "id": "18000000000000001",
+        "like_count": 6,
+        "post_id": "ExampleCode1",
+        "reply_count": 1,
+        "reply_to": "0"
+      },
+      {
+        "author": "commenter_2",
+        "author_id": "2002",
+        "content": "示例评论_2",
+        "create_time": 1756685002,
+        "head": "https://scontent.cdninstagram.com/p/2.jpg",
+        "id": "18000000000000002",
+        "like_count": 7,
+        "post_id": "ExampleCode1",
+        "reply_count": 0,
+        "reply_to": "18000000000000001"
+      }
+    ]
+  }
+}

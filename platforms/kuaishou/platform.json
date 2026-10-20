@@ -1,0 +1,26 @@
+{
+  "apiVersion": 1,
+  "id": "kuaishou",
+  "version": "0.1.0",
+  "label": "快手",
+  "locales": {
+    "zh": {
+      "name": "快手"
+    },
+    "en": {
+      "name": "Kuaishou"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/kuaishou/videos",
+      "label": "快手作品（「快手视频与评论」插件整理后交回，已内置解析）"
+    },
+    {
+      "match": "/nuttle/kuaishou/comments",
+      "label": "快手评论（「快手视频与评论」插件整理后交回，已内置解析）"
+    }
+  ],
+  "notes": "快手网页的作品详情、搜索、作者主页、评论走同一个 /graphql，数据根路径各不相同，评论里也没有作品 id。由配套插件 nuttle.kuaishou 拍平后交回 /nuttle/kuaishou/videos 与 /nuttle/kuaishou/comments，再由本包两张卡解析。数据全部经插件进来，本包不登记域名。字段依据 MediaCrawler 的快手 GraphQL 查询与官方快手插件样本，样本是示例值，还没有用真实浏览核对过。"
+}

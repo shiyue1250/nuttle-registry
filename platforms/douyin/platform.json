@@ -1,0 +1,44 @@
+{
+  "apiVersion": 1,
+  "id": "douyin",
+  "version": "0.1.0",
+  "label": "抖音",
+  "locales": {
+    "zh": {
+      "name": "抖音"
+    },
+    "en": {
+      "name": "Douyin"
+    }
+  },
+  "hosts": [
+    "www.douyin.com"
+  ],
+  "endpoints": [
+    {
+      "match": "/aweme/v1/web/aweme/detail/",
+      "label": "作品详情"
+    },
+    {
+      "match": "/aweme/v1/web/tab/feed/",
+      "label": "首页推荐"
+    },
+    {
+      "match": "/aweme/v1/web/aweme/post/",
+      "label": "作者主页作品"
+    },
+    {
+      "match": "/aweme/v1/web/general/search/single/",
+      "label": "综合搜索"
+    },
+    {
+      "match": "/aweme/v1/web/comment/list/",
+      "label": "评论与回复"
+    }
+  ],
+  "noise": [
+    "/aweme/v1/web/report/",
+    "/web/api/v2/aweme/"
+  ],
+  "notes": "抖音网页接口是普通 JSON，映射卡直接读；作品 id 是 aweme_id，可下载的视频由官方抖音插件识别，按 awemeId 对上。字段路径依据 MediaCrawler 的抖音解析与官方抖音插件样本，样本是按这些路径构造的示例值，还没有用真实浏览核对过。"
+}

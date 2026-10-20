@@ -1,0 +1,106 @@
+{
+  "apiVersion": 1,
+  "id": "douyin/comment",
+  "version": "0.1.0",
+  "platform": "douyin",
+  "entity": "comment",
+  "match": {
+    "host": "douyin.com",
+    "path": "/aweme/v1/web/comment/list/"
+  },
+  "item_path": "comments",
+  "fields": {
+    "id": "cid",
+    "video_id": "aweme_id",
+    "content": "text",
+    "create_time": "create_time",
+    "like_count": "digg_count",
+    "reply_count": "reply_comment_total",
+    "nickname": "user.nickname",
+    "author": "user.nickname",
+    "author_id": "user.uid",
+    "head": "user.avatar_thumb.url_list.0",
+    "ip_location": "ip_label",
+    "reply_to": "reply_id",
+    "extra.image_list": "image_list"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "reply_count": {
+      "type": "int"
+    },
+    "video_id": {
+      "type": "string",
+      "note": "对应「抖音作品」的 id"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "楼中楼里是所在一级评论的 cid；一级评论为 \"0\""
+    }
+  },
+  "trigger": "作品详情打开评论区、翻页、展开回复（接口 /aweme/v1/web/comment/list/ 与 /comment/list/reply/）",
+  "fixture": "comment.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "note": "字段路径依据 MediaCrawler 的抖音解析与官方抖音插件的样本；还没有用真实浏览采到的数据核对过，第一次采到后以实际为准",
+  "locales": {
+    "zh": {
+      "name": "抖音评论",
+      "description": "看过的作品下的评论与回复：内容、用户、时间、点赞、IP 属地"
+    },
+    "en": {
+      "name": "Douyin comments",
+      "description": "Comments and replies under posts you watch: text, user, time, likes, IP location"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "nickname": "author",
+      "create_time": "dateCreated"
+    }
+  },
+  "display": {
+    "columns": [
+      "nickname",
+      "content",
+      "create_time",
+      "like_count",
+      "reply_count",
+      "ip_location"
+    ],
+    "labels": {
+      "zh": {
+        "nickname": "用户",
+        "content": "内容",
+        "create_time": "时间",
+        "like_count": "点赞",
+        "reply_count": "回复",
+        "ip_location": "IP 属地"
+      },
+      "en": {
+        "nickname": "User",
+        "content": "Text",
+        "create_time": "Time",
+        "like_count": "Likes",
+        "reply_count": "Replies",
+        "ip_location": "IP location"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "douyin/detail",
+      "field": "video_id",
+      "count_field": "comment_count"
+    },
+    "reply_to": "reply_to"
+  }
+}

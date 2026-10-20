@@ -1,0 +1,44 @@
+{
+  "apiVersion": 1,
+  "id": "bilibili",
+  "version": "0.1.1",
+  "label": "哔哩哔哩",
+  "locales": {
+    "zh": {
+      "name": "哔哩哔哩"
+    },
+    "en": {
+      "name": "Bilibili"
+    }
+  },
+  "hosts": [
+    "api.bilibili.com"
+  ],
+  "endpoints": [
+    {
+      "match": "/x/web-interface/view",
+      "label": "视频详情（标题、简介、UP 主、各项数据）"
+    },
+    {
+      "match": "/x/web-interface/wbi/view",
+      "label": "视频详情（网页新版接口）"
+    },
+    {
+      "match": "/index/top/feed/rcmd",
+      "label": "首页推荐流"
+    },
+    {
+      "match": "/x/web-interface/popular",
+      "label": "热门"
+    },
+    {
+      "match": "/x/web-interface/archive/related",
+      "label": "相关推荐"
+    },
+    {
+      "match": "/x/v2/reply",
+      "label": "评论与楼中楼"
+    }
+  ],
+  "notes": "B 站网页接口是普通 JSON，映射卡直接读。视频 id 用 aid（评论接口的 oid），原文链接用 bvid；可下载的视频由「哔哩哔哩」插件（official.bilibili）识别，按 bvid 对上。样本来自 2026-10-20 公开接口的真实返回，用户名、正文、id 已换成示例值。"
+}

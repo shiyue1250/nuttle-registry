@@ -1,0 +1,89 @@
+{
+  "expected": [
+    {
+      "author": "example_user_1",
+      "author_id": "1001",
+      "comment_count": 21,
+      "cover": "https://scontent.cdninstagram.com/example/1.jpg",
+      "create_time": 1756684801,
+      "extra": {},
+      "id": "ExampleCode1",
+      "like_count": 1001,
+      "media_type": "video",
+      "title": "示例正文_1 & #tag",
+      "url": "https://www.instagram.com/reel/ExampleCode1/",
+      "view_count": 50001
+    },
+    {
+      "author": "example_user_2",
+      "author_id": "1002",
+      "comment_count": 22,
+      "cover": "https://scontent.cdninstagram.com/example/2.jpg",
+      "create_time": 1756684802,
+      "extra": {},
+      "id": "ExampleCode2",
+      "like_count": 1002,
+      "media_type": "photo",
+      "title": "示例正文_2 & #tag",
+      "url": "https://www.instagram.com/p/ExampleCode2/",
+      "view_count": null
+    },
+    {
+      "author": "example_user_3",
+      "author_id": "1003",
+      "comment_count": 23,
+      "cover": "https://scontent.cdninstagram.com/example/3.jpg",
+      "create_time": 1756684803,
+      "extra": {},
+      "id": "ExampleCode3",
+      "like_count": 1003,
+      "media_type": "video",
+      "title": "示例正文_3 & #tag",
+      "url": "https://www.instagram.com/reel/ExampleCode3/",
+      "view_count": 50003
+    }
+  ],
+  "response": {
+    "posts": [
+      {
+        "author": "example_user_1",
+        "author_id": "1001",
+        "comment_count": 21,
+        "cover": "https://scontent.cdninstagram.com/example/1.jpg",
+        "create_time": 1756684801,
+        "id": "ExampleCode1",
+        "like_count": 1001,
+        "media_type": "video",
+        "title": "示例正文_1 & #tag",
+        "url": "https://www.instagram.com/reel/ExampleCode1/",
+        "view_count": 50001
+      },
+      {
+        "author": "example_user_2",
+        "author_id": "1002",
+        "comment_count": 22,
+        "cover": "https://scontent.cdninstagram.com/example/2.jpg",
+        "create_time": 1756684802,
+        "id": "ExampleCode2",
+        "like_count": 1002,
+        "media_type": "photo",
+        "title": "示例正文_2 & #tag",
+        "url": "https://www.instagram.com/p/ExampleCode2/",
+        "view_count": null
+      },
+      {
+        "author": "example_user_3",
+        "author_id": "1003",
+        "comment_count": 23,
+        "cover": "https://scontent.cdninstagram.com/example/3.jpg",
+        "create_time": 1756684803,
+        "id": "ExampleCode3",
+        "like_count": 1003,
+        "media_type": "video",
+        "title": "示例正文_3 & #tag",
+        "url": "https://www.instagram.com/reel/ExampleCode3/",
+        "view_count": 50003
+      }
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "apiVersion": 1,
+  "id": "bilibili/feed",
+  "version": "0.1.0",
+  "platform": "bilibili",
+  "entity": "video",
+  "match": {
+    "host": "api.bilibili.com",
+    "path": "/index/top/feed/rcmd"
+  },
+  "item_path": "data.item",
+  "fields": {
+    "id": "id",
+    "bvid": "bvid",
+    "title": "title",
+    "author": "owner.name",
+    "author_id": "={owner.mid}",
+    "cover": "pic",
+    "duration_s": "duration",
+    "create_time": "pubdate",
+    "view_count": "stat.view",
+    "like_count": "stat.like",
+    "danmaku_count": "stat.danmaku",
+    "url": "=https://www.bilibili.com/video/{bvid}"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "duration_s": {
+      "type": "duration_s",
+      "note": "秒"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "view_count": {
+      "type": "int",
+      "note": "播放"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "danmaku_count": {
+      "type": "int",
+      "note": "弹幕"
+    },
+    "coin_count": {
+      "type": "int",
+      "note": "投币；列表接口没有"
+    },
+    "favorite_count": {
+      "type": "int",
+      "note": "收藏；列表接口没有"
+    },
+    "share_count": {
+      "type": "int",
+      "note": "分享；列表接口没有"
+    },
+    "reply_count": {
+      "type": "int",
+      "note": "评论数；列表接口没有"
+    },
+    "bvid": {
+      "type": "string",
+      "note": "对应「哔哩哔哩」下载插件资源里的 bvid"
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "浏览首页推荐流",
+  "note": "视频 id 用 aid（评论接口的 oid 就是它），原文链接用 bvid",
+  "fixture": "feed.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "哔哩哔哩首页推荐",
+      "description": "首页推荐流里刷到的视频：标题、UP 主、时长、播放 / 点赞 / 弹幕数"
+    },
+    "en": {
+      "name": "Bilibili home feed",
+      "description": "Videos in your home feed: title, uploader, duration, views / likes / danmaku"
+    }
+  },
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "name",
+      "cover": "thumbnailUrl",
+      "create_time": "uploadDate",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "duration_s",
+      "view_count",
+      "like_count",
+      "coin_count",
+      "favorite_count",
+      "reply_count",
+      "danmaku_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "标题",
+        "author": "UP 主",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "view_count": "播放",
+        "like_count": "点赞",
+        "coin_count": "投币",
+        "favorite_count": "收藏",
+        "reply_count": "评论",
+        "danmaku_count": "弹幕"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Title",
+        "author": "Uploader",
+        "create_time": "Published",
+        "duration_s": "Duration",
+        "view_count": "Views",
+        "like_count": "Likes",
+        "coin_count": "Coins",
+        "favorite_count": "Favorites",
+        "reply_count": "Comments",
+        "danmaku_count": "Danmaku"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "official.bilibili",
+    "match": {
+      "meta:bvid": "bvid"
+    }
+  }
+}

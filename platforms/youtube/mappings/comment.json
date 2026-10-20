@@ -1,0 +1,99 @@
+{
+  "apiVersion": 1,
+  "id": "youtube/comment",
+  "version": "0.1.0",
+  "platform": "youtube",
+  "entity": "comment",
+  "match": {
+    "host": "youtube.com",
+    "path": "/nuttle/youtube/comments"
+  },
+  "item_path": "comments",
+  "fields": {
+    "id": "id",
+    "video_id": "video_id",
+    "content": "content",
+    "nickname": "author",
+    "author": "author",
+    "author_id": "author_id",
+    "head": "head",
+    "like_count": "like_count",
+    "reply_count": "reply_count",
+    "reply_to": "reply_to",
+    "url": "url",
+    "extra.published_text": "published_text",
+    "extra.is_creator": "is_creator"
+  },
+  "schema": {
+    "like_count": {
+      "type": "int",
+      "note": "网页显示「105K」这类缩写时是约数"
+    },
+    "reply_count": {
+      "type": "int"
+    },
+    "video_id": {
+      "type": "string",
+      "note": "对应「YouTube 视频」的 id"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "回复的那条评论 id；一级评论为 \"0\""
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "在观看页往下滚到评论区、翻页、展开回复。需要「YouTube 视频与评论」插件",
+  "note": "YouTube 评论只给相对时间（如「6 years ago」），存在 extra.published_text；采到的时间是囤囤鼠看到它的时间",
+  "fixture": "comment.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "YouTube 评论",
+      "description": "看过的视频下的评论与回复：内容、作者、点赞数、回复数"
+    },
+    "en": {
+      "name": "YouTube comments",
+      "description": "Comments and replies under videos you watch: text, author, likes, replies"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "nickname",
+      "content",
+      "like_count",
+      "reply_count"
+    ],
+    "labels": {
+      "zh": {
+        "nickname": "作者",
+        "content": "内容",
+        "like_count": "点赞",
+        "reply_count": "回复"
+      },
+      "en": {
+        "nickname": "Author",
+        "content": "Text",
+        "like_count": "Likes",
+        "reply_count": "Replies"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "youtube/video",
+      "field": "video_id"
+    },
+    "reply_to": "reply_to"
+  }
+}

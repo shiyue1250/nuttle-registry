@@ -1,0 +1,91 @@
+{
+  "expected": [
+    {
+      "author": "示例UP主_4",
+      "author_id": "100004",
+      "bvid": "BV1example003",
+      "coin_count": 1285195,
+      "content": "示例简介_3",
+      "cover": "http://i0.hdslb.com/bfs/archive/example_3.jpg",
+      "create_time": 1577835803,
+      "danmaku_count": 151017,
+      "duration_s": 213,
+      "extra": {
+        "category": ""
+      },
+      "favorite_count": 1556089,
+      "id": "900003",
+      "like_count": 2958242,
+      "reply_count": 238099,
+      "share_count": 500476,
+      "title": "示例视频标题_3",
+      "url": "https://www.bilibili.com/video/BV1example003",
+      "view_count": 107453324
+    }
+  ],
+  "response": {
+    "code": 0,
+    "data": {
+      "aid": 900003,
+      "bvid": "BV1example003",
+      "cid": 137649199,
+      "copyright": 1,
+      "ctime": 1577835803,
+      "desc": "示例简介_3",
+      "dimension": {
+        "height": 1080,
+        "rotate": 0,
+        "width": 1920
+      },
+      "disable_show_up_info": false,
+      "duration": 213,
+      "enable_vt": 0,
+      "is_chargeable_season": false,
+      "is_hua_sheng": false,
+      "is_season_display": false,
+      "is_story": false,
+      "is_story_play": 0,
+      "is_upower_exclusive": false,
+      "is_upower_exclusive_with_qa": false,
+      "is_upower_play": false,
+      "is_upower_preview": false,
+      "is_view_self": false,
+      "like_icon": "",
+      "need_jump_bv": false,
+      "no_cache": true,
+      "owner": {
+        "face": "https://i0.hdslb.com/bfs/face/example_4.jpg",
+        "mid": 100004,
+        "name": "示例UP主_4"
+      },
+      "pic": "http://i0.hdslb.com/bfs/archive/example_3.jpg",
+      "premiere": null,
+      "pubdate": 1577835803,
+      "stat": {
+        "aid": 80433022,
+        "coin": 1285195,
+        "danmaku": 151017,
+        "dislike": 0,
+        "evaluation": "",
+        "favorite": 1556089,
+        "his_rank": 0,
+        "like": 2958242,
+        "now_rank": 0,
+        "reply": 238099,
+        "share": 500476,
+        "view": 107453324,
+        "vt": 0
+      },
+      "state": 0,
+      "teenage_mode": 0,
+      "tid": 193,
+      "tid_v2": 2017,
+      "title": "示例视频标题_3",
+      "tname": "",
+      "tname_v2": "",
+      "videos": 1,
+      "vt_display": ""
+    },
+    "message": "OK"
+  }
+}

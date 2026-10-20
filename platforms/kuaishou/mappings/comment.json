@@ -1,0 +1,108 @@
+{
+  "apiVersion": 1,
+  "id": "kuaishou/comment",
+  "version": "0.1.0",
+  "platform": "kuaishou",
+  "entity": "comment",
+  "match": {
+    "host": "kuaishou.com",
+    "path": "/nuttle/kuaishou/comments"
+  },
+  "item_path": "comments",
+  "fields": {
+    "id": "id",
+    "video_id": "video_id",
+    "content": "content",
+    "nickname": "author",
+    "author": "author",
+    "author_id": "author_id",
+    "head": "head",
+    "create_time": "create_time",
+    "like_count": "like_count",
+    "reply_count": "reply_count",
+    "reply_to": "reply_to",
+    "extra.reply_to_user": "reply_to_user"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "view_count": {
+      "type": "int"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "reply_count": {
+      "type": "int"
+    },
+    "duration_s": {
+      "type": "duration_s"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "url": {
+      "type": "url"
+    },
+    "video_id": {
+      "type": "string",
+      "note": "对应「快手作品」的 id（取自评论所在页面地址）"
+    },
+    "reply_to": {
+      "type": "string",
+      "note": "回复所在的一级评论 id；一级评论为 \"0\""
+    }
+  },
+  "trigger": "在作品详情页看评论、展开回复。需要「快手视频与评论」插件",
+  "note": "数据来自「快手视频与评论」插件的整理（经本机代理），不是网站原始接口；字段依据开源实现与官方插件样本，还没有用真实浏览采到的数据核对过",
+  "fixture": "comment.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "快手评论",
+      "description": "看过的作品下的评论与回复：内容、用户、时间、点赞"
+    },
+    "en": {
+      "name": "Kuaishou comments",
+      "description": "Comments and replies under videos you watch: text, user, time, likes"
+    }
+  },
+  "display": {
+    "columns": [
+      "nickname",
+      "content",
+      "create_time",
+      "like_count",
+      "reply_count"
+    ],
+    "labels": {
+      "zh": {
+        "nickname": "用户",
+        "content": "内容",
+        "create_time": "时间",
+        "like_count": "点赞",
+        "reply_count": "回复"
+      },
+      "en": {
+        "nickname": "User",
+        "content": "Text",
+        "create_time": "Time",
+        "like_count": "Likes",
+        "reply_count": "Replies"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "kuaishou/video",
+      "field": "video_id"
+    },
+    "reply_to": "reply_to"
+  }
+}

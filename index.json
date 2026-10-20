@@ -43,6 +43,144 @@
       "official": true
     },
     {
+      "id": "bilibili",
+      "version": "0.1.1",
+      "label": "哔哩哔哩",
+      "locales": {
+        "zh": {
+          "name": "哔哩哔哩"
+        },
+        "en": {
+          "name": "Bilibili"
+        }
+      },
+      "hosts": [
+        "api.bilibili.com"
+      ],
+      "cards": [
+        {
+          "id": "bilibili/comment",
+          "version": "0.1.1",
+          "entity": "comment",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/bilibili/mappings/comment.json"
+        },
+        {
+          "id": "bilibili/feed",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/bilibili/mappings/feed.json"
+        },
+        {
+          "id": "bilibili/popular",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/bilibili/mappings/popular.json"
+        },
+        {
+          "id": "bilibili/related",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/bilibili/mappings/related.json"
+        },
+        {
+          "id": "bilibili/video-detail",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/bilibili/mappings/video-detail.json"
+        },
+        {
+          "id": "bilibili/video-wbi",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/bilibili/mappings/video-wbi.json"
+        },
+        {
+          "id": "bilibili/video",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/bilibili/mappings/video.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/bilibili/platform.json",
+      "official": true
+    },
+    {
+      "id": "douyin",
+      "version": "0.1.0",
+      "label": "抖音",
+      "locales": {
+        "zh": {
+          "name": "抖音"
+        },
+        "en": {
+          "name": "Douyin"
+        }
+      },
+      "hosts": [
+        "www.douyin.com"
+      ],
+      "cards": [
+        {
+          "id": "douyin/comment",
+          "version": "0.1.0",
+          "entity": "comment",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/douyin/mappings/comment.json"
+        },
+        {
+          "id": "douyin/detail",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/douyin/mappings/detail.json"
+        },
+        {
+          "id": "douyin/feed",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/douyin/mappings/feed.json"
+        },
+        {
+          "id": "douyin/post",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/douyin/mappings/post.json"
+        },
+        {
+          "id": "douyin/search",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/douyin/mappings/search.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/douyin/platform.json",
+      "official": true
+    },
+    {
       "id": "feishu",
       "version": "0.1.0",
       "label": "飞书群聊",
@@ -98,6 +236,41 @@
       "official": true
     },
     {
+      "id": "instagram",
+      "version": "0.1.0",
+      "label": "Instagram",
+      "locales": {
+        "zh": {
+          "name": "Instagram"
+        },
+        "en": {
+          "name": "Instagram"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "instagram/comment",
+          "version": "0.1.0",
+          "entity": "comment",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/instagram/mappings/comment.json"
+        },
+        {
+          "id": "instagram/post",
+          "version": "0.1.0",
+          "entity": "post",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/instagram/mappings/post.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/instagram/platform.json",
+      "official": true
+    },
+    {
       "id": "keepa",
       "version": "0.1.0",
       "label": "Keepa",
@@ -115,6 +288,41 @@
       "cards": [],
       "recipes": [],
       "path": "platforms/keepa/platform.json",
+      "official": true
+    },
+    {
+      "id": "kuaishou",
+      "version": "0.1.0",
+      "label": "快手",
+      "locales": {
+        "zh": {
+          "name": "快手"
+        },
+        "en": {
+          "name": "Kuaishou"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "kuaishou/comment",
+          "version": "0.1.0",
+          "entity": "comment",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/kuaishou/mappings/comment.json"
+        },
+        {
+          "id": "kuaishou/video",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/kuaishou/mappings/video.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/kuaishou/platform.json",
       "official": true
     },
     {
@@ -476,6 +684,41 @@
       ],
       "path": "platforms/xiaohongshu/platform.json",
       "official": true
+    },
+    {
+      "id": "youtube",
+      "version": "0.1.0",
+      "label": "YouTube",
+      "locales": {
+        "zh": {
+          "name": "YouTube"
+        },
+        "en": {
+          "name": "YouTube"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "youtube/comment",
+          "version": "0.1.0",
+          "entity": "comment",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/youtube/mappings/comment.json"
+        },
+        {
+          "id": "youtube/video",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-20",
+          "fixture": true,
+          "path": "platforms/youtube/mappings/video.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/youtube/platform.json",
+      "official": true
     }
   ],
   "platforms": [
@@ -655,22 +898,25 @@
         "en": "Douyin"
       },
       "desc": {
-        "zh": "采集浏览过的视频与图文作品。",
-        "en": "Collects the videos and image posts you view."
+        "zh": "采集你看过的作品与评论。",
+        "en": "Collects the posts you watch and their comments."
       },
       "parts": [
         {
           "id": "videos",
+          "packs": [
+            "douyin"
+          ],
           "plugins": [
             "official.douyin"
           ],
           "name": {
-            "zh": "视频与图文",
-            "en": "Videos and image posts"
+            "zh": "作品与评论",
+            "en": "Posts and comments"
           },
           "desc": {
-            "zh": "浏览过的视频与图文作品。",
-            "en": "Videos and image posts you view."
+            "zh": "看过的作品、推荐 / 搜索 / 作者主页里刷到的作品、评论与回复，以及可下载的视频。",
+            "en": "Posts you watch or see in feeds, search and profiles, comments and replies, plus downloadable videos."
           }
         }
       ]
@@ -684,22 +930,26 @@
         "en": "Kuaishou"
       },
       "desc": {
-        "zh": "采集推荐页中浏览过的视频。",
-        "en": "Collects the videos you view in the recommended feed."
+        "zh": "采集你看过的视频与评论。",
+        "en": "Collects the videos you watch and their comments."
       },
       "parts": [
         {
           "id": "videos",
+          "packs": [
+            "kuaishou"
+          ],
           "plugins": [
-            "official.kuaishou"
+            "official.kuaishou",
+            "nuttle.kuaishou"
           ],
           "name": {
-            "zh": "视频",
-            "en": "Videos"
+            "zh": "视频与评论",
+            "en": "Videos and comments"
           },
           "desc": {
-            "zh": "推荐页中浏览过的视频。",
-            "en": "Videos you view in the feed."
+            "zh": "看过的作品、精选 / 搜索 / 作者主页里刷到的作品、评论与回复，以及可下载的视频。",
+            "en": "Videos you watch or see in feeds, search and profiles, comments and replies, plus downloadable videos."
           }
         }
       ]
@@ -713,22 +963,25 @@
         "en": "Bilibili"
       },
       "desc": {
-        "zh": "采集浏览过的视频。",
-        "en": "Collects the videos you view."
+        "zh": "采集你看过的视频与评论。",
+        "en": "Collects the videos you watch and their comments."
       },
       "parts": [
         {
           "id": "videos",
+          "packs": [
+            "bilibili"
+          ],
           "plugins": [
             "official.bilibili"
           ],
           "name": {
-            "zh": "视频",
-            "en": "Videos"
+            "zh": "视频与评论",
+            "en": "Videos and comments"
           },
           "desc": {
-            "zh": "浏览过的视频。",
-            "en": "Videos you view."
+            "zh": "看过的视频、首页推荐和热门里刷到的视频、评论与楼中楼，以及可下载的视频。",
+            "en": "Videos you watch or see in your feed and Popular, comments and replies, plus downloadable videos."
           }
         }
       ]
@@ -807,22 +1060,26 @@
         "en": "YouTube"
       },
       "desc": {
-        "zh": "采集浏览过的视频。",
-        "en": "Collects the videos you view."
+        "zh": "采集你看过的视频与评论。",
+        "en": "Collects the videos you watch and their comments."
       },
       "parts": [
         {
           "id": "videos",
+          "packs": [
+            "youtube"
+          ],
           "plugins": [
-            "official.youtube"
+            "official.youtube",
+            "nuttle.youtube"
           ],
           "name": {
-            "zh": "视频",
-            "en": "Videos"
+            "zh": "视频与评论",
+            "en": "Videos and comments"
           },
           "desc": {
-            "zh": "浏览过的视频。",
-            "en": "Videos you view."
+            "zh": "看过的视频、搜索和列表里刷到的视频、评论与回复，以及可下载的视频。",
+            "en": "Videos you watch or see in search and lists, comments and replies, plus downloadable videos."
           }
         }
       ]
@@ -836,22 +1093,26 @@
         "en": "Instagram"
       },
       "desc": {
-        "zh": "采集浏览过的 Reels 视频。",
-        "en": "Collects the Reels you view."
+        "zh": "采集你看过的帖子、Reels 与评论。",
+        "en": "Collects the posts and Reels you view and their comments."
       },
       "parts": [
         {
           "id": "reels",
+          "packs": [
+            "instagram"
+          ],
           "plugins": [
-            "official.instagram"
+            "official.instagram",
+            "nuttle.instagram"
           ],
           "name": {
-            "zh": "Reels",
-            "en": "Reels"
+            "zh": "帖子、Reels 与评论",
+            "en": "Posts, Reels and comments"
           },
           "desc": {
-            "zh": "浏览过的 Reels 视频。",
-            "en": "Reels you view."
+            "zh": "看过的帖子与 Reels、评论与回复，以及可下载的视频。",
+            "en": "Posts and Reels you view, comments and replies, plus downloadable videos."
           }
         }
       ]

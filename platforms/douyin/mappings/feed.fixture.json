@@ -1,0 +1,139 @@
+{
+  "expected": [
+    {
+      "author": "示例作者_2",
+      "author_id": "100000002",
+      "collect_count": 42,
+      "comment_count": 32,
+      "cover": "https://p3.douyinpic.com/obj/cover_2.jpeg",
+      "create_time": 1788220802,
+      "duration_s": 15.3,
+      "extra": {
+        "aweme_type": 0,
+        "images": null,
+        "sec_uid": "MS4wLjABAAAAexample2"
+      },
+      "id": "7390000000000000002",
+      "ip_location": "示例地区",
+      "like_count": 1202,
+      "share_count": 7,
+      "title": "示例作品描述_2 #示例话题",
+      "url": "https://www.douyin.com/video/7390000000000000002"
+    },
+    {
+      "author": "示例作者_3",
+      "author_id": "100000003",
+      "collect_count": 43,
+      "comment_count": 33,
+      "cover": "https://p3.douyinpic.com/obj/cover_3.jpeg",
+      "create_time": 1788220803,
+      "duration_s": 15.3,
+      "extra": {
+        "aweme_type": 68,
+        "images": [
+          {
+            "url_list": [
+              "https://p3.douyinpic.com/obj/img_3_1.jpeg"
+            ]
+          }
+        ],
+        "sec_uid": "MS4wLjABAAAAexample3"
+      },
+      "id": "7390000000000000003",
+      "ip_location": "示例地区",
+      "like_count": 1203,
+      "share_count": 8,
+      "title": "示例作品描述_3 #示例话题",
+      "url": "https://www.douyin.com/video/7390000000000000003"
+    }
+  ],
+  "response": {
+    "aweme_list": [
+      {
+        "author": {
+          "avatar_thumb": {
+            "url_list": [
+              "https://p3.douyinpic.com/aweme/100x100/avatar_2.jpeg"
+            ]
+          },
+          "nickname": "示例作者_2",
+          "sec_uid": "MS4wLjABAAAAexample2",
+          "uid": "100000002"
+        },
+        "aweme_id": "7390000000000000002",
+        "aweme_type": 0,
+        "create_time": 1788220802,
+        "desc": "示例作品描述_2 #示例话题",
+        "ip_label": "示例地区",
+        "statistics": {
+          "collect_count": 42,
+          "comment_count": 32,
+          "digg_count": 1202,
+          "play_count": 0,
+          "share_count": 7
+        },
+        "video": {
+          "cover": {
+            "url_list": [
+              "https://p3.douyinpic.com/obj/cover_2.jpeg",
+              "https://p9.douyinpic.com/obj/cover_2.jpeg"
+            ]
+          },
+          "duration": 15302,
+          "play_addr": {
+            "url_list": [
+              "https://v.douyinvod.com/example-2.mp4"
+            ]
+          }
+        }
+      },
+      {
+        "author": {
+          "avatar_thumb": {
+            "url_list": [
+              "https://p3.douyinpic.com/aweme/100x100/avatar_3.jpeg"
+            ]
+          },
+          "nickname": "示例作者_3",
+          "sec_uid": "MS4wLjABAAAAexample3",
+          "uid": "100000003"
+        },
+        "aweme_id": "7390000000000000003",
+        "aweme_type": 68,
+        "create_time": 1788220803,
+        "desc": "示例作品描述_3 #示例话题",
+        "images": [
+          {
+            "url_list": [
+              "https://p3.douyinpic.com/obj/img_3_1.jpeg"
+            ]
+          }
+        ],
+        "ip_label": "示例地区",
+        "statistics": {
+          "collect_count": 43,
+          "comment_count": 33,
+          "digg_count": 1203,
+          "play_count": 0,
+          "share_count": 8
+        },
+        "video": {
+          "cover": {
+            "url_list": [
+              "https://p3.douyinpic.com/obj/cover_3.jpeg",
+              "https://p9.douyinpic.com/obj/cover_3.jpeg"
+            ]
+          },
+          "duration": 15303,
+          "play_addr": {
+            "url_list": [
+              "https://v.douyinvod.com/example-3.mp4"
+            ]
+          }
+        }
+      }
+    ],
+    "has_more": 1,
+    "status_code": 0
+  }
+}

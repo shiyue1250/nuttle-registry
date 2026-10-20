@@ -1,0 +1,114 @@
+{
+  "apiVersion": 1,
+  "id": "kuaishou/video",
+  "version": "0.1.0",
+  "platform": "kuaishou",
+  "entity": "video",
+  "match": {
+    "host": "kuaishou.com",
+    "path": "/nuttle/kuaishou/videos"
+  },
+  "item_path": "videos",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "author": "author",
+    "author_id": "author_id",
+    "cover": "cover",
+    "duration_s": "duration_s",
+    "create_time": "create_time",
+    "like_count": "like_count",
+    "view_count": "view_count",
+    "url": "url"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "view_count": {
+      "type": "int"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "reply_count": {
+      "type": "int"
+    },
+    "duration_s": {
+      "type": "duration_s"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "刷精选 / 推荐、打开作品、搜索、看作者主页。需要「快手视频与评论」插件",
+  "note": "数据来自「快手视频与评论」插件的整理（经本机代理），不是网站原始接口；字段依据开源实现与官方插件样本，还没有用真实浏览采到的数据核对过",
+  "fixture": "video.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "快手作品",
+      "description": "看过的作品：描述、作者、发布时间、时长、播放与点赞数"
+    },
+    "en": {
+      "name": "Kuaishou videos",
+      "description": "Videos you watch: caption, author, time, duration, views and likes"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "duration_s",
+      "view_count",
+      "like_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "描述",
+        "author": "作者",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "view_count": "播放",
+        "like_count": "点赞",
+        "comment_count": "评论"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Caption",
+        "author": "Author",
+        "create_time": "Posted",
+        "duration_s": "Duration",
+        "view_count": "Views",
+        "like_count": "Likes",
+        "comment_count": "Comments"
+      }
+    }
+  },
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "description",
+      "cover": "thumbnailUrl",
+      "create_time": "uploadDate",
+      "url": "url"
+    }
+  },
+  "resource": {
+    "plugin": "official.kuaishou",
+    "match": {
+      "meta:kuaishou.photoId": "id"
+    }
+  }
+}

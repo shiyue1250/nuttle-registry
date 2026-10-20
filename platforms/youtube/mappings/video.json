@@ -1,0 +1,114 @@
+{
+  "apiVersion": 1,
+  "id": "youtube/video",
+  "version": "0.1.0",
+  "platform": "youtube",
+  "entity": "video",
+  "match": {
+    "host": "youtube.com",
+    "path": "/nuttle/youtube/videos"
+  },
+  "item_path": "videos",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "author": "author",
+    "author_id": "author_id",
+    "content": "description",
+    "snippet": "snippet",
+    "view_count": "view_count",
+    "duration_s": "duration_s",
+    "create_time": "create_time",
+    "cover": "cover",
+    "url": "url",
+    "is_short": "is_short",
+    "extra.category": "category",
+    "extra.published_text": "published_text",
+    "extra.is_live": "is_live"
+  },
+  "schema": {
+    "view_count": {
+      "type": "int"
+    },
+    "duration_s": {
+      "type": "duration_s"
+    },
+    "create_time": {
+      "type": "unix_s",
+      "note": "只有打开观看页时才有；列表里只有「1 day ago」这类文字（extra.published_text）"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "url": {
+      "type": "url"
+    },
+    "snippet": {
+      "type": "string",
+      "note": "搜索 / 列表里的简介片段；完整简介在 content（打开观看页才有）"
+    },
+    "is_short": {
+      "type": "bool",
+      "note": "Shorts"
+    }
+  },
+  "trigger": "打开视频观看页；搜索、频道页、首页列表里刷到的视频也会记下（信息少一些）。需要「YouTube 视频与评论」插件",
+  "note": "数据来自「YouTube 视频与评论」插件对观看页与 innertube 接口的整理（经本机代理），不是网站原始接口",
+  "fixture": "video.fixture.json",
+  "verified": "2026-10-20",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "YouTube 视频",
+      "description": "看过的视频：标题、频道、简介、播放数、时长、发布时间；搜索和列表里刷到的视频"
+    },
+    "en": {
+      "name": "YouTube videos",
+      "description": "Videos you watch: title, channel, description, views, duration, publish date; plus videos seen in search and lists"
+    }
+  },
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "name",
+      "cover": "thumbnailUrl",
+      "create_time": "uploadDate",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "duration_s",
+      "view_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "标题",
+        "author": "频道",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "view_count": "播放"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Title",
+        "author": "Channel",
+        "create_time": "Published",
+        "duration_s": "Duration",
+        "view_count": "Views"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "official.youtube",
+    "match": {
+      "meta:youtube.videoId": "id"
+    }
+  }
+}

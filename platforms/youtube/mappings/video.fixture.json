@@ -1,0 +1,99 @@
+{
+  "expected": [
+    {
+      "author": "示例频道_1",
+      "author_id": "UCexample0000000000000001",
+      "content": "示例简介_1\n第二行",
+      "cover": "https://i.ytimg.com/vi/vid00000001/hqdefault.jpg",
+      "create_time": 1256453853,
+      "duration_s": 213,
+      "extra": {
+        "category": "Music",
+        "is_live": false,
+        "published_text": null
+      },
+      "id": "vid00000001",
+      "is_short": null,
+      "snippet": null,
+      "title": "示例视频标题_1 & <b>",
+      "url": "https://www.youtube.com/watch?v=vid00000001",
+      "view_count": 1234567
+    },
+    {
+      "author": "示例频道_2",
+      "author_id": "UCexample0000000000000002",
+      "content": null,
+      "cover": "https://i.ytimg.com/vi/vid00000002/hqdefault.jpg",
+      "create_time": null,
+      "duration_s": 3723,
+      "extra": {
+        "category": null,
+        "is_live": null,
+        "published_text": "1 day ago"
+      },
+      "id": "vid00000002",
+      "is_short": null,
+      "snippet": "示例简介片段_2",
+      "title": "示例搜索结果_2",
+      "url": "https://www.youtube.com/watch?v=vid00000002",
+      "view_count": 36232
+    },
+    {
+      "author": null,
+      "author_id": null,
+      "content": null,
+      "cover": "https://i.ytimg.com/vi/vid00000003/hqdefault.jpg",
+      "create_time": null,
+      "duration_s": null,
+      "extra": {
+        "category": null,
+        "is_live": null,
+        "published_text": null
+      },
+      "id": "vid00000003",
+      "is_short": true,
+      "snippet": null,
+      "title": "示例短视频_3",
+      "url": "https://www.youtube.com/shorts/vid00000003",
+      "view_count": 4700000
+    }
+  ],
+  "response": {
+    "videos": [
+      {
+        "author": "示例频道_1",
+        "author_id": "UCexample0000000000000001",
+        "category": "Music",
+        "cover": "https://i.ytimg.com/vi/vid00000001/hqdefault.jpg",
+        "create_time": 1256453853,
+        "description": "示例简介_1\n第二行",
+        "duration_s": 213,
+        "id": "vid00000001",
+        "is_live": false,
+        "title": "示例视频标题_1 & <b>",
+        "url": "https://www.youtube.com/watch?v=vid00000001",
+        "view_count": 1234567
+      },
+      {
+        "author": "示例频道_2",
+        "author_id": "UCexample0000000000000002",
+        "cover": "https://i.ytimg.com/vi/vid00000002/hqdefault.jpg",
+        "duration_s": 3723,
+        "id": "vid00000002",
+        "published_text": "1 day ago",
+        "snippet": "示例简介片段_2",
+        "title": "示例搜索结果_2",
+        "url": "https://www.youtube.com/watch?v=vid00000002",
+        "view_count": 36232
+      },
+      {
+        "cover": "https://i.ytimg.com/vi/vid00000003/hqdefault.jpg",
+        "id": "vid00000003",
+        "is_short": true,
+        "title": "示例短视频_3",
+        "url": "https://www.youtube.com/shorts/vid00000003",
+        "view_count": 4700000
+      }
+    ]
+  }
+}
