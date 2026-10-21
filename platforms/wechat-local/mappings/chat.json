@@ -1,0 +1,69 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-local/chat",
+  "version": "0.1.0",
+  "platform": "wechat-local",
+  "entity": "chat",
+  "match": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-local/chats"
+  },
+  "item_path": "chats",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "is_group": "is_group",
+    "message_count": "message_count",
+    "last_time": "last_time"
+  },
+  "schema": {
+    "is_group": {
+      "type": "bool"
+    },
+    "message_count": {
+      "type": "int",
+      "note": "囤囤鼠里已存下的消息条数"
+    },
+    "last_time": {
+      "type": "unix_s",
+      "note": "存下的最新一条消息的时间"
+    }
+  },
+  "trigger": "关注一个微信会话后，后台每次检查到新消息时存入；在会话里点「读入分析」也会存入",
+  "note": "id 是微信会话的 username（群是 xxx@chatroom）；本机只读解密，关掉「本机数据」时连同消息一起删除",
+  "fixture": "chat.fixture.json",
+  "verified": "2026-10-21",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "会话",
+      "description": "关注或读入的微信群聊、私聊：名字、存下的消息数、最新时间"
+    },
+    "en": {
+      "name": "Chat",
+      "description": "WeChat groups and chats you follow or read in: name, stored messages, latest time"
+    }
+  },
+  "display": {
+    "columns": [
+      "title",
+      "message_count",
+      "last_time"
+    ],
+    "labels": {
+      "zh": {
+        "title": "会话",
+        "is_group": "群聊",
+        "message_count": "消息数",
+        "last_time": "最新"
+      },
+      "en": {
+        "title": "Chat",
+        "is_group": "Group",
+        "message_count": "Messages",
+        "last_time": "Latest"
+      }
+    }
+  }
+}

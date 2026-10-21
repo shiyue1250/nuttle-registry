@@ -1,0 +1,31 @@
+{
+  "context": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-local/messages"
+  },
+  "response": {
+    "messages": [
+      {
+        "id": "12345678@chatroom:3f9a2c1b",
+        "chat_id": "12345678@chatroom",
+        "nickname": "张三",
+        "content": "这顶帐篷防雨怎么样？",
+        "create_time": 1792040400,
+        "type": "文本",
+        "self": false
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "12345678@chatroom:3f9a2c1b",
+      "chat_id": "12345678@chatroom",
+      "nickname": "张三",
+      "content": "这顶帐篷防雨怎么样？",
+      "create_time": 1792040400,
+      "type": "文本",
+      "self": false,
+      "extra": {}
+    }
+  ]
+}

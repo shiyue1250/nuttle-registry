@@ -1,0 +1,85 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-local/message",
+  "version": "0.1.0",
+  "platform": "wechat-local",
+  "entity": "message",
+  "match": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-local/messages"
+  },
+  "item_path": "messages",
+  "fields": {
+    "id": "id",
+    "chat_id": "chat_id",
+    "nickname": "nickname",
+    "content": "content",
+    "create_time": "create_time",
+    "type": "type",
+    "self": "self"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "content": {
+      "type": "string",
+      "note": "文字消息的正文；链接、文件给标题；图片、语音等给 [图片]、[语音] 这类标记"
+    },
+    "type": {
+      "type": "string",
+      "note": "消息类型：文本、图片、链接、文件…"
+    },
+    "self": {
+      "type": "bool",
+      "note": "是不是自己发的"
+    }
+  },
+  "trigger": "关注一个微信会话后，后台每次检查到新消息时存入；在会话里点「读入分析」也会存入",
+  "note": "id = 会话 username + 发送者、时间、正文的哈希，同一条重复读到不会重复存；系统提示（撤回、入群）不存",
+  "fixture": "message.fixture.json",
+  "verified": "2026-10-21",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "消息",
+      "description": "关注或读入的微信会话里的每条消息：发送者、时间、正文"
+    },
+    "en": {
+      "name": "Message",
+      "description": "Each message in WeChat chats you follow or read in: sender, time, text"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "create_time"
+    ],
+    "labels": {
+      "zh": {
+        "content": "消息",
+        "nickname": "发送者",
+        "create_time": "时间",
+        "type": "类型",
+        "self": "自己发的"
+      },
+      "en": {
+        "content": "Message",
+        "nickname": "From",
+        "create_time": "Time",
+        "type": "Type",
+        "self": "Sent by me"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "wechat-local/chat",
+      "field": "chat_id",
+      "count_field": "message_count"
+    },
+    "order": "create_time"
+  }
+}

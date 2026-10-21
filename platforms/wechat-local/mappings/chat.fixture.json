@@ -1,0 +1,27 @@
+{
+  "context": {
+    "host": "wechat.local",
+    "path": "/nuttle/wechat-local/chats"
+  },
+  "response": {
+    "chats": [
+      {
+        "id": "12345678@chatroom",
+        "title": "露营装备交流群",
+        "is_group": true,
+        "message_count": 2,
+        "last_time": 1792040460
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "12345678@chatroom",
+      "title": "露营装备交流群",
+      "is_group": true,
+      "message_count": 2,
+      "last_time": 1792040460,
+      "extra": {}
+    }
+  ]
+}

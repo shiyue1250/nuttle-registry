@@ -429,7 +429,7 @@
     },
     {
       "id": "wechat-local",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "label": "微信本地",
       "locales": {
         "zh": {
@@ -441,6 +441,14 @@
       },
       "hosts": [],
       "cards": [
+        {
+          "id": "wechat-local/chat",
+          "version": "0.1.0",
+          "entity": "chat",
+          "verified": "2026-10-21",
+          "fixture": true,
+          "path": "platforms/wechat-local/mappings/chat.json"
+        },
         {
           "id": "wechat-local/favorite",
           "version": "0.1.0",
@@ -456,6 +464,14 @@
           "verified": "2026-10-07",
           "fixture": true,
           "path": "platforms/wechat-local/mappings/filehelper.json"
+        },
+        {
+          "id": "wechat-local/message",
+          "version": "0.1.0",
+          "entity": "message",
+          "verified": "2026-10-21",
+          "fixture": true,
+          "path": "platforms/wechat-local/mappings/message.json"
         }
       ],
       "recipes": [
