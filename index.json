@@ -429,14 +429,14 @@
     },
     {
       "id": "wechat-local",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "label": "微信本地",
       "locales": {
         "zh": {
-          "name": "微信收藏 / 文件传输助手"
+          "name": "微信收藏 / 聊天记录"
         },
         "en": {
-          "name": "WeChat Favorites / File Helper"
+          "name": "WeChat Favorites / Chats"
         }
       },
       "hosts": [],
@@ -458,14 +458,6 @@
           "path": "platforms/wechat-local/mappings/favorite.json"
         },
         {
-          "id": "wechat-local/filehelper",
-          "version": "0.1.0",
-          "entity": "filehelper",
-          "verified": "2026-10-07",
-          "fixture": true,
-          "path": "platforms/wechat-local/mappings/filehelper.json"
-        },
-        {
           "id": "wechat-local/message",
           "version": "0.1.0",
           "entity": "message",
@@ -477,7 +469,7 @@
       "recipes": [
         {
           "id": "wechat-local/inbox-triage",
-          "title": "整理收藏与「转给自己」的内容",
+          "title": "整理微信收藏",
           "path": "platforms/wechat-local/recipes/inbox-triage.md"
         }
       ],

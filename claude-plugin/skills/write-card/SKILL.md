@@ -34,7 +34,7 @@ Path syntax: `a.b.c`, numeric segments index arrays (`images.0.url`), `/N` divid
 ## 3. Register and verify
 
 1. `add_mapping` with `pattern` = a distinctive path segment of the endpoint, `item_path`, `fields` (must include `id`), `kind` = `record` (use `product` only for product listings that use the product field names in the tool description).
-2. `query_entities` (or `search_records`) for 2–3 items and compare them with what the user sees on the page — especially amounts, percentages and dates. Fix with another `add_mapping` call until they match.
+2. `query_entities` (filter by `source=<rule name>`) for 2–3 items and compare them with what the user sees on the page — especially amounts, percentages and dates. Fix with another `add_mapping` call until they match.
 
 ## 4. Export the card and redact the fixture
 
