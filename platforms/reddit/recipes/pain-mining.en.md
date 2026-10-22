@@ -39,9 +39,9 @@ Steps:
    - Unmet wants: want | people | quote
    - Workarounds: product / approach | mentions | praised for | complained about
    - Opportunity call: the 3 pains most worth building for, one-line reason each; mark weak evidence as "needs more threads"
-6. For posts or comments I should read myself, call tag_entity(platform="reddit", kind=<post or comment>, id=<id>, tag="待核实", note="<one-line reason>").
+6. List separately the posts or comments I should read myself (at most 10): a one-line reason + the link.
 
-Rules: quote verbatim with links; only use the tag "待核实" (to verify) — never "需求池" (backlog) or "忽略" (ignore), those are my calls; don't invent anything not in the data; don't change or delete any mapping.
+Rules: quote verbatim with links; don't make my calls for me (whether to star or act on something is mine, in the console); don't invent anything not in the data; don't change or delete any mapping.
 ```
 
 ## Known limits

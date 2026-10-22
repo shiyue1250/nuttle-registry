@@ -39,8 +39,7 @@ Steps:
    - Reply in their language; be specific and sincere — no marketing, no promised release dates; don't @ anyone unrelated to that reply.
    - Add a "reply" link to each draft: https://x.com/intent/post?in_reply_to=<reply id>&text=<draft, URL-encoded>
      When I open it, X shows the reply box already filled in, and I click Post myself.
-6. For replies that need my judgement (whether and how to reply, whether it goes to the backlog), call
-   tag_entity(platform="x", kind="comment", id=<reply id>, tag="待核实", note="<one-line reason>").
+6. For replies that need my judgement (whether and how to reply, whether to build it), add a separate table: to @handle | their reply | why it needs me | link.
 7. Output:
    - Overview: replies captured / reply_count shown on the post / count per category
    - Request table: request | people | total likes | quotes
@@ -50,7 +49,7 @@ Steps:
    - Remind me: keep scrolling the replies on X and say "update" for an incremental pass
 8. When I say "update": call get_thread again, process only replies not seen before (compare by id), merge them into the request table and mark what's new.
 
-Rules: only use the tag "待核实" (to verify) — never "需求池" (backlog) or "忽略" (ignore), those are my decisions; quote verbatim; don't invent anything that isn't in the replies; don't change or delete any mapping.
+Rules: don't make my decisions for me (whether to reply, build or star something is mine); quote verbatim; don't invent anything that isn't in the replies; don't change or delete any mapping.
 ```
 
 ## Known limits
