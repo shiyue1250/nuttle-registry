@@ -1,14 +1,14 @@
 {
   "apiVersion": 1,
   "id": "feishu",
-  "version": "0.1.0",
-  "label": "飞书群聊",
+  "version": "0.2.0",
+  "label": "飞书",
   "locales": {
     "zh": {
-      "name": "飞书群聊"
+      "name": "飞书"
     },
     "en": {
-      "name": "Feishu group chats"
+      "name": "Feishu"
     }
   },
   "hosts": [],
@@ -20,7 +20,15 @@
     {
       "match": "/nuttle/feishu/messages",
       "label": "飞书群里的消息（已内置解析）"
+    },
+    {
+      "match": "/nuttle/feishu/doc-chunks",
+      "label": "飞书云文档的分段（「飞书云文档」插件交回，宿主合并成一篇）"
+    },
+    {
+      "match": "/nuttle/feishu/docs",
+      "label": "飞书云文档（合并后的整篇，已内置解析）"
     }
   ],
-  "notes": "用用户自己在飞书开放平台建的企业自建应用（App ID / App Secret）调用官方接口：列出机器人所在的群，按游标增量同步选中群的消息，由内置模块 feishu 交回 /nuttle/feishu/*，本包解析。只读，不发消息。"
+  "notes": "用用户自己在飞书开放平台建的企业自建应用（App ID / App Secret）调用官方接口：列出机器人所在的群，按游标增量同步选中群的消息，由内置模块 feishu 交回 /nuttle/feishu/*，本包解析。只读，不发消息。 云文档（记录 120）：在浏览器里打开飞书文档时，插件 nuttle.feishu-docs 经本机代理读到页面 HTML 里的首段与页面自己加载的后几段（/space/api/docx/pages/client_vars），交回 /nuttle/feishu/doc-chunks；宿主按文档合并、还原全文后交 /nuttle/feishu/docs，本包的卡 feishu/doc 解析。"
 }

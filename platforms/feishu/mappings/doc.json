@@ -1,0 +1,86 @@
+{
+  "apiVersion": 1,
+  "id": "feishu/doc",
+  "version": "0.1.0",
+  "platform": "feishu",
+  "entity": "doc",
+  "match": {
+    "host": "feishu.cn",
+    "path": "/nuttle/feishu/docs"
+  },
+  "item_path": "docs",
+  "fields": {
+    "id": "id",
+    "title": "title",
+    "url": "url",
+    "text": "text",
+    "edit_time": "edit_time",
+    "create_time": "create_time",
+    "block_count": "block_count",
+    "complete": "complete",
+    "blocks": "blocks"
+  },
+  "schema": {
+    "url": {
+      "type": "url"
+    },
+    "text": {
+      "type": "string",
+      "note": "全文，按原文顺序还原成 Markdown：标题、列表、表格、分隔线；图片记作 [图片]"
+    },
+    "edit_time": {
+      "type": "unix_s",
+      "note": "文档最后编辑时间（飞书给的）"
+    },
+    "create_time": {
+      "type": "unix_s"
+    },
+    "block_count": {
+      "type": "int",
+      "note": "已收到的块数"
+    },
+    "complete": {
+      "type": "bool",
+      "note": "页面引用到的块是否都已收到（长文档后几段由页面陆续加载）"
+    },
+    "blocks": {
+      "type": "json",
+      "note": "收到的块（精简过：t 类型、c 子块、x 文字，表格另有 rows / cols / cells），后到的段据此和前面合并"
+    }
+  },
+  "trigger": "在浏览器里打开飞书云文档（需要「飞书云文档」插件，经本机代理）",
+  "note": "一篇文档一条。正文分几段到：首段在页面 HTML 里，其余由页面自己陆续加载；插件 nuttle.feishu-docs 交回各段，宿主合并后入这一条",
+  "fixture": "doc.fixture.json",
+  "verified": "2026-10-23",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "飞书文档",
+      "description": "打开过的飞书云文档：标题、链接、全文"
+    },
+    "en": {
+      "name": "Feishu doc",
+      "description": "A Feishu doc you opened: title, link and full text"
+    }
+  },
+  "display": {
+    "columns": [
+      "title",
+      "edit_time",
+      "url"
+    ],
+    "labels": {
+      "zh": {
+        "title": "文档",
+        "edit_time": "最后编辑",
+        "url": "链接"
+      },
+      "en": {
+        "title": "Doc",
+        "edit_time": "Last edited",
+        "url": "Link"
+      }
+    }
+  }
+}

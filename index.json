@@ -182,14 +182,14 @@
     },
     {
       "id": "feishu",
-      "version": "0.1.0",
-      "label": "飞书群聊",
+      "version": "0.2.0",
+      "label": "飞书",
       "locales": {
         "zh": {
-          "name": "飞书群聊"
+          "name": "飞书"
         },
         "en": {
-          "name": "Feishu group chats"
+          "name": "Feishu"
         }
       },
       "hosts": [],
@@ -201,6 +201,14 @@
           "verified": "2026-10-20",
           "fixture": true,
           "path": "platforms/feishu/mappings/chat.json"
+        },
+        {
+          "id": "feishu/doc",
+          "version": "0.1.0",
+          "entity": "doc",
+          "verified": "2026-10-23",
+          "fixture": true,
+          "path": "platforms/feishu/mappings/doc.json"
         },
         {
           "id": "feishu/message",
@@ -844,10 +852,27 @@
         "en": "Feishu"
       },
       "desc": {
-        "zh": "用你自己在飞书开放平台建的应用，同步关注的群聊消息。",
-        "en": "Syncs the group chats you watch, using an app you create on the Feishu Open Platform."
+        "zh": "在浏览器里打开的飞书云文档存下全文；用你自己在飞书开放平台建的应用，同步关注的群聊消息。",
+        "en": "Keeps the full text of Feishu docs you open in the browser, and syncs the group chats you watch using an app you create on the Feishu Open Platform."
       },
       "parts": [
+        {
+          "id": "docs",
+          "packs": [
+            "feishu"
+          ],
+          "plugins": [
+            "nuttle.feishu-docs"
+          ],
+          "name": {
+            "zh": "云文档",
+            "en": "Docs"
+          },
+          "desc": {
+            "zh": "在浏览器里打开的飞书文档：标题、链接、全文（标题、列表、表格按原文顺序）和图片。",
+            "en": "Feishu docs you open in the browser: title, link, full text (headings, lists and tables in order) and images."
+          }
+        },
         {
           "id": "groups",
           "packs": [
