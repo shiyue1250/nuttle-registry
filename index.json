@@ -402,7 +402,7 @@
     },
     {
       "id": "wechat-chat",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "label": "微信聊天记录",
       "locales": {
         "zh": {
@@ -416,7 +416,7 @@
       "cards": [
         {
           "id": "wechat-chat/chat",
-          "version": "0.2.0",
+          "version": "0.2.1",
           "entity": "chat",
           "verified": "2026-10-18",
           "fixture": true,
@@ -833,12 +833,12 @@
           ],
           "local": "wechat-chat",
           "name": {
-            "zh": "导入导出的聊天记录",
-            "en": "Import exported chats"
+            "zh": "微信转发的聊天记录",
+            "en": "Chats forwarded from WeChat"
           },
           "desc": {
-            "zh": "在微信里多选消息 → 转发 → 其他应用，导出后导入。只读你导出的文件。",
-            "en": "In WeChat, select messages → Forward → Other apps, then import the export. Only reads the file you export."
+            "zh": "在微信里多选消息 → 转发 → 其他应用 → 囤囤鼠，聊天记录直接进来。只读你转发的内容。",
+            "en": "In WeChat, select messages → Forward → Other apps → Nuttle, and the chat comes straight in. Only reads what you forward."
           }
         }
       ]
