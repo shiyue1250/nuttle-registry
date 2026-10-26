@@ -79,7 +79,7 @@
           "en": "Favorites"
         },
         "desc": {
-          "zh": "点「读入收藏」时读取微信收藏。",
+          "zh": "点击「读入收藏」时读取微信收藏。",
           "en": "Reads your WeChat Favorites when you click Read Favorites."
         },
         "risk": {
@@ -98,7 +98,7 @@
           "en": "Chats forwarded from WeChat"
         },
         "desc": {
-          "zh": "在微信里多选消息 → 转发 → 其他应用 → 囤囤鼠，聊天记录直接进来。只读你转发的内容。",
+          "zh": "在微信中多选消息 → 转发 → 其他应用 → 囤囤鼠，聊天记录直接导入。仅读取转发的内容。",
           "en": "In WeChat, select messages → Forward → Other apps → Nuttle, and the chat comes straight in. Only reads what you forward."
         }
       }
@@ -113,7 +113,7 @@
       "en": "Feishu"
     },
     "desc": {
-      "zh": "在浏览器里打开的飞书云文档存下全文；用你自己在飞书开放平台建的应用，同步关注的群聊消息。",
+      "zh": "保存浏览器中打开的飞书云文档全文；通过在飞书开放平台创建的自建应用，同步关注的群聊消息。",
       "en": "Keeps the full text of Feishu docs you open in the browser, and syncs the group chats you watch using an app you create on the Feishu Open Platform."
     },
     "parts": [
@@ -130,7 +130,7 @@
           "en": "Docs"
         },
         "desc": {
-          "zh": "在浏览器里打开的飞书文档：标题、链接、全文（标题、列表、表格按原文顺序）和图片。",
+          "zh": "浏览器中打开的飞书文档：标题、链接、全文（标题、列表、表格按原文顺序）与图片。",
           "en": "Feishu docs you open in the browser: title, link, full text (headings, lists and tables in order) and images."
         }
       },
@@ -145,7 +145,7 @@
           "en": "Group messages"
         },
         "desc": {
-          "zh": "选好要关注的群，每 10 分钟同步一次新消息。需要先填你的应用凭据。",
+          "zh": "选择要关注的群，每 10 分钟同步一次新消息。需先填写应用凭据。",
           "en": "Pick the groups to watch; new messages sync every 10 minutes. Needs your app credentials first."
         }
       }
@@ -160,7 +160,7 @@
       "en": "RedNote"
     },
     "desc": {
-      "zh": "采集点开的笔记：标题、正文、作者、互动数据与评论，以及图片与视频。",
+      "zh": "采集打开的笔记：标题、正文、作者、互动数据与评论，以及图片与视频。",
       "en": "Collects the notes you open: title, text, author, engagement and comments, plus images and videos."
     },
     "parts": [
@@ -177,7 +177,7 @@
           "en": "Notes and comments"
         },
         "desc": {
-          "zh": "点开的笔记、评论、图片与视频。",
+          "zh": "打开的笔记、评论、图片与视频。",
           "en": "Notes you open, comments, images and videos."
         }
       }
@@ -192,7 +192,7 @@
       "en": "Douyin"
     },
     "desc": {
-      "zh": "采集你看过的作品与评论。",
+      "zh": "采集浏览过的作品与评论。",
       "en": "Collects the posts you watch and their comments."
     },
     "parts": [
@@ -209,7 +209,7 @@
           "en": "Posts and comments"
         },
         "desc": {
-          "zh": "看过的作品、推荐 / 搜索 / 作者主页里刷到的作品、评论与回复，以及可下载的视频。",
+          "zh": "浏览过的作品，推荐、搜索与作者主页中出现的作品，评论与回复，以及可下载的视频。",
           "en": "Posts you watch or see in feeds, search and profiles, comments and replies, plus downloadable videos."
         }
       }
@@ -224,7 +224,7 @@
       "en": "Kuaishou"
     },
     "desc": {
-      "zh": "采集你看过的视频与评论。",
+      "zh": "采集浏览过的视频与评论。",
       "en": "Collects the videos you watch and their comments."
     },
     "parts": [
@@ -242,7 +242,7 @@
           "en": "Videos and comments"
         },
         "desc": {
-          "zh": "看过的作品、精选 / 搜索 / 作者主页里刷到的作品、评论与回复，以及可下载的视频。",
+          "zh": "浏览过的作品，精选、搜索与作者主页中出现的作品，评论与回复，以及可下载的视频。",
           "en": "Videos you watch or see in feeds, search and profiles, comments and replies, plus downloadable videos."
         }
       }
@@ -257,7 +257,7 @@
       "en": "Bilibili"
     },
     "desc": {
-      "zh": "采集你看过的视频与评论。",
+      "zh": "采集浏览过的视频与评论。",
       "en": "Collects the videos you watch and their comments."
     },
     "parts": [
@@ -274,7 +274,7 @@
           "en": "Videos and comments"
         },
         "desc": {
-          "zh": "看过的视频、首页推荐和热门里刷到的视频、评论与楼中楼，以及可下载的视频。",
+          "zh": "浏览过的视频，首页推荐与热门中出现的视频，评论与楼中楼，以及可下载的视频。",
           "en": "Videos you watch or see in your feed and Popular, comments and replies, plus downloadable videos."
         }
       }
@@ -354,7 +354,7 @@
       "en": "YouTube"
     },
     "desc": {
-      "zh": "采集你看过的视频与评论。",
+      "zh": "采集浏览过的视频与评论。",
       "en": "Collects the videos you watch and their comments."
     },
     "parts": [
@@ -372,7 +372,7 @@
           "en": "Videos and comments"
         },
         "desc": {
-          "zh": "看过的视频、搜索和列表里刷到的视频、评论与回复，以及可下载的视频。",
+          "zh": "浏览过的视频，搜索与列表中出现的视频，评论与回复，以及可下载的视频。",
           "en": "Videos you watch or see in search and lists, comments and replies, plus downloadable videos."
         }
       }
@@ -387,7 +387,7 @@
       "en": "Instagram"
     },
     "desc": {
-      "zh": "采集你看过的帖子、Reels 与评论。",
+      "zh": "采集浏览过的帖子、Reels 与评论。",
       "en": "Collects the posts and Reels you view and their comments."
     },
     "parts": [
@@ -405,7 +405,7 @@
           "en": "Posts, Reels and comments"
         },
         "desc": {
-          "zh": "看过的帖子与 Reels、评论与回复，以及可下载的视频。",
+          "zh": "浏览过的帖子与 Reels、评论与回复，以及可下载的视频。",
           "en": "Posts and Reels you view, comments and replies, plus downloadable videos."
         }
       }
