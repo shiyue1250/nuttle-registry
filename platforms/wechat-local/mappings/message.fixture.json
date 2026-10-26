@@ -12,7 +12,20 @@
         "content": "这顶帐篷防雨怎么样？",
         "create_time": 1792040400,
         "type": "文本",
-        "self": false
+        "self": false,
+        "url": null,
+        "link_source": null
+      },
+      {
+        "id": "12345678@chatroom:7c1d0e2a",
+        "chat_id": "12345678@chatroom",
+        "nickname": "李四",
+        "content": "露营装备怎么选",
+        "create_time": 1792040460,
+        "type": "链接",
+        "self": false,
+        "url": "https://mp.weixin.qq.com/s?__biz=MzA0MDAwMDAwMA==&mid=2247480000&idx=1&sn=example#rd",
+        "link_source": "示例公众号"
       }
     ]
   },
@@ -25,6 +38,20 @@
       "create_time": 1792040400,
       "type": "文本",
       "self": false,
+      "url": null,
+      "link_source": null,
+      "extra": {}
+    },
+    {
+      "id": "12345678@chatroom:7c1d0e2a",
+      "chat_id": "12345678@chatroom",
+      "nickname": "李四",
+      "content": "露营装备怎么选",
+      "create_time": 1792040460,
+      "type": "链接",
+      "self": false,
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA0MDAwMDAwMA==&mid=2247480000&idx=1&sn=example#rd",
+      "link_source": "示例公众号",
       "extra": {}
     }
   ]

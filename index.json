@@ -496,7 +496,7 @@
         },
         {
           "id": "wechat-local/message",
-          "version": "0.1.0",
+          "version": "0.1.1",
           "entity": "message",
           "verified": "2026-10-21",
           "fixture": true,
