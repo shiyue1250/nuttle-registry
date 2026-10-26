@@ -459,9 +459,9 @@
         },
         {
           "id": "wechat-local/favorite",
-          "version": "0.1.0",
+          "version": "0.2.0",
           "entity": "favorite",
-          "verified": "2026-10-07",
+          "verified": "2026-10-26",
           "fixture": true,
           "path": "platforms/wechat-local/mappings/favorite.json"
         },
@@ -818,8 +818,8 @@
             "en": "Favorites"
           },
           "desc": {
-            "zh": "点击「读入收藏」时读取微信收藏。",
-            "en": "Reads your WeChat Favorites when you click Read Favorites."
+            "zh": "开启后读取微信收藏，每次启动时更新。",
+            "en": "Reads your WeChat Favorites when turned on, and again each time Nuttle starts."
           },
           "risk": {
             "zh": "通过读取本机的微信数据库获取（只读，不改动微信）。",

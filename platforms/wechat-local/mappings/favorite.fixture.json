@@ -13,7 +13,8 @@
         "title": "示例收藏文章",
         "content": "正文",
         "url": "https://mp.weixin.qq.com/s/example",
-        "source": "某公众号"
+        "source": "某公众号",
+        "cover": "https://mmbiz.qpic.cn/example/300"
       }
     ]
   },
@@ -27,6 +28,7 @@
       "content": "正文",
       "url": "https://mp.weixin.qq.com/s/example",
       "source": "某公众号",
+      "cover": "https://mmbiz.qpic.cn/example/300",
       "extra": {}
     }
   ]

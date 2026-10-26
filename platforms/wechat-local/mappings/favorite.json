@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "wechat-local/favorite",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "platform": "wechat-local",
   "entity": "favorite",
   "match": {
@@ -17,9 +17,14 @@
     "title": "title",
     "content": "content",
     "url": "url",
-    "source": "source"
+    "source": "source",
+    "cover": "cover"
   },
   "schema": {
+    "cover": {
+      "type": "image",
+      "note": "文章封面，或图片 / 视频在本机微信缓存里的那份（没在电脑版微信点开过就没有）"
+    },
     "create_time": {
       "type": "unix_s"
     },
@@ -39,7 +44,7 @@
   "trigger": "在设置里开启「微信收藏 / 文件传输助手」并点同步（仅 Windows，微信需登录运行）",
   "note": "favorite.db / fav_db_item，本机只读解密",
   "fixture": "favorite.fixture.json",
-  "verified": "2026-10-07",
+  "verified": "2026-10-26",
   "author": "shiyue1250",
   "license": "MIT",
   "locales": {
@@ -54,6 +59,7 @@
   },
   "display": {
     "columns": [
+      "cover",
       "kind_label",
       "title",
       "source",
@@ -61,12 +67,14 @@
     ],
     "labels": {
       "zh": {
+        "cover": "封面",
         "kind_label": "类型",
         "title": "标题",
         "source": "来源",
         "create_time": "收藏时间"
       },
       "en": {
+        "cover": "Cover",
         "kind_label": "Type",
         "title": "Title",
         "source": "From",

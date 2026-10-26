@@ -79,8 +79,8 @@
           "en": "Favorites"
         },
         "desc": {
-          "zh": "点击「读入收藏」时读取微信收藏。",
-          "en": "Reads your WeChat Favorites when you click Read Favorites."
+          "zh": "开启后读取微信收藏，每次启动时更新。",
+          "en": "Reads your WeChat Favorites when turned on, and again each time Nuttle starts."
         },
         "risk": {
           "zh": "通过读取本机的微信数据库获取（只读，不改动微信）。",
