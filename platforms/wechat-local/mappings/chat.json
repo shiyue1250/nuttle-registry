@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "wechat-local/chat",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "platform": "wechat-local",
   "entity": "chat",
   "match": {
@@ -30,7 +30,7 @@
     }
   },
   "trigger": "关注一个微信会话后，后台每次检查到新消息时存入；在会话里点「读入分析」也会存入",
-  "note": "id 是微信会话的 username（群是 xxx@chatroom）；本机只读解密，关掉「本机数据」时连同消息一起删除",
+  "note": "id 是微信会话的 username（群是 xxx@chatroom）；读取本机微信数据（只读），关掉「聊天与群聊」时连同消息一起删除",
   "fixture": "chat.fixture.json",
   "verified": "2026-10-21",
   "author": "shiyue1250",

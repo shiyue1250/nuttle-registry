@@ -1,0 +1,293 @@
+{
+  "context": {
+    "host": "m.douban.com",
+    "path": "/rexxar/api/v2/subject/recent_hot/movie",
+    "q": {
+      "limit": "EXAMPLE",
+      "start": "EXAMPLE"
+    }
+  },
+  "expected": [
+    {
+      "cover": "https://img9.doubani…",
+      "extra": {},
+      "id": "37516455",
+      "is_new": true,
+      "rating": 7.5,
+      "rating_count": 15548,
+      "subtitle": "2026 / 中国大陆 / 犯罪 武侠 …",
+      "title": "杯雪·一战成名",
+      "type": "movie",
+      "url": "https://movie.douban.com/subject/37516455/"
+    },
+    {
+      "cover": "https://img2.doubani…",
+      "extra": {},
+      "id": "36179101",
+      "is_new": false,
+      "rating": 5.5,
+      "rating_count": 25797,
+      "subtitle": "2026 / 韩国 / 剧情 动作 科幻…",
+      "title": "希望",
+      "type": "movie",
+      "url": "https://movie.douban.com/subject/36179101/"
+    },
+    {
+      "cover": "https://img3.doubani…",
+      "extra": {},
+      "id": "36931140",
+      "is_new": true,
+      "rating": 6.3,
+      "rating_count": 10521,
+      "subtitle": "2026 / 中国大陆 / 剧情 悬疑 …",
+      "title": "数到三",
+      "type": "movie",
+      "url": "https://movie.douban.com/subject/36931140/"
+    }
+  ],
+  "response": {
+    "category": "热门",
+    "items": [
+      {
+        "card_subtitle": "2026 / 中国大陆 / 犯罪 武侠 …",
+        "episodes_info": "",
+        "id": "37516455",
+        "is_new": true,
+        "pic": {
+          "large": "https://img9.doubani…",
+          "normal": "https://img9.doubani…"
+        },
+        "rating": {
+          "count": 15548,
+          "max": 10,
+          "star_count": 4.0,
+          "value": 7.5
+        },
+        "title": "杯雪·一战成名",
+        "type": "movie",
+        "uri": "douban://douban.com/…"
+      },
+      {
+        "card_subtitle": "2026 / 韩国 / 剧情 动作 科幻…",
+        "episodes_info": "",
+        "id": "36179101",
+        "is_new": false,
+        "pic": {
+          "large": "https://img2.doubani…",
+          "normal": "https://img2.doubani…"
+        },
+        "rating": {
+          "count": 25797,
+          "max": 10,
+          "star_count": 3.0,
+          "value": 5.5
+        },
+        "title": "希望",
+        "type": "movie",
+        "uri": "douban://douban.com/…"
+      },
+      {
+        "card_subtitle": "2026 / 中国大陆 / 剧情 悬疑 …",
+        "episodes_info": "",
+        "id": "36931140",
+        "is_new": true,
+        "pic": {
+          "large": "https://img3.doubani…",
+          "normal": "https://img3.doubani…"
+        },
+        "rating": {
+          "count": 10521,
+          "max": 10,
+          "star_count": 3.0,
+          "value": 6.3
+        },
+        "title": "数到三",
+        "type": "movie",
+        "uri": "douban://douban.com/…"
+      }
+    ],
+    "recommend_tags": [
+      {
+        "category": "热门",
+        "selected": true,
+        "title": "热门",
+        "type": "全部"
+      },
+      {
+        "category": "最新",
+        "selected": false,
+        "title": "最新",
+        "type": "全部"
+      },
+      {
+        "category": "豆瓣高分",
+        "selected": false,
+        "title": "豆瓣高分",
+        "type": "全部"
+      },
+      {
+        "category": "冷门佳片",
+        "selected": false,
+        "title": "冷门佳片",
+        "type": "全部"
+      },
+      {
+        "category": "热门",
+        "selected": false,
+        "title": "华语",
+        "type": "华语"
+      },
+      {
+        "category": "热门",
+        "selected": false,
+        "title": "欧美",
+        "type": "欧美"
+      },
+      {
+        "category": "热门",
+        "selected": false,
+        "title": "韩国",
+        "type": "韩国"
+      },
+      {
+        "category": "热门",
+        "selected": false,
+        "title": "日本",
+        "type": "日本"
+      }
+    ],
+    "tags": [
+      {
+        "category": "热门",
+        "selected": true,
+        "title": "热门电影",
+        "types": [
+          {
+            "selected": true,
+            "title": "全部",
+            "type": "全部"
+          },
+          {
+            "selected": false,
+            "title": "华语",
+            "type": "华语"
+          },
+          {
+            "selected": false,
+            "title": "欧美",
+            "type": "欧美"
+          },
+          {
+            "selected": false,
+            "title": "韩国",
+            "type": "韩国"
+          },
+          {
+            "selected": false,
+            "title": "日本",
+            "type": "日本"
+          }
+        ]
+      },
+      {
+        "category": "最新",
+        "selected": false,
+        "title": "最新电影",
+        "types": [
+          {
+            "selected": false,
+            "title": "全部",
+            "type": "全部"
+          },
+          {
+            "selected": false,
+            "title": "华语",
+            "type": "华语"
+          },
+          {
+            "selected": false,
+            "title": "欧美",
+            "type": "欧美"
+          },
+          {
+            "selected": false,
+            "title": "韩国",
+            "type": "韩国"
+          },
+          {
+            "selected": false,
+            "title": "日本",
+            "type": "日本"
+          }
+        ]
+      },
+      {
+        "category": "豆瓣高分",
+        "selected": false,
+        "title": "豆瓣高分",
+        "types": [
+          {
+            "selected": false,
+            "title": "全部",
+            "type": "全部"
+          },
+          {
+            "selected": false,
+            "title": "华语",
+            "type": "华语"
+          },
+          {
+            "selected": false,
+            "title": "欧美",
+            "type": "欧美"
+          },
+          {
+            "selected": false,
+            "title": "韩国",
+            "type": "韩国"
+          },
+          {
+            "selected": false,
+            "title": "日本",
+            "type": "日本"
+          }
+        ]
+      },
+      {
+        "category": "冷门佳片",
+        "selected": false,
+        "title": "冷门佳片",
+        "types": [
+          {
+            "selected": false,
+            "title": "全部",
+            "type": "全部"
+          },
+          {
+            "selected": false,
+            "title": "华语",
+            "type": "华语"
+          },
+          {
+            "selected": false,
+            "title": "欧美",
+            "type": "欧美"
+          },
+          {
+            "selected": false,
+            "title": "韩国",
+            "type": "韩国"
+          },
+          {
+            "selected": false,
+            "title": "日本",
+            "type": "日本"
+          }
+        ]
+      }
+    ],
+    "total": 304,
+    "type": "全部"
+  },
+  "source_url": "https://m.douban.com/rexxar/api/v2/subject/recent_hot/movie"
+}

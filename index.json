@@ -120,6 +120,35 @@
       "official": true
     },
     {
+      "id": "douban",
+      "version": "0.1.0",
+      "label": "豆瓣",
+      "locales": {
+        "zh": {
+          "name": "豆瓣"
+        },
+        "en": {
+          "name": "Douban"
+        }
+      },
+      "hosts": [
+        "*.douban.com"
+      ],
+      "cards": [
+        {
+          "id": "douban/subject-recent-hot",
+          "version": "0.1.0",
+          "entity": "movie",
+          "verified": "2026-10-26",
+          "fixture": true,
+          "path": "platforms/douban/mappings/subject-recent-hot.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/douban/platform.json",
+      "official": true
+    },
+    {
       "id": "douyin",
       "version": "0.1.0",
       "label": "抖音",
@@ -437,7 +466,7 @@
     },
     {
       "id": "wechat-local",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "label": "微信本地",
       "locales": {
         "zh": {
@@ -451,7 +480,7 @@
       "cards": [
         {
           "id": "wechat-local/chat",
-          "version": "0.1.0",
+          "version": "0.1.1",
           "entity": "chat",
           "verified": "2026-10-21",
           "fixture": true,
@@ -459,7 +488,7 @@
         },
         {
           "id": "wechat-local/favorite",
-          "version": "0.2.0",
+          "version": "0.2.1",
           "entity": "favorite",
           "verified": "2026-10-26",
           "fixture": true,

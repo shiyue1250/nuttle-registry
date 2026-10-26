@@ -1,0 +1,85 @@
+{
+  "apiVersion": 1,
+  "id": "douban/subject-recent-hot",
+  "version": "0.1.0",
+  "platform": "douban",
+  "entity": "movie",
+  "match": {
+    "host": "douban.com",
+    "path": "rexxar/api/v2/subject/recent_hot"
+  },
+  "item_path": "items",
+  "fields": {
+    "cover": "pic.normal",
+    "id": "id",
+    "is_new": "is_new",
+    "rating": "rating.value",
+    "rating_count": "rating.count",
+    "subtitle": "card_subtitle",
+    "title": "title",
+    "type": "type",
+    "url": "=https://movie.douban.com/subject/{id}/"
+  },
+  "schema": {
+    "cover": {
+      "type": "image"
+    },
+    "rating": {
+      "note": "豆瓣评分，满分 10"
+    },
+    "rating_count": {
+      "type": "int",
+      "note": "评分人数"
+    },
+    "subtitle": {
+      "note": "年份 / 地区 / 类型 / 导演 / 主演"
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "打开豆瓣电影「选电影」页（movie.douban.com/explore），热门列表加载时",
+  "note": "官方接入示例（记录 169）：按接入规范由 Agent 完成——request_access(discover, *.douban.com) → 人打开「选电影」页 → list_endpoints / sample_raw 找到 m.douban.com 的 recent_hot 接口 → add_mapping → query_entities 核对。实测的是电影列表（/movie）；剧集（/tv）未实测。url 由 id 拼出，链接格式取自同站 /j/search_subjects 接口返回的 url 字段。",
+  "fixture": "subject-recent-hot.fixture.json",
+  "verified": "2026-10-26",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "豆瓣热门电影",
+      "description": "选电影页的热门列表：片名、评分、评分人数、年份地区类型与主创、海报、链接"
+    },
+    "en": {
+      "name": "Douban trending movies",
+      "description": "Trending list on the Douban explore page: title, rating, number of ratings, year / region / genre / cast, poster, link"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "rating",
+      "rating_count",
+      "subtitle",
+      "type"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "海报",
+        "title": "片名",
+        "rating": "评分",
+        "rating_count": "评分人数",
+        "subtitle": "年份 / 地区 / 类型 / 主创",
+        "type": "类型"
+      },
+      "en": {
+        "cover": "Poster",
+        "title": "Title",
+        "rating": "Rating",
+        "rating_count": "Ratings",
+        "subtitle": "Year / region / genre / cast",
+        "type": "Type"
+      }
+    }
+  }
+}

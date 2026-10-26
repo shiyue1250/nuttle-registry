@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "wechat-local/favorite",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "platform": "wechat-local",
   "entity": "favorite",
   "match": {
@@ -42,7 +42,7 @@
     }
   },
   "trigger": "在设置里开启「微信收藏 / 文件传输助手」并点同步（仅 Windows，微信需登录运行）",
-  "note": "favorite.db / fav_db_item，本机只读解密",
+  "note": "favorite.db / fav_db_item，读取本机微信数据（只读）",
   "fixture": "favorite.fixture.json",
   "verified": "2026-10-26",
   "author": "shiyue1250",

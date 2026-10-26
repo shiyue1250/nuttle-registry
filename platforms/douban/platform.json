@@ -1,0 +1,24 @@
+{
+  "apiVersion": 1,
+  "id": "douban",
+  "version": "0.1.0",
+  "label": "豆瓣",
+  "locales": {
+    "zh": {
+      "name": "豆瓣"
+    },
+    "en": {
+      "name": "Douban"
+    }
+  },
+  "hosts": [
+    "*.douban.com"
+  ],
+  "endpoints": [
+    {
+      "match": "rexxar/api/v2/subject/recent_hot",
+      "label": "选电影的热门列表（片名、评分、主创、海报）"
+    }
+  ],
+  "notes": "官方接入示例（记录 169）：演示「未支持的网站由你的 Agent 接上」——全程 MCP，不写代码。选电影页的数据来自 m.douban.com 而不是 movie.douban.com，所以发现要开 *.douban.com。不在平台清单里，作为示例包供开发者参照；不内置进应用，在「设置 → 开发者」的清单外平台包里安装后才采集豆瓣。"
+}
