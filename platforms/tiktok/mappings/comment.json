@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "tiktok/comment",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "platform": "tiktok",
   "entity": "comment",
   "match": {
@@ -21,7 +21,7 @@
     "author_id": "user.unique_id",
     "head": "user.avatar_thumb.url_list.0",
     "reply_to": "reply_id",
-    "image": "image_list.0.crop_url.url_list.0",
+    "image": "image_list.0.crop_url.url_list.2",
     "extra.image_list": "image_list",
     "extra.language": "comment_language"
   },
@@ -45,7 +45,7 @@
     },
     "image": {
       "type": "image",
-      "note": "评论里的配图（TikTok 一条评论只能带一张）"
+      "note": "评论里的配图（TikTok 一条评论只能带一张）。url_list 前两个是 HEIC，Chromium / Windows 显示不了，第 3 个是 jpeg"
     }
   },
   "trigger": "打开作品的评论区、往下翻、展开回复（/api/comment/list/ 与 /api/comment/list/reply/）",

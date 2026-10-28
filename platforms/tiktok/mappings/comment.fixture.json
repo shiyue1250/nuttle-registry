@@ -12,7 +12,9 @@
               "height": 830,
               "uri": "example/img1",
               "url_list": [
-                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image"
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image",
+                "https://p19-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image",
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.jpeg"
               ],
               "width": 1080
             },
@@ -31,7 +33,7 @@
       },
       "head": "https://p16-common-sign.tiktokcdn-us.com/avatar_1.jpg",
       "id": "7690000000000000001",
-      "image": "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image",
+      "image": "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.jpeg",
       "like_count": 11,
       "nickname": "示例用户_1",
       "reply_count": 2,
@@ -71,7 +73,9 @@
               "height": 830,
               "uri": "example/img1",
               "url_list": [
-                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image"
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image",
+                "https://p19-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image",
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.jpeg"
               ],
               "width": 1080
             },

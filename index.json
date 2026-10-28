@@ -431,7 +431,7 @@
     },
     {
       "id": "tiktok",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "label": "TikTok",
       "locales": {
         "zh": {
@@ -447,7 +447,7 @@
       "cards": [
         {
           "id": "tiktok/comment",
-          "version": "0.1.1",
+          "version": "0.1.2",
           "entity": "comment",
           "verified": "2026-10-28",
           "fixture": true,
