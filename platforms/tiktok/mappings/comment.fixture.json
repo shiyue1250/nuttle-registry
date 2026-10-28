@@ -1,0 +1,133 @@
+{
+  "expected": [
+    {
+      "author": "示例用户_1",
+      "author_id": "commenter_1",
+      "content": "示例评论_1",
+      "create_time": 1788221001,
+      "extra": {
+        "image_list": [
+          {
+            "crop_url": {
+              "height": 830,
+              "uri": "example/img1",
+              "url_list": [
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image"
+              ],
+              "width": 1080
+            },
+            "origin_url": {
+              "height": 830,
+              "uri": "example/img1",
+              "url_list": [
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-origin.image"
+              ],
+              "width": 1080
+            },
+            "source": 1
+          }
+        ],
+        "language": "en"
+      },
+      "head": "https://p16-common-sign.tiktokcdn-us.com/avatar_1.jpg",
+      "id": "7690000000000000001",
+      "image": "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image",
+      "like_count": 11,
+      "nickname": "示例用户_1",
+      "reply_count": 2,
+      "reply_to": "0",
+      "video_id": "7680000000000000001"
+    },
+    {
+      "author": "示例用户_2",
+      "author_id": "commenter_2",
+      "content": "示例评论_2",
+      "create_time": 1788221002,
+      "extra": {
+        "image_list": null,
+        "language": "en"
+      },
+      "head": "https://p16-common-sign.tiktokcdn-us.com/avatar_2.jpg",
+      "id": "7690000000000000002",
+      "image": null,
+      "like_count": 12,
+      "nickname": "示例用户_2",
+      "reply_count": 0,
+      "reply_to": "7690000000000000001",
+      "video_id": "7680000000000000001"
+    }
+  ],
+  "response": {
+    "comments": [
+      {
+        "aweme_id": "7680000000000000001",
+        "cid": "7690000000000000001",
+        "comment_language": "en",
+        "create_time": 1788221001,
+        "digg_count": 11,
+        "image_list": [
+          {
+            "crop_url": {
+              "height": 830,
+              "uri": "example/img1",
+              "url_list": [
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-medium.image"
+              ],
+              "width": 1080
+            },
+            "origin_url": {
+              "height": 830,
+              "uri": "example/img1",
+              "url_list": [
+                "https://p16-comment-sign.tiktokcdn.com/example_img1~tplv-image-origin.image"
+              ],
+              "width": 1080
+            },
+            "source": 1
+          }
+        ],
+        "reply_comment_total": 2,
+        "reply_id": "0",
+        "reply_to_reply_id": "0",
+        "text": "示例评论_1",
+        "user": {
+          "avatar_thumb": {
+            "url_list": [
+              "https://p16-common-sign.tiktokcdn-us.com/avatar_1.jpg"
+            ]
+          },
+          "nickname": "示例用户_1",
+          "uid": "6900000000000000001",
+          "unique_id": "commenter_1"
+        }
+      },
+      {
+        "aweme_id": "7680000000000000001",
+        "cid": "7690000000000000002",
+        "comment_language": "en",
+        "create_time": 1788221002,
+        "digg_count": 12,
+        "image_list": null,
+        "reply_comment_total": 0,
+        "reply_id": "7690000000000000001",
+        "reply_to_reply_id": "0",
+        "text": "示例评论_2",
+        "user": {
+          "avatar_thumb": {
+            "url_list": [
+              "https://p16-common-sign.tiktokcdn-us.com/avatar_2.jpg"
+            ]
+          },
+          "nickname": "示例用户_2",
+          "uid": "6900000000000000002",
+          "unique_id": "commenter_2"
+        }
+      }
+    ],
+    "cursor": 20,
+    "has_more": 1,
+    "status_code": 0,
+    "total": 12
+  },
+  "source_url": "https://www.tiktok.com/api/comment/list/?aweme_id=7680000000000000001"
+}

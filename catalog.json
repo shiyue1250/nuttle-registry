@@ -379,6 +379,38 @@
     ]
   },
   {
+    "id": "tiktok",
+    "letter": "T",
+    "group": "main",
+    "name": {
+      "zh": "TikTok",
+      "en": "TikTok"
+    },
+    "desc": {
+      "zh": "采集浏览过的视频与评论。",
+      "en": "Collects the videos you watch and their comments."
+    },
+    "parts": [
+      {
+        "id": "videos",
+        "packs": [
+          "tiktok"
+        ],
+        "plugins": [
+          "nuttle.tiktok"
+        ],
+        "name": {
+          "zh": "视频与评论",
+          "en": "Videos and comments"
+        },
+        "desc": {
+          "zh": "浏览过的视频，推荐、探索与作者主页中出现的视频，评论与回复，以及可下载的视频。",
+          "en": "Videos you watch or see in feeds, explore and profiles, comments and replies, plus downloadable videos."
+        }
+      }
+    ]
+  },
+  {
     "id": "instagram",
     "letter": "I",
     "group": "main",

@@ -1,0 +1,101 @@
+{
+  "expected": [
+    {
+      "author": "示例作者_1",
+      "author_id": "example_user_1",
+      "collect_count": 6,
+      "comment_count": 11,
+      "cover": "https://p16-sign.tiktokcdn-us.com/obj/example_1.jpeg",
+      "create_time": 1788220801,
+      "duration_s": 16,
+      "extra": {
+        "author_uid": "6800000000000000001",
+        "images": null,
+        "sec_uid": "MS4wLjABAAAAexample1"
+      },
+      "height": null,
+      "id": "7680000000000000001",
+      "like_count": 1001,
+      "share_count": 1,
+      "title": "示例视频_1 #示例",
+      "url": "https://www.tiktok.com/@example_user_1/video/7680000000000000001",
+      "view_count": 100001,
+      "width": null
+    },
+    {
+      "author": "示例作者_2",
+      "author_id": "example_user_2",
+      "collect_count": 7,
+      "comment_count": 12,
+      "cover": "https://p16-sign.tiktokcdn-us.com/obj/example_2.jpeg",
+      "create_time": 1788220802,
+      "duration_s": 17,
+      "extra": {
+        "author_uid": "6800000000000000002",
+        "images": null,
+        "sec_uid": "MS4wLjABAAAAexample2"
+      },
+      "height": null,
+      "id": "7680000000000000002",
+      "like_count": 1002,
+      "share_count": 2,
+      "title": "示例视频_2 #示例",
+      "url": "https://www.tiktok.com/@example_user_2/video/7680000000000000002",
+      "view_count": 100002,
+      "width": null
+    }
+  ],
+  "response": {
+    "hasMore": true,
+    "itemList": [
+      {
+        "author": {
+          "id": "6800000000000000001",
+          "nickname": "示例作者_1",
+          "secUid": "MS4wLjABAAAAexample1",
+          "uniqueId": "example_user_1"
+        },
+        "createTime": 1788220801,
+        "desc": "示例视频_1 #示例",
+        "id": "7680000000000000001",
+        "stats": {
+          "collectCount": 6,
+          "commentCount": 11,
+          "diggCount": 1001,
+          "playCount": 100001,
+          "shareCount": 1
+        },
+        "video": {
+          "cover": "https://p16-sign.tiktokcdn-us.com/obj/example_1.jpeg",
+          "duration": 16,
+          "id": "7680000000000000001"
+        }
+      },
+      {
+        "author": {
+          "id": "6800000000000000002",
+          "nickname": "示例作者_2",
+          "secUid": "MS4wLjABAAAAexample2",
+          "uniqueId": "example_user_2"
+        },
+        "createTime": 1788220802,
+        "desc": "示例视频_2 #示例",
+        "id": "7680000000000000002",
+        "stats": {
+          "collectCount": 7,
+          "commentCount": 12,
+          "diggCount": 1002,
+          "playCount": 100002,
+          "shareCount": 2
+        },
+        "video": {
+          "cover": "https://p16-sign.tiktokcdn-us.com/obj/example_2.jpeg",
+          "duration": 17,
+          "id": "7680000000000000002"
+        }
+      }
+    ],
+    "statusCode": 0
+  },
+  "source_url": "https://www.tiktok.com/api/recommend/item_list/?aid=1988"
+}

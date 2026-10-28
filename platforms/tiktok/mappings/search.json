@@ -1,0 +1,140 @@
+{
+  "apiVersion": 1,
+  "id": "tiktok/search",
+  "version": "0.1.0",
+  "platform": "tiktok",
+  "entity": "video",
+  "match": {
+    "host": "tiktok.com",
+    "path": "/api/search/item/full/"
+  },
+  "item_path": "item_list",
+  "fields": {
+    "id": "id",
+    "title": "desc",
+    "author": "author.nickname",
+    "author_id": "author.uniqueId",
+    "create_time": "createTime",
+    "like_count": "stats.diggCount",
+    "comment_count": "stats.commentCount",
+    "view_count": "stats.playCount",
+    "collect_count": "stats.collectCount",
+    "share_count": "stats.shareCount",
+    "cover": "video.cover",
+    "duration_s": "video.duration",
+    "width": "video.width",
+    "height": "video.height",
+    "url": "=https://www.tiktok.com/@{author.uniqueId}/video/{id}",
+    "extra.author_uid": "author.id",
+    "extra.sec_uid": "author.secUid",
+    "extra.images": "imagePost.images"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "like_count": {
+      "type": "int",
+      "note": "点赞"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "view_count": {
+      "type": "int",
+      "note": "播放"
+    },
+    "collect_count": {
+      "type": "int",
+      "note": "收藏"
+    },
+    "share_count": {
+      "type": "int"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "duration_s": {
+      "type": "duration_s",
+      "note": "秒；图文作品为 0"
+    },
+    "url": {
+      "type": "url"
+    },
+    "author_id": {
+      "type": "string",
+      "note": "作者用户名（@ 后面那段）"
+    }
+  },
+  "trigger": "登录后搜索并切到「视频」标签（/api/search/item/full/）",
+  "fixture": "search.fixture.json",
+  "verified": "2026-10-28",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "note": "字段依据 2026-10-28 用 Chrome 实际浏览 TikTok 网页采到的返回核对；样本是按这些路径构造的示例值",
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "description",
+      "cover": "thumbnailUrl",
+      "create_time": "uploadDate",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "duration_s",
+      "view_count",
+      "like_count",
+      "comment_count",
+      "collect_count",
+      "share_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "描述",
+        "author": "作者",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "view_count": "播放",
+        "like_count": "点赞",
+        "comment_count": "评论",
+        "collect_count": "收藏",
+        "share_count": "分享"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Caption",
+        "author": "Author",
+        "create_time": "Posted",
+        "duration_s": "Duration",
+        "view_count": "Views",
+        "like_count": "Likes",
+        "comment_count": "Comments",
+        "collect_count": "Saves",
+        "share_count": "Shares"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "nuttle.tiktok",
+    "match": {
+      "meta:tiktok.videoId": "id"
+    }
+  },
+  "locales": {
+    "zh": {
+      "name": "TikTok 搜索结果",
+      "description": "搜索「视频」标签下的作品：描述、作者、发布时间、时长、播放 / 点赞 / 评论 / 收藏 / 分享数"
+    },
+    "en": {
+      "name": "TikTok search results",
+      "description": "Videos in search results: caption, author, time, duration, views / likes / comments / saves / shares"
+    }
+  }
+}

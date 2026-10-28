@@ -430,6 +430,59 @@
       "official": true
     },
     {
+      "id": "tiktok",
+      "version": "0.1.3",
+      "label": "TikTok",
+      "locales": {
+        "zh": {
+          "name": "TikTok"
+        },
+        "en": {
+          "name": "TikTok"
+        }
+      },
+      "hosts": [
+        "www.tiktok.com"
+      ],
+      "cards": [
+        {
+          "id": "tiktok/comment",
+          "version": "0.1.1",
+          "entity": "comment",
+          "verified": "2026-10-28",
+          "fixture": true,
+          "path": "platforms/tiktok/mappings/comment.json"
+        },
+        {
+          "id": "tiktok/detail",
+          "version": "0.1.1",
+          "entity": "video",
+          "verified": "2026-10-28",
+          "fixture": true,
+          "path": "platforms/tiktok/mappings/detail.json"
+        },
+        {
+          "id": "tiktok/search",
+          "version": "0.1.0",
+          "entity": "video",
+          "verified": "2026-10-28",
+          "fixture": true,
+          "path": "platforms/tiktok/mappings/search.json"
+        },
+        {
+          "id": "tiktok/video",
+          "version": "0.1.1",
+          "entity": "video",
+          "verified": "2026-10-28",
+          "fixture": true,
+          "path": "platforms/tiktok/mappings/video.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/tiktok/platform.json",
+      "official": true
+    },
+    {
       "id": "wechat-chat",
       "version": "0.2.1",
       "label": "微信聊天记录",
@@ -1142,6 +1195,38 @@
           "desc": {
             "zh": "浏览过的视频，搜索与列表中出现的视频，评论与回复，以及可下载的视频。",
             "en": "Videos you watch or see in search and lists, comments and replies, plus downloadable videos."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tiktok",
+      "letter": "T",
+      "group": "main",
+      "name": {
+        "zh": "TikTok",
+        "en": "TikTok"
+      },
+      "desc": {
+        "zh": "采集浏览过的视频与评论。",
+        "en": "Collects the videos you watch and their comments."
+      },
+      "parts": [
+        {
+          "id": "videos",
+          "packs": [
+            "tiktok"
+          ],
+          "plugins": [
+            "nuttle.tiktok"
+          ],
+          "name": {
+            "zh": "视频与评论",
+            "en": "Videos and comments"
+          },
+          "desc": {
+            "zh": "浏览过的视频，推荐、探索与作者主页中出现的视频，评论与回复，以及可下载的视频。",
+            "en": "Videos you watch or see in feeds, explore and profiles, comments and replies, plus downloadable videos."
           }
         }
       ]

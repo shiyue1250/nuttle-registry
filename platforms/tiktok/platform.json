@@ -1,0 +1,64 @@
+{
+  "apiVersion": 1,
+  "id": "tiktok",
+  "version": "0.1.3",
+  "label": "TikTok",
+  "locales": {
+    "zh": {
+      "name": "TikTok"
+    },
+    "en": {
+      "name": "TikTok"
+    }
+  },
+  "hosts": [
+    "www.tiktok.com"
+  ],
+  "endpoints": [
+    {
+      "match": "/api/recommend/item_list/",
+      "label": "推荐"
+    },
+    {
+      "match": "/api/post/item_list/",
+      "label": "作者主页作品"
+    },
+    {
+      "match": "/api/preload/item_list/",
+      "label": "预加载的作品"
+    },
+    {
+      "match": "/api/prefetch/explore/item_list/",
+      "label": "探索"
+    },
+    {
+      "match": "/api/repost/item_list/",
+      "label": "作者主页转发"
+    },
+    {
+      "match": "/_dom/__UNIVERSAL_DATA_FOR_REHYDRATION__",
+      "label": "作品页 / 作者主页内嵌数据"
+    },
+    {
+      "match": "/api/search/item/full/",
+      "label": "搜索结果（视频标签，需登录）"
+    },
+    {
+      "match": "/api/comment/list/",
+      "label": "评论与回复"
+    }
+  ],
+  "noise": [
+    "/tiktok/v1/",
+    "/api/v1/web-cookie-privacy/",
+    "/api/compliance/",
+    "/api/share/settings/",
+    "/api/ba/",
+    "/api/feedback/",
+    "/api/v3/register/",
+    "/node-webapp/",
+    "/ttwid/check/",
+    "/cdn-sw-probe/"
+  ],
+  "notes": "字段依据 2026-10-28 用 Chrome 实际浏览 TikTok 网页采到的返回核对；样本是按这些路径构造的示例值。作品 id 是 itemList[].id；可下载的视频由配套插件 nuttle.tiktok 交回为资源（按 tiktok.videoId 对上），下载走视频下载组件。网页上搜索视频的接口还没采到过，暂不解析。"
+}
