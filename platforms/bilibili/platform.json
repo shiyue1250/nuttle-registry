@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "bilibili",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "label": "哔哩哔哩",
   "locales": {
     "zh": {
@@ -12,9 +12,14 @@
     }
   },
   "hosts": [
-    "api.bilibili.com"
+    "api.bilibili.com",
+    "www.bilibili.com"
   ],
   "endpoints": [
+    {
+      "match": "/video/*/_dom/__INITIAL_STATE__",
+      "label": "视频页（网页里写好的详情）"
+    },
     {
       "match": "/x/web-interface/view",
       "label": "视频详情（标题、简介、UP 主、各项数据）"

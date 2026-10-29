@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "amazon",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "label": "Amazon 前台 / Seller Central / 广告后台",
   "locales": {
     "zh": {
@@ -20,6 +20,10 @@
   ],
   "endpoints": [
     {
+      "match": "/nuttle/amazon/product",
+      "label": "商品页：标题、价格、评分、评论数、品牌（由插件 nuttle.amazon 从页面读出）"
+    },
+    {
       "match": "_dom/a-state:desktop-twister-sort-filter-data",
       "label": "商品页变体维度表（ASIN、颜色、尺寸、可售状态，已有映射卡）"
     },
@@ -28,5 +32,5 @@
       "label": "加购按钮配置（无业务数据，建议关闭）"
     }
   ],
-  "notes": "商品页数据大多在页面内嵌的 a-state 块里，扩展把它们记成 /dp/<ASIN>/_dom/a-state:<key>；desktop-twister-sort-filter-data 是变体维度表，只有 ASIN / 颜色 / 尺寸 / 可售状态，没有每个变体的价格。"
+  "notes": "商品页数据大多在页面内嵌的 a-state 块里，扩展把它们记成 /dp/<ASIN>/_dom/a-state:<key>；desktop-twister-sort-filter-data 是变体维度表，只有 ASIN / 颜色 / 尺寸 / 可售状态，没有每个变体的价格。 商品本身的标题、价格、评分只在 HTML 里（内嵌的 a-state 块全是页面配置），由配套插件 nuttle.amazon 读出后交回 /nuttle/amazon/product，再由 amazon/product 卡解析（记录 M036）。"
 }

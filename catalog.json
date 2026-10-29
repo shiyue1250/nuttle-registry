@@ -452,8 +452,8 @@
       "en": "Amazon"
     },
     "desc": {
-      "zh": "采集商品页的变体信息：ASIN、颜色、尺寸与可售状态。",
-      "en": "Collects product variations: ASIN, color, size and availability."
+      "zh": "采集打开过的商品页：标题、价格、评分、评论数、品牌，以及变体的 ASIN、颜色、尺寸与可售状态。",
+      "en": "Collects product pages you open: title, price, rating, reviews and brand, plus variations (ASIN, color, size, availability)."
     },
     "parts": [
       {
@@ -468,6 +468,24 @@
         "desc": {
           "zh": "商品页的变体信息。",
           "en": "Variations on product pages."
+        }
+      },
+      {
+        "id": "details",
+        "packs": [
+          "amazon"
+        ],
+        "plugins": [
+          "nuttle.amazon"
+        ],
+        "plugins_follow_packs": true,
+        "name": {
+          "zh": "商品详情",
+          "en": "Product details"
+        },
+        "desc": {
+          "zh": "商品页的标题、价格、评分、评论数与品牌。",
+          "en": "Title, price, rating, reviews and brand on product pages."
         }
       }
     ]

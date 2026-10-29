@@ -1,0 +1,31 @@
+{
+  "expected": [
+    {
+      "brand": "Example",
+      "cover": "https://m.media-amazon.com/images/I/example._AC_SL1500_.jpg",
+      "extra": {
+        "availability": "In Stock",
+        "price_text": "$49.99"
+      },
+      "id": "B0EXAMPLE1",
+      "price": 49.99,
+      "rating": 4.6,
+      "review_count": 12345,
+      "title": "Example Wireless Earbuds & Charging Case, White",
+      "url": "https://www.amazon.com/dp/B0EXAMPLE1"
+    }
+  ],
+  "response": {
+    "product": {
+      "asin": "B0EXAMPLE1",
+      "availability": "In Stock",
+      "brand": "Example",
+      "image": "https://m.media-amazon.com/images/I/example._AC_SL1500_.jpg",
+      "price": 49.99,
+      "price_text": "$49.99",
+      "rating": 4.6,
+      "review_count": 12345,
+      "title": "Example Wireless Earbuds & Charging Case, White"
+    }
+  }
+}

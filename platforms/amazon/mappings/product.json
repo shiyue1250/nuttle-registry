@@ -1,0 +1,97 @@
+{
+  "apiVersion": 1,
+  "id": "amazon/product",
+  "version": "0.1.0",
+  "platform": "amazon",
+  "entity": "listing",
+  "match": {
+    "host": "amazon.com",
+    "path": "/nuttle/amazon/product"
+  },
+  "item_path": "product",
+  "fields": {
+    "id": "asin",
+    "title": "title",
+    "price": "price",
+    "rating": "rating",
+    "review_count": "review_count",
+    "brand": "brand",
+    "cover": "image",
+    "url": "=https://www.amazon.com/dp/{asin}",
+    "extra.price_text": "price_text",
+    "extra.availability": "availability"
+  },
+  "schema": {
+    "price": {
+      "type": "float",
+      "note": "页面显示的到手价，美元；没有报价时为空"
+    },
+    "rating": {
+      "type": "float",
+      "note": "满分 5"
+    },
+    "review_count": {
+      "type": "int",
+      "note": "评分数"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "打开商品页",
+  "fixture": "product.fixture.json",
+  "verified": "2026-10-29",
+  "author": "nuttle-mac",
+  "license": "MIT",
+  "note": "商品页的标题、价格、评分只在 HTML 里，由配套插件 nuttle.amazon 读出后交回 /nuttle/amazon/product（Nuttle 记录 M036）。2026-10-29 用 3 个真实商品页核对：在售、仅剩 1 件、暂时缺货（价格为空）",
+  "locales": {
+    "zh": {
+      "name": "Amazon 商品页",
+      "description": "打开过的商品：标题、价格、评分、评论数、品牌"
+    },
+    "en": {
+      "name": "Amazon product pages",
+      "description": "Products you open: title, price, rating, reviews, brand"
+    }
+  },
+  "jsonld": {
+    "@type": "Product",
+    "map": {
+      "title": "name",
+      "cover": "image",
+      "brand": "brand",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "price",
+      "rating",
+      "review_count",
+      "brand"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "主图",
+        "title": "标题",
+        "price": "价格",
+        "rating": "评分",
+        "review_count": "评分数",
+        "brand": "品牌"
+      },
+      "en": {
+        "cover": "Image",
+        "title": "Title",
+        "price": "Price",
+        "rating": "Rating",
+        "review_count": "Ratings",
+        "brand": "Brand"
+      }
+    }
+  }
+}

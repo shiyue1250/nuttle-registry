@@ -1,0 +1,108 @@
+{
+  "expected": [
+    {
+      "author": "示例作者_1",
+      "author_id": "200000001",
+      "collect_count": 31,
+      "comment_count": 13,
+      "cover": "https://p3.douyinpic.com/obj/module_cover_1.jpeg",
+      "create_time": 1793000001,
+      "duration_s": 2206.34,
+      "extra": {
+        "images": null,
+        "sec_uid": "MS4wLjABAAAAmodule1"
+      },
+      "id": "7390000000000000101",
+      "ip_location": null,
+      "like_count": 879,
+      "share_count": 6,
+      "title": "示例精选作品_1 #示例话题",
+      "url": "https://www.douyin.com/video/7390000000000000101"
+    },
+    {
+      "author": "示例作者_2",
+      "author_id": "200000002",
+      "collect_count": 32,
+      "comment_count": 14,
+      "cover": "https://p3.douyinpic.com/obj/module_cover_2.jpeg",
+      "create_time": 1793000002,
+      "duration_s": 273.17,
+      "extra": {
+        "images": null,
+        "sec_uid": "MS4wLjABAAAAmodule2"
+      },
+      "id": "7390000000000000102",
+      "ip_location": null,
+      "like_count": 4434,
+      "share_count": 7,
+      "title": "示例精选作品_2 #示例话题",
+      "url": "https://www.douyin.com/video/7390000000000000102"
+    }
+  ],
+  "response": {
+    "aweme_list": [
+      {
+        "author": {
+          "nickname": "示例作者_1",
+          "sec_uid": "MS4wLjABAAAAmodule1",
+          "uid": "200000001"
+        },
+        "aweme_id": "7390000000000000101",
+        "aweme_type": 0,
+        "create_time": 1793000001,
+        "desc": "示例精选作品_1 #示例话题",
+        "images": null,
+        "ip_label": null,
+        "statistics": {
+          "collect_count": 31,
+          "comment_count": 13,
+          "digg_count": 879,
+          "share_count": 6
+        },
+        "video": {
+          "cover": {
+            "url_list": [
+              "https://p3.douyinpic.com/obj/module_cover_1.jpeg"
+            ]
+          },
+          "duration": 2206341
+        }
+      },
+      {
+        "aweme_id": "7390000000000000199",
+        "aweme_type": 101
+      },
+      {
+        "author": {
+          "nickname": "示例作者_2",
+          "sec_uid": "MS4wLjABAAAAmodule2",
+          "uid": "200000002"
+        },
+        "aweme_id": "7390000000000000102",
+        "aweme_type": 0,
+        "create_time": 1793000002,
+        "desc": "示例精选作品_2 #示例话题",
+        "images": null,
+        "ip_label": null,
+        "statistics": {
+          "collect_count": 32,
+          "comment_count": 14,
+          "digg_count": 4434,
+          "share_count": 7
+        },
+        "video": {
+          "cover": {
+            "url_list": [
+              "https://p3.douyinpic.com/obj/module_cover_2.jpeg"
+            ]
+          },
+          "duration": 273167
+        }
+      }
+    ],
+    "has_more": 1,
+    "max_cursor": 0,
+    "min_cursor": 0,
+    "status_code": 0
+  }
+}

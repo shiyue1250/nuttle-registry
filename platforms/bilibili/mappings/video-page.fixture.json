@@ -1,0 +1,60 @@
+{
+  "expected": [
+    {
+      "author": "示例UP主",
+      "author_id": "40001",
+      "bvid": "BV1example1",
+      "coin_count": 112,
+      "content": "示例简介",
+      "cover": "http://i0.hdslb.com/bfs/archive/example.jpg",
+      "create_time": 1793000000,
+      "danmaku_count": 67,
+      "duration_s": 213,
+      "extra": {
+        "category": "音乐"
+      },
+      "favorite_count": 101,
+      "id": "170001",
+      "like_count": 1415,
+      "reply_count": 89,
+      "share_count": 13,
+      "title": "示例视频标题",
+      "url": "https://www.bilibili.com/video/BV1example1",
+      "view_count": 12345
+    }
+  ],
+  "response": {
+    "aid": 170001,
+    "bvid": "BV1example1",
+    "p": 1,
+    "upData": {
+      "mid": "40001"
+    },
+    "videoData": {
+      "aid": 170001,
+      "bvid": "BV1example1",
+      "cid": 270001,
+      "desc": "示例简介",
+      "duration": 213,
+      "owner": {
+        "face": "https://i0.hdslb.com/bfs/face/example.jpg",
+        "mid": 40001,
+        "name": "示例UP主"
+      },
+      "pic": "http://i0.hdslb.com/bfs/archive/example.jpg",
+      "pubdate": 1793000000,
+      "stat": {
+        "aid": 170001,
+        "coin": 112,
+        "danmaku": 67,
+        "favorite": 101,
+        "like": 1415,
+        "reply": 89,
+        "share": 13,
+        "view": 12345
+      },
+      "title": "示例视频标题",
+      "tname": "音乐"
+    }
+  }
+}

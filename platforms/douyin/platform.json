@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "douyin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "label": "抖音",
   "locales": {
     "zh": {
@@ -22,6 +22,10 @@
     {
       "match": "/aweme/v1/web/tab/feed/",
       "label": "首页推荐"
+    },
+    {
+      "match": "/aweme/v2/web/module/feed/",
+      "label": "首页精选"
     },
     {
       "match": "/aweme/v1/web/aweme/post/",

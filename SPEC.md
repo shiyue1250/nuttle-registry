@@ -28,7 +28,7 @@ JSON, one file per card, validated by [`schema/mapping-card.schema.json`](schema
 | `platform` | yes | The pack id this card belongs to |
 | `entity` | yes | Entity type produced, e.g. `comment`, `product`, `variation` |
 | `match.host` | no | Substring of the response host |
-| `match.path` | yes | Substring of the response path (query string excluded) |
+| `match.path` | yes | Substring of the response path (query string excluded). A `*` matches any run of characters, so the pieces must appear in order (e.g. `/video/*/_dom/__INITIAL_STATE__`); hosts older than 2026-10-29 read `*` literally and never match such a card |
 | `item_path` | yes | Dot path from the response root to the array of items; empty string if the response itself is the array. If the path resolves to a single object, it is treated as one item. A `*` segment walks every value of an object or array (e.g. `note.noteDetailMap.*.note`, where the keys are ids) |
 | `fields` | yes | Output field → source path. Must contain `id` (used to de-duplicate) |
 | `fixture` | to publish | Sibling file `<name>.fixture.json` with `response` (redacted) and `expected` (entities) |

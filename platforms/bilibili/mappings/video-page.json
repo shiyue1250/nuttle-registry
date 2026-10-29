@@ -1,0 +1,152 @@
+{
+  "apiVersion": 1,
+  "id": "bilibili/video-page",
+  "version": "0.1.0",
+  "platform": "bilibili",
+  "entity": "video",
+  "match": {
+    "host": "www.bilibili.com",
+    "path": "/video/*/_dom/__INITIAL_STATE__"
+  },
+  "item_path": "videoData",
+  "fields": {
+    "id": "aid",
+    "bvid": "bvid",
+    "title": "title",
+    "author": "owner.name",
+    "author_id": "={owner.mid}",
+    "cover": "pic",
+    "duration_s": "duration",
+    "create_time": "pubdate",
+    "view_count": "stat.view",
+    "like_count": "stat.like",
+    "danmaku_count": "stat.danmaku",
+    "url": "=https://www.bilibili.com/video/{bvid}",
+    "content": "desc",
+    "coin_count": "stat.coin",
+    "favorite_count": "stat.favorite",
+    "share_count": "stat.share",
+    "reply_count": "stat.reply",
+    "extra.category": "tname"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "duration_s": {
+      "type": "duration_s",
+      "note": "秒"
+    },
+    "cover": {
+      "type": "image"
+    },
+    "view_count": {
+      "type": "int",
+      "note": "播放"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "danmaku_count": {
+      "type": "int",
+      "note": "弹幕"
+    },
+    "coin_count": {
+      "type": "int",
+      "note": "投币；列表接口没有"
+    },
+    "favorite_count": {
+      "type": "int",
+      "note": "收藏；列表接口没有"
+    },
+    "share_count": {
+      "type": "int",
+      "note": "分享；列表接口没有"
+    },
+    "reply_count": {
+      "type": "int",
+      "note": "评论数；列表接口没有"
+    },
+    "bvid": {
+      "type": "string",
+      "note": "对应「哔哩哔哩」下载插件资源里的 bvid"
+    },
+    "url": {
+      "type": "url"
+    }
+  },
+  "trigger": "直接打开视频页（从别处点进来、刷新、粘贴链接）",
+  "note": "2026-10-29 Mac 实测：直接打开 www.bilibili.com/video/<BV号> 时视频详情写在网页的 window.__INITIAL_STATE__.videoData 里，不调 /x/web-interface/view；字段与 view 接口的 data 相同。路径片段带 * 通配（2026-10-29 之后的应用版本才认，旧版不生效、不出错）。样本按真实返回的结构构造",
+  "fixture": "video-page.fixture.json",
+  "verified": "2026-10-29",
+  "author": "nuttle-mac",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "B站视频页",
+      "description": "直接打开的视频页里的视频详情"
+    },
+    "en": {
+      "name": "Bilibili video page",
+      "description": "Video details from a video page you open directly"
+    }
+  },
+  "jsonld": {
+    "@type": "VideoObject",
+    "map": {
+      "title": "name",
+      "cover": "thumbnailUrl",
+      "create_time": "uploadDate",
+      "url": "url"
+    }
+  },
+  "display": {
+    "columns": [
+      "cover",
+      "title",
+      "author",
+      "create_time",
+      "duration_s",
+      "view_count",
+      "like_count",
+      "coin_count",
+      "favorite_count",
+      "reply_count",
+      "danmaku_count"
+    ],
+    "labels": {
+      "zh": {
+        "cover": "封面",
+        "title": "标题",
+        "author": "UP 主",
+        "create_time": "发布时间",
+        "duration_s": "时长",
+        "view_count": "播放",
+        "like_count": "点赞",
+        "coin_count": "投币",
+        "favorite_count": "收藏",
+        "reply_count": "评论",
+        "danmaku_count": "弹幕"
+      },
+      "en": {
+        "cover": "Cover",
+        "title": "Title",
+        "author": "Uploader",
+        "create_time": "Published",
+        "duration_s": "Duration",
+        "view_count": "Views",
+        "like_count": "Likes",
+        "coin_count": "Coins",
+        "favorite_count": "Favorites",
+        "reply_count": "Comments",
+        "danmaku_count": "Danmaku"
+      }
+    }
+  },
+  "resource": {
+    "plugin": "official.bilibili",
+    "match": {
+      "meta:bvid": "bvid"
+    }
+  }
+}
