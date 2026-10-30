@@ -1542,7 +1542,7 @@
     {
       "apiVersion": 1,
       "id": "drama",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "name": {
         "zh": "短剧工作台",
         "en": "Short drama"
@@ -1598,13 +1598,14 @@
       "cards": [
         {
           "id": "rising",
+          "place": "main",
           "title": {
-            "zh": "最近起量的对标",
+            "zh": "起量的对标",
             "en": "Rising benchmarks"
           },
           "sub": {
-            "zh": "你最近 3 天刷到的视频，按点赞排",
-            "en": "Videos you saw in the last 3 days, by likes"
+            "zh": "你最近 7 天刷到的视频，按点赞排",
+            "en": "Videos you saw in the last 7 days, by likes"
           },
           "from": [
             {
@@ -1620,11 +1621,11 @@
               "kind": "video"
             }
           ],
-          "days": 3,
+          "days": 7,
           "sort": [
             "like_count"
           ],
-          "limit": 5,
+          "limit": 30,
           "empty": {
             "zh": "接上视频号或抖音，刷到的视频会按点赞列在这里。",
             "en": "Connect Channels or Douyin; the videos you watch show up here by likes.",
@@ -1633,6 +1634,7 @@
         },
         {
           "id": "asks",
+          "place": "side",
           "title": {
             "zh": "评论里的需求",
             "en": "What comments ask for"
@@ -1673,38 +1675,10 @@
           "sort": [
             "like_count"
           ],
-          "limit": 5,
+          "limit": 12,
           "empty": {
             "zh": "打开视频看评论，问链接、问全集的评论会出现在这里。",
             "en": "Open videos and read comments; ones asking for links or the full series appear here."
-          }
-        },
-        {
-          "id": "overseas",
-          "title": {
-            "zh": "海外短剧",
-            "en": "Overseas drama"
-          },
-          "sub": {
-            "zh": "TikTok 上最近刷到的视频，按播放排",
-            "en": "Recent TikTok videos, by views"
-          },
-          "from": [
-            {
-              "platform": "tiktok",
-              "kind": "video"
-            }
-          ],
-          "days": 7,
-          "sort": [
-            "view_count",
-            "like_count"
-          ],
-          "limit": 5,
-          "empty": {
-            "zh": "接上 TikTok，浏览短剧视频后这里就会列出来。",
-            "en": "Connect TikTok and browse; drama videos show up here.",
-            "platform": "tiktok"
           }
         }
       ]

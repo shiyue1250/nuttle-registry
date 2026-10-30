@@ -18,7 +18,7 @@
       "additionalProperties": false,
       "properties": { "media": { "enum": ["text", "video", "image"] } }
     },
-    "input": { "type": "array", "minItems": 1, "items": { "enum": ["text", "ocr", "frames", "transcript"] } },
+    "input": { "type": "array", "minItems": 1, "items": { "enum": ["text", "ocr", "frames", "transcript", "comments"] } },
     "types": {
       "type": "object",
       "minProperties": 1,
