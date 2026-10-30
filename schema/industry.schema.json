@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuttle.dev/schema/industry.schema.json",
+  "title": "Nuttle industry pack",
+  "description": "A view over the same data for one line of work: what the sidebar is called, which sources to connect first, and home cards computed from the person's own captured items. Configuration only, no code.",
+  "type": "object",
+  "required": ["apiVersion", "id", "version", "name", "cards"],
+  "additionalProperties": false,
+  "properties": {
+    "apiVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,31}$" },
+    "version": { "type": "string" },
+    "name": { "$ref": "#/$defs/text" },
+    "desc": { "$ref": "#/$defs/text" },
+    "nav": {
+      "type": "object",
+      "propertyNames": { "enum": ["navOv", "navWk", "navKb", "navPr", "navMk"] },
+      "additionalProperties": { "$ref": "#/$defs/text" }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["platform", "part"],
+        "additionalProperties": false,
+        "properties": { "platform": { "type": "string" }, "part": { "type": "string" }, "why": { "$ref": "#/$defs/text" } }
+      }
+    },
+    "cards": { "type": "array", "items": { "$ref": "#/$defs/card" } }
+  },
+  "$defs": {
+    "text": {
+      "type": "object",
+      "required": ["zh", "en"],
+      "additionalProperties": false,
+      "properties": { "zh": { "type": "string", "minLength": 1 }, "en": { "type": "string", "minLength": 1 } }
+    },
+    "card": {
+      "type": "object",
+      "required": ["id", "title", "from"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "$ref": "#/$defs/text" },
+        "sub": { "$ref": "#/$defs/text" },
+        "from": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "object", "required": ["platform", "kind"], "additionalProperties": false, "properties": { "platform": { "type": "string" }, "kind": { "type": "string" } } }
+        },
+        "days": { "type": "integer", "minimum": 0, "description": "Only items first captured in the last N days; 0 = any time" },
+        "match": { "type": "array", "items": { "type": "string" }, "description": "Keep items whose title or text contains any of these (case-insensitive)" },
+        "sort": { "type": "array", "items": { "type": "string" }, "description": "Rank by the first of these numeric fields an item has, highest first; none = newest first" },
+        "limit": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "empty": {
+          "type": "object",
+          "required": ["zh", "en"],
+          "additionalProperties": false,
+          "properties": { "zh": { "type": "string" }, "en": { "type": "string" }, "platform": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

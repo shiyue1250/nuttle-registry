@@ -77,6 +77,10 @@ Optional `connector`: brand parameters for a built-in protocol connector, so a n
 
 `parts/<id>.json`, validated by [`schema/parts-recipe.schema.json`](schema/parts-recipe.schema.json): how to break **one** captured item into parts (steps, parameters, judgments; later shots), each pointing back to where it came from (paragraph number plus a verbatim quote). Fields: `apiVersion` (1), `id`, `version`, `name` (`{zh, en}`), `on.media` (`text` / `video` / `image`), `input` (`text`, later `ocr` / `frames` / `transcript`, prepared by the host), `types` (`{<type>: {name, cols: [{id, zh, en}]}}`; the first column is the part's main text) and `prompt` (`{zh, en}`). The host numbers the text by paragraph, sends it with the prompt to the user's own model (or hands it to the user's AI over MCP `start_parts` / `submit_parts`), keeps a part only if its type is declared and its quote is found verbatim, and never lets a re-run overwrite a part the person edited. The host ships `points` (steps / parameters / judgments of any text); industry packs will add their own (e.g. a short-drama shot list).
 
+## Industry packs
+
+`industries/<id>.json`, validated by [`schema/industry.schema.json`](schema/industry.schema.json): a view over the same data for one line of work, configuration only. Switching to it changes what the sidebar is called (`nav`), lists the sources to connect first (`sources`: catalog platform + part) and puts home cards on top, computed from the person's own captured items (`cards`: `from` platform/kind pairs, `days`, `match` substrings, `sort` by the first numeric field present, `limit`, and an `empty` hint). Data is never filtered. `index.json` carries every industry pack in full under `industries`, so updating the platform list updates them without an app release. Demo packs use the same card format.
+
 ## Publishing
 
 ### Official packs
@@ -160,6 +164,10 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 ## 拆解配方
 
 `parts/<id>.json`，按 [`schema/parts-recipe.schema.json`](schema/parts-recipe.schema.json) 校验：把**一条**采集内容拆成零件（步骤、参数、判断，以后还有镜头），每块带出处（段号 + 原话）。字段：`apiVersion`（1）、`id`、`version`、`name`（`{zh, en}`）、`on.media`（`text` / `video` / `image`）、`input`（`text`，以后 `ocr` / `frames` / `transcript`，由宿主准备）、`types`（`{类型: {name, cols: [{id, zh, en}]}}`，第一列是零件的主文字）、`prompt`（`{zh, en}`）。宿主把原文按段编号，连同提示交给用户自己的模型（或经 MCP `start_parts` / `submit_parts` 交给用户的 AI），类型不在配方里、原话在原文里找不到的丢弃；重拆不覆盖人改过的。宿主自带 `points`（任意文字的步骤 / 参数 / 判断）；行业包以后带自己的（如短剧镜头表）。
+
+## 行业包
+
+`industries/<id>.json`，按 [`schema/industry.schema.json`](schema/industry.schema.json) 校验：同一份数据朝一个行业的视角，只是配置。切过去换侧栏叫法（`nav`）、列出先接哪几处（`sources`：平台清单里的平台 + 模块）、首页顶上放用自己采到的数据现算的卡片（`cards`：`from` 平台 / 类型、`days`、`match` 关键词、`sort` 按第一个有的数字字段排、`limit`、空着时的提示 `empty`）。不过滤数据。`index.json` 的 `industries` 带全部行业包全文，「更新平台列表」即更新，不用发版。演示包的卡片用同一写法。
 
 ## 发布
 
