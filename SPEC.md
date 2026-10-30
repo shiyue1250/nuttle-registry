@@ -73,6 +73,10 @@ recipes/<name>.en.md   # optional English version of the same recipe (falls back
 
 Optional `connector`: brand parameters for a built-in protocol connector, so a new brand on a known protocol ships as a pack, not an app release. `kind` picks the connector: `folder` (local folders the user picks, no parameters; pack `files`) or `imap`: `providers` lists mail services (`id`, `name`, address `domains` used to auto-pick the service, `host`, `port`, `help` shown next to the credential field, `secret_label` naming that field) plus default `folders`, and `classify`: ordered mail rules (`category` personal / notification / subscription / ad, matched on `subject` / `from` substrings, `precedence` values, and `list` / `auto` / `answered` / `own` flags; the first rule whose conditions all hold wins, otherwise personal). One pack (`mail`) holds every service and the user adds as many accounts as they like; adding a service is a pack update. The connector logs in with the user's own credential (kept in the OS keychain, never in the pack), reads only, and hands raw data to `/nuttle/<id>/*` for this pack's cards to parse. A pack with `hosts: []` and a `connector` is fed only by the connector.
 
+## Parts recipes
+
+`parts/<id>.json`, validated by [`schema/parts-recipe.schema.json`](schema/parts-recipe.schema.json): how to break **one** captured item into parts (steps, parameters, judgments; later shots), each pointing back to where it came from (paragraph number plus a verbatim quote). Fields: `apiVersion` (1), `id`, `version`, `name` (`{zh, en}`), `on.media` (`text` / `video` / `image`), `input` (`text`, later `ocr` / `frames` / `transcript`, prepared by the host), `types` (`{<type>: {name, cols: [{id, zh, en}]}}`; the first column is the part's main text) and `prompt` (`{zh, en}`). The host numbers the text by paragraph, sends it with the prompt to the user's own model (or hands it to the user's AI over MCP `start_parts` / `submit_parts`), keeps a part only if its type is declared and its quote is found verbatim, and never lets a re-run overwrite a part the person edited. The host ships `points` (steps / parameters / judgments of any text); industry packs will add their own (e.g. a short-drama shot list).
+
 ## Publishing
 
 ### Official packs
@@ -152,6 +156,10 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 ## 平台包格式
 
 一个目录（或一个仓库），包含 `platform.json`、`mappings/` 下的卡与样本、可选的 `recipes/` 配方（第一行是标题；同名加 `.en.md` 是英文版，没有英文版时按中文版给）。`platform.json` 字段：`apiVersion`（1）、`id`、`version`、`label`、`locales`、`hosts`（`*.` 前缀匹配所有子域），可选 `endpoints`（`[{match, label}]`，每个接口是做什么的）、`watches`、`noise`、`notes`、`homepage`。可选 `connector`：内置协议连接器的品牌参数，同协议的新品牌只发包、不发版。`kind` 选连接器：`folder`（用户选的本机文件夹，没有参数；包 `files`）或 `imap`：`providers` 列各家邮箱服务商（`id`、`name`、用来按地址自动认服务商的后缀 `domains`、`host`、`port`、填凭据处显示的 `help`、凭据那一栏的名字 `secret_label`），外加默认 `folders`；`classify` 是邮件分类规则（`category` 取 personal / notification / subscription / ad，条件有主题 / 发件地址含某段文字 `subject` / `from`、`precedence` 取值、`list` / `auto` / `answered` / `own` 四个开关；从上往下第一条全满足的生效，都不满足是 personal）。所有服务商都在一个包（`mail`）里，用户可添加多个账户；加服务商只更新包。连接器用用户自己的凭据（存系统凭据管理器，不进包）只读取数，交回 `/nuttle/<id>/*` 由本包的卡解析。
+
+## 拆解配方
+
+`parts/<id>.json`，按 [`schema/parts-recipe.schema.json`](schema/parts-recipe.schema.json) 校验：把**一条**采集内容拆成零件（步骤、参数、判断，以后还有镜头），每块带出处（段号 + 原话）。字段：`apiVersion`（1）、`id`、`version`、`name`（`{zh, en}`）、`on.media`（`text` / `video` / `image`）、`input`（`text`，以后 `ocr` / `frames` / `transcript`，由宿主准备）、`types`（`{类型: {name, cols: [{id, zh, en}]}}`，第一列是零件的主文字）、`prompt`（`{zh, en}`）。宿主把原文按段编号，连同提示交给用户自己的模型（或经 MCP `start_parts` / `submit_parts` 交给用户的 AI），类型不在配方里、原话在原文里找不到的丢弃；重拆不覆盖人改过的。宿主自带 `points`（任意文字的步骤 / 参数 / 判断）；行业包以后带自己的（如短剧镜头表）。
 
 ## 发布
 

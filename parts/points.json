@@ -1,0 +1,18 @@
+{
+  "apiVersion": 1,
+  "id": "points",
+  "version": "1.0.0",
+  "name": { "zh": "拆要点", "en": "Key points" },
+  "note": "Base recipe shipped with the app: steps, parameters and judgments out of any text (articles, notes, mail, documents in watched folders).",
+  "on": { "media": "text" },
+  "input": ["text"],
+  "types": {
+    "step": { "name": { "zh": "步骤", "en": "Step" }, "cols": [{ "id": "what", "zh": "做什么", "en": "What to do" }] },
+    "param": { "name": { "zh": "参数", "en": "Parameter" }, "cols": [{ "id": "name", "zh": "名称", "en": "Name" }, { "id": "value", "zh": "数值", "en": "Value" }] },
+    "judgment": { "name": { "zh": "判断", "en": "Judgment" }, "cols": [{ "id": "claim", "zh": "结论", "en": "Claim" }, { "id": "premise", "zh": "前提", "en": "Premise" }] }
+  },
+  "prompt": {
+    "zh": "你在把一篇内容拆成要点。原文按段编号，每段以 [n] 开头。拆成三种：\n- step（步骤）：读者照着能做的一步。what：做什么，一句话。\n- param（参数）：具体的数值、配置、价格、时长、比例。name：名称；value：数值，带单位。\n- judgment（判断）：作者的结论或经验。claim：结论；premise：成立的前提，原文没说就留空。\n只拆原文明确写了的，不推断、不补充；广告、引导关注、客套话不拆。每条必须带 para（段号）和 quote：从那一段原样摘一句连续的原文，一字不改，10~80 字。按原文先后排，最多 40 条；没有可拆的就给空数组。\n只回 JSON，不要别的：{\"parts\":[{\"type\":\"step\",\"para\":2,\"quote\":\"…\",\"what\":\"…\"},{\"type\":\"param\",\"para\":4,\"quote\":\"…\",\"name\":\"…\",\"value\":\"…\"}]}",
+    "en": "You are breaking a piece of content into key points. The text is numbered by paragraph; each starts with [n]. Three types:\n- step: one thing the reader can do. what: the action, one sentence.\n- param: a concrete number, setting, price, duration or ratio. name; value with its unit.\n- judgment: the author's conclusion or lesson. claim; premise: when it holds, empty if the text does not say.\nOnly take what the text states; do not infer or add. Skip ads, follow-me prompts and pleasantries. Every part needs para (paragraph number) and quote: one continuous sentence copied verbatim from that paragraph, 10-80 characters. Keep the text's order, at most 40 parts; an empty array if there is nothing.\nReply with JSON only: {\"parts\":[{\"type\":\"step\",\"para\":2,\"quote\":\"…\",\"what\":\"…\"},{\"type\":\"param\",\"para\":4,\"quote\":\"…\",\"name\":\"…\",\"value\":\"…\"}]}"
+  }
+}
