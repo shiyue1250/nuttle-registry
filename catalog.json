@@ -182,6 +182,36 @@
     ]
   },
   {
+    "id": "files",
+    "letter": "文",
+    "group": "main",
+    "name": {
+      "zh": "文件",
+      "en": "Files"
+    },
+    "desc": {
+      "zh": "选几个本机文件夹（NAS、共享盘挂载后也算），只读扫描文件名、修改时间和正文文字，每 10 分钟一次。",
+      "en": "Pick folders on this computer (mounted NAS or network shares count too); reads file names, modified times and text, read-only, every 10 minutes."
+    },
+    "parts": [
+      {
+        "id": "folder",
+        "packs": [
+          "files"
+        ],
+        "local": "files",
+        "name": {
+          "zh": "本机文件夹",
+          "en": "Local folders"
+        },
+        "desc": {
+          "zh": "txt、md、csv、Word、PPT、Excel、网页的文字；PDF、图片暂只记文件名。只读：不改、不删、不移动文件。",
+          "en": "Text from txt, md, csv, Word, PowerPoint, Excel and web pages; PDFs and images are listed by name for now. Read-only: never edits, deletes or moves files."
+        }
+      }
+    ]
+  },
+  {
     "id": "xiaohongshu",
     "letter": "小",
     "group": "main",

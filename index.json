@@ -298,6 +298,33 @@
       "official": true
     },
     {
+      "id": "files",
+      "version": "0.1.0",
+      "label": "文件",
+      "locales": {
+        "zh": {
+          "name": "文件"
+        },
+        "en": {
+          "name": "Files"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "files/file",
+          "version": "0.1.0",
+          "entity": "file",
+          "verified": "2026-10-30",
+          "fixture": true,
+          "path": "platforms/files/mappings/file.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/files/platform.json",
+      "official": true
+    },
+    {
       "id": "instagram",
       "version": "0.1.0",
       "label": "Instagram",
@@ -1050,6 +1077,36 @@
           "desc": {
             "zh": "发件人、主题、时间、正文与附件，可添加多个账户。只读：不改已读、不发信、不删信。",
             "en": "Sender, subject, time, text and attachments, across several accounts. Read-only: never marks as read, sends or deletes."
+          }
+        }
+      ]
+    },
+    {
+      "id": "files",
+      "letter": "文",
+      "group": "main",
+      "name": {
+        "zh": "文件",
+        "en": "Files"
+      },
+      "desc": {
+        "zh": "选几个本机文件夹（NAS、共享盘挂载后也算），只读扫描文件名、修改时间和正文文字，每 10 分钟一次。",
+        "en": "Pick folders on this computer (mounted NAS or network shares count too); reads file names, modified times and text, read-only, every 10 minutes."
+      },
+      "parts": [
+        {
+          "id": "folder",
+          "packs": [
+            "files"
+          ],
+          "local": "files",
+          "name": {
+            "zh": "本机文件夹",
+            "en": "Local folders"
+          },
+          "desc": {
+            "zh": "txt、md、csv、Word、PPT、Excel、网页的文字；PDF、图片暂只记文件名。只读：不改、不删、不移动文件。",
+            "en": "Text from txt, md, csv, Word, PowerPoint, Excel and web pages; PDFs and images are listed by name for now. Read-only: never edits, deletes or moves files."
           }
         }
       ]

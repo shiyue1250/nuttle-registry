@@ -1,0 +1,24 @@
+{
+  "apiVersion": 1,
+  "id": "files",
+  "version": "0.1.0",
+  "label": "文件",
+  "locales": {
+    "zh": {
+      "name": "文件"
+    },
+    "en": {
+      "name": "Files"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/nuttle/files/files",
+      "label": "本机文件夹里的文件（只读扫描，已内置解析）"
+    }
+  ],
+  "connector": {
+    "kind": "folder"
+  }
+}

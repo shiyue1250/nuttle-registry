@@ -1,0 +1,38 @@
+{
+  "context": {
+    "host": "files.local",
+    "path": "/nuttle/files/files"
+  },
+  "expected": [
+    {
+      "content": "名称\t报价\n沙发\t3200",
+      "create_time": 1793239200,
+      "ext": "xlsx",
+      "extra": {},
+      "folder": "/Users/example/Documents",
+      "id": "9a0b1c2d3e4f5a6b7c8d9e0f",
+      "mtime": 1793239200,
+      "path": "/Users/example/Documents/客户/报价单.xlsx",
+      "rel": "客户/报价单.xlsx",
+      "size": 8192,
+      "text_state": "ok",
+      "title": "报价单.xlsx"
+    }
+  ],
+  "response": {
+    "files": [
+      {
+        "ext": "xlsx",
+        "folder": "/Users/example/Documents",
+        "id": "9a0b1c2d3e4f5a6b7c8d9e0f",
+        "mtime": 1793239200,
+        "name": "报价单.xlsx",
+        "path": "/Users/example/Documents/客户/报价单.xlsx",
+        "rel": "客户/报价单.xlsx",
+        "size": 8192,
+        "text": "名称\t报价\n沙发\t3200",
+        "text_state": "ok"
+      }
+    ]
+  }
+}

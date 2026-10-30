@@ -123,7 +123,8 @@
         "kind": {
           "type": "string",
           "enum": [
-            "imap"
+            "imap",
+            "folder"
           ]
         },
         "folders": {
