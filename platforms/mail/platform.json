@@ -113,6 +113,62 @@
         "secret_label": "密码或三方客户端安全密码",
         "help": "企业邮管理员需允许 IMAP；开了三方客户端安全密码的，在网页版设置里生成一个填在这里。"
       }
+    ],
+    "classify": [
+      {
+        "category": "personal",
+        "own": true
+      },
+      {
+        "category": "personal",
+        "answered": true
+      },
+      {
+        "category": "ad",
+        "subject": [
+          "(AD)",
+          "（AD）",
+          "[AD]",
+          "【AD】",
+          "(广告)",
+          "（广告）",
+          "[广告]",
+          "【广告】",
+          "<广告>",
+          "＜广告＞"
+        ]
+      },
+      {
+        "category": "notification",
+        "auto": true
+      },
+      {
+        "category": "subscription",
+        "list": true
+      },
+      {
+        "category": "notification",
+        "from": [
+          "noreply",
+          "no-reply",
+          "no_reply",
+          "donotreply",
+          "do-not-reply",
+          "mailer-daemon",
+          "postmaster",
+          "notification",
+          "notify",
+          "alert"
+        ]
+      },
+      {
+        "category": "subscription",
+        "precedence": [
+          "bulk",
+          "list",
+          "junk"
+        ]
+      }
     ]
   },
   "notes": "一个平台、多个账户。用户自选服务商（按地址后缀自动认）或「其他」自填服务器，用自己的授权码 / 应用专用密码经 IMAP（993，加密）只读同步所选文件夹：首次取最近 7 天，之后按编号增量；取信不改已读，不发信、不删信。附件 20MB 以内存到本机。由内置连接器 mail 交回 /nuttle/mail/messages（每封带 account），本包解析。"

@@ -31,7 +31,8 @@
     "auto_submitted": "auto_submitted",
     "read": "read",
     "answered": "answered",
-    "flagged": "flagged"
+    "flagged": "flagged",
+    "category": "category"
   },
   "schema": {
     "create_time": {
@@ -108,6 +109,10 @@
     "message_id": {
       "type": "string",
       "note": "信头 Message-ID（不带尖括号）"
+    },
+    "category": {
+      "type": "string",
+      "note": "类型：personal 往来信 / notification 通知 / subscription 订阅 / ad 广告；按平台包 connector.classify 的规则定，AI 加工默认只读往来信（关注的发件人与手动挑的除外）"
     }
   },
   "trigger": "同步邮箱时一并生成",
@@ -148,7 +153,8 @@
         "thread": "会话",
         "read": "已读",
         "answered": "已回复",
-        "flagged": "星标"
+        "flagged": "星标",
+        "category": "类型"
       },
       "en": {
         "title": "Subject",
@@ -164,7 +170,8 @@
         "thread": "Thread",
         "read": "Read",
         "answered": "Replied",
-        "flagged": "Flagged"
+        "flagged": "Flagged",
+        "category": "Type"
       }
     }
   }

@@ -17,6 +17,7 @@
       ],
       "author": "示例客户",
       "auto_submitted": "",
+      "category": "personal",
       "cc": "",
       "content": "您好，报价单见附件。",
       "create_time": 1793239200,
@@ -51,6 +52,7 @@
           }
         ],
         "auto_submitted": "",
+        "category": "personal",
         "cc": "",
         "date": 1793239200,
         "flagged": false,
