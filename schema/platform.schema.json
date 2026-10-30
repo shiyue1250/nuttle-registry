@@ -112,6 +112,70 @@
     },
     "notes": {
       "type": "string"
+    },
+    "connector": {
+      "type": "object",
+      "description": "可选：基座连接器的品牌参数（执行方案 10-接入分层）。kind 选连接器，其余是它的参数；imap 用 providers（各家服务商：id、name、domains 地址后缀、host、port、help、secret_label 凭据那一栏叫什么）与默认 folders。 / Optional: brand parameters for a built-in protocol connector; kind picks it, the rest are its parameters (imap: providers [{id, name, domains, host, port, help, secret_label}] and default folders).",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "imap"
+          ]
+        },
+        "folders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "host"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "domains": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "host": {
+                "type": "string"
+              },
+              "port": {
+                "type": "integer"
+              },
+              "help": {
+                "type": "string"
+              },
+              "secret_label": {
+                "type": "string"
+              },
+              "folders": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

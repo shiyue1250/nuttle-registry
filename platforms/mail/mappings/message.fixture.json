@@ -1,0 +1,75 @@
+{
+  "context": {
+    "host": "mail.local",
+    "path": "/nuttle/mail/messages"
+  },
+  "expected": [
+    {
+      "account": "me@example.com",
+      "answered": false,
+      "attachments": [
+        {
+          "file": "mail/me@example.com/3f1c0a9e7b2d4c6e8a0b1c2d/quote.csv",
+          "name": "quote.csv",
+          "size": 9,
+          "type": "text/csv"
+        }
+      ],
+      "author": "示例客户",
+      "auto_submitted": "",
+      "cc": "",
+      "content": "您好，报价单见附件。",
+      "create_time": 1793239200,
+      "extra": {},
+      "flagged": false,
+      "folder": "INBOX",
+      "from": "client@example.com",
+      "id": "3f1c0a9e7b2d4c6e8a0b1c2d",
+      "in_reply_to": "",
+      "list_id": "",
+      "message_id": "a1@example.com",
+      "precedence": "",
+      "read": true,
+      "references": [],
+      "thread": "9b2e4f6a8c0d1e3f5a7b9c1d",
+      "title": "本周报价单",
+      "to": "me@example.com",
+      "unsubscribe": false
+    }
+  ],
+  "response": {
+    "messages": [
+      {
+        "account": "me@example.com",
+        "answered": false,
+        "attachments": [
+          {
+            "file": "mail/me@example.com/3f1c0a9e7b2d4c6e8a0b1c2d/quote.csv",
+            "name": "quote.csv",
+            "size": 9,
+            "type": "text/csv"
+          }
+        ],
+        "auto_submitted": "",
+        "cc": "",
+        "date": 1793239200,
+        "flagged": false,
+        "folder": "INBOX",
+        "from": "client@example.com",
+        "from_name": "示例客户",
+        "id": "3f1c0a9e7b2d4c6e8a0b1c2d",
+        "in_reply_to": "",
+        "list_id": "",
+        "message_id": "a1@example.com",
+        "precedence": "",
+        "read": true,
+        "references": [],
+        "subject": "本周报价单",
+        "text": "您好，报价单见附件。",
+        "thread": "9b2e4f6a8c0d1e3f5a7b9c1d",
+        "to": "me@example.com",
+        "unsubscribe": false
+      }
+    ]
+  }
+}

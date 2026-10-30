@@ -71,6 +71,8 @@ recipes/<name>.en.md   # optional English version of the same recipe (falls back
 
 `platform.json` fields: `apiVersion` (1), `id`, `version`, `label`, `locales`, `hosts` (`*.` prefix matches subdomains), and optional `endpoints` (`[{match, label}]` — what each API endpoint is for), `watches`, `noise`, `notes`, `homepage`.
 
+Optional `connector`: brand parameters for a built-in protocol connector, so a new brand on a known protocol ships as a pack, not an app release. `kind` picks the connector; today only `imap`: `providers` lists mail services (`id`, `name`, address `domains` used to auto-pick the service, `host`, `port`, `help` shown next to the credential field, `secret_label` naming that field) plus default `folders`. One pack (`mail`) holds every service and the user adds as many accounts as they like; adding a service is a pack update. The connector logs in with the user's own credential (kept in the OS keychain, never in the pack), reads only, and hands raw data to `/nuttle/<id>/*` for this pack's cards to parse. A pack with `hosts: []` and a `connector` is fed only by the connector.
+
 ## Publishing
 
 ### Official packs
@@ -149,7 +151,7 @@ Breaking changes bump `apiVersion`. Hosts must reject cards with an `apiVersion`
 
 ## 平台包格式
 
-一个目录（或一个仓库），包含 `platform.json`、`mappings/` 下的卡与样本、可选的 `recipes/` 配方（第一行是标题；同名加 `.en.md` 是英文版，没有英文版时按中文版给）。`platform.json` 字段：`apiVersion`（1）、`id`、`version`、`label`、`locales`、`hosts`（`*.` 前缀匹配所有子域），可选 `endpoints`（`[{match, label}]`，每个接口是做什么的）、`watches`、`noise`、`notes`、`homepage`。
+一个目录（或一个仓库），包含 `platform.json`、`mappings/` 下的卡与样本、可选的 `recipes/` 配方（第一行是标题；同名加 `.en.md` 是英文版，没有英文版时按中文版给）。`platform.json` 字段：`apiVersion`（1）、`id`、`version`、`label`、`locales`、`hosts`（`*.` 前缀匹配所有子域），可选 `endpoints`（`[{match, label}]`，每个接口是做什么的）、`watches`、`noise`、`notes`、`homepage`。可选 `connector`：内置协议连接器的品牌参数，同协议的新品牌只发包、不发版。`kind` 选连接器，目前只有 `imap`：`providers` 列各家邮箱服务商（`id`、`name`、用来按地址自动认服务商的后缀 `domains`、`host`、`port`、填凭据处显示的 `help`、凭据那一栏的名字 `secret_label`），外加默认 `folders`。所有服务商都在一个包（`mail`）里，用户可添加多个账户；加服务商只更新包。连接器用用户自己的凭据（存系统凭据管理器，不进包）只读取数，交回 `/nuttle/<id>/*` 由本包的卡解析。
 
 ## 发布
 

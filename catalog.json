@@ -152,6 +152,36 @@
     ]
   },
   {
+    "id": "mail",
+    "letter": "邮",
+    "group": "main",
+    "name": {
+      "zh": "邮箱",
+      "en": "Mail"
+    },
+    "desc": {
+      "zh": "添加 QQ、网易、Gmail、iCloud 等邮箱账户，经 IMAP 只读同步所选文件夹的邮件与附件，每 10 分钟一次。",
+      "en": "Add QQ, NetEase, Gmail, iCloud and other mail accounts; syncs mail and attachments from the folders you pick over IMAP, read-only, every 10 minutes."
+    },
+    "parts": [
+      {
+        "id": "mail",
+        "packs": [
+          "mail"
+        ],
+        "local": "mail",
+        "name": {
+          "zh": "邮件",
+          "en": "Mail"
+        },
+        "desc": {
+          "zh": "发件人、主题、时间、正文与附件，可添加多个账户。只读：不改已读、不发信、不删信。",
+          "en": "Sender, subject, time, text and attachments, across several accounts. Read-only: never marks as read, sends or deletes."
+        }
+      }
+    ]
+  },
+  {
     "id": "xiaohongshu",
     "letter": "小",
     "group": "main",

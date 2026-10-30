@@ -1,0 +1,171 @@
+{
+  "apiVersion": 1,
+  "id": "mail/message",
+  "version": "0.1.0",
+  "platform": "mail",
+  "entity": "mail",
+  "match": {
+    "host": "mail.local",
+    "path": "/nuttle/mail/messages"
+  },
+  "item_path": "messages",
+  "fields": {
+    "id": "id",
+    "title": "subject",
+    "author": "from_name",
+    "from": "from",
+    "to": "to",
+    "account": "account",
+    "create_time": "date",
+    "folder": "folder",
+    "content": "text",
+    "attachments": "attachments",
+    "message_id": "message_id",
+    "cc": "cc",
+    "in_reply_to": "in_reply_to",
+    "references": "references",
+    "thread": "thread",
+    "list_id": "list_id",
+    "unsubscribe": "unsubscribe",
+    "precedence": "precedence",
+    "auto_submitted": "auto_submitted",
+    "read": "read",
+    "answered": "answered",
+    "flagged": "flagged"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s"
+    },
+    "content": {
+      "type": "string",
+      "note": "纯文本正文（HTML 邮件转成文字），超过 2 万字截断"
+    },
+    "attachments": {
+      "type": "json",
+      "note": "[{name, size, type, file}]，file 是数据目录下的相对路径（mail/<账户>/<信>/<文件名>）；超过 20MB 的为空、只记名字和大小"
+    },
+    "id": {
+      "type": "string",
+      "note": "账户 + Message-ID 的哈希；没有 Message-ID 时用文件夹 + 编号"
+    },
+    "author": {
+      "type": "string",
+      "note": "发件人显示名"
+    },
+    "from": {
+      "type": "string",
+      "note": "发件人地址"
+    },
+    "account": {
+      "type": "string",
+      "note": "这封信同步自哪个账户（邮箱地址）"
+    },
+    "cc": {
+      "type": "string",
+      "note": "抄送地址，逗号分隔"
+    },
+    "in_reply_to": {
+      "type": "string",
+      "note": "回复的是哪封（Message-ID）"
+    },
+    "references": {
+      "type": "json",
+      "note": "信头 References 里的 Message-ID 列表"
+    },
+    "thread": {
+      "type": "string",
+      "note": "会话：账户 + 会话第一封的 Message-ID 的哈希，同一串来回的信相同"
+    },
+    "list_id": {
+      "type": "string",
+      "note": "邮件列表标识（List-Id），订阅 / 群发类才有"
+    },
+    "unsubscribe": {
+      "type": "bool",
+      "note": "带退订链接（List-Unsubscribe），多为订阅 / 营销"
+    },
+    "precedence": {
+      "type": "string",
+      "note": "Precedence 信头（bulk / list / junk 多为群发）"
+    },
+    "auto_submitted": {
+      "type": "string",
+      "note": "Auto-Submitted 信头（auto-generated / auto-replied 为自动发送）"
+    },
+    "read": {
+      "type": "bool",
+      "note": "已读（IMAP \\\\Seen）；最近 7 天的每轮同步刷新"
+    },
+    "answered": {
+      "type": "bool",
+      "note": "已回复（IMAP \\\\Answered）；最近 7 天的每轮同步刷新"
+    },
+    "flagged": {
+      "type": "bool",
+      "note": "星标（IMAP \\\\Flagged）；最近 7 天的每轮同步刷新"
+    },
+    "message_id": {
+      "type": "string",
+      "note": "信头 Message-ID（不带尖括号）"
+    }
+  },
+  "trigger": "同步邮箱时一并生成",
+  "fixture": "message.fixture.json",
+  "verified": "2026-10-30",
+  "author": "nuttle-mac",
+  "license": "MIT",
+  "note": "样本是按连接器的真实输出构造的示例值",
+  "locales": {
+    "zh": {
+      "name": "邮件",
+      "description": "每个账户所选文件夹里的每封邮件：发件人、主题、时间、正文与附件"
+    },
+    "en": {
+      "name": "Email",
+      "description": "Each email in the folders you picked, across accounts: sender, subject, time, text and attachments"
+    }
+  },
+  "display": {
+    "columns": [
+      "title",
+      "author",
+      "create_time",
+      "folder"
+    ],
+    "labels": {
+      "zh": {
+        "title": "主题",
+        "author": "发件人",
+        "from": "地址",
+        "to": "收件人",
+        "create_time": "时间",
+        "folder": "文件夹",
+        "content": "正文",
+        "attachments": "附件",
+        "account": "账户",
+        "cc": "抄送",
+        "thread": "会话",
+        "read": "已读",
+        "answered": "已回复",
+        "flagged": "星标"
+      },
+      "en": {
+        "title": "Subject",
+        "author": "From",
+        "from": "Address",
+        "to": "To",
+        "create_time": "Time",
+        "folder": "Folder",
+        "content": "Text",
+        "attachments": "Attachments",
+        "account": "Account",
+        "cc": "Cc",
+        "thread": "Thread",
+        "read": "Read",
+        "answered": "Replied",
+        "flagged": "Flagged"
+      }
+    }
+  }
+}
