@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "mail",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "label": "邮箱",
   "locales": {
     "zh": {
@@ -35,7 +35,7 @@
         "host": "imap.qq.com",
         "port": 993,
         "secret_label": "授权码",
-        "help": "在 QQ 邮箱网页版：设置 → 账号 → 开启「IMAP/SMTP 服务」，按提示生成授权码，填在这里（不是 QQ 密码）。"
+        "help": "在 QQ 邮箱网页版：设置 → 账号 → 开启「IMAP/SMTP 服务」，按提示生成授权码（非 QQ 密码）。"
       },
       {
         "id": "163",
@@ -46,7 +46,7 @@
         "host": "imap.163.com",
         "port": 993,
         "secret_label": "授权码",
-        "help": "在 163 邮箱网页版：设置 → POP3/SMTP/IMAP → 开启「IMAP/SMTP 服务」，按提示生成授权码，填在这里（不是登录密码）。"
+        "help": "在 163 邮箱网页版：设置 → POP3/SMTP/IMAP → 开启「IMAP/SMTP 服务」，按提示生成授权码（非登录密码）。"
       },
       {
         "id": "126",
@@ -57,7 +57,7 @@
         "host": "imap.126.com",
         "port": 993,
         "secret_label": "授权码",
-        "help": "在 126 邮箱网页版：设置 → POP3/SMTP/IMAP → 开启「IMAP/SMTP 服务」，按提示生成授权码，填在这里（不是登录密码）。"
+        "help": "在 126 邮箱网页版：设置 → POP3/SMTP/IMAP → 开启「IMAP/SMTP 服务」，按提示生成授权码（非登录密码）。"
       },
       {
         "id": "yeah",
@@ -68,7 +68,7 @@
         "host": "imap.yeah.net",
         "port": 993,
         "secret_label": "授权码",
-        "help": "在 yeah.net 邮箱网页版：设置 → POP3/SMTP/IMAP → 开启「IMAP/SMTP 服务」，按提示生成授权码，填在这里（不是登录密码）。"
+        "help": "在 yeah.net 邮箱网页版：设置 → POP3/SMTP/IMAP → 开启「IMAP/SMTP 服务」，按提示生成授权码（非登录密码）。"
       },
       {
         "id": "gmail",
@@ -80,7 +80,7 @@
         "host": "imap.gmail.com",
         "port": 993,
         "secret_label": "应用专用密码",
-        "help": "个人 Gmail：先在 Google 账号开启两步验证，再到「应用专用密码」生成一个，填在这里（不是登录密码）。公司或学校的 Google Workspace 账号只能用 OAuth 登录，目前不支持。"
+        "help": "个人 Gmail：在 Google 账号开启两步验证后，于「应用专用密码」中生成（非登录密码）。暂不支持 Google Workspace 账号。"
       },
       {
         "id": "icloud",
@@ -93,7 +93,7 @@
         "host": "imap.mail.me.com",
         "port": 993,
         "secret_label": "App 专用密码",
-        "help": "在 Apple 账户网站：登录与安全 → App 专用密码，生成一个填在这里（不是 Apple 账户密码）。"
+        "help": "在 Apple 账户网站：登录与安全 → App 专用密码中生成（非 Apple 账户密码）。"
       },
       {
         "id": "exmail",
@@ -102,7 +102,7 @@
         "host": "imap.exmail.qq.com",
         "port": 993,
         "secret_label": "密码或客户端专用密码",
-        "help": "企业邮管理员需允许 IMAP；开了安全登录（微信动态码）的账号，在企业邮网页版：设置 → 账户 → 客户端专用密码 生成一个。"
+        "help": "需管理员允许 IMAP。已开启安全登录的账号，在企业邮网页版：设置 → 账户 → 客户端专用密码中生成。"
       },
       {
         "id": "aliyun-qiye",
@@ -111,7 +111,7 @@
         "host": "imap.qiye.aliyun.com",
         "port": 993,
         "secret_label": "密码或三方客户端安全密码",
-        "help": "企业邮管理员需允许 IMAP；开了三方客户端安全密码的，在网页版设置里生成一个填在这里。"
+        "help": "需管理员允许 IMAP。已开启三方客户端安全密码的账号，在网页版设置中生成。"
       }
     ],
     "classify": [

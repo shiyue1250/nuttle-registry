@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "reddit",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "label": "Reddit",
   "locales": {
     "zh": {
@@ -30,12 +30,12 @@
   "connector": {
     "kind": "http",
     "label": "盯版块",
-    "help": "Reddit 不让匿名程序读帖子，要用你自己建的 Reddit 应用：登录 reddit.com 打开 reddit.com/prefs/apps →「create another app」→ 类型选 script、回调地址随便填 http://localhost → 创建后，名字下面那串是应用 id，secret 是应用密钥。填好要盯的版块（不带 r/，多个用逗号隔开），每小时取一次每个版块最新的 100 个帖子。只读；国内网络要能打开 reddit.com。",
+    "help": "Reddit 不允许匿名程序读取帖子，需使用自建的 Reddit 应用：登录后打开 reddit.com/prefs/apps →「create another app」，类型选 script，回调地址填 http://localhost。应用名称下方的字符串为应用 id，secret 为应用密钥。每小时获取每个版块最新 100 个帖子，只读。",
     "inputs": [
       {
         "id": "client_id",
         "label": "应用 id",
-        "placeholder": "名字下面那串",
+        "placeholder": "应用名称下方的字符串",
         "chars": "word",
         "max": 40
       },
