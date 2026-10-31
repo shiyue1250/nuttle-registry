@@ -430,7 +430,7 @@
       "cards": [
         {
           "id": "mail/message",
-          "version": "0.1.0",
+          "version": "0.1.1",
           "entity": "mail",
           "verified": "2026-10-30",
           "fixture": true,

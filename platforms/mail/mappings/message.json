@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "mail/message",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "platform": "mail",
   "entity": "mail",
   "match": {
@@ -44,7 +44,7 @@
     },
     "attachments": {
       "type": "json",
-      "note": "[{name, size, type, file}]，file 是数据目录下的相对路径（mail/<账户>/<信>/<文件名>）；超过 20MB 的为空、只记名字和大小"
+      "note": "[{name, size, type, file, text, text_state}]，file 是数据目录下的相对路径（mail/<账户>/<信>/<文件名>）；超过 20MB 的为空、只记名字和大小。text 是附件读出的文字（txt / md / csv / html / docx / pptx / xlsx，最多 2 万字），text_state：ok / unsupported（读不出的类型，如 PDF、图片）/ too_large / failed"
     },
     "id": {
       "type": "string",
