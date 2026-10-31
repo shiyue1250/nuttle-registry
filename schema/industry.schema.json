@@ -27,6 +27,12 @@
       }
     },
     "cards": { "type": "array", "items": { "$ref": "#/$defs/card" } },
+    "vocab": {
+      "type": "array",
+      "description": "Trade terms of this industry. Used as ASR hotwords (local Qwen3-ASR) and given to the model when breaking down shots so similar-sounding transcript mistakes get fixed (record 229)",
+      "maxItems": 200,
+      "items": { "type": "string", "minLength": 1, "maxLength": 20 }
+    },
     "transition": {
       "type": "object",
       "description": "Played the first time someone switches into this industry in a session (task 21g). style = a built-in animated cut (clapper: clapperboard snap, letterbox bars, flash); video = optional footage URL (webm / mp4) played instead; sfx = clap or none; color = accent of the light sweep",

@@ -1,9 +1,10 @@
 {
   "apiVersion": 1,
   "id": "drama",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "name": { "zh": "短剧工作台", "en": "Short drama" },
   "desc": { "zh": "对标、评论需求、先接哪几处", "en": "Benchmarks, comment asks, sources to connect" },
+  "vocab": ["短剧", "投流", "完播率", "起量", "付费卡点", "爽点", "钩子", "反转", "霸总", "重生", "战神", "赘婿", "甜宠", "大女主", "逆袭", "追妻火葬场", "闪婚", "豪门", "千金", "复仇"],
   "transition": { "style": "clapper", "title": { "zh": "短剧工作台", "en": "Short drama" }, "color": "#f5b947", "sfx": "clap" },
   "nav": {
     "navOv": { "zh": "工作台", "en": "Workbench" },
