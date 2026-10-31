@@ -19,6 +19,10 @@ jobs:
             | xargs -0 check-jsonschema --schemafile schema/mapping-card.schema.json
       - name: 平台包符合 Schema
         run: check-jsonschema --schemafile schema/platform.schema.json platforms/*/platform.json
+      - name: 拆解配方符合 Schema
+        run: check-jsonschema --schemafile schema/parts-recipe.schema.json parts/*.json
+      - name: 行业包符合 Schema
+        run: check-jsonschema --schemafile schema/industry.schema.json industries/*.json
       - name: 社区包发现逻辑（离线桩数据）
         run: cd scripts && python test_discover.py
       - name: 样本文件是合法 JSON 且带 response / expected
