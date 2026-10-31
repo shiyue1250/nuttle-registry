@@ -443,7 +443,7 @@
     },
     {
       "id": "reddit",
-      "version": "0.1.5",
+      "version": "0.2.0",
       "label": "Reddit",
       "locales": {
         "zh": {
@@ -462,6 +462,14 @@
           "verified": "2026-10-06",
           "fixture": true,
           "path": "platforms/reddit/mappings/comment.json"
+        },
+        {
+          "id": "reddit/listing",
+          "version": "0.1.0",
+          "entity": "post",
+          "verified": "2026-10-31",
+          "fixture": true,
+          "path": "platforms/reddit/mappings/listing.json"
         },
         {
           "id": "reddit/post",
@@ -1301,6 +1309,21 @@
           "desc": {
             "zh": "浏览过的帖子与评论。",
             "en": "Posts and comments you view."
+          }
+        },
+        {
+          "id": "subs",
+          "packs": [
+            "reddit"
+          ],
+          "local": "http",
+          "name": {
+            "zh": "盯版块",
+            "en": "Watch subreddits"
+          },
+          "desc": {
+            "zh": "填几个版块，每小时自动取最新帖子，不用开浏览器。只读，用你自己建的 Reddit 应用走官方接口。",
+            "en": "List a few subreddits; their newest posts come in every hour without a browser. Read-only, through the official API with your own Reddit app."
           }
         }
       ]

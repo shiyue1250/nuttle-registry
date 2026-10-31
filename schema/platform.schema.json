@@ -124,8 +124,75 @@
           "type": "string",
           "enum": [
             "imap",
-            "folder"
+            "folder",
+            "http"
           ]
+        },
+        "label": {
+          "type": "string",
+          "description": "http：模块里显示的名字 / http: name shown on the module"
+        },
+        "help": {
+          "type": "string",
+          "description": "http：填之前给用户看的说明（取什么、多久一次、要不要登录）/ http: what it fetches, how often, whether it needs a key"
+        },
+        "inputs": {
+          "type": "array",
+          "description": "http：要用户填的值，在请求地址里写成 {id}；list = 可填多个（每个值一个地址），chars: word = 只许字母数字下划线连字符，max = 最长几个字 / http: values the user fills in, used as {id} in request URLs",
+          "items": {
+            "type": "object",
+            "required": ["id", "label"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+              "label": { "type": "string" },
+              "placeholder": { "type": "string" },
+              "list": { "type": "boolean" },
+              "chars": { "enum": ["word"] },
+              "max": { "type": "integer", "minimum": 1 }
+            }
+          }
+        },
+        "requests": {
+          "type": "array",
+          "description": "http：只发 GET；url 里的 {id} 换成输入；every 秒（至少 600）一次；page 分页：param 参数名，next 下一页游标的路径（取不到就停）或 start 起始页码 + items 列表路径（空了就停），max 最多几页（≤ 10）。响应按真实地址入库，由本包映射卡解析 / http: GET only; responses are stored under their real URL and parsed by this pack's cards",
+          "items": {
+            "type": "object",
+            "required": ["id", "url"],
+            "properties": {
+              "id": { "type": "string" },
+              "url": { "type": "string", "pattern": "^https?://" },
+              "every": { "type": "integer", "minimum": 600 },
+              "page": {
+                "type": "object",
+                "properties": {
+                  "param": { "type": "string" },
+                  "next": { "type": "string" },
+                  "start": { "type": "integer" },
+                  "items": { "type": "string" },
+                  "max": { "type": "integer", "minimum": 1, "maximum": 10 }
+                }
+              }
+            }
+          }
+        },
+        "auth": {
+          "type": "object",
+          "description": "http：要密钥时写；密钥由用户填、只存系统凭据管理器，只发给请求地址里写死的域名。type: bearer / header（name 是请求头名）/ query（name 是参数名）/ oauth_client（OAuth2 client credentials：id_input 指哪个输入是应用 id，密钥是应用密钥，向 token_url 换令牌后按 bearer 带）；label 是那一栏叫什么 / http: the key the user enters, kept in the system keychain and sent only to hosts written literally in request URLs",
+          "required": ["type", "label"],
+          "properties": {
+            "type": { "enum": ["bearer", "header", "query", "oauth_client"] },
+            "name": { "type": "string" },
+            "token_url": { "type": "string", "pattern": "^https://" },
+            "id_input": { "type": "string" },
+            "label": { "type": "string" }
+          }
+        },
+        "rate": {
+          "type": "object",
+          "description": "http：两次请求之间至少隔多少毫秒（默认 1000）/ http: minimum gap between requests",
+          "properties": {
+            "min_interval_ms": { "type": "integer", "minimum": 200 }
+          }
         },
         "folders": {
           "type": "array",

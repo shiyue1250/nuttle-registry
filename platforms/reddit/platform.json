@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "reddit",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "label": "Reddit",
   "locales": {
     "zh": {
@@ -20,7 +20,49 @@
     {
       "match": "/nuttle/reddit/comments",
       "label": "Reddit 评论（「Reddit 帖子与评论」插件整理后交回，已内置解析）"
+    },
+    {
+      "match": "/r/*/new.json",
+      "label": "版块最新帖子列表（「盯版块」连接器用你的 Reddit 应用按小时取，官方接口，已内置解析）"
     }
   ],
-  "notes": "Reddit 新版网页（shreddit）的帖子和评论直接渲染在 HTML 里，没有给页面用的 JSON 接口。由配套插件 nuttle.reddit 在本机代理里读到页面与「加载更多」的 HTML 片段时，把 <shreddit-post> / <shreddit-comment> 拍平，交回 /nuttle/reddit/posts 与 /nuttle/reddit/comments，再由本包两张映射卡解析。数据全部经插件进来，本包不登记域名。"
+  "notes": "Reddit 新版网页（shreddit）的帖子和评论直接渲染在 HTML 里，没有给页面用的 JSON 接口。由配套插件 nuttle.reddit 在本机代理里读到页面与「加载更多」的 HTML 片段时，把 <shreddit-post> / <shreddit-comment> 拍平，交回 /nuttle/reddit/posts 与 /nuttle/reddit/comments，再由本包两张映射卡解析。数据全部经插件进来，本包不登记域名。",
+  "connector": {
+    "kind": "http",
+    "label": "盯版块",
+    "help": "Reddit 不让匿名程序读帖子，要用你自己建的 Reddit 应用：登录 reddit.com 打开 reddit.com/prefs/apps →「create another app」→ 类型选 script、回调地址随便填 http://localhost → 创建后，名字下面那串是应用 id，secret 是应用密钥。填好要盯的版块（不带 r/，多个用逗号隔开），每小时取一次每个版块最新的 100 个帖子。只读；国内网络要能打开 reddit.com。",
+    "inputs": [
+      {
+        "id": "client_id",
+        "label": "应用 id",
+        "placeholder": "名字下面那串",
+        "chars": "word",
+        "max": 40
+      },
+      {
+        "id": "sub",
+        "label": "版块",
+        "placeholder": "SaaS, smallbusiness",
+        "list": true,
+        "chars": "word",
+        "max": 21
+      }
+    ],
+    "requests": [
+      {
+        "id": "new",
+        "url": "https://oauth.reddit.com/r/{sub}/new.json?limit=100&raw_json=1",
+        "every": 3600
+      }
+    ],
+    "rate": {
+      "min_interval_ms": 2000
+    },
+    "auth": {
+      "type": "oauth_client",
+      "token_url": "https://www.reddit.com/api/v1/access_token",
+      "id_input": "client_id",
+      "label": "应用密钥（secret）"
+    }
+  }
 }

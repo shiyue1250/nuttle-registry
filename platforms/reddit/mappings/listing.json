@@ -1,0 +1,77 @@
+{
+ "apiVersion": 1,
+ "id": "reddit/listing",
+ "version": "0.1.0",
+ "platform": "reddit",
+ "entity": "post",
+ "match": {
+  "host": "reddit.com",
+  "path": "/r/*/new.json"
+ },
+ "item_path": "data.children.*.data",
+ "trigger": "「盯版块」连接器每小时用你的 Reddit 应用取一次所填版块的最新帖子（oauth.reddit.com 的官方列表接口）",
+ "note": "Reddit 原始列表接口；与插件整理的帖子按 id 合成同一条",
+ "fixture": "listing.fixture.json",
+ "verified": "2026-10-31",
+ "author": "shiyue1250",
+ "license": "MIT",
+ "locales": {
+  "zh": {
+   "name": "Reddit 版块新帖",
+   "description": "所盯版块的最新帖子：标题、正文、作者、版块、分数、评论数、赞成比例、发帖时间"
+  },
+  "en": {
+   "name": "Reddit subreddit new posts",
+   "description": "Newest posts in the subreddits you watch: title, text, author, subreddit, score, comments, upvote ratio, time"
+  }
+ },
+ "fields": {
+  "id": "id",
+  "title": "title",
+  "content": "selftext",
+  "author": "author",
+  "author_id": "author_fullname",
+  "subreddit": "subreddit_name_prefixed",
+  "score": "score",
+  "comment_count": "num_comments",
+  "upvote_ratio": "upvote_ratio",
+  "award_count": "total_awards_received",
+  "create_time": "created_utc",
+  "domain": "domain",
+  "link": "url_overridden_by_dest",
+  "url": "=https://www.reddit.com{permalink}"
+ },
+ "display": {
+  "columns": [
+   "title",
+   "subreddit",
+   "author",
+   "score",
+   "comment_count",
+   "upvote_ratio",
+   "create_time"
+  ],
+  "labels": {
+   "zh": {
+    "cover": "配图",
+    "title": "标题",
+    "subreddit": "版块",
+    "author": "作者",
+    "score": "分数",
+    "comment_count": "评论",
+    "upvote_ratio": "赞成比例",
+    "create_time": "发帖时间"
+   },
+   "en": {
+    "cover": "Media",
+    "title": "Title",
+    "subreddit": "Subreddit",
+    "author": "Author",
+    "score": "Score",
+    "comment_count": "Comments",
+    "upvote_ratio": "Upvoted",
+    "create_time": "Posted"
+   }
+  }
+ }
+}

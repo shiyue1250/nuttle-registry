@@ -1,0 +1,89 @@
+{
+  "context": {
+    "host": "www.reddit.com",
+    "path": "/r/example/new.json"
+  },
+  "response": {
+    "kind": "Listing",
+    "data": {
+      "after": "t3_ex2002",
+      "children": [
+        {
+          "kind": "t3",
+          "data": {
+            "id": "ex2001",
+            "title": "Example: what do you hate about tool A?",
+            "selftext": "Example body.",
+            "author": "example_user",
+            "author_fullname": "t2_exex2001",
+            "subreddit_name_prefixed": "r/example",
+            "score": 12,
+            "num_comments": 3,
+            "upvote_ratio": 0.9,
+            "total_awards_received": 0,
+            "created_utc": 1793404800.0,
+            "domain": "self.example",
+            "permalink": "/r/example/comments/ex2001/example_title/",
+            "thumbnail": "self"
+          }
+        },
+        {
+          "kind": "t3",
+          "data": {
+            "id": "ex2002",
+            "title": "Example link post",
+            "selftext": "",
+            "author": "example_user",
+            "author_fullname": "t2_exex2002",
+            "subreddit_name_prefixed": "r/example",
+            "score": 5,
+            "num_comments": 0,
+            "upvote_ratio": 0.9,
+            "total_awards_received": 0,
+            "created_utc": 1793404800.0,
+            "domain": "self.example",
+            "url_overridden_by_dest": "https://example.com/a",
+            "permalink": "/r/example/comments/ex2002/example_title/",
+            "thumbnail": "self"
+          }
+        }
+      ]
+    }
+  },
+  "expected": [
+    {
+      "id": "ex2001",
+      "title": "Example: what do you hate about tool A?",
+      "content": "Example body.",
+      "author": "example_user",
+      "author_id": "t2_exex2001",
+      "subreddit": "r/example",
+      "score": 12,
+      "comment_count": 3,
+      "upvote_ratio": 0.9,
+      "award_count": 0,
+      "create_time": 1793404800.0,
+      "domain": "self.example",
+      "link": null,
+      "url": "https://www.reddit.com/r/example/comments/ex2001/example_title/",
+      "extra": {}
+    },
+    {
+      "id": "ex2002",
+      "title": "Example link post",
+      "content": "",
+      "author": "example_user",
+      "author_id": "t2_exex2002",
+      "subreddit": "r/example",
+      "score": 5,
+      "comment_count": 0,
+      "upvote_ratio": 0.9,
+      "award_count": 0,
+      "create_time": 1793404800.0,
+      "domain": "self.example",
+      "link": "https://example.com/a",
+      "url": "https://www.reddit.com/r/example/comments/ex2002/example_title/",
+      "extra": {}
+    }
+  ]
+}
