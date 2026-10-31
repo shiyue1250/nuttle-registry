@@ -26,7 +26,20 @@
         "properties": { "platform": { "type": "string" }, "part": { "type": "string" }, "why": { "$ref": "#/$defs/text" } }
       }
     },
-    "cards": { "type": "array", "items": { "$ref": "#/$defs/card" } }
+    "cards": { "type": "array", "items": { "$ref": "#/$defs/card" } },
+    "transition": {
+      "type": "object",
+      "description": "Played the first time someone switches into this industry in a session (task 21g). style = a built-in animated cut (clapper: clapperboard snap, letterbox bars, flash); video = optional footage URL (webm / mp4) played instead; sfx = clap or none; color = accent of the light sweep",
+      "additionalProperties": false,
+      "properties": {
+        "style": { "enum": ["clapper"] },
+        "title": { "$ref": "#/$defs/text" },
+        "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "sfx": { "enum": ["clap", "none"] },
+        "video": { "type": "string", "format": "uri" },
+        "dur": { "type": "number", "minimum": 0.6, "maximum": 2.5 }
+      }
+    }
   },
   "$defs": {
     "text": {
