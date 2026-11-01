@@ -1,0 +1,22 @@
+{
+  "apiVersion": 1,
+  "id": "scys",
+  "version": "0.1.0",
+  "label": "生财有术",
+  "locales": {
+    "zh": {
+      "name": "生财有术"
+    },
+    "en": {
+      "name": "Shengcai Youshu"
+    }
+  },
+  "hosts": [],
+  "endpoints": [
+    {
+      "match": "/listMyTopicFootprints",
+      "label": "我看过的帖子（外部服务「自动囤」按设定间隔调用生财有术官方 MCP 的 listMyTopicFootprints，已内置解析）"
+    }
+  ],
+  "notes": "数据全部经生财有术官方 MCP 服务进来（设置 → AI → 外部服务，自己的令牌），不抓网页、本包不登记域名。原始记录地址是 mcp://scys/<工具名>，所以映射卡按「主机 scys + 工具名」认。"
+}

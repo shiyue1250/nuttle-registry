@@ -1,0 +1,44 @@
+{
+  "context": {
+    "host": "scys",
+    "path": "/listMyTopicFootprints"
+  },
+  "response": {
+    "hasNext": false,
+    "items": [
+      {
+        "accessTimestamp": 1790950931,
+        "author": {
+          "avatar": "https://example.com/a.png",
+          "name": "示例作者",
+          "unionUserId": "100001"
+        },
+        "commentCount": 3,
+        "contentPreview": "示例正文开头：这是一段编的帖子预览。",
+        "createdAt": 1786333426,
+        "entityId": "1000000000000001",
+        "entityType": "xq_topic",
+        "favoriteCount": 12,
+        "likeCount": 8,
+        "title": "示例帖子标题"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "1000000000000001",
+      "type": "xq_topic",
+      "title": "示例帖子标题",
+      "content": "示例正文开头：这是一段编的帖子预览。",
+      "author": "示例作者",
+      "author_id": "100001",
+      "author_avatar": "https://example.com/a.png",
+      "like_count": 8,
+      "comment_count": 3,
+      "favorite_count": 12,
+      "create_time": 1786333426,
+      "access_time": 1790950931,
+      "extra": {}
+    }
+  ]
+}

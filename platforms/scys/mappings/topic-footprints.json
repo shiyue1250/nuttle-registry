@@ -1,0 +1,95 @@
+{
+  "apiVersion": 1,
+  "id": "scys/topic-footprints",
+  "version": "0.1.0",
+  "platform": "scys",
+  "entity": "topic",
+  "match": {
+    "host": "scys",
+    "path": "listMyTopicFootprints"
+  },
+  "item_path": "items",
+  "fields": {
+    "id": "entityId",
+    "type": "entityType",
+    "title": "title",
+    "content": "contentPreview",
+    "author": "author.name",
+    "author_id": "author.unionUserId",
+    "author_avatar": "author.avatar",
+    "like_count": "likeCount",
+    "comment_count": "commentCount",
+    "favorite_count": "favoriteCount",
+    "create_time": "createdAt",
+    "access_time": "accessTimestamp"
+  },
+  "schema": {
+    "author_avatar": {
+      "type": "image"
+    },
+    "like_count": {
+      "type": "int"
+    },
+    "comment_count": {
+      "type": "int"
+    },
+    "favorite_count": {
+      "type": "int"
+    },
+    "create_time": {
+      "type": "time",
+      "note": "发帖时间（秒）"
+    },
+    "access_time": {
+      "type": "time",
+      "note": "你最后一次看这篇的时间（秒）"
+    },
+    "content": {
+      "note": "正文开头的预览，不是全文"
+    }
+  },
+  "trigger": "设置 → AI → 外部服务 → 生财有术 →「自动囤」勾上「我看过的帖子」后按间隔调用；囤囤鼠 Bot 调这个工具时也会存下",
+  "note": "字段按 2026-11-01 真实返回核对（items[] 每条带 entityId、entityType=xq_topic、title、contentPreview、author{name,unionUserId,avatar}、likeCount、commentCount、favoriteCount、createdAt、accessTimestamp）。样本是编的，不放真实帖子。帖子网页地址的格式没核实，不拼链接。",
+  "fixture": "topic-footprints.fixture.json",
+  "verified": "2026-11-02",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "生财有术 · 我看过的帖子",
+      "description": "你在生财有术看过的帖子：标题、作者、正文预览、点赞 / 评论 / 收藏数、发帖与最后看的时间"
+    },
+    "en": {
+      "name": "Shengcai Youshu · posts I read",
+      "description": "Posts you read on Shengcai Youshu: title, author, preview, likes / comments / saves, posted and last-read time"
+    }
+  },
+  "display": {
+    "columns": [
+      "title",
+      "author",
+      "like_count",
+      "favorite_count",
+      "comment_count",
+      "access_time"
+    ],
+    "labels": {
+      "zh": {
+        "title": "标题",
+        "author": "作者",
+        "like_count": "点赞",
+        "favorite_count": "收藏",
+        "comment_count": "评论",
+        "access_time": "最后看的时间"
+      },
+      "en": {
+        "title": "Title",
+        "author": "Author",
+        "like_count": "Likes",
+        "favorite_count": "Saves",
+        "comment_count": "Comments",
+        "access_time": "Last read"
+      }
+    }
+  }
+}
