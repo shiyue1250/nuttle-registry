@@ -682,7 +682,7 @@
     },
     {
       "id": "weixin",
-      "version": "0.3.0",
+      "version": "0.5.0",
       "label": "微信（带货助手 / 公众号）",
       "locales": {
         "zh": {
@@ -711,9 +711,45 @@
           "verified": "2026-10-04",
           "fixture": true,
           "path": "platforms/weixin/mappings/channels-video.json"
+        },
+        {
+          "id": "weixin/live-comment",
+          "version": "0.2.0",
+          "entity": "live_comment",
+          "verified": "2026-11-02",
+          "fixture": true,
+          "path": "platforms/weixin/mappings/live-comment.json"
+        },
+        {
+          "id": "weixin/live-speech",
+          "version": "0.2.0",
+          "entity": "live_speech",
+          "verified": "2026-11-02",
+          "fixture": true,
+          "path": "platforms/weixin/mappings/live-speech.json"
+        },
+        {
+          "id": "weixin/live",
+          "version": "0.1.0",
+          "entity": "live",
+          "verified": "2026-11-02",
+          "fixture": true,
+          "path": "platforms/weixin/mappings/live.json"
         }
       ],
-      "recipes": [],
+      "recipes": [
+        {
+          "id": "weixin/live-summary",
+          "title": "视频号直播总结",
+          "path": "platforms/weixin/recipes/live-summary.md",
+          "locales": {
+            "en": {
+              "title": "Channels live summary",
+              "path": "platforms/weixin/recipes/live-summary.en.md"
+            }
+          }
+        }
+      ],
       "path": "platforms/weixin/platform.json",
       "official": true
     },
@@ -943,8 +979,8 @@
         "en": "WeChat"
       },
       "desc": {
-        "zh": "公众号文章、视频号、聊天与群聊、收藏，按需开启。",
-        "en": "Official Account articles, Channels, chats and Favorites — turn on what you need."
+        "zh": "公众号文章、视频号与直播、聊天与群聊、收藏，按需开启。",
+        "en": "Official Account articles, Channels and live streams, chats and Favorites — turn on what you need."
       },
       "parts": [
         {
@@ -980,6 +1016,29 @@
           "desc": {
             "zh": "采集视频号的视频、作者、互动数据与评论，以及带货助手的选品商品。",
             "en": "Collects Channels videos, authors, engagement and comments, plus products from the shopping assistant."
+          }
+        },
+        {
+          "id": "live",
+          "packs": [
+            "weixin"
+          ],
+          "plugins": [
+            "official.wechat",
+            "nuttle.wechat-extra"
+          ],
+          "local": "wx-live",
+          "name": {
+            "zh": "视频号直播",
+            "en": "Channels live"
+          },
+          "desc": {
+            "zh": "在电脑版微信里看直播时，记下评论区和录音，主播说的话每分钟转成文字；看完可一键总结。同时只记一场。",
+            "en": "While you watch a live stream in desktop WeChat, keeps the comments and a recording, and transcribes the host every minute; summarize it afterwards. One stream at a time."
+          },
+          "risk": {
+            "zh": "会在后台另外拉一路直播流来录音，多占一份网速；转文字用「设置 → 语音转写」。",
+            "en": "Pulls a second copy of the live stream in the background to record it, using extra bandwidth; transcription uses Settings → Speech-to-text."
           }
         },
         {

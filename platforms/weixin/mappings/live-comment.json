@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin/live-comment",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "platform": "weixin",
   "entity": "live_comment",
   "match": {
@@ -84,5 +84,12 @@
         "live_id": "Live id"
       }
     }
+  },
+  "relations": {
+    "parent": {
+      "card": "weixin/live",
+      "field": "live_id"
+    },
+    "order": "seq"
   }
 }

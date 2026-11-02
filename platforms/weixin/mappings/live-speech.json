@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin/live-speech",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "platform": "weixin",
   "entity": "live_speech",
   "match": {
@@ -14,7 +14,8 @@
     "live_id": "liveId",
     "content": "text",
     "secs": "secs",
-    "create_time": "start"
+    "create_time": "start",
+    "offset": "offset"
   },
   "schema": {
     "create_time": {
@@ -32,6 +33,10 @@
     "live_id": {
       "type": "string",
       "note": "哪一场直播；评论（weixin/live-comment）用同一个编号"
+    },
+    "offset": {
+      "type": "int",
+      "note": "这段在录音里从第几秒开始（录音见上级「视频号直播」）"
     }
   },
   "trigger": "进视频号直播间、并设置了语音转写（设置 → 语音转写）：囤囤鼠在后台收直播声音，每分钟转一段；离开直播间 90 秒内停",
@@ -52,6 +57,7 @@
   "display": {
     "columns": [
       "content",
+      "offset",
       "create_time",
       "secs",
       "live_id"
@@ -61,14 +67,23 @@
         "content": "口播",
         "create_time": "开始",
         "secs": "秒",
-        "live_id": "直播编号"
+        "live_id": "直播编号",
+        "offset": "录音位置"
       },
       "en": {
         "content": "Speech",
         "create_time": "Start",
         "secs": "Secs",
-        "live_id": "Live id"
+        "live_id": "Live id",
+        "offset": "At"
       }
     }
+  },
+  "relations": {
+    "parent": {
+      "card": "weixin/live",
+      "field": "live_id"
+    },
+    "order": "offset"
   }
 }

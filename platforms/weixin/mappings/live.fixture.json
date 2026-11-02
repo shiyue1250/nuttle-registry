@@ -1,0 +1,29 @@
+{
+  "response": {
+    "liveId": "2000000000000000001",
+    "title": "示例直播标题",
+    "anchor": "示例主播",
+    "cover": "https://finder.video.qq.com/example.jpg",
+    "start": 1793619041,
+    "end": 1793622641,
+    "online_max": 3469,
+    "likes": 5567,
+    "audio_secs": 3600,
+    "recording": false
+  },
+  "expected": [
+    {
+      "id": "2000000000000000001",
+      "title": "示例直播标题",
+      "author": "示例主播",
+      "cover": "https://finder.video.qq.com/example.jpg",
+      "start": 1793619041,
+      "end": 1793622641,
+      "online_max": 3469,
+      "like_count": 5567,
+      "audio_secs": 3600,
+      "recording": false,
+      "extra": {}
+    }
+  ]
+}
