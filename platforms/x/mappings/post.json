@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "x/post",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "platform": "x",
   "entity": "post",
   "match": {
@@ -12,6 +12,7 @@
   "fields": {
     "id": "id",
     "title": "text",
+    "content": "body",
     "author": "author",
     "handle": "handle",
     "author_id": "author_id",
@@ -35,6 +36,10 @@
     "extra.quote_of": "quote_of"
   },
   "schema": {
+    "content": {
+      "type": "string",
+      "note": "X 文章（长文）的全文；正文列是文章标题。只有打开帖子详情时才有"
+    },
     "create_time": {
       "type": "unix_s"
     },

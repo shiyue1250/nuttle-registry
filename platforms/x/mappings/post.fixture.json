@@ -57,7 +57,8 @@
         "avatar": "https://pbs.twimg.com/profile_images/example_1.jpg",
         "conversation_id": "1900000000000000001",
         "quote_of": ""
-      }
+      },
+      "content": null
     }
   ]
 }
