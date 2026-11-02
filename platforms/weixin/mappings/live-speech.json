@@ -1,0 +1,74 @@
+{
+  "apiVersion": 1,
+  "id": "weixin/live-speech",
+  "version": "0.1.0",
+  "platform": "weixin",
+  "entity": "live_speech",
+  "match": {
+    "host": "wxapp.tc.qq.com",
+    "path": "/nuttle/wxlive/Speech"
+  },
+  "item_path": "",
+  "fields": {
+    "id": "={liveId}-{start}",
+    "live_id": "liveId",
+    "content": "text",
+    "secs": "secs",
+    "create_time": "start"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s",
+      "note": "这一段开始的时间"
+    },
+    "secs": {
+      "type": "int",
+      "note": "这一段多长（秒），一般 60"
+    },
+    "content": {
+      "type": "string",
+      "note": "主播口播转出来的文字，按设置里的语音转写；同音字、数字可能有错"
+    },
+    "live_id": {
+      "type": "string",
+      "note": "哪一场直播；评论（weixin/live-comment）用同一个编号"
+    }
+  },
+  "trigger": "进视频号直播间、并设置了语音转写（设置 → 语音转写）：囤囤鼠在后台收直播声音，每分钟转一段；离开直播间 90 秒内停",
+  "fixture": "live-speech.fixture.json",
+  "verified": "2026-11-02",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "视频号直播口播",
+      "description": "看直播时主播说的话，每分钟转成一段文字"
+    },
+    "en": {
+      "name": "Channels live speech",
+      "description": "What the host says in a live room you watch, transcribed minute by minute"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "create_time",
+      "secs",
+      "live_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "口播",
+        "create_time": "开始",
+        "secs": "秒",
+        "live_id": "直播编号"
+      },
+      "en": {
+        "content": "Speech",
+        "create_time": "Start",
+        "secs": "Secs",
+        "live_id": "Live id"
+      }
+    }
+  }
+}

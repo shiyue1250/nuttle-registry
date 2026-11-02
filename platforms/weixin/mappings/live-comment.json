@@ -1,0 +1,88 @@
+{
+  "apiVersion": 1,
+  "id": "weixin/live-comment",
+  "version": "0.1.0",
+  "platform": "weixin",
+  "entity": "live_comment",
+  "match": {
+    "host": "wxapp.tc.qq.com",
+    "path": "/nuttle/wxlive/GetLiveMsg"
+  },
+  "item_path": "comments",
+  "fields": {
+    "id": "id",
+    "live_id": "liveId",
+    "seq": "seq",
+    "nickname": "nickname",
+    "user_id": "username",
+    "content": "content",
+    "identity": "identity",
+    "create_time": "ts"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s",
+      "note": "收到这条的时间（直播消息本身不带时间），和真实发言差一两秒"
+    },
+    "seq": {
+      "type": "string",
+      "note": "直播间里的消息序号，按它排就是发言顺序"
+    },
+    "identity": {
+      "type": "int",
+      "note": "3 = 主播或场控（页面上标「主播」，常用来打商品卖点、价格）；1、2 = 观众"
+    },
+    "live_id": {
+      "type": "string",
+      "note": "哪一场直播；口播转文字（weixin/live-speech）用同一个编号"
+    }
+  },
+  "trigger": "在电脑版微信里进视频号直播间；需要「视频号完整数据」插件 0.10 以上",
+  "fixture": "live-comment.fixture.json",
+  "verified": "2026-11-02",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "视频号直播评论",
+      "description": "看直播时评论区里的每条文字评论：谁说的、说了什么、是不是主播；进场、下单提示不算"
+    },
+    "en": {
+      "name": "Channels live comments",
+      "description": "Each text comment in a live room you watch: who, what, and whether it's the host; join and order notices excluded"
+    }
+  },
+  "jsonld": {
+    "@type": "Comment",
+    "map": {
+      "content": "text",
+      "create_time": "dateCreated",
+      "nickname": "author"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "nickname",
+      "identity",
+      "create_time",
+      "live_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "评论",
+        "nickname": "评论者",
+        "identity": "身份",
+        "create_time": "时间",
+        "live_id": "直播编号"
+      },
+      "en": {
+        "content": "Comment",
+        "nickname": "By",
+        "identity": "Role",
+        "create_time": "Time",
+        "live_id": "Live id"
+      }
+    }
+  }
+}

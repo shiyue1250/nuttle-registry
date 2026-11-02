@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "label": "微信（带货助手 / 公众号）",
   "locales": {
     "zh": {
@@ -22,6 +22,22 @@
     "/base/getMsgInfo"
   ],
   "endpoints": [
+    {
+      "match": "/nuttle/wxlive/GetLiveMsg",
+      "label": "视频号直播间消息流：评论、进场、在线人数、点赞（插件上报，已内置解析）"
+    },
+    {
+      "match": "/nuttle/wxlive/Speech",
+      "label": "视频号直播口播转文字，每分钟一段（囤囤鼠在后台转，已内置解析）"
+    },
+    {
+      "match": "/nuttle/wxlive/JoinLive",
+      "label": "进直播间：直播信息、拉流地址"
+    },
+    {
+      "match": "/nuttle/wxlive/FinderLiveGetShopShelf",
+      "label": "直播间商品货架"
+    },
     {
       "match": "ecListSelectionSpuItems",
       "label": "选品广场商品列表（商品、佣金、店铺，已内置解析）"
@@ -67,5 +83,5 @@
       "label": "视频号评论（「视频号完整数据」插件上报，已内置解析）"
     }
   ],
-  "notes": "带货助手选品广场接口 ecListSelectionSpuItems 由桥内置的提取器解析（字段逐个核对过），不需要映射卡。公众号后台接口在 mp.weixin.qq.com。 视频号视频与评论来自插件在页面里的钩子（经本机代理上报到 wxapp.tc.qq.com 的假地址），由映射卡 channels-video / channels-comment 解析。"
+  "notes": "带货助手选品广场接口 ecListSelectionSpuItems 由桥内置的提取器解析（字段逐个核对过），不需要映射卡。公众号后台接口在 mp.weixin.qq.com。 视频号视频与评论来自插件在页面里的钩子（经本机代理上报到 wxapp.tc.qq.com 的假地址），由映射卡 channels-video / channels-comment 解析。 视频号直播间（插件 0.10 起）发到 wxapp.tc.qq.com/nuttle/wxlive/<接口名>：评论由映射卡 live-comment 解析；设置了语音转写时，囤囤鼠在后台收直播声音、每分钟转一段口播存成 /nuttle/wxlive/Speech，由 live-speech 解析。"
 }

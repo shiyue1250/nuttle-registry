@@ -1,0 +1,46 @@
+{
+  "response": {
+    "name": "GetLiveMsg",
+    "request": {
+      "liveId": "2000000000000000001"
+    },
+    "data": {
+      "curParticipantCount": 2982,
+      "msgList": [
+        {
+          "nickname": "示例用户_1",
+          "content": "来了",
+          "type": 10005,
+          "username": "v8_example_1@flstranger",
+          "seq": "5535",
+          "clientMsgId": "finderlive_sysmsg_joinlive_example_1"
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": "finderlive_usermsg_comment_example_2",
+        "liveId": "2000000000000000001",
+        "seq": "5536",
+        "nickname": "示例主播",
+        "username": "v2_example_2@finder",
+        "content": "示例商品卖点：4L 容量，40-200℃ 5℃ 微调",
+        "identity": 3,
+        "ts": 1793619041
+      }
+    ]
+  },
+  "expected": [
+    {
+      "id": "finderlive_usermsg_comment_example_2",
+      "live_id": "2000000000000000001",
+      "seq": "5536",
+      "nickname": "示例主播",
+      "user_id": "v2_example_2@finder",
+      "content": "示例商品卖点：4L 容量，40-200℃ 5℃ 微调",
+      "identity": 3,
+      "create_time": 1793619041,
+      "extra": {}
+    }
+  ]
+}
