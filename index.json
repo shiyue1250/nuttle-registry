@@ -497,6 +497,33 @@
       "official": true
     },
     {
+      "id": "scys",
+      "version": "0.1.0",
+      "label": "生财有术",
+      "locales": {
+        "zh": {
+          "name": "生财有术"
+        },
+        "en": {
+          "name": "Shengcai Youshu"
+        }
+      },
+      "hosts": [],
+      "cards": [
+        {
+          "id": "scys/topic-footprints",
+          "version": "0.1.0",
+          "entity": "topic",
+          "verified": "2026-11-02",
+          "fixture": true,
+          "path": "platforms/scys/mappings/topic-footprints.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/scys/platform.json",
+      "official": true
+    },
+    {
       "id": "sellersprite",
       "version": "0.1.0",
       "label": "卖家精灵网页版",
@@ -739,7 +766,7 @@
     },
     {
       "id": "x",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "label": "X",
       "locales": {
         "zh": {
@@ -753,7 +780,7 @@
       "cards": [
         {
           "id": "x/post",
-          "version": "0.1.0",
+          "version": "0.1.1",
           "entity": "post",
           "verified": "2026-10-05",
           "fixture": true,
