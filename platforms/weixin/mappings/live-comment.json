@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin/live-comment",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "platform": "weixin",
   "entity": "live_comment",
   "match": {
@@ -17,7 +17,8 @@
     "user_id": "username",
     "content": "content",
     "identity": "identity",
-    "create_time": "ts"
+    "create_time": "ts",
+    "offset": "offset"
   },
   "schema": {
     "create_time": {
@@ -35,6 +36,10 @@
     "live_id": {
       "type": "string",
       "note": "哪一场直播；口播转文字（weixin/live-speech）用同一个编号"
+    },
+    "offset": {
+      "type": "duration_s",
+      "note": "在这场录音里的位置（秒），和口播的 offset 同一把尺子；记录 M095 起才有"
     }
   },
   "trigger": "在电脑版微信里进视频号直播间；需要「视频号完整数据」插件 0.10 以上",

@@ -9,7 +9,8 @@
     "online_max": 3469,
     "likes": 5567,
     "audio_secs": 3600,
-    "recording": false
+    "recording": false,
+    "products": [{ "id": "10000000000001", "title": "示例商品", "price": 69, "market_price": 139, "list_no": 1, "orders": 2, "spans": [[120, 600]] }]
   },
   "expected": [
     {
@@ -23,6 +24,7 @@
       "like_count": 5567,
       "audio_secs": 3600,
       "recording": false,
+      "products": [{ "id": "10000000000001", "title": "示例商品", "price": 69, "market_price": 139, "list_no": 1, "orders": 2, "spans": [[120, 600]] }],
       "extra": {}
     }
   ]

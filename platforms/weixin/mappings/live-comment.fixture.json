@@ -26,7 +26,8 @@
         "username": "v2_example_2@finder",
         "content": "示例商品卖点：4L 容量，40-200℃ 5℃ 微调",
         "identity": 3,
-        "ts": 1793619041
+        "ts": 1793619041,
+        "offset": 95
       }
     ]
   },
@@ -40,7 +41,8 @@
       "content": "示例商品卖点：4L 容量，40-200℃ 5℃ 微调",
       "identity": 3,
       "create_time": 1793619041,
-      "extra": {}
+      "extra": {},
+      "offset": 95
     }
   ]
 }

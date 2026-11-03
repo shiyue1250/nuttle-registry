@@ -62,8 +62,8 @@
           "en": "Channels live"
         },
         "desc": {
-          "zh": "在电脑版微信里看直播时，记下评论区和录音，主播说的话每分钟转成文字；看完可一键总结。同时只记一场。",
-          "en": "While you watch a live stream in desktop WeChat, keeps the comments and a recording, and transcribes the host every minute; summarize it afterwards. One stream at a time."
+          "zh": "在电脑版微信里看直播时，点「开始记录」才记：评论区、录音、讲解过的商品，主播说的话转成文字；随时可暂停，看完可一键总结。同时只记一场。",
+          "en": "While you watch a live stream in desktop WeChat, click “Start recording” to keep the comments, a recording and the products presented, with the host transcribed; pause any time and summarize afterwards. One stream at a time."
         },
         "risk": {
           "zh": "会在后台另外拉一路直播流来录音，多占一份网速；转文字用「设置 → 语音转写」。",
