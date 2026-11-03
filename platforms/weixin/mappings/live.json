@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "id": "weixin/live",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "platform": "weixin",
   "entity": "live",
   "match": {
@@ -54,7 +54,7 @@
       "note": "讲解过 / 被下单的商品（直播间商品卡推送与下单消息）：[{id, title, img, price, market_price（元）, list_no（上架序号）, orders（下单次数）, spans（讲解时段 [[开始, 结束 | null]]，录音里的秒数，null = 还在讲）}]"
     }
   },
-  "trigger": "平台页「微信 → 视频号直播」开着，在电脑版微信里进视频号直播间、在囤囤鼠侧栏点「开始记录」；暂停、离开直播间 90 秒内停止",
+  "trigger": "平台页「微信 → 视频号直播」开着，在电脑版微信里进视频号直播间、在囤囤鼠侧栏点「开始记录」；暂停、离开直播间 20 秒内停止",
   "fixture": "live.fixture.json",
   "verified": "2026-11-02",
   "author": "shiyue1250",

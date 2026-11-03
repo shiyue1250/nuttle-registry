@@ -682,7 +682,7 @@
     },
     {
       "id": "weixin",
-      "version": "0.5.2",
+      "version": "0.5.3",
       "label": "微信（带货助手 / 公众号）",
       "locales": {
         "zh": {
@@ -730,7 +730,7 @@
         },
         {
           "id": "weixin/live",
-          "version": "0.1.1",
+          "version": "0.1.2",
           "entity": "live",
           "verified": "2026-11-02",
           "fixture": true,
