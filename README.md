@@ -58,7 +58,7 @@ nuttle --check registry/platforms/xiaohongshu/mappings/comment-page.json --updat
 以及哪些判断留给人（打标签）。分析在 Agent 里做，桥不碰。Agent 用 MCP `list_recipes` / `get_recipe` 取到全文；
 控制台「市场」里每个平台包卡片上能看到；在卡片上点「装到 Claude Code」即装成技能 `/nuttle-<平台>-<配方名>`；它们同时是 MCP 提示（同名），其他 Agent 客户端也能调用。首批两份：`xiaohongshu/comment-insight`（评论洞察）、`amazon/variation-compare`（变体对比）。
 
-不属于某个平台的配方放在根目录 `recipes/`，id 是 `nuttle/<名>`，随应用内置（不经平台包下载）：`nuttle/assess`（需求评估：拆功能点，按 现成 / 改造 / 新开发 / 有前提 四档判断）、`nuttle/case`（把做过的项目整理成案例，用到的能力记进事物）。
+不属于某个平台的配方放在根目录 `recipes/`，id 是 `nuttle/<名>`，随应用内置（不经平台包下载）：`nuttle/assess`（需求评估：拆功能点，按 现成 / 改造 / 新开发 / 有前提 四档判断）、`nuttle/case`（把做过的项目整理成案例，用到的能力记进事物）。这两份的结果由 Agent 调 MCP `submit_assessment` / `submit_case` 交，应用校验后生成固定格式的正文。
 
 英文版放同目录、同名加 `.en`：`comment-insight.en.md`。`build_index.py` 把它挂到配方条目的 `locales.en {title, path}`，
 不会当成独立配方；装包时一并下载。英文界面复制、Agent 用 `get_recipe(lang="en")` 取到的就是英文版，没有英文版就给中文。
