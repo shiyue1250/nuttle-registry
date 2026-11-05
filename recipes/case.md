@@ -15,7 +15,7 @@
 
 1. 读来源：在做项目用 get_work_project(id) 看需求事项、周报、交付报告；GitHub 仓库读 README 与目录；飞书文档用 search + get_thread。
 2. 调 submit_case 交结果（不要用 write_piece）：
-   - title：一句话「给谁做了什么」（≤ 60 字，不写客户名，写「某电商客户」这类）；summary：一句话解决了什么问题
+   - title：一句话「给哪类客户做了什么」（≤ 60 字；标题和正文都不写客户名，写「某电商客户」这类，客户名只放 internal）；summary：一句话解决了什么问题
    - need：客户要什么（列表）；approach：怎么做的，1～8 条
    - abilities：[{name, kind, maturity}]——用到的技术、产品、平台对接。name 2～20 个字、简短通用（如「小红书图片采集」「飞书多维表格对接」），不带括号说明；先看 list_things 里已有的能力，有就沿用它的名字。kind：tool（技术、工具、平台对接）/ product（自己的产品）/ work（作品）。maturity 只在有把握时给：1 产品化可直接给 / 2 有可复用代码 / 3 做过一次 / 4 只调研过。新的能力会进「待处理」等用户确认
    - effect：有数字写数字，没有就不填（显示「未记录」）；effort：实际用时（几人天、从哪天到哪天），来源里没有就不填
