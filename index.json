@@ -1033,8 +1033,8 @@
             "en": "Channels live"
           },
           "desc": {
-            "zh": "在电脑版微信里看直播时，点「开始记录」才记：评论区、录音、讲解过的商品，主播说的话转成文字；随时可暂停，看完可一键总结。同时只记一场。",
-            "en": "While you watch a live stream in desktop WeChat, click “Start recording” to keep the comments, a recording and the products presented, with the host transcribed; pause any time and summarize afterwards. One stream at a time."
+            "zh": "看直播时点「开始记录」：记下评论、录音与讲解的商品，口播转文字，看完可一键总结；同时只记一场。",
+            "en": "Click “Start recording” while watching: keeps comments, audio and the products shown, transcribes the host and summarizes afterwards. One stream at a time."
           },
           "risk": {
             "zh": "会在后台另外拉一路直播流来录音，多占一份网速；转文字用「设置 → 语音转写」。",
@@ -1092,8 +1092,8 @@
             "en": "Chats forwarded from WeChat"
           },
           "desc": {
-            "zh": "在微信中多选消息 → 转发 → 其他应用 → 囤囤鼠，聊天记录直接导入。仅读取转发的内容。",
-            "en": "In WeChat, select messages → Forward → Other apps → Nuttle, and the chat comes straight in. Only reads what you forward."
+            "zh": "微信里多选消息 → 转发 → 其他应用 → 囤囤鼠，直接导入；只读转发的内容。",
+            "en": "In WeChat, select messages → Forward → Other apps → Nuttle to import them. Reads only what you forward."
           }
         }
       ]
@@ -1107,8 +1107,8 @@
         "en": "Feishu"
       },
       "desc": {
-        "zh": "保存浏览器中打开的飞书云文档全文；通过在飞书开放平台创建的自建应用，同步关注的群聊消息。",
-        "en": "Keeps the full text of Feishu docs you open in the browser, and syncs the group chats you watch using an app you create on the Feishu Open Platform."
+        "zh": "保存打开的飞书文档全文；用自建应用同步关注的群消息。",
+        "en": "Keeps the full text of Feishu docs you open and syncs watched groups through your own app."
       },
       "parts": [
         {
@@ -1154,8 +1154,8 @@
         "en": "Mail"
       },
       "desc": {
-        "zh": "添加 QQ、网易、Gmail、iCloud 等邮箱账户，经 IMAP 只读同步所选文件夹的邮件与附件，每 10 分钟一次。",
-        "en": "Add QQ, NetEase, Gmail, iCloud and other mail accounts; syncs mail and attachments from the folders you pick over IMAP, read-only, every 10 minutes."
+        "zh": "经 IMAP 只读同步 QQ、网易、Gmail、iCloud 等邮箱的邮件与附件，每 10 分钟一次。",
+        "en": "Read-only IMAP sync of mail and attachments from QQ, NetEase, Gmail, iCloud and more, every 10 minutes."
       },
       "parts": [
         {
@@ -1169,8 +1169,8 @@
             "en": "Mail"
           },
           "desc": {
-            "zh": "发件人、主题、时间、正文与附件，可添加多个账户。只读：不改已读、不发信、不删信。",
-            "en": "Sender, subject, time, text and attachments, across several accounts. Read-only: never marks as read, sends or deletes."
+            "zh": "发件人、主题、时间、正文与附件，可添加多个账户；只读。",
+            "en": "Sender, subject, time, text and attachments across several accounts. Read-only."
           }
         }
       ]
@@ -1184,8 +1184,8 @@
         "en": "Files"
       },
       "desc": {
-        "zh": "选几个本机文件夹（NAS、共享盘挂载后也算），只读扫描文件名、修改时间和正文文字，每 10 分钟一次。",
-        "en": "Pick folders on this computer (mounted NAS or network shares count too); reads file names, modified times and text, read-only, every 10 minutes."
+        "zh": "只读扫描所选文件夹（含挂载的 NAS）的文件名与正文，每 10 分钟一次。",
+        "en": "Read-only scan of file names and text in the folders you pick (mounted NAS included), every 10 minutes."
       },
       "parts": [
         {
@@ -1199,8 +1199,8 @@
             "en": "Local folders"
           },
           "desc": {
-            "zh": "txt、md、csv、Word、PPT、Excel、网页的文字；PDF、图片暂只记文件名。只读：不改、不删、不移动文件。",
-            "en": "Text from txt, md, csv, Word, PowerPoint, Excel and web pages; PDFs and images are listed by name for now. Read-only: never edits, deletes or moves files."
+            "zh": "txt、md、csv、Office、网页的文字；PDF、图片只记文件名；不改、不删、不移动文件。",
+            "en": "Text from txt, md, csv, Office files and web pages; PDFs and images by name only. Never edits, deletes or moves files."
           }
         }
       ]
@@ -1408,8 +1408,8 @@
             "en": "Watch subreddits"
           },
           "desc": {
-            "zh": "每小时自动获取所填版块的最新帖子，无需打开浏览器。只读，使用自建的 Reddit 应用。",
-            "en": "List a few subreddits; their newest posts come in every hour without a browser. Read-only, through the official API with your own Reddit app."
+            "zh": "每小时自动取所填版块的新帖，不用开浏览器；只读，需自建 Reddit 应用。",
+            "en": "New posts from your subreddits every hour, no browser needed. Read-only, with your own Reddit app."
           }
         }
       ]
@@ -1521,8 +1521,8 @@
         "en": "Amazon"
       },
       "desc": {
-        "zh": "采集打开过的商品页：标题、价格、评分、评论数、品牌，以及变体的 ASIN、颜色、尺寸与可售状态。",
-        "en": "Collects product pages you open: title, price, rating, reviews and brand, plus variations (ASIN, color, size, availability)."
+        "zh": "采集打开过的商品页：价格、评分、评论数、品牌与变体（ASIN、颜色、尺寸、可售）。",
+        "en": "Collects product pages you open: price, rating, reviews, brand and variations (ASIN, color, size, availability)."
       },
       "parts": [
         {
