@@ -1645,6 +1645,35 @@
           }
         }
       ]
+    },
+    {
+      "id": "scys",
+      "letter": "生",
+      "group": "more",
+      "name": {
+        "zh": "生财有术",
+        "en": "Shengcai Youshu"
+      },
+      "desc": {
+        "zh": "经生财有术官方 MCP 自动囤你看过的帖子，供分析使用。",
+        "en": "Saves the Shengcai Youshu posts you viewed, via its official MCP, for analysis."
+      },
+      "parts": [
+        {
+          "id": "footprints",
+          "packs": [
+            "scys"
+          ],
+          "name": {
+            "zh": "我看过的帖子",
+            "en": "Posts I viewed"
+          },
+          "desc": {
+            "zh": "在「设置 → AI → 外部服务」接入生财有术后按间隔自动囤。",
+            "en": "Collected on a schedule after connecting Shengcai Youshu in Settings → AI → External services."
+          }
+        }
+      ]
     }
   ],
   "industries": [

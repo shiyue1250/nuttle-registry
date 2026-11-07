@@ -58,6 +58,14 @@ def build():
             missing = [x for x in part.get("packs", []) if x not in ids]
             if missing:
                 sys.exit(f"catalog.json: {plat['id']}/{part['id']} 引用了不存在的平台包 {missing}")
+    # 反过来：每个官方平台包都要有平台认领，否则装上后掉进「设置 → 开发者 → 清单外的插件」
+    # （2026-11-08 用户：「清单外的插件就总是多出来，不能杜绝掉吗？」——生财有术 scys 包在、清单里漏了）
+    # 接入示例模板（不在应用里列出、不会自动装上）不算：豆瓣是照接入规范让 AI 走一遍用的示例
+    TEMPLATES = {"douban"}
+    used = {x for plat in platforms for part in plat["parts"] for x in part.get("packs", [])}
+    orphan = sorted(ids - used - TEMPLATES)
+    if orphan:
+        sys.exit(f"catalog.json: 这些平台包没有平台认领，会掉进「清单外的插件」：{orphan}")
     industries = [load(f) for f in sorted((ROOT / "industries").glob("*.json"))]
     return {"schema": "schema/mapping-card.schema.json", "packs": packs, "platforms": platforms, "industries": industries}
 
