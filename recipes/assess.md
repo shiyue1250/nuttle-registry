@@ -27,6 +27,7 @@
    - ⚠ 有前提：能不能做取决于外部条件。写明卡在哪：平台不开放接口、要客户给账号或权限、合规或封号风险、要买第三方授权等。
 4. 汇总：要问客户的问题、主要风险（总工作量由程序按功能点加总）。
 5. 调 submit_assessment 交结果（不要用 write_piece）：
+   - title：内容短标题，一行，最好 24 字内（最多 40 字），写「对象 + 要解决的事」，如「训练营图片采集、打标与学员匹配」；不是需求原文的截断，不写客户名。列表标题和转成项目时的默认项目名都用它
    - requirement：需求原文；conclusion：一句话结论（能做 / 大部分能做 / 要先确认几件事）
    - points：[{point, verdict, basis, refs, blocker, effort_min, effort_max}]
      - verdict：ready（现成）/ adapt（改造）/ new（新开发）/ blocked（有前提）
