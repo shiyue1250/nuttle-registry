@@ -1,0 +1,91 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-miniapp/live",
+  "version": "0.2.0",
+  "platform": "wechat-miniapp",
+  "entity": "live",
+  "match": {
+    "host": "live.work.weixin.qq.com",
+    "path": "/nuttle/wecomlive/Session"
+  },
+  "item_path": "",
+  "fields": {
+    "id": "liveId",
+    "title": "title",
+    "author": "anchor",
+    "cover": "cover",
+    "start": "start",
+    "end": "end",
+    "audio_secs": "audio_secs",
+    "recording": "recording",
+    "replay": "replay"
+  },
+  "schema": {
+    "cover": {
+      "type": "image"
+    },
+    "start": {
+      "type": "unix_s",
+      "note": "开始看（开始记录）的时间；同一场退出再进接着记"
+    },
+    "end": {
+      "type": "unix_s",
+      "note": "最后一次记录的时间"
+    },
+    "audio_secs": {
+      "type": "duration_s",
+      "note": "录音时长；录音在数据目录 media/live/<直播编号>.aac"
+    },
+    "recording": {
+      "type": "bool",
+      "note": "还在记录"
+    },
+    "replay": {
+      "type": "json",
+      "note": "回放任务进度、总时长与评论完整性，和局部直播文件分开"
+    }
+  },
+  "trigger": "平台 → 微信小程序 → 企业微信直播开启后，打开直播并点击开始记录；评论正文尚未接入",
+  "fixture": "live.fixture.json",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "企业微信直播",
+      "description": "记录过的企业微信直播：主播、标题、录音时长与口播"
+    },
+    "en": {
+      "name": "WeCom live streams",
+      "description": "Recorded WeCom live streams with host, title, audio and speech"
+    }
+  },
+  "display": {
+    "columns": [
+      "title",
+      "author",
+      "start",
+      "audio_secs",
+      "cover"
+    ],
+    "labels": {
+      "zh": {
+        "title": "标题",
+        "author": "主播",
+        "start": "开始",
+        "audio_secs": "录音",
+        "online_max": "最高在线",
+        "like_count": "点赞",
+        "cover": "封面"
+      },
+      "en": {
+        "title": "Title",
+        "author": "Host",
+        "start": "Start",
+        "audio_secs": "Recording",
+        "online_max": "Peak viewers",
+        "like_count": "Likes",
+        "cover": "Cover"
+      }
+    }
+  }
+}

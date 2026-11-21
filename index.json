@@ -681,6 +681,51 @@
       "official": true
     },
     {
+      "id": "wechat-miniapp",
+      "version": "0.2.0",
+      "label": "微信小程序",
+      "locales": {
+        "zh": {
+          "name": "微信小程序"
+        },
+        "en": {
+          "name": "WeChat Mini Programs"
+        }
+      },
+      "hosts": [
+        "live.work.weixin.qq.com"
+      ],
+      "cards": [
+        {
+          "id": "wechat-miniapp/live-comment",
+          "version": "0.1.0",
+          "entity": "live_comment",
+          "verified": null,
+          "fixture": true,
+          "path": "platforms/wechat-miniapp/mappings/live-comment.json"
+        },
+        {
+          "id": "wechat-miniapp/live-speech",
+          "version": "0.2.0",
+          "entity": "live_speech",
+          "verified": null,
+          "fixture": true,
+          "path": "platforms/wechat-miniapp/mappings/live-speech.json"
+        },
+        {
+          "id": "wechat-miniapp/live",
+          "version": "0.2.0",
+          "entity": "live",
+          "verified": null,
+          "fixture": true,
+          "path": "platforms/wechat-miniapp/mappings/live.json"
+        }
+      ],
+      "recipes": [],
+      "path": "platforms/wechat-miniapp/platform.json",
+      "official": true
+    },
+    {
       "id": "weixin",
       "version": "0.5.3",
       "label": "微信（带货助手 / 公众号）",
@@ -1094,6 +1139,36 @@
           "desc": {
             "zh": "微信里多选消息 → 转发 → 其他应用 → 囤囤鼠，直接导入；只读转发的内容。",
             "en": "In WeChat, select messages → Forward → Other apps → Nuttle to import them. Reads only what you forward."
+          }
+        }
+      ]
+    },
+    {
+      "id": "wechat-miniapp",
+      "letter": "小",
+      "group": "main",
+      "name": {
+        "zh": "微信小程序",
+        "en": "WeChat Mini Programs"
+      },
+      "desc": {
+        "zh": "记录已接入的小程序内容，目前支持企业微信直播。",
+        "en": "Collects supported mini programs, starting with WeCom live streams."
+      },
+      "parts": [
+        {
+          "id": "wecom-live",
+          "packs": [
+            "wechat-miniapp"
+          ],
+          "local": "wecom-live",
+          "name": {
+            "zh": "企业微信直播",
+            "en": "WeCom live streams"
+          },
+          "desc": {
+            "zh": "识别正在观看的直播和回放：录音、整场转写、回放评论与总结。",
+            "en": "Detect live streams and replays you watch: audio, full replay transcription, replay comments and summaries."
           }
         }
       ]

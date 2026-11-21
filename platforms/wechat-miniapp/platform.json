@@ -1,0 +1,28 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-miniapp",
+  "version": "0.2.0",
+  "label": "微信小程序",
+  "locales": {
+    "zh": {
+      "name": "微信小程序"
+    },
+    "en": {
+      "name": "WeChat Mini Programs"
+    }
+  },
+  "hosts": [
+    "live.work.weixin.qq.com"
+  ],
+  "endpoints": [
+    {
+      "match": "/nuttle/wecomlive/Session",
+      "label": "企业微信直播记录"
+    },
+    {
+      "match": "/nuttle/wecomlive/Speech",
+      "label": "企业微信直播口播"
+    }
+  ],
+  "notes": "企业微信直播与回放：直播边收边转写，回放整场分段转写、历史评论与总结；新场需点开始。"
+}

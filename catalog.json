@@ -128,6 +128,36 @@
     ]
   },
   {
+    "id": "wechat-miniapp",
+    "letter": "小",
+    "group": "main",
+    "name": {
+      "zh": "微信小程序",
+      "en": "WeChat Mini Programs"
+    },
+    "desc": {
+      "zh": "记录已接入的小程序内容，目前支持企业微信直播。",
+      "en": "Collects supported mini programs, starting with WeCom live streams."
+    },
+    "parts": [
+      {
+        "id": "wecom-live",
+        "packs": [
+          "wechat-miniapp"
+        ],
+        "local": "wecom-live",
+        "name": {
+          "zh": "企业微信直播",
+          "en": "WeCom live streams"
+        },
+        "desc": {
+          "zh": "识别正在观看的直播和回放：录音、整场转写、回放评论与总结。",
+          "en": "Detect live streams and replays you watch: audio, full replay transcription, replay comments and summaries."
+        }
+      }
+    ]
+  },
+  {
     "id": "feishu",
     "letter": "飞",
     "group": "main",

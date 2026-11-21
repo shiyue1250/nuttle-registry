@@ -1,0 +1,23 @@
+{
+  "response": {
+    "name": "Speech",
+    "liveId": "wecom-2000000000000000001",
+    "start": 1793619041,
+    "secs": 60,
+    "text": "示例口播：800 毫升今天 139，1000 毫升 149，7 天无理由。",
+    "offset": 120,
+    "origin": "live"
+  },
+  "expected": [
+    {
+      "id": "wecom-2000000000000000001-live-120",
+      "live_id": "wecom-2000000000000000001",
+      "content": "示例口播：800 毫升今天 139，1000 毫升 149，7 天无理由。",
+      "secs": 60,
+      "create_time": 1793619041,
+      "extra": {},
+      "offset": 120,
+      "origin": "live"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "apiVersion": 1,
+  "id": "wechat-miniapp/live-speech",
+  "version": "0.2.0",
+  "platform": "wechat-miniapp",
+  "entity": "live_speech",
+  "match": {
+    "host": "live.work.weixin.qq.com",
+    "path": "/nuttle/wecomlive/Speech"
+  },
+  "item_path": "",
+  "fields": {
+    "id": "={liveId}-{origin}-{offset}",
+    "live_id": "liveId",
+    "content": "text",
+    "secs": "secs",
+    "create_time": "start",
+    "offset": "offset",
+    "origin": "origin"
+  },
+  "schema": {
+    "create_time": {
+      "type": "unix_s",
+      "note": "这一段开始的时间"
+    },
+    "secs": {
+      "type": "int",
+      "note": "这一段多长（秒），一般 60"
+    },
+    "content": {
+      "type": "string",
+      "note": "主播口播转出来的文字，按设置里的语音转写；同音字、数字可能有错"
+    },
+    "live_id": {
+      "type": "string",
+      "note": "企业微信直播编号（带wecom-前缀）"
+    },
+    "offset": {
+      "type": "int",
+      "note": "录音中的秒数"
+    },
+    "origin": {
+      "type": "string",
+      "note": "live为局部直播录音位置，replay为原回放视频位置"
+    }
+  },
+  "trigger": "平台 → 微信小程序 → 企业微信直播开启后，打开直播并点击开始记录；评论正文尚未接入",
+  "fixture": "live-speech.fixture.json",
+  "author": "shiyue1250",
+  "license": "MIT",
+  "locales": {
+    "zh": {
+      "name": "企业微信直播口播",
+      "description": "企业微信直播中说的话，随录音转成文字"
+    },
+    "en": {
+      "name": "WeCom live speech",
+      "description": "Speech transcribed from a WeCom live stream"
+    }
+  },
+  "display": {
+    "columns": [
+      "content",
+      "offset",
+      "create_time",
+      "secs",
+      "live_id"
+    ],
+    "labels": {
+      "zh": {
+        "content": "口播",
+        "create_time": "开始",
+        "secs": "秒",
+        "live_id": "直播编号",
+        "offset": "录音位置"
+      },
+      "en": {
+        "content": "Speech",
+        "create_time": "Start",
+        "secs": "Secs",
+        "live_id": "Live id",
+        "offset": "At"
+      }
+    }
+  },
+  "relations": {
+    "parent": {
+      "card": "wechat-miniapp/live",
+      "field": "live_id"
+    },
+    "order": "offset"
+  }
+}

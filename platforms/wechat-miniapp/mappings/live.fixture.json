@@ -1,0 +1,37 @@
+{
+  "response": {
+    "liveId": "wecom-2000000000000000001",
+    "title": "示例直播标题",
+    "anchor": "示例主播",
+    "cover": "https://finder.video.qq.com/example.jpg",
+    "start": 1793619041,
+    "end": 1793622641,
+    "audio_secs": 3600,
+    "recording": false,
+    "replay": {
+      "state": "回放处理完成",
+      "complete": true,
+      "duration": 2139,
+      "comments_complete": true
+    }
+  },
+  "expected": [
+    {
+      "id": "wecom-2000000000000000001",
+      "title": "示例直播标题",
+      "author": "示例主播",
+      "cover": "https://finder.video.qq.com/example.jpg",
+      "start": 1793619041,
+      "end": 1793622641,
+      "audio_secs": 3600,
+      "recording": false,
+      "extra": {},
+      "replay": {
+        "state": "回放处理完成",
+        "complete": true,
+        "duration": 2139,
+        "comments_complete": true
+      }
+    }
+  ]
+}
